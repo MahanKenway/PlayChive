@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Build and package the upstream Digger Remastered WASM target for RetroPlay.
+# Build and package the upstream Digger Remastered WASM target for PLAYCHIVE.
 # Digger's upstream source carries mixed historical notices (Public Domain,
 # Beer-Ware, BSD-2-Clause and GPL-2.0); the original README is shipped intact.
 set -euo pipefail
@@ -22,7 +22,7 @@ git -C "$SOURCE_DIR" checkout --detach "$DIGGER_COMMIT"
 test "$(git -C "$SOURCE_DIR" rev-parse HEAD)" = "$DIGGER_COMMIT"
 
 # The project maintains an official Emscripten target in GNUmakefile. Prefer the
-# RetroPlay SDK in a local development sandbox; GitHub Actions already adds emcc
+# PLAYCHIVE SDK in a local development sandbox; GitHub Actions already adds emcc
 # to PATH before this script is called.
 if [[ -x /home/ubuntu/emsdk/upstream/emscripten/emcc ]]; then
   export PATH="/home/ubuntu/emsdk/upstream/emscripten:$PATH"
@@ -41,7 +41,7 @@ sed -i \
   "$OUT_DIR/digger.html"
 cp "$SOURCE_DIR/README.md" "$OUT_DIR/DIGGER-UPSTREAM-NOTICES.txt"
 cat > "$OUT_DIR/SOURCE-NOTICE.txt" <<NOTICE
-Digger Remastered runtime built for RetroPlay
+Digger Remastered runtime built for PLAYCHIVE
 
 Upstream repository: https://github.com/sobomax/digger
 Pinned revision: $DIGGER_COMMIT
@@ -50,7 +50,7 @@ Upstream project: https://www.digger.org/
 The Digger Remastered upstream README documents the source's historical mixed
 license notices, including Public Domain, Beer-Ware, 2-clause BSD and GPL-2.0.
 The original README is included at DIGGER-UPSTREAM-NOTICES.txt. Corresponding
-source is available from the repository above; RetroPlay's build recipe is
+source is available from the repository above; PLAYCHIVE's build recipe is
 scripts/build-digger-web.sh.
 
 Packaging changes: Digger's upstream `ARCH=WASM` target is used unmodified for

@@ -2,7 +2,7 @@
 # Package the browser-native HexGL runtime with all playable assets local.
 # The selected revision is a verified MIT-code source snapshot. Individual
 # files with a different licence (notably ShipControls.js) are retained with
-# their upstream notices; RetroPlay deploys this runtime non-commercially.
+# their upstream notices; PLAYCHIVE deploys this runtime non-commercially.
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -40,7 +40,7 @@ sed -i \
 sed -i "s#window.location.href = 'http://get.webgl.org/';#console.warn('WebGL unavailable');#g" "$OUT_DIR/launch.js"
 
 cat > "$OUT_DIR/retroplay-loader.js" <<'LOADER'
-// RetroPlay integration: a runtime path starts the bundled race directly.
+// PLAYCHIVE integration: a runtime path starts the bundled race directly.
 // This file does not download assets or contact external services.
 (function () {
   if (new URLSearchParams(location.search).get('autostart') !== '1') return;
@@ -62,7 +62,7 @@ sed -i '/<script src="launch.js"><\/script>/a\    <script src="retroplay-loader.
 cp "$SOURCE_DIR/LICENSE" "$OUT_DIR/HEXGL-MIT-LICENSE.txt"
 cp "$SOURCE_DIR/audio/LICENSE" "$OUT_DIR/HEXGL-AUDIO-LICENSE.txt"
 cat > "$OUT_DIR/SOURCE-NOTICE.txt" <<NOTICE
-HexGL runtime packaged for RetroPlay
+HexGL runtime packaged for PLAYCHIVE
 
 Upstream repository: https://github.com/BKcore/HexGL
 Pinned revision: $HEXGL_COMMIT
@@ -70,7 +70,7 @@ Upstream project: https://hexgl.bkcore.com/
 
 The upstream root LICENSE is MIT. Some individual files retain their own
 upstream notices, including bkcore/hexgl/ShipControls.js (CC BY-NC 3.0) and
-the audio attribution terms in HEXGL-AUDIO-LICENSE.txt. RetroPlay distributes
+the audio attribution terms in HEXGL-AUDIO-LICENSE.txt. PLAYCHIVE distributes
 this runtime on a non-commercial basis and retains these files verbatim.
 
 Packaging changes: no gameplay files are fetched from third parties at runtime;

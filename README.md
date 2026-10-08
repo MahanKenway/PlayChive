@@ -1,12 +1,12 @@
 <div align="center">
 
-# RetroPlay
+# PLAYCHIVE
 
 > **Classic worlds, ready to play.**
 >
 > A curated browser hub for open-source retro games, classic engines and WAD worlds that run through WebAssembly.
 
-[![Play RetroPlay](https://img.shields.io/badge/PLAY_RETROPLAY-1a1d18?style=for-the-badge&logo=googlechrome&logoColor=d7eb41)](https://mahankenway.github.io/RetroPlay/)
+[![Play PLAYCHIVE](https://img.shields.io/badge/PLAY_PLAYCHIVE-1a1d18?style=for-the-badge&logo=googlechrome&logoColor=d7eb41)](https://mahankenway.github.io/RetroPlay/)
 [![Build and deploy](https://img.shields.io/github/actions/workflow/status/MahanKenway/RetroPlay/build-and-deploy.yml?style=for-the-badge&label=BUILD&logo=githubactions&logoColor=white&color=success)](../../actions/workflows/build-and-deploy.yml)
 [![GitHub Pages](https://img.shields.io/badge/HOSTED_ON-GitHub_Pages-222?style=for-the-badge&logo=github&logoColor=white)](https://pages.github.com/)
 
@@ -15,23 +15,23 @@
 [![Static deployment](https://img.shields.io/badge/DEPLOYMENT-static-54785c?style=flat-square)](https://pages.github.com/)
 [![Non-commercial](https://img.shields.io/badge/DEPLOYMENT-non--commercial-7b5aa6?style=flat-square)](#licensing-and-attribution)
 
-[**Open RetroPlay**](https://mahankenway.github.io/RetroPlay/) · [**Browse the catalog**](https://mahankenway.github.io/RetroPlay/#catalog) · [**Report an issue**](../../issues) · [**View releases**](../../actions)
+[**Open PLAYCHIVE**](https://mahankenway.github.io/RetroPlay/) · [**Browse the catalog**](https://mahankenway.github.io/RetroPlay/#catalog) · [**Report an issue**](../../issues) · [**View releases**](../../actions)
 
 </div>
 
 ---
 
-[![OpenTTD in the RetroPlay browser runtime: a colorful town, rail network and the game’s new-game menu.](assets/screenshots/openttd-runtime.webp)](https://mahankenway.github.io/RetroPlay/openttd.html)
+[![OpenTTD in the PLAYCHIVE browser runtime: a colorful town, rail network and the game’s new-game menu.](assets/screenshots/openttd-runtime.webp)](https://mahankenway.github.io/RetroPlay/openttd.html)
 
 ## A browser-first retro game collection
 
-**RetroPlay** is no longer only a Doom WAD launcher. It is a deliberately small, curated collection of independently built browser runtimes: first-person action, top-down combat, adventure, shooters, transport strategy and theme-park strategy. The shell provides discovery, a local library and PSP-inspired touch controls; each game runtime owns its engine, data path and persistence model.
+**PLAYCHIVE** is no longer only a Doom WAD launcher. It is a deliberately small, curated collection of independently built browser runtimes: first-person action, top-down combat, adventure, shooters, transport strategy and theme-park strategy. The shell provides discovery, a local library and PSP-inspired touch controls; each game runtime owns its engine, data path and persistence model.
 
 > **Design rule:** a game marked **Ready** includes the free content it needs and launches from the browser. It does not ask the player to upload a commercial archive, create an account or install a native application.
 
 The project is published as a static GitHub Pages site. Its browser runtimes use WebAssembly, a web standard intended to run compiled code efficiently in the browser [1], with Emscripten used by the project’s C and C++ build paths [2]. GitHub Actions builds the deployable artifact and GitHub Pages serves the static result [3].
 
-| Area | What RetroPlay provides |
+| Area | What PLAYCHIVE provides |
 |---|---|
 | **Discover** | A searchable catalog that combines classic WAD material with standalone, free-content games. |
 | **Play** | One click opens the relevant browser runtime; bundled entries are designed to start on first load. |
@@ -65,7 +65,7 @@ All catalog and README visuals are sourced from actual game or local browser-run
 | [![OpenTTD gameplay and menu in a browser.](assets/screenshots/openttd-runtime.webp)](https://mahankenway.github.io/RetroPlay/openttd.html) | [![FreeRCT title menu over an isometric theme park.](assets/screenshots/freerct-runtime.webp)](https://mahankenway.github.io/RetroPlay/freerct.html) | [![Neverball 3D physics-puzzle gameplay.](assets/screenshots/neverball-runtime.png)](https://mahankenway.github.io/RetroPlay/neverball.html) |
 | **OpenTTD** uses its free graphics, effects and music sets. | **FreeRCT** uses its project-generated clean-room graphics and data. | **Neverball** uses its bundled base content and Easy level set. |
 
-## Playing RetroPlay
+## Playing PLAYCHIVE
 
 Start at the [main hub](https://mahankenway.github.io/RetroPlay/), select a **Ready** game card and choose its launch action. The hub opens independent runtimes in their own pages when the game requires a different engine. On mobile, use the visible D-pad, face buttons and shoulder controls where supplied; on desktop, click the game canvas once if the runtime asks to capture pointer input.
 
@@ -74,16 +74,16 @@ Start at the [main hub](https://mahankenway.github.io/RetroPlay/), select a **Re
 | **Play a bundled title** | Select a game marked **Free / bundled** or **Ready**, then use its launch action. |
 | **Enter fullscreen** | Use the runtime’s **Fullscreen** control after the canvas has initialized. |
 | **Save progress** | Let the game use browser-local storage; do not clear site data if you want to retain saves. |
-| **Use a Doom mapset you own** | Use the separate local WAD importer on the main hub. Files stay in the browser session and are never uploaded to a RetroPlay server. |
+| **Use a Doom mapset you own** | Use the separate local WAD importer on the main hub. Files stay in the browser session and are never uploaded to a PLAYCHIVE server. |
 | **Find a game** | Use catalog search, genre filters and the local pinned library. |
 
 ## Runtime architecture
 
-RetroPlay intentionally does not force all games through one emulation layer. The hub is static HTML, CSS and ES modules; the individual runtime pages load their own WebAssembly build and assets. This isolates dependencies and lets each classic engine keep its natural rendering, audio and input model.
+PLAYCHIVE intentionally does not force all games through one emulation layer. The hub is static HTML, CSS and ES modules; the individual runtime pages load their own WebAssembly build and assets. This isolates dependencies and lets each classic engine keep its natural rendering, audio and input model.
 
 ```text
 Browser
-├── RetroPlay hub
+├── PLAYCHIVE hub
 │   ├── index.html + styles/ + src/
 │   ├── catalog search, filtering and local library
 │   └── Doom WAD runtime and optional local WAD importer
@@ -121,7 +121,7 @@ The authoritative build is [`.github/workflows/build-and-deploy.yml`](.github/wo
 
 ```bash
 git clone https://github.com/MahanKenway/RetroPlay.git
-cd RetroPlay
+cd PLAYCHIVE
 
 # The repository is a static frontend. To inspect an already generated artifact locally:
 python3 -m http.server 4180 --directory dist
@@ -159,7 +159,7 @@ Open an [issue](../../issues) for defects, compatibility reports or candidate fr
 
 ## Licensing and attribution
 
-RetroPlay is a **non-commercial** deployment. The hub does not claim ownership of the engines, game data or artwork represented in the catalog. Each package remains subject to its own license and attribution obligations; the repository keeps runtime-specific notices alongside the relevant bundles and source material.
+PLAYCHIVE is a **non-commercial** deployment. The hub does not claim ownership of the engines, game data or artwork represented in the catalog. Each package remains subject to its own license and attribution obligations; the repository keeps runtime-specific notices alongside the relevant bundles and source material.
 
 | Component | Primary licensing / attribution path |
 |---|---|
@@ -205,6 +205,6 @@ For the historical legal and technical decision not to package OpenRCT2 or propr
 
 <div align="center">
 
-Built and maintained by [MahanKenway](https://github.com/MahanKenway). RetroPlay is a preservation-minded, non-commercial experiment in making free classic game worlds easier to explore.
+Built and maintained by [MahanKenway](https://github.com/MahanKenway). PLAYCHIVE is a preservation-minded, non-commercial experiment in making free classic game worlds easier to explore.
 
 </div>

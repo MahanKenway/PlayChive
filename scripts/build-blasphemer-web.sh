@@ -72,7 +72,7 @@ curl -fsSL --retry 2 "https://raw.githubusercontent.com/Blasphemer/blasphemer/$B
   -o "$OUT_DIR/BLASPHEMER-CREDITS.md"
 
 cat > "$OUT_DIR/SOURCE-NOTICE.txt" <<EOF
-Blasphemer WebAssembly runtime for RetroPlay
+Blasphemer WebAssembly runtime for PLAYCHIVE
 
 Engine: Chocolate Heretic from https://github.com/$CHOCOLATE_REPO
 Pinned engine commit: $CHOCOLATE_COMMIT
@@ -80,7 +80,7 @@ Bundled game data: Blasphemer $BLASPHEMER_TAG from https://github.com/$BLASPHEME
 Release archive: $BLASPHEMER_ARCHIVE
 
 The engine and bundled Blasphemer data are distributed under GPL-2.0-or-later.
-RetroPlay packages a browser-specific build patch that starts the first-load
+PLAYCHIVE packages a browser-specific build patch that starts the first-load
 session silently for mobile compatibility and runs the native frame loop through
 Emscripten. No original Heretic data, uploads, external level downloads or
 player-supplied files are included or required.

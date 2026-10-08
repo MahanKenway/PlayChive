@@ -26,10 +26,10 @@ rm -rf "$OUT_DIR/.git" "$OUT_DIR/.github" "$OUT_DIR/.gitignore" "$OUT_DIR/README
 
 # The original footer points to stores and external sites. Attribution and legal
 # information remain in the included MIT license and source notice instead.
-sed -i '79,85c\    <p class="game-explanation">RetroPlay bundles this free browser version locally. Use arrow keys, a swipe or the PSP controls outside the play area.</p>' "$OUT_DIR/index.html"
+sed -i '79,85c\    <p class="game-explanation">PLAYCHIVE bundles this free browser version locally. Use arrow keys, a swipe or the PSP controls outside the play area.</p>' "$OUT_DIR/index.html"
 cp "$SOURCE_DIR/LICENSE.txt" "$OUT_DIR/2048-MIT.txt"
 cat > "$OUT_DIR/SOURCE-NOTICE.txt" <<NOTICE
-2048 runtime packaged for RetroPlay
+2048 runtime packaged for PLAYCHIVE
 
 Upstream repository: https://github.com/gabrielecirulli/2048
 Pinned revision: $GAME_COMMIT
@@ -37,7 +37,7 @@ Upstream project: https://gabrielecirulli.github.io/2048/
 
 2048 is licensed under MIT. The full upstream license is included at
 2048-MIT.txt. The corresponding source is available from the repository above;
-RetroPlay's packaging script is scripts/build-2048-web.sh.
+PLAYCHIVE's packaging script is scripts/build-2048-web.sh.
 
 The package keeps all upstream HTML, JavaScript, Clear Sans webfonts and mobile
 swipe input local. External promotional/store links in the upstream footer were

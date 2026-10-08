@@ -1,6 +1,6 @@
-# RetroPlay
+# PLAYCHIVE
 
-> RetroPlay is an independent browser hub for legally distributable open-source retro games, classic engines, WAD worlds, and experimental runtimes.
+> PLAYCHIVE is an independent browser hub for legally distributable open-source retro games, classic engines, WAD worlds, and experimental runtimes.
 
 ## What this site offers
 
@@ -11,7 +11,7 @@
 
 ## Important URLs
 
-- [RetroPlay home](https://mahankenway.github.io/RetroPlay/)
+- [PLAYCHIVE home](https://mahankenway.github.io/RetroPlay/)
 - [Game sitemap](https://mahankenway.github.io/RetroPlay/sitemap.xml)
 - [Crawler policy](https://mahankenway.github.io/RetroPlay/robots.txt)
 - [About the creator](https://mahankenway.github.io/RetroPlay/#about)
@@ -19,11 +19,11 @@
 
 ## Content and rights
 
-RetroPlay distinguishes bundled libre/open-source content from local-file imports and external projects. Each catalog entry retains upstream attribution and license information. Commercial copyrighted game data is not presented as bundled free content.
+PLAYCHIVE distinguishes bundled libre/open-source content from local-file imports and external projects. Each catalog entry retains upstream attribution and license information. Commercial copyrighted game data is not presented as bundled free content.
 
 ## Entity
 
 - Creator: Mahan Tavakoli (MahanKenway)
-- Project: RetroPlay
+- Project: PLAYCHIVE
 - Primary language: English
 - Platform: Web browser, desktop and mobile

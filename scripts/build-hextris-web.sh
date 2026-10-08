@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Package the browser-native Hextris arcade-puzzle runtime with all playable
-# code and assets local.  RetroPlay serves this GPL-3.0-or-later package
+# code and assets local.  PLAYCHIVE serves this GPL-3.0-or-later package
 # non-commercially with upstream source and attribution notices retained.
 set -euo pipefail
 
@@ -53,7 +53,7 @@ sed -E -i "s#<hr> <p id = 'afterhr'></p> By <a href='http://loganengstrom.com'.*
 sed -i '/^[[:space:]]*(function(){/,/^})()/d' "$OUT_DIR/js/main.js"
 
 cat > "$OUT_DIR/retroplay-loader.js" <<'LOADER'
-// RetroPlay integration: a launch URL begins the local Hextris session.
+// PLAYCHIVE integration: a launch URL begins the local Hextris session.
 // It does not fetch assets, communicate with a score server or enable ads.
 (function () {
   if (new URLSearchParams(location.search).get('autostart') !== '1') return;
@@ -79,7 +79,7 @@ sed -i '/js\/initialization\.js/a\        <script type="text/javascript" src="re
 
 cp "$SOURCE_DIR/LICENSE.md" "$OUT_DIR/HEXTRIS-GPL-3.0-OR-LATER.txt"
 cat > "$OUT_DIR/SOURCE-NOTICE.txt" <<NOTICE
-Hextris runtime packaged for RetroPlay
+Hextris runtime packaged for PLAYCHIVE
 
 Upstream repository: https://github.com/Hextris/hextris
 Pinned revision: $HEXTRIS_COMMIT
@@ -87,7 +87,7 @@ Upstream project: https://hextris.github.io/hextris/
 
 Hextris is GPL-3.0-or-later. This bundled directory retains the full upstream
 license at HEXTRIS-GPL-3.0-OR-LATER.txt. The complete corresponding source is
-available from the upstream repository above, and RetroPlay's packaging script
+available from the upstream repository above, and PLAYCHIVE's packaging script
 is scripts/build-hextris-web.sh.
 
 Packaging changes: Google font, Google Ads and Google Analytics references were

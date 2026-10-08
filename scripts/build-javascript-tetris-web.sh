@@ -25,7 +25,7 @@ cp "$SOURCE_DIR/index.html" "$SOURCE_DIR/stats.js" "$SOURCE_DIR/texture.jpg" "$O
 cp "$SOURCE_DIR/LICENSE" "$OUT_DIR/JAVASCRIPT-TETRIS-MIT.txt"
 
 # The upstream game is fully local. This loader starts a game only when opened
-# by the RetroPlay wrapper's Play action; it does not alter game logic or fetch.
+# by the PLAYCHIVE wrapper's Play action; it does not alter game logic or fetch.
 cat > "$OUT_DIR/retroplay-loader.js" <<'LOADER'
 (function () {
   if (new URLSearchParams(location.search).get('autostart') !== '1') return;
@@ -39,7 +39,7 @@ LOADER
 sed -i '/<\/body>/i\  <script src="retroplay-loader.js"></script>' "$OUT_DIR/index.html"
 
 cat > "$OUT_DIR/SOURCE-NOTICE.txt" <<NOTICE
-JavaScript Tetris runtime packaged for RetroPlay
+JavaScript Tetris runtime packaged for PLAYCHIVE
 
 Upstream repository: https://github.com/jakesgordon/javascript-tetris
 Pinned revision: $JSTETRIS_COMMIT
@@ -47,11 +47,11 @@ Upstream game: https://jakesgordon.com/games/tetris/
 
 JavaScript Tetris is licensed under MIT. The full upstream license is included
 at JAVASCRIPT-TETRIS-MIT.txt. The corresponding source is available from the
-upstream repository above; RetroPlay's packaging script is
+upstream repository above; PLAYCHIVE's packaging script is
 scripts/build-javascript-tetris-web.sh.
 
 The runtime uses only the upstream HTML, JavaScript and local texture image. The
-small RetroPlay loader reads an autostart query flag and calls the upstream
+small PLAYCHIVE loader reads an autostart query flag and calls the upstream
 play() function; it makes no network requests and preserves game behavior.
 NOTICE
 

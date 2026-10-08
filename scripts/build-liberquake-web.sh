@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Build LibreQuake Lite on the Qwasm Quake engine as an isolated browser runtime for RetroPlay.
+# Build LibreQuake Lite on the Qwasm Quake engine as an isolated browser runtime for PLAYCHIVE.
 # Engine: GMH-Code/Qwasm (GPL-2.0-or-later lineage). Game data: LibreQuake v0.09-beta Lite (free content).
 set -euo pipefail
 
@@ -38,8 +38,8 @@ sed -i 's/Cbuf_InsertText ("exec quake.rc\\n");/Cbuf_InsertText ("exec retroplay
 rm -rf "$SOURCE_DIR/WinQuake/id1"
 cp -a "$DATA_DIR/lite/id1" "$SOURCE_DIR/WinQuake/id1"
 cat > "$SOURCE_DIR/WinQuake/id1/retroplay.cfg" <<'EOF'
-// RetroPlay browser profile: use only commands implemented by Qwasm/WinQuake.
-name "RetroPlay"
+// PLAYCHIVE browser profile: use only commands implemented by Qwasm/WinQuake.
+name "PLAYCHIVE"
 bind "ESCAPE" "togglemenu"
 bind "`" "toggleconsole"
 bind "UPARROW" "+forward"

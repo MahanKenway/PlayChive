@@ -1,4 +1,4 @@
-# برنامهٔ RetroPlay
+# برنامهٔ PLAYCHIVE
 
 ## هدف
 
@@ -20,13 +20,13 @@
 
 ## ساخت اصلی
 
-- هدر RetroPlay شامل Discover، Collections و Library.
+- هدر PLAYCHIVE شامل Discover، Collections و Library.
 - پنل Featured برای اجرای Freedoom و مشاهدهٔ metadata.
 - catalog چهارگانه شامل Action، Horror، Exploration و Experimental با metadata و وضعیت اجرا.
 - فیلترهای ژانر/فرمت و جست‌وجوی فوری در مرورگر.
 - Library محلی بر مبنای localStorage برای بازی‌های pin‌شده.
 - پنل Bring Your Own WAD که اجرای یک IWAD و تا سه PWAD را به جریان فعلی متصل می‌کند.
-- loading، HUD، pause و settings هم‌سبک با زبان بصری RetroPlay.
+- loading، HUD، pause و settings هم‌سبک با زبان بصری PLAYCHIVE.
 
 ## دارایی‌های لازم
 

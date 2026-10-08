@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Package Astray as a completely local 3D WebGL runtime for RetroPlay.
+# Package Astray as a completely local 3D WebGL runtime for PLAYCHIVE.
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -36,7 +36,7 @@ sed -i \
 cp "$SOURCE_DIR/License.md" "$OUT_DIR/ASTRAY-UNLICENSE.md"
 cp "$SOURCE_DIR/README.md" "$OUT_DIR/UPSTREAM-README.md"
 cat > "$OUT_DIR/SOURCE-NOTICE.txt" <<NOTICE
-Astray runtime packaged for RetroPlay
+Astray runtime packaged for PLAYCHIVE
 
 Upstream repository: https://github.com/wwwtyro/Astray
 Pinned revision: $ASTRAY_COMMIT
@@ -48,7 +48,7 @@ Three.js, Box2dWeb, KeyboardJS and jQuery files exactly as supplied upstream.
 This package makes only static-hosting path corrections: the three texture URLs
 were changed from origin-root paths to local relative paths. No playable asset,
 analytics script, user upload, account, server or remote game-data request is
-used by RetroPlay.
+used by PLAYCHIVE.
 NOTICE
 
 if grep -nE "['\"]/(ball|brick|concrete)\.png" "$OUT_DIR/index.html"; then

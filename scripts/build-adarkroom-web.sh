@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Package A Dark Room as a fully local MPL-2.0 browser runtime for RetroPlay.
+# Package A Dark Room as a fully local MPL-2.0 browser runtime for PLAYCHIVE.
 # The game and its original audio, script, translations and image assets remain
 # upstream material; this script only removes remote-service references.
 set -euo pipefail
@@ -26,7 +26,7 @@ mkdir -p "$OUT_DIR"
 cp -a "$SOURCE_DIR"/. "$OUT_DIR"/
 rm -rf "$OUT_DIR/.git" "$OUT_DIR/.github" "$OUT_DIR/node_modules" "$OUT_DIR/doc" "$OUT_DIR/tools" "$OUT_DIR/dev-server.js" "$OUT_DIR/package.json" "$OUT_DIR/yarn.lock" "$OUT_DIR/README.md" "$OUT_DIR/contributing.md"
 
-# The playable application includes a local jQuery fallback, but RetroPlay must
+# The playable application includes a local jQuery fallback, but PLAYCHIVE must
 # not contact Google's CDN.  Make the local copy authoritative and remove the
 # upstream analytics snippet and marketing link; all game assets remain local.
 sed -i \
@@ -43,7 +43,7 @@ sed -i \
 
 cp "$SOURCE_DIR/LICENSE.md" "$OUT_DIR/ADARKROOM-MPL-2.0.txt"
 cat > "$OUT_DIR/SOURCE-NOTICE.txt" <<NOTICE
-A Dark Room runtime packaged for RetroPlay
+A Dark Room runtime packaged for PLAYCHIVE
 
 Upstream repository: https://github.com/doublespeakgames/adarkroom
 Pinned revision: $ADARKROOM_COMMIT
@@ -51,7 +51,7 @@ Upstream game: https://adarkroom.doublespeakgames.com/
 
 A Dark Room is licensed under MPL-2.0. The full upstream license is included at
 ADARKROOM-MPL-2.0.txt. The corresponding source is available from the upstream
-repository above; RetroPlay's packaging script is scripts/build-adarkroom-web.sh.
+repository above; PLAYCHIVE's packaging script is scripts/build-adarkroom-web.sh.
 
 Packaging changes: the remote Google jQuery CDN fallback, Google Analytics and
 an external studio-marketing link were removed. Gameplay code, localization,

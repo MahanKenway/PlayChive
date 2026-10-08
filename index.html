@@ -5,29 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <meta name="theme-color" content="#e9e8e3" />
   <script>(function(){try{var t=localStorage.getItem('retroplay:theme');if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t;document.querySelector('meta[name="theme-color"]').setAttribute('content',t==='dark'?'#10140f':'#e7e6e0')}catch(e){document.documentElement.dataset.theme='light'}})();</script>
-  <meta name="application-name" content="RetroPlay" />
-  <meta name="description" content="RetroPlay is a curated browser hub for ready-to-play open-source retro games, classic engines and WAD worlds." />
+  <meta name="application-name" content="PLAYCHIVE" />
+  <meta name="description" content="PLAYCHIVE is a curated, playable archive for classic, open-source, browser-based and preservation-focused games." />
   <meta name="author" content="Mahan Tavakoli" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://mahankenway.github.io/RetroPlay/" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:site_name" content="RetroPlay" />
-  <meta property="og:title" content="RetroPlay — Classic worlds, ready to play" />
-  <meta property="og:description" content="A curated browser hub for ready-to-play open-source retro games, classic engines and WAD worlds." />
+  <meta property="og:site_name" content="PLAYCHIVE" />
+  <meta property="og:title" content="PLAYCHIVE — The Playable Archive" />
+  <meta property="og:description" content="A curated, playable archive for classic, open-source, browser-based and preservation-focused games." />
   <meta property="og:url" content="https://mahankenway.github.io/RetroPlay/" />
-  <meta property="og:image" content="https://mahankenway.github.io/RetroPlay/assets/og-retroplay.png" />
+  <meta property="og:image" content="https://mahankenway.github.io/RetroPlay/assets/og-playchive-1200x630.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="RetroPlay browser arcade with classic open-source game worlds" />
+  <meta property="og:image:alt" content="PLAYCHIVE browser arcade with classic open-source game worlds" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="RetroPlay — Classic worlds, ready to play" />
-  <meta name="twitter:description" content="Open-source retro games and classic engines, ready to play in your browser." />
-  <meta name="twitter:image" content="https://mahankenway.github.io/RetroPlay/assets/og-retroplay.png" />
-  <meta name="twitter:image:alt" content="RetroPlay browser arcade with classic open-source game worlds" />
-  <title>RetroPlay — Classic worlds, ready to play</title>
+  <meta name="twitter:title" content="PLAYCHIVE — The Playable Archive" />
+  <meta name="twitter:description" content="Discover and play classic, open-source and browser-based games in a curated digital archive." />
+  <meta name="twitter:image" content="https://mahankenway.github.io/RetroPlay/assets/og-playchive-1200x630.png" />
+  <meta name="twitter:image:alt" content="PLAYCHIVE browser arcade with classic open-source game worlds" />
+  <title>PLAYCHIVE — The Playable Archive</title>
   <link rel="manifest" href="manifest.json" />
-  <link rel="alternate" type="text/plain" href="llms.txt" title="RetroPlay machine-readable site guide" />
+  <link rel="alternate" type="text/plain" href="llms.txt" title="PLAYCHIVE machine-readable site guide" />
   <link rel="apple-touch-icon" sizes="192x192" href="assets/apple-touch-icon.png" />
   <link rel="icon" href="assets/favicon.ico?v=gamecube-1" type="image/x-icon" />
   <link rel="preload" href="assets/screenshots/hexgl-runtime.webp" as="image" fetchpriority="high" />
@@ -56,9 +56,9 @@
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "RetroPlay",
+    "name": "PLAYCHIVE",
     "url": "https://mahankenway.github.io/RetroPlay/",
-    "description": "A curated browser hub for ready-to-play open-source retro games, classic engines and WAD worlds.",
+    "description": "A curated, playable archive for classic, open-source, browser-based and preservation-focused games.",
     "publisher": {"@type": "Person", "name": "Mahan Tavakoli", "url": "https://github.com/MahanKenway"},
     "sameAs": ["https://github.com/MahanKenway/DOOM"]
   }
@@ -68,7 +68,7 @@
 
 <div id="loading-screen" class="screen active" role="status" aria-live="polite">
   <div class="loading-inner retro-loading">
-    <div class="loading-mark" aria-hidden="true"><span>RETRO</span><span>PLAY</span></div>
+    <div class="loading-mark" aria-hidden="true"><span>PLAY</span><span>CHIVE</span></div>
     <p class="loading-kicker">Runtime / preflight</p>
     <div class="boot-log" id="boot-log" aria-label="Loading progress"></div>
     <div class="progress-container">
@@ -79,23 +79,23 @@
   </div>
 </div>
 
-<div id="wad-picker" class="screen" role="main" aria-label="RetroPlay classic game hub">
+<div id="wad-picker" class="screen" role="main" aria-label="PLAYCHIVE classic game hub">
   <div class="retro-shell">
     <header class="retro-header">
-      <button class="brand-mark" data-retro-nav="featured" aria-label="Go to featured collection"><span>RETRO</span><b>PLAY</b><canvas id="evil-eye" class="evil-eye" width="44" height="24" aria-hidden="true"></canvas><span class="evil-eye-fallback" aria-hidden="true"><i></i></span></button>
+      <button class="brand-mark" data-retro-nav="featured" aria-label="Go to featured collection"><span>PLAY</span><b>CHIVE</b><canvas id="evil-eye" class="evil-eye" width="44" height="24" aria-hidden="true"></canvas><span class="evil-eye-fallback" aria-hidden="true"><i></i></span></button>
       <nav class="retro-nav" aria-label="Primary navigation">
         <button data-retro-nav="featured" class="is-active">Discover</button>
         <button data-retro-nav="catalog">Collections</button>
         <button data-retro-nav="library">Library <span id="library-count">00</span></button>
         <button data-retro-nav="about">About</button>
       </nav>
-      <div class="header-utility"><div class="retro-audio" aria-label="Retro Audio controls"><button id="retro-audio-toggle" class="audio-toggle" type="button" aria-pressed="false" aria-label="Enable Retro Audio"><span class="audio-toggle-icon" aria-hidden="true">♫</span><span id="retro-audio-label">Audio off</span></button><label class="audio-volume" for="retro-audio-volume"><span>VOL</span><input id="retro-audio-volume" type="range" min="0" max="100" step="1" value="42" aria-label="Retro Audio volume" /></label></div><button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode"><span class="theme-toggle-track" aria-hidden="true"><i></i></span><span data-theme-label>Light</span></button><div class="header-status"><span class="status-dot"></span><span>Browser runtime</span><span class="header-divider"></span><span id="system-time">Online</span></div></div>
+      <div class="header-utility"><div class="retro-audio" aria-label="Archive Audio controls"><button id="retro-audio-toggle" class="audio-toggle" type="button" aria-pressed="false" aria-label="Enable Archive Audio"><span class="audio-toggle-icon" aria-hidden="true">♫</span><span id="retro-audio-label">Audio off</span></button><label class="audio-volume" for="retro-audio-volume"><span>VOL</span><input id="retro-audio-volume" type="range" min="0" max="100" step="1" value="42" aria-label="Archive Audio volume" /></label></div><button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode"><span class="theme-toggle-track" aria-hidden="true"><i></i></span><span data-theme-label>Light</span></button><div class="header-status"><span class="status-dot"></span><span>Browser runtime</span><span class="header-divider"></span><span id="system-time">Online</span></div></div>
     </header>
 
     <main class="retro-main">
       <section id="featured" class="featured-zone" aria-labelledby="featured-title">
         <div class="section-tag"><span>// 01</span><span>Featured world</span></div>
-        <article class="featured-panel spatial-panel" aria-roledescription="carousel" aria-label="Featured RetroPlay games">
+        <article class="featured-panel spatial-panel" aria-roledescription="carousel" aria-label="Featured PLAYCHIVE games">
           <div class="featured-media">
             <img id="featured-cover" src="assets/screenshots/hexgl-runtime.webp" width="1600" height="900" fetchpriority="high" decoding="async" alt="HexGL gameplay preview" />
             <canvas id="gradient-waves" class="gradient-waves" aria-hidden="true"></canvas>
@@ -116,7 +116,7 @@
               <div><dt>Topology</dt><dd id="featured-topology">Bundled track</dd></div>
               <div><dt>Input</dt><dd>KB / Touch / Gamepad</dd></div>
             </dl>
-            <p id="featured-credit" class="featured-credit">Gameplay screenshot: RetroPlay local runtime</p>
+            <p id="featured-credit" class="featured-credit">Gameplay screenshot: PLAYCHIVE local runtime</p>
             <div class="featured-actions">
               <button id="btn-freedoom" class="retro-button retro-button-primary" data-magnet data-action="play-featured">Launch featured</button>
               <button id="btn-featured-details" class="retro-button retro-button-quiet" data-action="show-detail">Game details</button>
@@ -128,7 +128,7 @@
       </section>
 
       <section id="genre-nav" class="genre-deck" aria-labelledby="genre-nav-title">
-        <div class="genre-deck-heading"><p class="section-tag"><span>// 02</span><span>Genre navigation</span></p><div><h2 id="genre-nav-title">Choose a lane.<br />Enter a world.</h2><p>Every genre in the RetroPlay catalog has a direct route. Pick a lane to jump to its filtered collection, then switch or reset from the persistent catalog controls.</p></div></div>
+        <div class="genre-deck-heading"><p class="section-tag"><span>// 02</span><span>Genre navigation</span></p><div><h2 id="genre-nav-title">Choose a lane.<br />Enter a world.</h2><p>Every genre in the PLAYCHIVE catalog has a direct route. Pick a lane to jump to its filtered collection, then switch or reset from the persistent catalog controls.</p></div></div>
         <div class="collection-strip accordion-genre-strip" aria-label="Browse every game genre">
           <button class="collection-card collection-action" data-action="focus-genre" data-genre="Action"><span>// A</span><b>Action</b><small>Combat &amp; arcade</small><strong data-collection-count="Action">00</strong></button>
           <button class="collection-card collection-horror" data-action="focus-genre" data-genre="Horror"><span>// H</span><b>Horror</b><small>Tension &amp; survival</small><strong data-collection-count="Horror">00</strong></button>
@@ -179,12 +179,12 @@
       </section>
 
       <section id="about" class="about-panel spatial-panel" aria-labelledby="about-title">
-        <div class="about-intro"><p class="section-tag"><span>// 05</span><span>About the creator</span></p><h2 id="about-title">Classic worlds.<br />Open paths.</h2><p>RetroPlay is an independent browser archive and play space created by <strong>Mahan Tavakoli</strong> <span lang="fa" dir="rtl">(ماهان توکلی)</span>. It brings legally distributable retro games, engines and experiments into one deliberate interface—ready to play without a forced account, ad network or player upload.</p><a class="retro-button retro-button-primary" href="https://github.com/MahanKenway" target="_blank" rel="noopener noreferrer">GitHub / MahanKenway ↗</a></div>
-        <div class="about-principles"><article><span>01 / MOTIVATION</span><h3>Keep play accessible.</h3><p>The goal is to preserve the feeling of discovering old games while removing avoidable friction: each eligible world should start in the browser with its lawful free data already prepared.</p></article><article><span>02 / CURATION</span><h3>Credit the builders.</h3><p>Every runtime keeps an upstream source notice and license information. RetroPlay does not present commercial data as free, and it does not turn a local-file requirement into a false promise.</p></article><article><span>03 / THE FORMAT</span><h3>One library, many engines.</h3><p>Doom worlds belong beside strategy, puzzle, rhythm and action games when each is technically sound, respectful of its creators and genuinely playable on desktop or phone.</p></article></div>
+        <div class="about-intro"><p class="section-tag"><span>// 05</span><span>About the creator</span></p><h2 id="about-title">Classic worlds.<br />Open paths.</h2><p>PLAYCHIVE is an independent browser archive and play space created by <strong>Mahan Tavakoli</strong> <span lang="fa" dir="rtl">(ماهان توکلی)</span>. It brings legally distributable retro games, engines and experiments into one deliberate interface—ready to play without a forced account, ad network or player upload.</p><a class="retro-button retro-button-primary" href="https://github.com/MahanKenway" target="_blank" rel="noopener noreferrer">GitHub / MahanKenway ↗</a></div>
+        <div class="about-principles"><article><span>01 / MOTIVATION</span><h3>Keep play accessible.</h3><p>The goal is to preserve the feeling of discovering old games while removing avoidable friction: each eligible world should start in the browser with its lawful free data already prepared.</p></article><article><span>02 / CURATION</span><h3>Credit the builders.</h3><p>Every runtime keeps an upstream source notice and license information. PLAYCHIVE does not present commercial data as free, and it does not turn a local-file requirement into a false promise.</p></article><article><span>03 / THE FORMAT</span><h3>One library, many engines.</h3><p>Doom worlds belong beside strategy, puzzle, rhythm and action games when each is technically sound, respectful of its creators and genuinely playable on desktop or phone.</p></article></div>
       </section>
     </main>
 
-    <footer class="retro-footer"><span>RetroPlay / GAME INDEX</span><span>Games, engines and archives remain the property of their creators.</span><span>Audio: Theme Song [8-bit] / nene / CC0</span><a class="retro-footer-link" href="privacy/">Privacy policy</a><span>Build 01 · 2026</span></footer>
+    <footer class="retro-footer"><span>PLAYCHIVE / GAME INDEX</span><span>Games, engines and archives remain the property of their creators.</span><span>Audio: Theme Song [8-bit] / nene / CC0</span><a class="retro-footer-link" href="privacy/">Privacy policy</a><span>Build 01 · 2026</span></footer>
   </div>
 </div>
 
@@ -201,17 +201,17 @@
       <p id="detail-description" class="detail-description"></p>
       <dl class="detail-specs"><div><dt>Format</dt><dd id="detail-format"></dd></div><div><dt>Session</dt><dd id="detail-duration"></dd></div><div><dt>World</dt><dd id="detail-maps"></dd></div><div><dt>License</dt><dd id="detail-license"></dd></div></dl>
       <p id="detail-credit" class="detail-credit"></p>
-      <div id="detail-links" class="detail-links"><a id="detail-project-link" target="_blank" rel="noopener noreferrer" hidden aria-hidden="true"></a><a id="detail-download-link" target="_blank" rel="noopener noreferrer" hidden aria-hidden="true"></a><p id="detail-download-note" class="detail-download-note" hidden></p></div>
+      <div id="detail-links" class="detail-links"><a id="detail-project-link" href="./" target="_blank" rel="noopener noreferrer" hidden aria-hidden="true"></a><a id="detail-download-link" href="./" target="_blank" rel="noopener noreferrer" hidden aria-hidden="true"></a><p id="detail-download-note" class="detail-download-note" hidden></p></div>
       <div class="detail-actions"><button id="detail-primary" class="retro-button retro-button-primary" data-magnet type="button"></button><button id="detail-library" class="retro-button retro-button-quiet" type="button"></button></div>
-      <p class="detail-note">RetroPlay launches only packaged local runtimes and clearly marked legal data paths. No account is required.</p>
+      <p class="detail-note">PLAYCHIVE launches only packaged local runtimes and clearly marked legal data paths. No account is required.</p>
     </div>
   </article>
 </dialog>
 
 <div id="game-screen" class="screen" role="main">
   <div id="crt-overlay" aria-hidden="true"></div>
-  <div class="game-topbar" aria-hidden="true"><button class="game-return-chip" id="btn-return-hub" type="button">← RetroPlay</button><span>Runtime / active</span><span>Pointer lock for direct input</span></div>
-  <canvas id="doom-canvas" width="320" height="200" aria-label="RetroPlay game canvas" tabindex="0">Your browser does not support the HTML canvas element.</canvas>
+  <div class="game-topbar" aria-hidden="true"><button class="game-return-chip" id="btn-return-hub" type="button">← PLAYCHIVE</button><span>Runtime / active</span><span>Pointer lock for direct input</span></div>
+  <canvas id="doom-canvas" width="320" height="200" aria-label="PLAYCHIVE game canvas" tabindex="0">Your browser does not support the HTML canvas element.</canvas>
   <div id="hud-overlay" aria-hidden="true"><div id="hud-fps" class="hud-chip">-- FPS</div><div id="hud-map" class="hud-chip">E1M1</div><div id="hud-ping" class="hud-chip" style="display:none">LOCAL</div></div>
 
   <div id="pause-overlay" class="hidden" aria-live="polite"><div class="pause-box"><p class="pause-title">Session paused</p><p class="pause-hint">Your runtime remains ready.</p><button id="btn-resume" class="retro-button retro-button-primary">Resume</button><button id="btn-settings" class="retro-button retro-button-quiet">Settings</button><button id="btn-fullscreen" class="retro-button retro-button-quiet">Fullscreen</button><button id="btn-restart" class="retro-text-button">Restart session</button></div></div>

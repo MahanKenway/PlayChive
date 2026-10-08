@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Build GNU FreeDink as an isolated WebAssembly runtime for RetroPlay.
+# Build GNU FreeDink as an isolated WebAssembly runtime for PLAYCHIVE.
 # Requires Emscripten 3.1.51 and authenticated gh CLI to be on PATH.
 set -euo pipefail
 

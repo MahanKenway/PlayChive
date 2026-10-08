@@ -10,7 +10,7 @@ Obsidian Relay is an **original game layer built on the existing OpenResident We
 | Renderer extension | WebGL2 primitive buffers, flat-colour material, original geometry submission, camera and presentation | `third_party/openresident-web/render_web.cpp`, `include/render.h` |
 | Browser module API | Modularized Emscripten bridge with initialization, resize, frame, semantic input, interact and restart exports | `dist/shadow-station/obsidian-relay.js` at build output |
 | Game host | Loads the module, maps browser keyboard and gamepad state to semantic actions, renders accessible HTML HUD | `shadow-station/index.html` |
-| RetroPlay shell | Status messaging, fullscreen, PSP-styled touch controls | `shadow-station.html`, `src/runtime-shell.js` |
+| PLAYCHIVE shell | Status messaging, fullscreen, PSP-styled touch controls | `shadow-station.html`, `src/runtime-shell.js` |
 | Catalog | Runtime card, real gameplay capture, filtering and navigation metadata | `src/catalog.js`, `assets/screenshots/` |
 
 ## Ownership and flow

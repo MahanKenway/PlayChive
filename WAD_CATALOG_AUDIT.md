@@ -1,8 +1,8 @@
-# ممیزی catalog، مجوز و سازگاری RetroPlay
+# ممیزی catalog، مجوز و سازگاری PLAYCHIVE
 
-**دامنهٔ گزارش.** این catalog میان مجوز source code و اجازهٔ مستقل برای بازتوزیع WAD، map، texture، sprite و موسیقی تمایز می‌گذارد. عمومی‌بودن یک repository به‌تنهایی اجازهٔ bundle کردن محتوای بازی نیست. RetroPlay فقط عنوانی را در build قرار می‌دهد که مسیر مجوز و منبع آن روشن باشد؛ سایر موارد یا به‌صورت فایل محلیِ مالک کاربر یا به‌شکل مطالعهٔ engine فهرست می‌شوند.
+**دامنهٔ گزارش.** این catalog میان مجوز source code و اجازهٔ مستقل برای بازتوزیع WAD، map، texture، sprite و موسیقی تمایز می‌گذارد. عمومی‌بودن یک repository به‌تنهایی اجازهٔ bundle کردن محتوای بازی نیست. PLAYCHIVE فقط عنوانی را در build قرار می‌دهد که مسیر مجوز و منبع آن روشن باشد؛ سایر موارد یا به‌صورت فایل محلیِ مالک کاربر یا به‌شکل مطالعهٔ engine فهرست می‌شوند.
 
-| عنوان | وضعیت catalog | وضعیت اجرا در RetroPlay | مبنای مجوز / policy |
+| عنوان | وضعیت catalog | وضعیت اجرا در PLAYCHIVE | مبنای مجوز / policy |
 |---|---|---|---|
 | Freedoom: Phase 1 | Bundled IWAD | قابل اجرا | محتوای آزاد Freedoom با attribution حفظ‌شده [1] |
 | Freedoom: Phase 2 | Bundled IWAD | قابل اجرا | محتوای آزاد Freedoom با attribution حفظ‌شده [1] |
@@ -16,12 +16,12 @@
 | TNT: Evilution | Owned file | فقط پس از انتخاب WAD قانونی کاربر | Final Doom تجاری؛ هیچ archive یا dataای bundle نمی‌شود [3] |
 | Community WAD shelf | Local import | یک IWAD و حداکثر سه PWAD محلی | حق استفاده و سازگاری بر عهدهٔ کاربر؛ فایل‌ها upload نمی‌شوند |
 | Blasphemer | External engine | غیرقابل اجرا در runtime فعلی | محتوای آزاد برای engine خانوادهٔ Heretic است، نه Doom 1.10 [4] |
-| C-Dogs SDL | Bundled independent runtime | قابل اجرا در صفحه و WebAssembly جداگانه | code تحت GPL-2.0 و دادهٔ آزاد upstream؛ فقط برای deployment غیرتجاری RetroPlay و با attribution حفظ‌شده [12] |
+| C-Dogs SDL | Bundled independent runtime | قابل اجرا در صفحه و WebAssembly جداگانه | code تحت GPL-2.0 و دادهٔ آزاد upstream؛ فقط برای deployment غیرتجاری PLAYCHIVE و با attribution حفظ‌شده [12] |
 | OpenResident | WebGL2 study | فقط graphics probe؛ بازی نیست | source engine با BSD-2-Clause و بدون game data [5] |
 
 ## محدودیت سازگاری runtime
 
-RetroPlay فعلی یک browser build از **linuxdoom 1.10** با loader سازگار با WADهای Doom است. بنابراین نباید سازگاری با GZDoom/ZScript/UDMF، formatهای Heretic/Hexen یا total conversionهای مدرن را ادعا کند. Blasphemer با وجود وضعیت آزاد محتوا، به یک engine سازگار با Heretic نیاز دارد؛ به همین دلیل فقط به‌عنوان title خارجی و غیرقابل‌اجرا نمایش داده می‌شود [4].
+PLAYCHIVE فعلی یک browser build از **linuxdoom 1.10** با loader سازگار با WADهای Doom است. بنابراین نباید سازگاری با GZDoom/ZScript/UDMF، formatهای Heretic/Hexen یا total conversionهای مدرن را ادعا کند. Blasphemer با وجود وضعیت آزاد محتوا، به یک engine سازگار با Heretic نیاز دارد؛ به همین دلیل فقط به‌عنوان title خارجی و غیرقابل‌اجرا نمایش داده می‌شود [4].
 
 | خانوادهٔ runtime | رفتار صادقانه در این build |
 |---|---|
@@ -49,17 +49,17 @@ RetroPlay فعلی یک browser build از **linuxdoom 1.10** با loader ساز
 | `tnt-steel-works.webp` | Doom Wiki / Fandom، MAP14 [3] | Doom Wiki / Fandom |
 | `blasphemer-gameplay.webp` | image ارجاع‌شده در README پروژه [4] | Blasphemer project / jeshimoth.com |
 | `openresident-gameplay.webp` | image ارجاع‌شده در README upstream [5] | XProger/OpenResident README |
-| `cdogs-sdl-browser.png` | screenshot واقعی runtime C-Dogs در Chromium | RetroPlay C-Dogs SDL WebAssembly runtime |
+| `cdogs-sdl-browser.png` | screenshot واقعی runtime C-Dogs در Chromium | PLAYCHIVE C-Dogs SDL WebAssembly runtime |
 
 ## Hacx 1.2: مبنای bundle
 
-Hacx 1.2 در منبع رسمی Dr Nostromo به‌عنوان یک **stand-alone IWAD** معرفی شده و به Doom II برای اجرا نیاز ندارد. با این حال، linuxdoom 1.10 فعلی Hacx را از مسیر Doom II/`MAP01` تشخیص می‌دهد؛ بنابراین RetroPlay برای سازگاری، archive Hacx را به‌عنوان PWAD روی Freedoom Phase 2 (base IWAD bundleشده) لایه‌گذاری می‌کند. `HACX.TXT` در release، توزیع آزاد برای سایت‌ها را تصریح می‌کند، اما هرگونه درآمدزایی یا استفاده برای ترویج فعالیت درآمدزا را منع می‌کند. `LEGAL.txt` و `CREDITS.txt` upstream در artifact منتشرشدهٔ RetroPlay کنار WAD و README release قرار می‌گیرند تا attribution و شرایط distribution همراه bundle بمانند. Archive رسمی `hacx12.zip` با SHA-256 `70d25e8f4b48906759db32213927859a99b3b045d3291d468357b225d64cbf8b` در `third_party/hacx/` نگهداری و در CI پیش از استخراج verify می‌شود؛ این کار deploy را از کندی host خارجی مستقل می‌کند. [6] [7]
+Hacx 1.2 در منبع رسمی Dr Nostromo به‌عنوان یک **stand-alone IWAD** معرفی شده و به Doom II برای اجرا نیاز ندارد. با این حال، linuxdoom 1.10 فعلی Hacx را از مسیر Doom II/`MAP01` تشخیص می‌دهد؛ بنابراین PLAYCHIVE برای سازگاری، archive Hacx را به‌عنوان PWAD روی Freedoom Phase 2 (base IWAD bundleشده) لایه‌گذاری می‌کند. `HACX.TXT` در release، توزیع آزاد برای سایت‌ها را تصریح می‌کند، اما هرگونه درآمدزایی یا استفاده برای ترویج فعالیت درآمدزا را منع می‌کند. `LEGAL.txt` و `CREDITS.txt` upstream در artifact منتشرشدهٔ PLAYCHIVE کنار WAD و README release قرار می‌گیرند تا attribution و شرایط distribution همراه bundle بمانند. Archive رسمی `hacx12.zip` با SHA-256 `70d25e8f4b48906759db32213927859a99b3b045d3291d468357b225d64cbf8b` در `third_party/hacx/` نگهداری و در CI پیش از استخراج verify می‌شود؛ این کار deploy را از کندی host خارجی مستقل می‌کند. [6] [7]
 
-> Hacx 1.2 فقط برای deploymentهای **غیرتجاری** RetroPlay bundle می‌شود. در صورت اضافه‌شدن تبلیغ، فروش، subscription یا هر مدل درآمدزای دیگر، باید از artifact حذف شود یا اجازهٔ کتبی جداگانه اخذ گردد.
+> Hacx 1.2 فقط برای deploymentهای **غیرتجاری** PLAYCHIVE bundle می‌شود. در صورت اضافه‌شدن تبلیغ، فروش، subscription یا هر مدل درآمدزای دیگر، باید از artifact حذف شود یا اجازهٔ کتبی جداگانه اخذ گردد.
 
 ## OpenResident: نتیجهٔ prototype WebAssembly
 
-> **نتیجه:** تبدیل فنی به WebAssembly/WebGL2 ممکن است، اما این نتیجه به‌معنای قابل‌بازی‌بودن Resident Evil در RetroPlay نیست.
+> **نتیجه:** تبدیل فنی به WebAssembly/WebGL2 ممکن است، اما این نتیجه به‌معنای قابل‌بازی‌بودن Resident Evil در PLAYCHIVE نیست.
 
 یک adapter جداگانه از revision `00711c427297d70664be1fa86201bea11b9a9a04` مخزن OpenResident ساخته شد. Adapter با Emscripten و WebGL2-only build کامپایل شده، یک WASM حدود 5.6 KB و loader ES module حدود 33 KB تولید کرد و در Chromium، lifecycle renderer را بدون خطای console با نتیجهٔ `PASS` اجرا کرد. صفحهٔ `openresident.html` همین probe را در build منتشرشده نمایش می‌دهد؛ آن صفحه صریحاً هیچ game dataای را bundle، mount، درخواست یا دانلود نمی‌کند.
 

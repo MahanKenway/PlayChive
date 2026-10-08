@@ -1,4 +1,4 @@
-# Modern Runtime Selection for RetroPlay
+# Modern Runtime Selection for PLAYCHIVE
 
 **Decision date:** 2026-08-15  
 **Selected runtime:** **Neverball**  
@@ -11,13 +11,13 @@ A candidate must be independently playable from first load on the static GitHub 
 | Candidate | Decision | Reason |
 |---|---|---|
 | **Neverball** | **Accepted** | It has a maintained source tree, an upstream WebAssembly deployment workflow, bundled game data, browser-local replay support, and documented keyboard, gamepad and touchscreen controls. The official browser build launched to visible 3D gameplay during evaluation. [1] [2] [3] |
-| The Powder Toy | Deferred | It is a compelling GPL physics-sandbox candidate with a real Emscripten target, and its official web build reached the live sandbox. However, its upstream local wasm server explicitly emits COOP and COEP headers; static GitHub Pages cannot set those headers. It will not enter RetroPlay until an independently verified headerless build and no-upload interaction layer are available. [4] [5] |
+| The Powder Toy | Deferred | It is a compelling GPL physics-sandbox candidate with a real Emscripten target, and its official web build reached the live sandbox. However, its upstream local wasm server explicitly emits COOP and COEP headers; static GitHub Pages cannot set those headers. It will not enter PLAYCHIVE until an independently verified headerless build and no-upload interaction layer are available. [4] [5] |
 | SuperTux | Rejected for this release | The project provides a WebAssembly route, but the v0.7.0 wasm build has a documented crash after loading the large data file. This violates the no-known-runtime-error requirement. [6] [7] |
 | SuperTuxKart | Rejected for this release | The available browser port identifies itself as experimental, documents incomplete rendering/network support, a 120 MB initial download, and about 500 MB memory usage. [8] |
 
 ## Neverball integration design
 
-Neverball is a three-dimensional physics-puzzle game in which the player tilts the floor, collects coins, and reaches an exit before time expires. RetroPlay will use the project’s upstream Emscripten build model, pin the source revision, package its own base data, and present a dedicated launch page.
+Neverball is a three-dimensional physics-puzzle game in which the player tilts the floor, collects coins, and reaches an exit before time expires. PLAYCHIVE will use the project’s upstream Emscripten build model, pin the source revision, package its own base data, and present a dedicated launch page.
 
 The runtime page will use browser-local storage for configuration and replays, rather than exposing the upstream replay or add-on upload interface. Its touchscreen interface will map a visible PSP-style D-pad to the floor-tilt direction, while camera actions and pause/fullscreen controls are supplied as dedicated touch buttons. Desktop keyboard and gamepad support remain available. The page will expose an explicit fullscreen action and report startup errors in-page instead of leaving a black canvas.
 

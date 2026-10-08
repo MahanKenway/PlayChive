@@ -96,7 +96,7 @@ export class LoadingScreen {
    */
   async playBootSequence() {
     const lines = [
-      { text: 'RetroPlay // browser catalog',              level: 'ok'   },
+      { text: 'PLAYCHIVE // browser catalog',              level: 'ok'   },
       { text: 'Checking local runtime...',                level: 'info' },
       { text: 'Archive bridge: available.',               level: 'ok'   },
       { text: 'WAD parser: ready.',                       level: 'ok'   },

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Package a fully playable, data-complete OpenTTD WebAssembly runtime for RetroPlay.
+# Package a fully playable, data-complete OpenTTD WebAssembly runtime for PLAYCHIVE.
 # Engine/browser port: swords02/openttd-online (OpenTTD GPL-2.0-only build).
 # Bundled libre base sets: OpenGFX 8.0, OpenSFX 1.0.3, OpenMSX 0.4.2.
 # No original Transport Tycoon Deluxe data and no player file upload are used.
@@ -44,7 +44,7 @@ for artifact in openttd.js openttd.wasm openttd.data; do
 done
 
 # This web build contains its own language preloader. Keep every upstream language locally
-# available and point that built-in loader at RetroPlay's `openttd/lang/` path rather than
+# available and point that built-in loader at PLAYCHIVE's `openttd/lang/` path rather than
 # the otherwise missing site-root `lang/` directory.
 test -d "$WORK_DIR/port/play/lang"
 cp -a "$WORK_DIR/port/play/lang" "$OUTPUT_DIR/lang"
@@ -139,7 +139,7 @@ Archive: $OPENMSX_URL
 SHA-256: $OPENMSX_SHA256
 License: GPL-2.0-only (see OPENMSX-LICENSE.txt)
 
-RetroPlay profile: fully bundled libre base graphics, sound and music. The browser glue is
+PLAYCHIVE profile: fully bundled libre base graphics, sound and music. The browser glue is
 patched only to resolve its shipped language files from the local openttd/lang/ path and to seed
 OpenTTD's documented network.participate_survey = no preference on a missing first-launch profile.
 Existing browser-local player settings are preserved. No proprietary Transport Tycoon Deluxe files

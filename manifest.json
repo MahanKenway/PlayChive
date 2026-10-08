@@ -1,7 +1,7 @@
 {
-  "name": "RetroPlay — Classic worlds, ready to play",
-  "short_name": "RetroPlay",
-  "description": "A curated browser hub for ready-to-play open-source retro games, classic engines and WAD worlds.",
+  "name": "PLAYCHIVE — The Playable Archive",
+  "short_name": "PLAYCHIVE",
+  "description": "A curated, playable archive for classic, open-source, browser-based and preservation-focused games.",
   "id": "/RetroPlay/",
   "start_url": "/RetroPlay/",
   "scope": "/RetroPlay/",

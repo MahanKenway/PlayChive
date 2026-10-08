@@ -48,7 +48,7 @@ button { color: inherit; }
 .progress-text { font: 12px var(--font-mono); text-align: right; color: var(--lime-bright); }
 
 /* ═══════════════════════════════════════════════════════════════
-   RetroPlay HUB
+   PLAYCHIVE HUB
    ═══════════════════════════════════════════════════════════════ */
 #wad-picker { z-index: 10; overflow-x: hidden; overflow-y: auto; background: var(--paper); }
 #wad-picker::before { content: ''; position: fixed; inset: 0; pointer-events: none; background: linear-gradient(rgba(24,28,24,.052) 1px, transparent 1px), linear-gradient(90deg, rgba(24,28,24,.052) 1px, transparent 1px), radial-gradient(circle at 85% 11%, rgba(255,255,255,.95), transparent 28%), radial-gradient(circle at 11% 40%, rgba(185,200,45,.12), transparent 21%); background-size: 36px 36px, 36px 36px, auto, auto; }
@@ -116,7 +116,7 @@ button { color: inherit; }
 ::selection { background: var(--lime); color: var(--ink); }
 ::-webkit-scrollbar { width: 8px; }::-webkit-scrollbar-track { background: rgba(0,0,0,.05); }::-webkit-scrollbar-thumb { background: rgba(25,28,25,.42); }
 
-/* RetroPlay catalog licensing and persistence */
+/* PLAYCHIVE catalog licensing and persistence */
 .featured-license, .featured-credit, .card-license { font: 9px/1.4 var(--font-mono); letter-spacing: .035em; }
 .featured-license { margin: -9px 0 15px; color: #667024; text-transform: uppercase; }
 .featured-credit { margin: 13px 0 0; color: var(--ink-muted); }
@@ -199,7 +199,7 @@ html[data-performance="battery"] .game-topbar + #doom-canvas { box-shadow: none;
 .collection-experimental::before { content:''; position:absolute; z-index:-1; width:75%; height:150%; border:1px solid rgba(25,28,25,.35); transform:rotate(42deg); top:-31%; left:15%; background:none; opacity:1; mix-blend-mode:normal; }
 
 
-/* Native 3D card lab: RetroPlay tilt / depth / quick-view ----------------- */
+/* Native 3D card lab: PLAYCHIVE tilt / depth / quick-view ----------------- */
 .catalog-group .catalog-grid { perspective:1180px; perspective-origin:50% 38%; }
 .card-quickview { position:fixed; z-index:100; top:var(--tooltip-y,0); left:var(--tooltip-x,0); display:flex; align-items:center; gap:7px; max-width:calc(100vw - 28px); padding:6px 8px; border:1px solid rgba(24,28,24,.82); background:rgba(232,249,85,.96); color:var(--ink); box-shadow:4px 4px 0 rgba(24,28,24,.78); font:8px/1 var(--font-mono); letter-spacing:.075em; pointer-events:none; opacity:0; transform:translate3d(0,8px,0) rotate(-2deg); transition:opacity .18s var(--ease), transform .25s var(--ease); }
 .card-quickview span { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }.card-quickview i { width:5px; height:5px; flex:0 0 auto; background:var(--ink); transform:rotate(45deg); }.card-quickview.is-visible { opacity:1; transform:translate3d(0,0,0) rotate(-2deg); }

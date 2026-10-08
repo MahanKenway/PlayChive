@@ -28,7 +28,7 @@ The first local navigation to `http://localhost:4173/shadow-station/` identified
 
 ## Visual QA progress
 
-The local WebAssembly build compiles successfully after three renderer-specific corrections: the game world is scaled into the adapter’s native unit range, its positive-up simulation coordinates are translated to the adapter’s negative-up convention, and original geometry is rendered through a stable dimetric shader rather than the legacy asset-camera matrix. The current local browser frame visibly shows the explorer, cyan station lights, a signal-cell pickup, cargo obstacle, station shell and HUD. Painter-order rendering keeps interactable silhouettes visible instead of allowing the station shell to hide them. The next verification pass must test movement/progression, fullscreen and the RetroPlay wrapper, then take the catalog screenshot from the live runtime.
+The local WebAssembly build compiles successfully after three renderer-specific corrections: the game world is scaled into the adapter’s native unit range, its positive-up simulation coordinates are translated to the adapter’s negative-up convention, and original geometry is rendered through a stable dimetric shader rather than the legacy asset-camera matrix. The current local browser frame visibly shows the explorer, cyan station lights, a signal-cell pickup, cargo obstacle, station shell and HUD. Painter-order rendering keeps interactable silhouettes visible instead of allowing the station shell to hide them. The next verification pass must test movement/progression, fullscreen and the PLAYCHIVE wrapper, then take the catalog screenshot from the live runtime.
 
 ## Input QA trace
 
@@ -44,4 +44,4 @@ The post-restart browser frame restored `SURVEYOR VITALS 100`, `SIGNAL CELLS 0 /
 
 ## Wrapper and fullscreen verification
 
-The local `shadow-station.html` RetroPlay wrapper loaded the iframe, received `Obsidian Relay online. Recover the signal cells.` through the runtime-status message, and displayed the expected runtime facts. Its fullscreen button expanded the active canvas while the original station scene and HUD remained visible; no black-screen failure occurred.
+The local `shadow-station.html` PLAYCHIVE wrapper loaded the iframe, received `Obsidian Relay online. Recover the signal cells.` through the runtime-status message, and displayed the expected runtime facts. Its fullscreen button expanded the active canvas while the original station scene and HUD remained visible; no black-screen failure occurred.

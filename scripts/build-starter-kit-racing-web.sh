@@ -64,20 +64,20 @@ import sys
 p = Path(sys.argv[1])
 s = p.read_text()
 needle = '\tanimate();\n\n}\n\ninit();\n'
-replacement = '\twindow.RETROPLAY_STARTER_KIT_RACING_READY = true;\n\tanimate();\n\n}\n\ninit();\n'
+replacement = '\twindow.PLAYCHIVE_STARTER_KIT_RACING_READY = true;\n\tanimate();\n\n}\n\ninit();\n'
 if needle not in s:
     raise SystemExit('ERROR: upstream readiness insertion point changed')
 p.write_text(s.replace(needle, replacement, 1))
 PY
 
 cat > "$DEST/SOURCE-NOTICE.txt" <<NOTICE
-Starter Kit Racing was packaged by RetroPlay from:
+Starter Kit Racing was packaged by PLAYCHIVE from:
 $UPSTREAM_URL
 Pinned source commit: $UPSTREAM_COMMIT
 
 Upstream project license: MIT (Copyright 2023 Kenney; Copyright 2026 mrdoob).
 Game meshes are identified by upstream as Kenney CC0 assets in README.md.
-RetroPlay packaging changes: local vendoring of Three.js $THREE_VERSION,
+PLAYCHIVE packaging changes: local vendoring of Three.js $THREE_VERSION,
 crashcat $CRASHCAT_VERSION and mathcat $MATHCAT_VERSION; removal of remote
 CDN imports and off-site UI links. No gameplay source or mesh data is replaced.
 NOTICE

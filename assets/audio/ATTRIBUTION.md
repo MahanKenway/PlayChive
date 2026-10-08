@@ -1,4 +1,4 @@
-# RetroPlay Audio Attribution
+# PLAYCHIVE Audio Attribution
 
 ## `retroplay-theme-nene.ogg`
 
@@ -14,4 +14,4 @@
 
 No musical edits were made. The Opus file SHA-256 is `cf7b1527386e8ef7a97820b2cf4557fdfa302b926905e091b5d868355eedd255`.
 
-CC0 does not require attribution, but RetroPlay retains this credit and source link as a matter of preservation and courtesy.
+CC0 does not require attribution, but PLAYCHIVE retains this credit and source link as a matter of preservation and courtesy.

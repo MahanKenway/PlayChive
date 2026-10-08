@@ -4,18 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#0b1022" />
-  <meta name="description" content="HexGL on RetroPlay: a fully bundled 3D WebGL racing game with PSP-style touch controls, gamepad support and fullscreen." />
-  <meta name="application-name" content="RetroPlay" />
+  <meta name="description" content="HexGL on PLAYCHIVE: a fully bundled 3D WebGL racing game with PSP-style touch controls, gamepad support and fullscreen." />
+  <meta name="application-name" content="PLAYCHIVE" />
   <link rel="canonical" href="https://mahankenway.github.io/RetroPlay/hexgl.html" />
   <link rel="icon" href="assets/favicon.ico?v=gamecube-1" type="image/x-icon" />
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="RetroPlay" />
-  <meta property="og:title" content="RetroPlay — HexGL Runtime" />
+  <meta property="og:site_name" content="PLAYCHIVE" />
+  <meta property="og:title" content="PLAYCHIVE — HexGL Runtime" />
   <meta property="og:description" content="A fully bundled 3D futuristic racing game with local assets, fullscreen and PSP-style touch controls." />
   <meta property="og:url" content="https://mahankenway.github.io/RetroPlay/hexgl.html" />
   <meta property="og:image" content="https://mahankenway.github.io/RetroPlay/assets/screenshots/hexgl-runtime.webp" />
   <meta name="twitter:card" content="summary_large_image" />
-  <title>RetroPlay — HexGL Runtime</title>
+  <title>PLAYCHIVE — HexGL Runtime</title>
   <style>
     :root { --paper:#e8ecea; --ink:#071126; --night:#060816; --violet:#624aff; --cyan:#3ad7ff; --lime:#d7f64f; --line:rgba(7,17,38,.22); --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
     * { box-sizing:border-box; } body { min-height:100vh; margin:0; color:var(--ink); background:var(--paper); font:14px/1.5 Arial,sans-serif; }
@@ -40,7 +40,7 @@
 </head>
 <body>
   <main>
-    <header><a class="brand" href="./" aria-label="Return to RetroPlay">RETRO<b>PLAY</b></a><a class="back" href="./">← World index</a></header>
+    <header><a class="brand" href="./" aria-label="Return to PLAYCHIVE">PLAY<b>CHIVE</b></a><a class="back" href="./">← World index</a></header>
     <p class="eyebrow"><span>// R-HX</span>Independent runtime / WebGL</p>
     <h1>Cut the apex.<br />Keep the charge.</h1>
     <p class="intro">HexGL is a complete futuristic 3D racing world already packed inside this page. Launch straight into Cityscape, fly with the keyboard or gamepad, and race from a phone with PSP-style controls — no account, upload, external data or original game disc required.</p>
@@ -53,9 +53,9 @@
           <div class="control-cluster"><span class="control-label">Air-brake / session</span><div class="actions"><button class="pad-btn" data-key="KeyA" aria-label="Left air-brake">△</button><button class="pad-btn" data-key="ArrowUp" aria-label="Accelerate">×</button><button class="pad-btn" data-key="KeyD" aria-label="Right air-brake">○</button><button id="btn-restart" class="pad-btn pad-btn--restart" aria-label="Restart race">↻</button><button id="btn-fullscreen-touch" class="pad-btn" aria-label="Toggle fullscreen">□</button><button id="btn-menu" class="pad-btn pad-btn--menu" aria-label="Return to HexGL menu">MENU</button></div></div>
         </div>
       </div>
-      <div class="result"><span>Runtime status</span><output id="result" class="status">Loading bundled HexGL runtime…</output><dl class="facts"><div><dt>Runtime</dt><dd>Native WebGL / JavaScript</dd></div><div><dt>Content</dt><dd>Bundled Cityscape race + audio</dd></div><div><dt>Session</dt><dd>Browser-local settings</dd></div><div><dt>Input</dt><dd>Keyboard / touch / gamepad</dd></div><div><dt>Distribution</dt><dd>Non-commercial RetroPlay package</dd></div></dl><button id="btn-fullscreen" class="utility" type="button">Fullscreen</button></div>
+      <div class="result"><span>Runtime status</span><output id="result" class="status">Loading bundled HexGL runtime…</output><dl class="facts"><div><dt>Runtime</dt><dd>Native WebGL / JavaScript</dd></div><div><dt>Content</dt><dd>Bundled Cityscape race + audio</dd></div><div><dt>Session</dt><dd>Browser-local settings</dd></div><div><dt>Input</dt><dd>Keyboard / touch / gamepad</dd></div><div><dt>Distribution</dt><dd>Non-commercial PLAYCHIVE package</dd></div></dl><button id="btn-fullscreen" class="utility" type="button">Fullscreen</button></div>
     </section>
-    <p class="notice"><strong>Fully bundled 3D game:</strong> HexGL ships from a pinned upstream source revision with all required tracks, models, textures, scripts and audio inside RetroPlay. The copied runtime removes legacy analytics and remote icon requests; it does not fetch playable content from another site. Root code is MIT-licensed, while individual upstream files retain their own notices, including the non-commercial ShipControls file and the sound attributions. <a href="hexgl/HEXGL-MIT-LICENSE.txt">MIT license</a> · <a href="hexgl/HEXGL-AUDIO-LICENSE.txt">Audio attributions</a> · <a href="hexgl/SOURCE-NOTICE.txt">Source notice</a>.</p>
+    <p class="notice"><strong>Fully bundled 3D game:</strong> HexGL ships from a pinned upstream source revision with all required tracks, models, textures, scripts and audio inside PLAYCHIVE. The copied runtime removes legacy analytics and remote icon requests; it does not fetch playable content from another site. Root code is MIT-licensed, while individual upstream files retain their own notices, including the non-commercial ShipControls file and the sound attributions. <a href="hexgl/HEXGL-MIT-LICENSE.txt">MIT license</a> · <a href="hexgl/HEXGL-AUDIO-LICENSE.txt">Audio attributions</a> · <a href="hexgl/SOURCE-NOTICE.txt">Source notice</a>.</p>
   </main>
   <script>
     const frame = document.getElementById('game-frame');

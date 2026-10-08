@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Build Neverball as a fully bundled WebAssembly runtime for RetroPlay.
+# Build Neverball as a fully bundled WebAssembly runtime for PLAYCHIVE.
 # Uses the upstream Emscripten route and packages the official base/easy-set data.
 set -euo pipefail
 
@@ -82,7 +82,7 @@ done
 cp "$SOURCE_DIR/LICENSE.md" "$OUT_DIR/NEVERBALL-LICENSE.md"
 cp -a "$SOURCE_DIR/doc/legal" "$OUT_DIR/LEGAL"
 cat > "$OUT_DIR/SOURCE-NOTICE.txt" <<EOF
-Neverball WebAssembly runtime for RetroPlay
+Neverball WebAssembly runtime for PLAYCHIVE
 
 Engine and game data source: https://github.com/$NEVERBALL_REPO
 Pinned source revision: $NEVERBALL_COMMIT

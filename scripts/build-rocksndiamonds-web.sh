@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Build Rocks'n'Diamonds as a fully bundled browser runtime for RetroPlay.
+# Build Rocks'n'Diamonds as a fully bundled browser runtime for PLAYCHIVE.
 # The official GPL-2.0-or-later source and its included free game data stay local.
 set -euo pipefail
 
@@ -27,7 +27,7 @@ if [[ -f "$ROOT_DIR/emsdk/emsdk_env.sh" ]]; then
   # GitHub Actions checks out emsdk inside the repository workspace.
   source "$ROOT_DIR/emsdk/emsdk_env.sh" >/dev/null
 elif [[ -f "/home/ubuntu/emsdk/emsdk_env.sh" ]]; then
-  # Local RetroPlay verification uses the shared sandbox toolchain.
+  # Local PLAYCHIVE verification uses the shared sandbox toolchain.
   source "/home/ubuntu/emsdk/emsdk_env.sh" >/dev/null
 fi
 command -v emcc >/dev/null || { echo 'FATAL: Emscripten emcc is required.' >&2; exit 1; }
@@ -62,7 +62,7 @@ cat > "$OUT_DIR/index.html" <<'HTML'
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#05070b" />
-  <title>Rocks'n'Diamonds — RetroPlay Runtime</title>
+  <title>Rocks'n'Diamonds — PLAYCHIVE Runtime</title>
   <style>
     html,body { width:100%; height:100%; margin:0; overflow:hidden; background:#05070b; color:#d9ffe9; font:13px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
     #canvas { display:block; width:100%; height:100%; outline:0; image-rendering:auto; }
@@ -102,7 +102,7 @@ cat > "$OUT_DIR/index.html" <<'HTML'
 HTML
 
 cat > "$OUT_DIR/SOURCE-NOTICE.txt" <<NOTICE
-Rocks'n'Diamonds browser runtime packaged for RetroPlay
+Rocks'n'Diamonds browser runtime packaged for PLAYCHIVE
 
 Upstream source: $RND_REPO
 Pinned revision: $RND_COMMIT
@@ -111,7 +111,7 @@ Upstream project: https://www.artsoft.org/rocksndiamonds/
 Rocks'n'Diamonds is distributed under the GNU GPL version 2 or later. The
 full license is retained at ROCKSNDIAMONDS-GPL-2.0-OR-LATER.txt. Complete
 corresponding source is available from the upstream Git repository above; the
-RetroPlay packaging script is scripts/build-rocksndiamonds-web.sh.
+PLAYCHIVE packaging script is scripts/build-rocksndiamonds-web.sh.
 
 Packaging changes: a compile guard encloses a Windows-only SDL DPI hint that is
 not present in SDL's Emscripten build. The runtime packages the project's

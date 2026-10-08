@@ -308,4 +308,4 @@ if grep -R "assets/covers/" index.html src styles .github 2>/dev/null; then
   exit 1
 fi
 
-printf 'RetroPlay validation: PASS\n'
+printf 'PLAYCHIVE validation: PASS\n'

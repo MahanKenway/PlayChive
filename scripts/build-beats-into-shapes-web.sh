@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Package the official, browser-ready Beats into Shapes release with every
-# playable asset local. RetroPlay distributes this GPL-3.0-or-later rhythm
+# playable asset local. PLAYCHIVE distributes this GPL-3.0-or-later rhythm
 # game non-commercially and keeps its upstream source and license notices.
 set -euo pipefail
 
@@ -61,7 +61,7 @@ grep -q 'src="coi-serviceworker.js"' "$OUT_DIR/beats-into-shapes.html" || {
 }
 
 cat > "$OUT_DIR/SOURCE-NOTICE.txt" <<NOTICE
-Beats into Shapes runtime packaged for RetroPlay
+Beats into Shapes runtime packaged for PLAYCHIVE
 
 Official HTML5 release: $RELEASE_URL
 Upstream repository: $UPSTREAM_REPO
@@ -75,7 +75,7 @@ license is retained in BEATS-INTO-SHAPES-GPL-3.0-OR-LATER.txt.
 
 This directory is a local copy of the upstream project's official HTML5
 release: all gameplay code, art, music, WebAssembly and PCK data are served
-from this directory. RetroPlay's package script is
+from this directory. PLAYCHIVE's package script is
 scripts/build-beats-into-shapes-web.sh. No user game file, account, network
 score service, ad network or remote playable data is required.
 

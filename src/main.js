@@ -72,7 +72,7 @@ const ui = {
 async function init() {
   // Show loading screen immediately
   ui.loading.show();
-  ui.loading.update(0, 'Opening RetroPlay…');
+  ui.loading.update(0, 'Opening PLAYCHIVE…');
 
   // Play the ASCII boot sequence for that classic feel
   await ui.loading.playBootSequence();
@@ -105,7 +105,7 @@ function bootstrapUI() {
   // inside it. Wiring this once, here, satisfies that ordering
   // requirement permanently (no need to re-wire on every startGame).
   EventBus.on('engine:log', ({ text, level }) => {
-    console.log('[RetroPlay]', text);
+    console.log('[PLAYCHIVE]', text);
     logHistory.push({ text, level: level ?? 'info', t: performance.now() });
     if (logHistory.length > LOG_HISTORY_MAX) logHistory.shift();
   });
@@ -324,7 +324,7 @@ async function startGame(sources, type, { catalogGame = null } = {}) {
     applySettings(loadSettings());
     renderSaveSlots(activeSaveProfile);
 
-    console.log('[RetroPlay] Runtime started');
+    console.log('[PLAYCHIVE] Runtime started');
 
   } catch (err) {
     console.error('[DOOM] Startup error:', err);

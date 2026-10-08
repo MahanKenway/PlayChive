@@ -1,4 +1,4 @@
-name: Build RetroPlay WASM & Deploy
+name: Build PLAYCHIVE WASM & Deploy
 
 on:
   push:
