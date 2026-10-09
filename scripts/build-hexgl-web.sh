@@ -35,7 +35,7 @@ sed -i \
   -e '/^[[:space:]]*<link rel="shortcut icon" href="http:\/\/hexgl\.bkcore\.com\/favicon\.png"/d' \
   -e '/^[[:space:]]*<script type="text\/javascript">/,/^[[:space:]]*<\/script>/d' \
   -e '/^[[:space:]]*<meta property="og:image"/d' \
-  -e 's#http://hexgl\\.bkcore\\.com/#https://mahankenway.github.io/RetroPlay/hexgl.html#g' \
+  -e 's#http://hexgl\\.bkcore\\.com/#https://mahankenway.github.io/PlayChive/hexgl.html#g' \
   "$OUT_DIR/index.html"
 sed -i "s#window.location.href = 'http://get.webgl.org/';#console.warn('WebGL unavailable');#g" "$OUT_DIR/launch.js"
 
