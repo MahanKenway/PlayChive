@@ -366,6 +366,33 @@ html[data-visual-quality='static'] .evil-eye-fallback { animation:none; }
 @keyframes retroplay-status-in { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:translateY(0); } }
 @media (prefers-reduced-motion:reduce){.is-status-rotating,.is-status-rotating.is-status-exiting,.is-status-rotating.is-status-entering{animation:none;transition:none;transform:none}}
 
+/* PLAYCHIVE brand lockup: PLAY + CHIVE / THE PLAYABLE ARCHIVE */
+.loading-mark { display:flex; flex-direction:column; align-items:flex-start; gap:8px; letter-spacing:0; }
+.loading-mark > strong, .brand-lockup > strong { display:flex; align-items:baseline; gap:.08em; font-family:var(--font-display); font-weight:700; letter-spacing:-.095em; line-height:.88; }
+.loading-mark > strong { font-size:clamp(50px,9vw,96px); }
+.loading-mark > strong span, .brand-lockup > strong span { color:#f3f2ed; }
+.loading-mark > strong b, .brand-lockup > strong b { color:var(--lime-bright); font-weight:700; }
+.loading-mark > small, .brand-lockup > small { display:block; color:rgba(237,237,230,.62); font:500 9px/1 var(--font-mono); letter-spacing:.24em; }
+.loading-mark > small::before, .brand-lockup > small::before { content:'// '; color:var(--lime-bright); }
+.brand-mark { gap:10px; letter-spacing:0; }
+.brand-lockup { display:flex; flex-direction:column; align-items:flex-start; gap:4px; }
+.brand-lockup > strong { font-size:clamp(22px,2.05vw,31px); }
+.brand-lockup > small { color:var(--ink-muted); font-size:6px; letter-spacing:.17em; }
+.brand-lockup > small::before { color:var(--lime); }
+.brand-mark .brand-lockup > strong span { color:var(--ink); }
+.brand-mark .brand-lockup > strong b { color:var(--lime); }
+.brand-mark .evil-eye { margin-left:3px; }
+.brand-mark:hover .brand-lockup > strong b, .brand-mark:focus-visible .brand-lockup > strong b { color:var(--lime-bright); }
+@media (max-width:760px) {
+  .brand-lockup > strong { font-size:25px; }
+  .brand-lockup > small { font-size:5px; letter-spacing:.13em; }
+  .brand-mark { gap:7px; }
+}
+@media (max-width:420px) {
+  .brand-lockup > strong { font-size:22px; }
+  .brand-lockup > small { font-size:4.5px; letter-spacing:.1em; }
+}
+
 
 /* Drift Wall: local React Bits-inspired loading backdrop. It remains decorative,
    pointer-inert and is never created for eco/static quality tiers. */
