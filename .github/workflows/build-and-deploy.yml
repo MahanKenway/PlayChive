@@ -208,13 +208,39 @@ jobs:
 
     - name: Copy frontend files
       run: |
-        cp index.html neon-rift.html shadow-station.html tuxracer.html armawebtron.html astray.html starter-kit-racing.html cdogs.html freedink.html opentyrian.html librequake.html openttd.html freerct.html neverball.html blasphemer.html hexgl.html hextris.html rocksndiamonds.html beats-into-shapes.html 2048.html javascript-tetris.html adarkroom.html digger.html ecwolf.html openresident.html coi-serviceworker.js manifest.json robots.txt sitemap.xml llms.txt agent-manifest.json google*.html dist/ 2>/dev/null || true
+        cp index.html neon-rift.html shadow-station.html tuxracer.html armawebtron.html astray.html starter-kit-racing.html cdogs.html freedink.html opentyrian.html librequake.html openttd.html freerct.html neverball.html blasphemer.html hexgl.html hextris.html rocksndiamonds.html beats-into-shapes.html 2048.html javascript-tetris.html adarkroom.html digger.html ecwolf.html openresident.html coi-serviceworker.js offline-worker.js manifest.json robots.txt sitemap.xml llms.txt agent-manifest.json google*.html dist/ 2>/dev/null || true
         cp -r styles src data agent neon-rift shadow-station tuxracer armawebtron starter-kit-racing privacy dist/ 2>/dev/null || true
         mkdir -p dist/assets
         # Copy nested catalog artwork as well as existing icons. The WADs are
         # downloaded above into dist/assets and remain untouched because the
         # source assets directory contains no bundled archive.
         cp -R assets/. dist/assets/
+
+    - name: Generate complete offline pack manifest
+      run: |
+        python3 - <<'PY'
+        import json
+        from pathlib import Path
+        root = Path('dist')
+        files = []
+        total = 0
+        for path in sorted(root.rglob('*')):
+          if not path.is_file() or path.name == 'offline-manifest.json':
+            continue
+          rel = path.relative_to(root).as_posix()
+          size = path.stat().st_size
+          files.append({'url': './' + rel, 'bytes': size})
+          total += size
+        Path('dist/offline-manifest.json').write_text(json.dumps({
+          'schemaVersion': '1.0',
+          'name': 'PLAYCHIVE complete offline pack',
+          'generatedAt': '${{ github.sha }}',
+          'totalBytes': total,
+          'files': files,
+        }, indent=2) + '\n')
+        print(f'Offline pack: {len(files)} files / {total / 1024 / 1024:.1f} MiB')
+        PY
+        test -s dist/offline-manifest.json
 
     - name: Cache-bust WAD/WASM URLs with commit SHA
       run: |

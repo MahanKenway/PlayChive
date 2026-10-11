@@ -302,6 +302,15 @@ grep -q "assets/hacx.wad" src/catalog.js
 grep -q "hacx12.zip" .github/workflows/build-and-deploy.yml
 test -f assets/licenses/HACX-LEGAL.txt
 test -f assets/licenses/HACX-CREDITS.txt
+test -f offline-worker.js
+test -f src/offline-pack.js
+grep -q 'id="offline-pack-button"' index.html
+grep -q 'initOfflinePack' src/main.js
+grep -q 'offline-worker.js' .github/workflows/build-and-deploy.yml
+grep -q 'Generate complete offline pack manifest' .github/workflows/build-and-deploy.yml
+grep -q '"scope": "\/PlayChive\/"' manifest.json
+node --check offline-worker.js
+node --check src/offline-pack.js
 
 if grep -R "assets/covers/" index.html src styles .github 2>/dev/null; then
   echo "Deprecated generated cover reference found in active runtime files" >&2

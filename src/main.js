@@ -27,6 +27,7 @@ import { CatalogController } from './catalog.js?v=retroplay-20260815-r2';
 import { initVisualEffects, prepareVisualQuality } from './visual-effects.js?v=retroplay-20260822-r2';
 import { initTheme } from './theme.js?v=retroplay-20260822-r1';
 import { initRetroAudio } from './retro-audio.js?v=retroplay-20260822-r1';
+import { initOfflinePack } from './offline-pack.js?v=playchive-offline-v1';
 import { loadSettings, saveSettings, profileIdFor, listSaveSlots, exportSaveBundle, importSaveBundle } from './persistence.js?v=retroplay-20260815-r2';
 import {
   LoadingScreen,
@@ -116,6 +117,7 @@ function bootstrapUI() {
   prepareVisualQuality();
   initTheme();
   initRetroAudio();
+  initOfflinePack();
   wireWadPicker();
   wireGameControls();
   wireSettingsPanel();

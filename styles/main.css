@@ -409,6 +409,19 @@ html[data-visual-quality='static'] .evil-eye-fallback { animation:none; }
 html[data-visual-quality='static'] .loading-drift-wall { display:none; }
 @media (prefers-reduced-motion:reduce){.loading-drift-wall{display:none}.loading-inner{z-index:2}}
 
+/* Offline Pack: one-tap local archive download --------------------------- */
+.offline-pack-button { display:inline-flex; align-items:center; gap:6px; min-height:28px; padding:0 9px; border:1px solid var(--line-strong); background:var(--glass); color:var(--ink); cursor:pointer; font:8px var(--font-mono); letter-spacing:.055em; text-transform:uppercase; transition:transform .2s var(--ease),background .2s,border-color .2s,box-shadow .2s; }
+.offline-pack-button > span:first-child { color:var(--lime); font-size:13px; line-height:1; }
+.offline-pack-button:hover,.offline-pack-button:focus-visible { border-color:var(--ink); background:var(--lime-fade); box-shadow:3px 3px 0 color-mix(in srgb,var(--ink) 22%,transparent); transform:translate(-1px,-1px); }
+.offline-pack-button:active { transform:translate(0,0) scale(.97); }
+.offline-pack-button:disabled { cursor:wait; opacity:.7; }
+.offline-pack-button[data-offline-state='ready'] { border-color:var(--lime); }
+.offline-pack-button[data-offline-state='ready'] > span:first-child { color:var(--lime-bright); }
+.offline-pack-status { max-width:82px; overflow:hidden; color:var(--ink-muted); font:7px var(--font-mono); letter-spacing:.04em; text-overflow:ellipsis; text-transform:uppercase; white-space:nowrap; }
+html[data-theme='dark'] .offline-pack-button { background:var(--glass-deep); }
+@media (max-width:760px) { .offline-pack-status { display:none; }.offline-pack-button > span:last-child { display:none; }.offline-pack-button { width:30px; justify-content:center; padding:0; }.header-utility { gap:8px; } }
+@media (prefers-reduced-motion:reduce) { .offline-pack-button { transition:none; } }
+
 
 /* Retro Audio: opt-in chiptune controls remain compact in the runtime header. */
 .retro-audio { display:flex; align-items:center; gap:7px; color:var(--ink-muted); font:8px var(--font-mono); letter-spacing:.08em; text-transform:uppercase; }
