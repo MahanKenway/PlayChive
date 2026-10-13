@@ -34,4 +34,3 @@ The catalog includes a rights-aware directory of external browser projects. Entr
 
 The detailed records are in `data/games.json`; the audit is in `docs/external-experiments-audit.md`.
 The large-project audit is documented in `docs/large-open-source-bundle-audit.md`; current additions include OpenLara, CorsixTH, Freeciv-web and Endless Sky as external references only.
-
