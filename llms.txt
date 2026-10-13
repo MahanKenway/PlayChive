@@ -33,3 +33,5 @@ PLAYCHIVE distinguishes bundled libre/open-source content from local-file import
 The catalog includes a rights-aware directory of external browser projects. Entries marked `EXTERNAL LINK / RIGHTS REVIEW` are link-only references: PLAYCHIVE does not mirror their code, WASM, game archives, maps, assets, trademarks or multiplayer services, and they are excluded from the Offline Pack. Agents must not describe them as local PLAYCHIVE runtimes or PLAYCHIVE-owned downloads.
 
 The detailed records are in `data/games.json`; the audit is in `docs/external-experiments-audit.md`.
+The large-project audit is documented in `docs/large-open-source-bundle-audit.md`; current additions include OpenLara, CorsixTH, Freeciv-web and Endless Sky as external references only.
+

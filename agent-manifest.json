@@ -1066,6 +1066,62 @@
         "open-project"
       ],
       "agentStateSelector": null
+    },
+    {
+      "id": "openlara",
+      "name": "OpenLara",
+      "url": "https://xproger.info/projects/OpenLara/",
+      "playable": false,
+      "runtime": "External web experiment",
+      "controls": [],
+      "launchMethod": "external-project-or-local-import",
+      "status": "External link · original data required",
+      "actions": [
+        "open-project"
+      ],
+      "agentStateSelector": null
+    },
+    {
+      "id": "corsixth",
+      "name": "CorsixTH",
+      "url": "https://github.com/CorsixTH/CorsixTH",
+      "playable": false,
+      "runtime": "External engine project",
+      "controls": [],
+      "launchMethod": "external-project-or-local-import",
+      "status": "External link · original data required",
+      "actions": [
+        "open-project"
+      ],
+      "agentStateSelector": null
+    },
+    {
+      "id": "freeciv-web",
+      "name": "Freeciv-web",
+      "url": "https://freeciv.github.io/freeciv-web/",
+      "playable": false,
+      "runtime": "External browser strategy",
+      "controls": [],
+      "launchMethod": "external-project-or-local-import",
+      "status": "External link · multi-service deployment",
+      "actions": [
+        "open-project"
+      ],
+      "agentStateSelector": null
+    },
+    {
+      "id": "endless-sky",
+      "name": "Endless Sky",
+      "url": "https://endless-sky.github.io/",
+      "playable": false,
+      "runtime": "External desktop/web experiment",
+      "controls": [],
+      "launchMethod": "external-project-or-local-import",
+      "status": "External link · WASM build not pinned",
+      "actions": [
+        "open-project"
+      ],
+      "agentStateSelector": null
     }
   ]
 }
