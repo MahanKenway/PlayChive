@@ -1,0 +1,5 @@
+## External Experiments
+
+PLAYCHIVE also maintains a rights-aware directory of external browser projects. These records are link-only: PLAYCHIVE does not mirror their code, WASM, game archives, maps, models, music, trademarks or multiplayer services, and they are excluded from the Offline Pack. Agents must not describe these entries as local playable runtimes or as PLAYCHIVE-owned downloads. See `data/games.json` for `catalogState: EXTERNAL LINK / RIGHTS REVIEW` records and the original `projectUrl`.
+
+The directory includes Vibeslops, OVZ Global Flashpoint, Surfd, webXash, PixelSutf Half-Life, Halo web projects, Pieter.com Quake-family ports, GTA Vice City WASM, PES 6 Web, Skate 3 Rust Engine, Diablo Web and WebWars. It excludes unverified or rights-sensitive fan reconstructions such as Moon Zombies, Kino der Toten, Cheese Cube, SHAR WASM, Minecraft/Eaglercraft mirrors and Global Terror.

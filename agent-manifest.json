@@ -5,7 +5,7 @@
     "identity": "PLAYCHIVE — Classic worlds, ready to play",
     "type": "browser-game-hub",
     "homepage": "https://mahankenway.github.io/PlayChive/",
-    "repository": "https://github.com/MahanKenway/RetroPlay",
+    "repository": "https://github.com/MahanKenway/PlayChive",
     "creator": {
       "name": "Mahan Tavakoli",
       "handle": "MahanKenway",
@@ -824,6 +824,244 @@
       "controls": [],
       "launchMethod": "external-project-or-local-import",
       "status": "Free full game / download required",
+      "actions": [
+        "open-project"
+      ],
+      "agentStateSelector": null
+    },
+    {
+      "id": "vibeslops",
+      "name": "Vibeslops / Claude of Duty",
+      "url": "https://vibeslops.luckeysystems.com/",
+      "playable": false,
+      "runtime": "External web experiment",
+      "controls": [],
+      "launchMethod": "external-project-or-local-import",
+      "status": "External link · rights review",
+      "actions": [
+        "open-project"
+      ],
+      "agentStateSelector": null
+    },
+    {
+      "id": "ovz-global-flashpoint",
+      "name": "Contemporary Conflict: Global Flashpoint",
+      "url": "https://ovz-game-production.up.railway.app/",
+      "playable": false,
+      "runtime": "External web experiment",
+      "controls": [],
+      "launchMethod": "external-project-or-local-import",
+      "status": "External link · no local mirror",
+      "actions": [
+        "open-project"
+      ],
+      "agentStateSelector": null
+    },
+    {
+      "id": "surfd-external",
+      "name": "Surfd",
+      "url": "https://surfd.net/",
+      "playable": false,
+      "runtime": "External web experiment",
+      "controls": [],
+      "launchMethod": "external-project-or-local-import",
+      "status": "External link · maps not mirrored",
+      "actions": [
+        "open-project"
+      ],
+      "agentStateSelector": null
+    },
+    {
+      "id": "webxash-half-life",
+      "name": "webXash / Half-Life browser ports",
+      "url": "https://x8bitrain.github.io/webXash/",
+      "playable": false,
+      "runtime": "External web experiment",
+      "controls": [],
+      "launchMethod": "external-project-or-local-import",
+      "status": "External link · lawful files required",
+      "actions": [
+        "open-project"
+      ],
+      "agentStateSelector": null
+    },
+    {
+      "id": "pixelsuft-half-life",
+      "name": "PixelSutf Half-Life web build",
+      "url": "https://pixelsuft.github.io/hl/",
+      "playable": false,
+      "runtime": "External web experiment",
+      "controls": [],
+      "launchMethod": "external-project-or-local-import",
+      "status": "External link · no asset mirror",
+      "actions": [
+        "open-project"
+      ],
+      "agentStateSelector": null
+    },
+    {
+      "id": "halo-web-port",
+      "name": "Halo: Combat Evolved web port",
+      "url": "https://mitchellhynes.com/halo",
+      "playable": false,
+      "runtime": "External web experiment",
+      "controls": [],
+      "launchMethod": "external-project-or-local-import",
+      "status": "External link · user data required",
+      "actions": [
+        "open-project"
+      ],
+      "agentStateSelector": null
+    },
+    {
+      "id": "halo-ce-mobile",
+      "name": "Halo CE Mobile",
+      "url": "https://hcemobile.com/",
+      "playable": false,
+      "runtime": "External web experiment",
+      "controls": [],
+      "launchMethod": "external-project-or-local-import",
+      "status": "External link · user data required",
+      "actions": [
+        "open-project"
+      ],
+      "agentStateSelector": null
+    },
+    {
+      "id": "quake-browser-port",
+      "name": "Quake browser port",
+      "url": "https://q1.pieter.com/",
+      "playable": false,
+      "runtime": "External web experiment",
+      "controls": [],
+      "launchMethod": "external-project-or-local-import",
+      "status": "External link · hosted runtime",
+      "actions": [
+        "open-project"
+      ],
+      "agentStateSelector": null
+    },
+    {
+      "id": "quake2-browser-port",
+      "name": "Quake II browser port",
+      "url": "https://q2.pieter.com/",
+      "playable": false,
+      "runtime": "External web experiment",
+      "controls": [],
+      "launchMethod": "external-project-or-local-import",
+      "status": "External link · hosted runtime",
+      "actions": [
+        "open-project"
+      ],
+      "agentStateSelector": null
+    },
+    {
+      "id": "quake3-browser-port",
+      "name": "Quake III browser port",
+      "url": "https://q3.pieter.com/",
+      "playable": false,
+      "runtime": "External web experiment",
+      "controls": [],
+      "launchMethod": "external-project-or-local-import",
+      "status": "External link · hosted runtime",
+      "actions": [
+        "open-project"
+      ],
+      "agentStateSelector": null
+    },
+    {
+      "id": "rtcw-browser-port",
+      "name": "Return to Castle Wolfenstein web port",
+      "url": "https://rtcw.pieter.com/",
+      "playable": false,
+      "runtime": "External web experiment",
+      "controls": [],
+      "launchMethod": "external-project-or-local-import",
+      "status": "External link · game data not mirrored",
+      "actions": [
+        "open-project"
+      ],
+      "agentStateSelector": null
+    },
+    {
+      "id": "urban-terror-browser-port",
+      "name": "Urban Terror browser port",
+      "url": "https://ut.pieter.com/",
+      "playable": false,
+      "runtime": "External web experiment",
+      "controls": [],
+      "launchMethod": "external-project-or-local-import",
+      "status": "External link · not Unreal Tournament",
+      "actions": [
+        "open-project"
+      ],
+      "agentStateSelector": null
+    },
+    {
+      "id": "gta-vice-city-wasm",
+      "name": "GTA: Vice City WASM port",
+      "url": "https://joncodeofficial.github.io/gta-vice-city-wasm/",
+      "playable": false,
+      "runtime": "External web experiment",
+      "controls": [],
+      "launchMethod": "external-project-or-local-import",
+      "status": "External link · user data required",
+      "actions": [
+        "open-project"
+      ],
+      "agentStateSelector": null
+    },
+    {
+      "id": "pes6-web",
+      "name": "PES 6 Web Online Port",
+      "url": "https://pes6.optijuegos.net/",
+      "playable": false,
+      "runtime": "External web experiment",
+      "controls": [],
+      "launchMethod": "external-project-or-local-import",
+      "status": "External link · Konami data not mirrored",
+      "actions": [
+        "open-project"
+      ],
+      "agentStateSelector": null
+    },
+    {
+      "id": "skate3-web-engine",
+      "name": "Skate 3 Rust Engine web project",
+      "url": "https://skate.aaddpp.lol/",
+      "playable": false,
+      "runtime": "External web experiment",
+      "controls": [],
+      "launchMethod": "external-project-or-local-import",
+      "status": "External link · EA data not mirrored",
+      "actions": [
+        "open-project"
+      ],
+      "agentStateSelector": null
+    },
+    {
+      "id": "diablo-web",
+      "name": "Diablo Web",
+      "url": "https://johnimril.github.io/diablo_web/",
+      "playable": false,
+      "runtime": "External web experiment",
+      "controls": [],
+      "launchMethod": "external-project-or-local-import",
+      "status": "External link · full data local",
+      "actions": [
+        "open-project"
+      ],
+      "agentStateSelector": null
+    },
+    {
+      "id": "webwars",
+      "name": "WebWars",
+      "url": "https://webwars.link/",
+      "playable": false,
+      "runtime": "External web experiment",
+      "controls": [],
+      "launchMethod": "external-project-or-local-import",
+      "status": "External link · live host status varies",
       "actions": [
         "open-project"
       ],
