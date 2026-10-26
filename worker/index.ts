@@ -3,9 +3,13 @@
 // runtimes) is built by GitHub Actions and published to GitHub Pages. This
 // Worker serves that build from Cloudflare so it can be used with a custom
 // domain, without needing Emscripten inside Cloudflare's build environment.
+//
+// NOTE: this file is the source of truth. Cloudflare's Git integration redeploys
+// it on every push to main, so edits made only in the dashboard are overwritten.
 
 const ORIGIN = "https://mahankenway.github.io";
 const BASE_PATH = "/PlayChive"; // GitHub Pages project path
+const MAX_HOPS = 5;
 
 // Request headers that are safe and useful to forward upstream.
 const FORWARDED_HEADERS = ["accept", "accept-encoding", "range", "if-none-match", "if-modified-since"];
@@ -17,39 +21,61 @@ export default {
     }
 
     const url = new URL(request.url);
-    const target = `${ORIGIN}${BASE_PATH}${url.pathname}${url.search}`;
-
     const upstreamHeaders = new Headers();
     for (const name of FORWARDED_HEADERS) {
       const value = request.headers.get(name);
       if (value) upstreamHeaders.set(name, value);
     }
 
+    let target = `${ORIGIN}${BASE_PATH}${url.pathname}${url.search}`;
+
     try {
-      const upstream = await fetch(target, {
-        method: request.method,
-        headers: upstreamHeaders,
-        redirect: "manual", // rewrite redirects ourselves so they stay on this domain
-        cf: { cacheEverything: true, cacheTtl: 300 },
-      });
+      for (let hop = 0; hop < MAX_HOPS; hop++) {
+        const upstream = await fetch(target, {
+          method: request.method,
+          headers: upstreamHeaders,
+          redirect: "manual", // handle redirects ourselves so they stay on this domain
+          // Cache successful responses briefly; never cache errors or 404s.
+          cf: { cacheTtlByStatus: { "200-299": 300, "300-399": 0, "400-599": 0 } },
+        });
 
-      const headers = new Headers(upstream.headers);
-
-      // Keep redirects (e.g. /dir -> /dir/) on the public hostname.
-      const location = headers.get("location");
-      if (location) {
-        const absolute = new URL(location, target).toString();
-        const prefix = `${ORIGIN}${BASE_PATH}`;
-        if (absolute.startsWith(prefix)) {
-          headers.set("location", url.origin + absolute.slice(prefix.length));
+        const location = upstream.headers.get("location");
+        if (upstream.status < 300 || upstream.status >= 400 || !location) {
+          return new Response(upstream.body, {
+            status: upstream.status,
+            statusText: upstream.statusText,
+            headers: new Headers(upstream.headers),
+          });
         }
+
+        const next = new URL(location, target);
+        const prefix = `${ORIGIN}${BASE_PATH}`;
+
+        // Normal Pages redirect (e.g. /dir -> /dir/): send it to the public hostname.
+        if (next.toString().startsWith(prefix)) {
+          const headers = new Headers(upstream.headers);
+          headers.set("location", url.origin + next.toString().slice(prefix.length));
+          return new Response(null, { status: upstream.status, headers });
+        }
+
+        // GitHub Pages redirects to its configured custom domain. If that is this
+        // very hostname, follow the path internally instead of looping the browser.
+        if (next.host === url.host) {
+          const nextTarget = `${ORIGIN}${BASE_PATH}${next.pathname}${next.search}`;
+          if (nextTarget === target) break; // would loop forever
+          target = nextTarget;
+          continue;
+        }
+
+        // Redirect to some other host: pass it through unchanged.
+        return new Response(null, { status: upstream.status, headers: { location: next.toString() } });
       }
 
-      return new Response(upstream.body, {
-        status: upstream.status,
-        statusText: upstream.statusText,
-        headers,
-      });
+      return new Response(
+        "Redirect loop: GitHub Pages is redirecting to this domain. " +
+          "Remove the custom domain in the GitHub repository's Settings > Pages.",
+        { status: 502 },
+      );
     } catch (error) {
       console.error("Upstream fetch failed:", error);
       return new Response("Bad Gateway", { status: 502 });
