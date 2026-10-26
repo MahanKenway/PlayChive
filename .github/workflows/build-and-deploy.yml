@@ -17,9 +17,6 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-22.04
-    env:
-      # Job-level so the Cloudflare step's `if` can see whether the secret exists.
-      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
     steps:
     - uses: actions/checkout@v4
       with:
@@ -258,25 +255,6 @@ jobs:
       uses: actions/upload-pages-artifact@v3
       with:
         path: dist/
-
-    - name: Check Cloudflare static asset limits
-      run: |
-        # Workers Static Assets: max 25 MiB per file, 20,000 files (Free plan).
-        echo "File count: $(find dist -type f | wc -l)"
-        echo "Files over 25 MiB:"
-        find dist -type f -size +25M -exec ls -lh {} \; || true
-
-    - name: Deploy to Cloudflare Workers
-      if: ${{ (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master') && env.CLOUDFLARE_API_TOKEN != '' }}
-      continue-on-error: true
-      uses: cloudflare/wrangler-action@v3
-      env:
-        CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-      with:
-        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        command: deploy
 
   deploy:
     needs: build
