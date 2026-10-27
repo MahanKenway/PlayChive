@@ -11,6 +11,19 @@ const ORIGIN = "https://mahankenway.github.io";
 const BASE_PATH = "/PlayChive"; // GitHub Pages project path
 const MAX_HOPS = 5;
 
+// Never let the *.workers.dev address compete with the real domain in search results.
+const isWorkersDev = (host: string) => host.endsWith(".workers.dev");
+const isLocal = (host: string) => host === "localhost" || host === "127.0.0.1";
+
+// Small, safe hardening headers added to every response.
+function finalize(upstreamHeaders: Headers, host: string): Headers {
+  const headers = new Headers(upstreamHeaders);
+  headers.set("X-Content-Type-Options", "nosniff");
+  headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
+  if (isWorkersDev(host)) headers.set("X-Robots-Tag", "noindex, nofollow");
+  return headers;
+}
+
 // Request headers that are safe and useful to forward upstream.
 const FORWARDED_HEADERS = ["accept", "accept-encoding", "range", "if-none-match", "if-modified-since"];
 
@@ -24,11 +37,18 @@ export default {
 
     // One canonical host: send www.* and plain http to https on the apex domain
     // so search engines see a single version of every URL.
-    if (url.hostname.startsWith("www.") || url.protocol === "http:") {
+    if (url.hostname.startsWith("www.") || (url.protocol === "http:" && !isLocal(url.hostname))) {
       const canonical = new URL(request.url);
       canonical.protocol = "https:";
       canonical.hostname = url.hostname.replace(/^www\./, "");
       return Response.redirect(canonical.toString(), 301);
+    }
+
+    // /index.html and /dir/index.html duplicate / and /dir/: redirect to the clean URL.
+    if (url.pathname.endsWith("/index.html")) {
+      const clean = new URL(request.url);
+      clean.pathname = url.pathname.slice(0, -"index.html".length);
+      return Response.redirect(clean.toString(), 301);
     }
 
     const upstreamHeaders = new Headers();
@@ -54,7 +74,7 @@ export default {
           return new Response(upstream.body, {
             status: upstream.status,
             statusText: upstream.statusText,
-            headers: new Headers(upstream.headers),
+            headers: finalize(upstream.headers, url.hostname),
           });
         }
 
@@ -63,7 +83,7 @@ export default {
 
         // Normal Pages redirect (e.g. /dir -> /dir/): send it to the public hostname.
         if (next.toString().startsWith(prefix)) {
-          const headers = new Headers(upstream.headers);
+          const headers = finalize(upstream.headers, url.hostname);
           headers.set("location", url.origin + next.toString().slice(prefix.length));
           return new Response(null, { status: upstream.status, headers });
         }

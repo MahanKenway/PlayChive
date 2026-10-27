@@ -5,3 +5,7 @@ dist/
 node_modules/
 wasm4-*/node_modules/
 wasm4-*/build/
+
+# Local worker test bundle
+.wrangler-test/
+.wrangler/

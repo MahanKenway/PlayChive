@@ -4,9 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#101126" />
-  <meta name="description" content="OpenTyrian2000 on PLAYCHIVE: a freeware vertical shooter running in WebAssembly with browser-local saves and touch controls." />
   <link rel="icon" href="assets/favicon.ico?v=gamecube-1" type="image/x-icon" />
-  <title>PLAYCHIVE — OpenTyrian2000 Runtime</title>
   <style>
     :root { --paper:#e8e8e2; --ink:#131520; --night:#101126; --violet:#8874f5; --cyan:#55dbef; --line:rgba(19,21,32,.23); --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
     * { box-sizing:border-box; }
@@ -28,15 +26,123 @@
     @media (max-width:760px) { main { width:min(100% - 24px,680px); padding-top:18px; }.panel { grid-template-columns:1fr; }.controls { display:flex; }.intro { font-size:14px; } canvas { max-height:54vh; } }
   </style>
   <meta name="application-name" content="PLAYCHIVE" />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
+<!-- seo:begin -->
+  <title>Play OpenTyrian2000 Online Free in Your Browser | PLAYCHIVE</title>
+  <meta name="description" content="An arcade vertical shooter running in its own OpenTyrian2000 WebAssembly module. Free to play in your browser, no install or account." />
   <link rel="canonical" href="https://playchive.ir/opentyrian.html" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="PLAYCHIVE" />
-  <meta property="og:title" content="PLAYCHIVE — OpenTyrian2000 Runtime" />
-  <meta property="og:description" content="OpenTyrian2000 on PLAYCHIVE: a freeware vertical shooter running in WebAssembly with browser-local saves and touch controls." />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Play OpenTyrian2000 Online Free in Your Browser | PLAYCHIVE" />
+  <meta property="og:description" content="An arcade vertical shooter running in its own OpenTyrian2000 WebAssembly module. Free to play in your browser, no install or account." />
   <meta property="og:url" content="https://playchive.ir/opentyrian.html" />
   <meta property="og:image" content="https://playchive.ir/assets/screenshots/opentyrian-runtime.png" />
+  <meta property="og:image:width" content="351" />
+  <meta property="og:image:height" content="281" />
+  <meta property="og:image:alt" content="OpenTyrian2000 gameplay in the PLAYCHIVE browser runtime" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Play OpenTyrian2000 Online Free in Your Browser | PLAYCHIVE" />
+  <meta name="twitter:description" content="An arcade vertical shooter running in its own OpenTyrian2000 WebAssembly module. Free to play in your browser, no install or account." />
+  <meta name="twitter:image" content="https://playchive.ir/assets/screenshots/opentyrian-runtime.png" />
+  <meta name="twitter:image:alt" content="OpenTyrian2000 gameplay in the PLAYCHIVE browser runtime" />
+  <style>.seo-about{margin:34px 0 0;padding:20px 22px;border:1px solid rgba(21,24,20,.24);background:rgba(255,255,251,.5);color:#2b2f29;font:14px/1.65 Arial,sans-serif}.seo-about h2{margin:0 0 10px;font-size:20px;letter-spacing:-.02em}.seo-about h3{margin:22px 0 8px;font-size:15px}.seo-about dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 16px;margin:14px 0}.seo-about dt{color:#596057;font-weight:700}.seo-about dd{margin:0}.seo-about details{margin:6px 0;padding:8px 0;border-top:1px solid rgba(21,24,20,.14)}.seo-about summary{cursor:pointer;font-weight:700}.seo-about ul{margin:8px 0;padding-left:20px}.seo-about a{color:#385b20}</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "VideoGame",
+      "@id": "https://playchive.ir/opentyrian.html#game",
+      "name": "OpenTyrian2000",
+      "url": "https://playchive.ir/opentyrian.html",
+      "description": "An arcade vertical shooter running in its own OpenTyrian2000 WebAssembly module. It bundles the project-documented freeware Tyrian 2000 data, persists saves inside the browser and provides PSP-style touch controls without sharing Doom’s WAD loader or game loop.",
+      "image": "https://playchive.ir/assets/screenshots/opentyrian-runtime.png",
+      "screenshot": "https://playchive.ir/assets/screenshots/opentyrian-runtime.png",
+      "genre": "Action",
+      "gamePlatform": "Web browser",
+      "applicationCategory": "Game",
+      "operatingSystem": "Any modern web browser",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Organization",
+        "name": "OpenTyrian2000 project"
+      },
+      "publisher": {
+        "@id": "https://playchive.ir/#org"
+      },
+      "isPartOf": {
+        "@id": "https://playchive.ir/#website"
+      },
+      "mainEntityOfPage": "https://playchive.ir/opentyrian.html",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://playchive.ir/opentyrian.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "PLAYCHIVE",
+          "item": "https://playchive.ir/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "OpenTyrian2000",
+          "item": "https://playchive.ir/opentyrian.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is OpenTyrian2000 free to play on PLAYCHIVE?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. OpenTyrian2000 runs free in your browser. PLAYCHIVE bundles the engine and the game content it needs, distributed under their own open or freeware terms (GPLv2-or-later engine · project-documented freeware data · notices retained). There is no sign-up and no file upload step."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to install anything to play OpenTyrian2000?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. OpenTyrian2000 runs directly in a modern desktop or mobile browser such as Chrome, Edge, Firefox or Safari, using WebAssembly or HTML5. No account is required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I play OpenTyrian2000 on a phone or with a controller?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PLAYCHIVE supports keyboard, on-screen touch controls, gamepad and fullscreen mode. Where the runtime allows it, phones get PSP-style on-screen controls, and desktop browsers accept keyboard, mouse and a connected gamepad."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who makes OpenTyrian2000 and what is its license?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "OpenTyrian2000 is developed by OpenTyrian2000 project. License and attribution: GPLv2-or-later engine · project-documented freeware data · notices retained. PLAYCHIVE is a non-commercial hub and keeps upstream notices with each runtime."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- seo:end -->
 </head>
 <body>
   <main>
@@ -54,7 +160,32 @@
       <div class="actions"><span></span><button class="pad-btn" data-key="Enter">△</button><span></span><button class="pad-btn" data-key="AltLeft">□</button><button class="pad-btn" data-key="Space">○</button><button class="pad-btn" data-key="ControlLeft">×</button><button class="pad-btn pad-btn--menu" data-key="Escape">MENU</button></div>
     </div>
     <p class="notice"><strong>Freeware data, libre engine:</strong> OpenTyrian2000 engine code is GPLv2-or-later. The bundled Tyrian 2000 data is the project-documented freeware release; its original readme is retained. <a href="opentyrian/ENGINE-COPYING.txt">Engine license</a> · <a href="opentyrian/DATA-README.txt">Data notice</a> · <a href="opentyrian/SOURCE-NOTICE.txt">Source notice</a>. *Gamepad support is delegated to SDL and browser capability.</p>
-  </main>
+  <!-- seo:content:begin -->
+<section class="seo-about" aria-labelledby="seo-about-title">
+<h2 id="seo-about-title">About OpenTyrian2000</h2>
+<p>An arcade vertical shooter running in its own OpenTyrian2000 WebAssembly module. It bundles the project-documented freeware Tyrian 2000 data, persists saves inside the browser and provides PSP-style touch controls without sharing Doom’s WAD loader or game loop.</p>
+<dl>
+<dt>Genre</dt><dd>Action</dd>
+<dt>Developer</dt><dd>OpenTyrian2000 project</dd>
+<dt>License</dt><dd>GPLv2-or-later engine · project-documented freeware data · notices retained</dd>
+<dt>Runtime</dt><dd>Bundled independent runtime</dd>
+<dt>Controls</dt><dd>keyboard, on-screen touch controls, gamepad, fullscreen mode</dd>
+<dt>Content status</dt><dd>Free / bundled</dd>
+</dl>
+<h3>OpenTyrian2000: frequently asked questions</h3>
+<details><summary>Is OpenTyrian2000 free to play on PLAYCHIVE?</summary><p>Yes. OpenTyrian2000 runs free in your browser. PLAYCHIVE bundles the engine and the game content it needs, distributed under their own open or freeware terms (GPLv2-or-later engine · project-documented freeware data · notices retained). There is no sign-up and no file upload step.</p></details>
+<details><summary>Do I need to install anything to play OpenTyrian2000?</summary><p>No. OpenTyrian2000 runs directly in a modern desktop or mobile browser such as Chrome, Edge, Firefox or Safari, using WebAssembly or HTML5. No account is required.</p></details>
+<details><summary>Can I play OpenTyrian2000 on a phone or with a controller?</summary><p>PLAYCHIVE supports keyboard, on-screen touch controls, gamepad and fullscreen mode. Where the runtime allows it, phones get PSP-style on-screen controls, and desktop browsers accept keyboard, mouse and a connected gamepad.</p></details>
+<details><summary>Who makes OpenTyrian2000 and what is its license?</summary><p>OpenTyrian2000 is developed by OpenTyrian2000 project. License and attribution: GPLv2-or-later engine · project-documented freeware data · notices retained. PLAYCHIVE is a non-commercial hub and keeps upstream notices with each runtime.</p></details>
+<h3>More playable games on PLAYCHIVE</h3><ul>
+<li><a href="cdogs.html">C-Dogs SDL</a> (Action)</li>
+<li><a href="librequake.html">LibreQuake</a> (Action)</li>
+<li><a href="digger.html">Digger Remastered</a> (Action)</li>
+<li><a href="ecwolf.html">ECWolf</a> (Action)</li>
+<li><a href="openttd.html">OpenTTD</a> (Strategy)</li>
+</ul><p><a href="./">Browse the full PLAYCHIVE catalog</a></p></section>
+<!-- seo:content:end -->
+</main>
   <script>
     const BUILD_ID = '20260814-opentyrian-rift-runtime-v1';
     const canvas = document.getElementById('canvas');

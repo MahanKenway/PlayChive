@@ -4,9 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#111611" />
-  <meta name="description" content="GNU FreeDink on PLAYCHIVE: a bundled libre action-adventure running in WebAssembly with browser-local saves and touch controls." />
   <link rel="icon" href="assets/favicon.ico?v=gamecube-1" type="image/x-icon" />
-  <title>PLAYCHIVE — GNU FreeDink Runtime</title>
   <style>
     :root { --paper:#e7e6e0; --ink:#151814; --night:#111511; --amber:#efae45; --line:rgba(21,24,20,.24); --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
     * { box-sizing:border-box; }
@@ -28,15 +26,123 @@
     @media (max-width:760px) { main { width:min(100% - 24px,680px); padding-top:18px; }.panel { grid-template-columns:1fr; }.controls { display:flex; }.intro { font-size:14px; } }
   </style>
   <meta name="application-name" content="PLAYCHIVE" />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
+<!-- seo:begin -->
+  <title>Play GNU FreeDink Online Free in Your Browser | PLAYCHIVE</title>
+  <meta name="description" content="A complete libre 2D action-adventure running in its own GNU FreeDink WebAssembly module. Free to play in your browser, no install or account." />
   <link rel="canonical" href="https://playchive.ir/freedink.html" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="PLAYCHIVE" />
-  <meta property="og:title" content="PLAYCHIVE — GNU FreeDink Runtime" />
-  <meta property="og:description" content="GNU FreeDink on PLAYCHIVE: a bundled libre action-adventure running in WebAssembly with browser-local saves and touch controls." />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Play GNU FreeDink Online Free in Your Browser | PLAYCHIVE" />
+  <meta property="og:description" content="A complete libre 2D action-adventure running in its own GNU FreeDink WebAssembly module. Free to play in your browser, no install or account." />
   <meta property="og:url" content="https://playchive.ir/freedink.html" />
   <meta property="og:image" content="https://playchive.ir/assets/screenshots/freedink-runtime.png" />
+  <meta property="og:image:width" content="642" />
+  <meta property="og:image:height" content="507" />
+  <meta property="og:image:alt" content="GNU FreeDink gameplay in the PLAYCHIVE browser runtime" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Play GNU FreeDink Online Free in Your Browser | PLAYCHIVE" />
+  <meta name="twitter:description" content="A complete libre 2D action-adventure running in its own GNU FreeDink WebAssembly module. Free to play in your browser, no install or account." />
+  <meta name="twitter:image" content="https://playchive.ir/assets/screenshots/freedink-runtime.png" />
+  <meta name="twitter:image:alt" content="GNU FreeDink gameplay in the PLAYCHIVE browser runtime" />
+  <style>.seo-about{margin:34px 0 0;padding:20px 22px;border:1px solid rgba(21,24,20,.24);background:rgba(255,255,251,.5);color:#2b2f29;font:14px/1.65 Arial,sans-serif}.seo-about h2{margin:0 0 10px;font-size:20px;letter-spacing:-.02em}.seo-about h3{margin:22px 0 8px;font-size:15px}.seo-about dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 16px;margin:14px 0}.seo-about dt{color:#596057;font-weight:700}.seo-about dd{margin:0}.seo-about details{margin:6px 0;padding:8px 0;border-top:1px solid rgba(21,24,20,.14)}.seo-about summary{cursor:pointer;font-weight:700}.seo-about ul{margin:8px 0;padding-left:20px}.seo-about a{color:#385b20}</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "VideoGame",
+      "@id": "https://playchive.ir/freedink.html#game",
+      "name": "GNU FreeDink",
+      "url": "https://playchive.ir/freedink.html",
+      "description": "A complete libre 2D action-adventure running in its own GNU FreeDink WebAssembly module. It includes official FreeDink game data, keeps saves inside the browser and has PSP-style touch controls without sharing Doom’s WAD loader or game loop.",
+      "image": "https://playchive.ir/assets/screenshots/freedink-runtime.png",
+      "screenshot": "https://playchive.ir/assets/screenshots/freedink-runtime.png",
+      "genre": "Exploration",
+      "gamePlatform": "Web browser",
+      "applicationCategory": "Game",
+      "operatingSystem": "Any modern web browser",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Organization",
+        "name": "GNU FreeDink project"
+      },
+      "publisher": {
+        "@id": "https://playchive.ir/#org"
+      },
+      "isPartOf": {
+        "@id": "https://playchive.ir/#website"
+      },
+      "mainEntityOfPage": "https://playchive.ir/freedink.html",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://playchive.ir/freedink.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "PLAYCHIVE",
+          "item": "https://playchive.ir/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "GNU FreeDink",
+          "item": "https://playchive.ir/freedink.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is GNU FreeDink free to play on PLAYCHIVE?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. GNU FreeDink runs free in your browser. PLAYCHIVE bundles the engine and the game content it needs, distributed under their own open or freeware terms (GPLv3-or-later engine · official redistributable game data · notices retained). There is no sign-up and no file upload step."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to install anything to play GNU FreeDink?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. GNU FreeDink runs directly in a modern desktop or mobile browser such as Chrome, Edge, Firefox or Safari, using WebAssembly or HTML5. No account is required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I play GNU FreeDink on a phone or with a controller?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PLAYCHIVE supports keyboard, on-screen touch controls, gamepad and fullscreen mode. Where the runtime allows it, phones get PSP-style on-screen controls, and desktop browsers accept keyboard, mouse and a connected gamepad."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who makes GNU FreeDink and what is its license?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GNU FreeDink is developed by GNU FreeDink project. License and attribution: GPLv3-or-later engine · official redistributable game data · notices retained. PLAYCHIVE is a non-commercial hub and keeps upstream notices with each runtime."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- seo:end -->
 </head>
 <body>
   <main>
@@ -54,7 +160,32 @@
       <div class="actions"><span></span><button class="pad-btn" data-key="ShiftLeft">△</button><span></span><button class="pad-btn" data-key="Enter">□</button><button class="pad-btn" data-key="Space">○</button><button class="pad-btn" data-key="ControlLeft">×</button><button class="pad-btn pad-btn--menu" data-key="Escape">MENU</button></div>
     </div>
     <p class="notice"><strong>Libre game and data:</strong> GNU FreeDink engine is GPLv3-or-later. The bundled Dink Smallwood data is the official FreeDink data release with free sound replacements and its original redistribution notice retained. <a href="freedink/ENGINE-COPYING.txt">Engine license</a> · <a href="freedink/DATA-COPYING.txt">Data notice</a> · <a href="freedink/DATA-README.txt">Data credits</a>. *Gamepad support is delegated to SDL and browser capability.</p>
-  </main>
+  <!-- seo:content:begin -->
+<section class="seo-about" aria-labelledby="seo-about-title">
+<h2 id="seo-about-title">About GNU FreeDink</h2>
+<p>A complete libre 2D action-adventure running in its own GNU FreeDink WebAssembly module. It includes official FreeDink game data, keeps saves inside the browser and has PSP-style touch controls without sharing Doom’s WAD loader or game loop.</p>
+<dl>
+<dt>Genre</dt><dd>Exploration</dd>
+<dt>Developer</dt><dd>GNU FreeDink project</dd>
+<dt>License</dt><dd>GPLv3-or-later engine · official redistributable game data · notices retained</dd>
+<dt>Runtime</dt><dd>Bundled independent runtime</dd>
+<dt>Controls</dt><dd>keyboard, on-screen touch controls, gamepad, fullscreen mode</dd>
+<dt>Content status</dt><dd>Free / bundled</dd>
+</dl>
+<h3>GNU FreeDink: frequently asked questions</h3>
+<details><summary>Is GNU FreeDink free to play on PLAYCHIVE?</summary><p>Yes. GNU FreeDink runs free in your browser. PLAYCHIVE bundles the engine and the game content it needs, distributed under their own open or freeware terms (GPLv3-or-later engine · official redistributable game data · notices retained). There is no sign-up and no file upload step.</p></details>
+<details><summary>Do I need to install anything to play GNU FreeDink?</summary><p>No. GNU FreeDink runs directly in a modern desktop or mobile browser such as Chrome, Edge, Firefox or Safari, using WebAssembly or HTML5. No account is required.</p></details>
+<details><summary>Can I play GNU FreeDink on a phone or with a controller?</summary><p>PLAYCHIVE supports keyboard, on-screen touch controls, gamepad and fullscreen mode. Where the runtime allows it, phones get PSP-style on-screen controls, and desktop browsers accept keyboard, mouse and a connected gamepad.</p></details>
+<details><summary>Who makes GNU FreeDink and what is its license?</summary><p>GNU FreeDink is developed by GNU FreeDink project. License and attribution: GPLv3-or-later engine · official redistributable game data · notices retained. PLAYCHIVE is a non-commercial hub and keeps upstream notices with each runtime.</p></details>
+<h3>More playable games on PLAYCHIVE</h3><ul>
+<li><a href="adarkroom.html">A Dark Room</a> (Exploration)</li>
+<li><a href="opentyrian.html">OpenTyrian2000</a> (Action)</li>
+<li><a href="librequake.html">LibreQuake</a> (Action)</li>
+<li><a href="openttd.html">OpenTTD</a> (Strategy)</li>
+<li><a href="freerct.html">FreeRCT</a> (Strategy)</li>
+</ul><p><a href="./">Browse the full PLAYCHIVE catalog</a></p></section>
+<!-- seo:content:end -->
+</main>
   <script>
     const BUILD_ID = '20260814-freedink-rift-runtime-v1';
     const canvas = document.getElementById('canvas');
