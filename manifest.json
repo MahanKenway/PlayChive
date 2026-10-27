@@ -2,7 +2,7 @@
   "name": "PLAYCHIVE — The Playable Archive",
   "short_name": "PLAYCHIVE",
   "description": "A curated, playable archive for classic, open-source, browser-based and preservation-focused games.",
-  "id": "/PlayChive/",
+  "id": "/",
   "start_url": "./",
   "scope": "./",
   "lang": "en",
