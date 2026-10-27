@@ -21,6 +21,16 @@ export default {
     }
 
     const url = new URL(request.url);
+
+    // One canonical host: send www.* and plain http to https on the apex domain
+    // so search engines see a single version of every URL.
+    if (url.hostname.startsWith("www.") || url.protocol === "http:") {
+      const canonical = new URL(request.url);
+      canonical.protocol = "https:";
+      canonical.hostname = url.hostname.replace(/^www\./, "");
+      return Response.redirect(canonical.toString(), 301);
+    }
+
     const upstreamHeaders = new Headers();
     for (const name of FORWARDED_HEADERS) {
       const value = request.headers.get(name);

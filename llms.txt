@@ -11,11 +11,11 @@
 
 ## Important URLs
 
-- [PLAYCHIVE home](https://mahankenway.github.io/PlayChive/)
-- [Game sitemap](https://mahankenway.github.io/PlayChive/sitemap.xml)
-- [Crawler policy](https://mahankenway.github.io/PlayChive/robots.txt)
-- [About the creator](https://mahankenway.github.io/PlayChive/#about)
-- [Source repository](https://github.com/MahanKenway/RetroPlay)
+- [PLAYCHIVE home](https://playchive.ir/)
+- [Game sitemap](https://playchive.ir/sitemap.xml)
+- [Crawler policy](https://playchive.ir/robots.txt)
+- [About the creator](https://playchive.ir/#about)
+- [Source repository](https://github.com/MahanKenway/PlayChive)
 
 ## Content and rights
 

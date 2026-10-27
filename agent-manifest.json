@@ -4,7 +4,7 @@
     "name": "PLAYCHIVE",
     "identity": "PLAYCHIVE — Classic worlds, ready to play",
     "type": "browser-game-hub",
-    "homepage": "https://mahankenway.github.io/PlayChive/",
+    "homepage": "https://playchive.ir/",
     "repository": "https://github.com/MahanKenway/PlayChive",
     "creator": {
       "name": "Mahan Tavakoli",
@@ -12,11 +12,11 @@
       "url": "https://github.com/MahanKenway"
     },
     "language": "en",
-    "catalog": "https://mahankenway.github.io/PlayChive/data/games.json",
-    "sitemap": "https://mahankenway.github.io/PlayChive/sitemap.xml",
-    "llms": "https://mahankenway.github.io/PlayChive/llms.txt",
-    "privacy": "https://mahankenway.github.io/PlayChive/privacy/",
-    "agentGuide": "https://mahankenway.github.io/PlayChive/agent/",
+    "catalog": "https://playchive.ir/data/games.json",
+    "sitemap": "https://playchive.ir/sitemap.xml",
+    "llms": "https://playchive.ir/llms.txt",
+    "privacy": "https://playchive.ir/privacy/",
+    "agentGuide": "https://playchive.ir/agent/",
     "robotsPolicy": "all public content allowed"
   },
   "agentMode": "?agent=1",
