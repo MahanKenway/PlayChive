@@ -22,6 +22,9 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
 
+    - name: SEO and GEO checks
+      run: python3 scripts/check-seo.py
+
     - name: Cache Emscripten SDK
       id: cache-emsdk
       uses: actions/cache@v4
@@ -208,8 +211,8 @@ jobs:
 
     - name: Copy frontend files
       run: |
-        cp index.html neon-rift.html shadow-station.html tuxracer.html armawebtron.html astray.html starter-kit-racing.html cdogs.html freedink.html opentyrian.html librequake.html openttd.html freerct.html neverball.html blasphemer.html hexgl.html hextris.html rocksndiamonds.html beats-into-shapes.html 2048.html javascript-tetris.html adarkroom.html digger.html ecwolf.html openresident.html coi-serviceworker.js offline-worker.js manifest.json robots.txt sitemap.xml llms.txt agent-manifest.json google*.html verify-platform.txt dist/ 2>/dev/null || true
-        cp -r styles src data agent neon-rift shadow-station tuxracer armawebtron starter-kit-racing privacy dist/ 2>/dev/null || true
+        cp index.html neon-rift.html shadow-station.html tuxracer.html armawebtron.html astray.html starter-kit-racing.html cdogs.html freedink.html opentyrian.html librequake.html openttd.html freerct.html neverball.html blasphemer.html hexgl.html hextris.html rocksndiamonds.html beats-into-shapes.html 2048.html javascript-tetris.html adarkroom.html digger.html ecwolf.html openresident.html coi-serviceworker.js offline-worker.js manifest.json robots.txt sitemap.xml llms.txt agent-manifest.json google*.html verify-platform.txt llms-full.txt 130c06551e96f52003eb8c0a4570ee51.txt dist/ 2>/dev/null || true
+        cp -r styles src data agent fa neon-rift shadow-station tuxracer armawebtron starter-kit-racing privacy dist/ 2>/dev/null || true
         mkdir -p dist/assets
         # Copy nested catalog artwork as well as existing icons. The WADs are
         # downloaded above into dist/assets and remain untouched because the
@@ -266,3 +269,37 @@ jobs:
     steps:
     - uses: actions/deploy-pages@v4
       id: deployment
+
+    - name: Checkout (to find changed pages)
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 2
+
+    - name: Notify IndexNow about changed pages
+      continue-on-error: true
+      run: |
+        python3 - <<'PY'
+        import json, subprocess, urllib.request
+        KEY = "130c06551e96f52003eb8c0a4570ee51"
+        HOST = "playchive.ir"
+        changed = subprocess.run(["git", "diff", "--name-only", "HEAD^", "HEAD"], capture_output=True, text=True).stdout.split()
+        urls = set()
+        for f in changed:
+            if f == "index.html":
+                urls.add(f"https://{HOST}/")
+            elif f.endswith("/index.html") and f.count("/") == 1:
+                urls.add(f"https://{HOST}/{f[:-10]}")
+            elif f.endswith(".html") and "/" not in f and not f.startswith("google"):
+                urls.add(f"https://{HOST}/{f}")
+        if "sitemap.xml" in changed or "llms.txt" in changed:
+            urls.add(f"https://{HOST}/sitemap.xml")
+        urls = sorted(urls)
+        print("changed URLs:", urls)
+        if not urls:
+            raise SystemExit(0)
+        body = json.dumps({"host": HOST, "key": KEY, "keyLocation": f"https://{HOST}/{KEY}.txt", "urlList": urls}).encode()
+        req = urllib.request.Request("https://api.indexnow.org/indexnow", data=body,
+                                     headers={"Content-Type": "application/json; charset=utf-8"})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            print("IndexNow status:", r.status)
+        PY

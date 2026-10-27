@@ -1,0 +1,110 @@
+{
+  "/": {
+    "hash": "fd88e09ffcdf5bf56341b5688fe3bb4ce5a1f2e463d9d7c854e7cd9010ec93e1",
+    "lastmod": "2026-10-28"
+  },
+  "2048.html": {
+    "hash": "2b2abc15664b814b11d866f2e0d492176fc838eafb15a82403ce2c22d1a4b87e",
+    "lastmod": "2026-10-28"
+  },
+  "adarkroom.html": {
+    "hash": "0ee617a26ba343bb031900fcf2c28587b7c5bf912cb0bdf2090a519dd1a379e2",
+    "lastmod": "2026-10-28"
+  },
+  "agent/": {
+    "hash": "631713ad310a67eab7090311c1fdb3ce728e1c07046b5d1f9d5760280fc10eba",
+    "lastmod": "2026-10-28"
+  },
+  "armawebtron.html": {
+    "hash": "d2d3c88d9d7852a612170cbf889e64240be2e65b9d2896264a7b50739543bc79",
+    "lastmod": "2026-10-28"
+  },
+  "astray.html": {
+    "hash": "92974f9ae49a4afa915e32ef19a94d6cc7a9c9a3225967824201ef683b03033e",
+    "lastmod": "2026-10-28"
+  },
+  "beats-into-shapes.html": {
+    "hash": "a8471ce5207bf94c75685daf7af51575e59aad6c3eeb28a5f1889a60542fff93",
+    "lastmod": "2026-10-28"
+  },
+  "blasphemer.html": {
+    "hash": "372fc3e1910a362572b6a1e42a0e34910108f98ca9ec353b58077f10937b6d2f",
+    "lastmod": "2026-10-28"
+  },
+  "cdogs.html": {
+    "hash": "b2dcd640a7f2c4a8197e08d81a7057d23d71e5c65ba50d07b16bfbefdf1b95f3",
+    "lastmod": "2026-10-28"
+  },
+  "digger.html": {
+    "hash": "bf0ac9f9f1e2b3d2668648d53012ee602ad6c36a057adf2a275475d6796a6efe",
+    "lastmod": "2026-10-28"
+  },
+  "ecwolf.html": {
+    "hash": "ad0a21eb4424f6b3be15a0693c330abe580827cdf0fa9b4740696256566ef556",
+    "lastmod": "2026-10-28"
+  },
+  "fa/": {
+    "hash": "15773073ed9dacd1b9e936ee277114a33be838346aca412f05d013e750ae79ec",
+    "lastmod": "2026-10-28"
+  },
+  "freedink.html": {
+    "hash": "3b0f93f7c6291ebd0a69a8e4b65f558b8bbb90b142a086fc7a25b0ed5c4741f6",
+    "lastmod": "2026-10-28"
+  },
+  "freerct.html": {
+    "hash": "9364a8af5baad1af3fd24272bb3d4d27d0fb7f13c66924862889067b0a154184",
+    "lastmod": "2026-10-28"
+  },
+  "hexgl.html": {
+    "hash": "fada6c0e72968e0505794f7bb8aa93114332663d238b123e7a5b3d0a5c145c24",
+    "lastmod": "2026-10-28"
+  },
+  "hextris.html": {
+    "hash": "08b9968193fed8294914cc61bef23795ed5b2d50b0c1de73a9e50e60a45a4202",
+    "lastmod": "2026-10-28"
+  },
+  "javascript-tetris.html": {
+    "hash": "e26ad680d15be1634a40d7787f3a2aa72504c7462278ce6a4001b60a008355dc",
+    "lastmod": "2026-10-28"
+  },
+  "librequake.html": {
+    "hash": "9f01470958398a6943b92667462761a185c29d70976771ebdcf1aa56d2d571cc",
+    "lastmod": "2026-10-28"
+  },
+  "neon-rift.html": {
+    "hash": "9a054d54990ee62c46f0450cabc6182914578efa1eb2311adf8be59f1f3c8051",
+    "lastmod": "2026-10-28"
+  },
+  "neverball.html": {
+    "hash": "ee5e0c663450a99ef048a6a0635fb8c0603b467e51ae70b01433c7d21fc65ccc",
+    "lastmod": "2026-10-28"
+  },
+  "openttd.html": {
+    "hash": "efc3660a7fab83aa5757f7165129f3962d51fac881f5a5e0e9a226947893e7fc",
+    "lastmod": "2026-10-28"
+  },
+  "opentyrian.html": {
+    "hash": "d86065f685839caacf1353370c6f6a4e1ecb862b63fffc4200786c42aef18c55",
+    "lastmod": "2026-10-28"
+  },
+  "privacy/": {
+    "hash": "32b002f99722409145f14b037882febda1ae3240be8a074e20b02fa2e770eed1",
+    "lastmod": "2026-10-28"
+  },
+  "rocksndiamonds.html": {
+    "hash": "93cb97402265d10573ce89e01e0d35a783cf182883ef73e6c21c76227a99c5c1",
+    "lastmod": "2026-10-28"
+  },
+  "shadow-station.html": {
+    "hash": "89f2581bf3989e41c5688f1f2d23eccc58fb3edf700ff5051fc136b2923a7e20",
+    "lastmod": "2026-10-28"
+  },
+  "starter-kit-racing.html": {
+    "hash": "782cc69fd9c7f838ddbad1ac65b4d8320b6e5524cb84058191716a364f101952",
+    "lastmod": "2026-10-28"
+  },
+  "tuxracer.html": {
+    "hash": "6e68d9a4ec02e30004de92b6c81efbaf949bc5a0fbce5d543d70176226ae4cf4",
+    "lastmod": "2026-10-28"
+  }
+}
