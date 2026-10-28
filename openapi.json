@@ -1,0 +1,255 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "PLAYCHIVE catalog data",
+    "version": "1.0.0",
+    "summary": "Read-only static JSON endpoints describing the PLAYCHIVE game catalog.",
+    "description": "PLAYCHIVE has no dynamic backend. These are static, cacheable, unauthenticated GET endpoints that list every catalog record (playable runtimes, local-import entries and link-only external projects). Human-readable guide: https://playchive.ir/agent/",
+    "contact": {
+      "name": "PLAYCHIVE",
+      "url": "https://github.com/MahanKenway/PlayChive"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://playchive.ir"
+    }
+  ],
+  "tags": [
+    {
+      "name": "catalog",
+      "description": "Game catalog records"
+    }
+  ],
+  "paths": {
+    "/data/games.json": {
+      "get": {
+        "operationId": "getGames",
+        "summary": "Complete game catalog (source of truth)",
+        "tags": [
+          "catalog"
+        ],
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Catalog"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/agent/catalog.json": {
+      "get": {
+        "operationId": "getAgentCatalog",
+        "summary": "Same catalog, published for browser agents",
+        "tags": [
+          "catalog"
+        ],
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Catalog"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/agent-manifest.json": {
+      "get": {
+        "operationId": "getAgentManifest",
+        "summary": "Machine-readable site contract for browser agents (launch rules, selectors, discovery links)",
+        "tags": [
+          "catalog"
+        ],
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Catalog": {
+        "type": "object",
+        "required": [
+          "schemaVersion",
+          "generatedFrom",
+          "generatedAt",
+          "games"
+        ],
+        "properties": {
+          "schemaVersion": {
+            "type": [
+              "string",
+              "integer"
+            ]
+          },
+          "generatedFrom": {
+            "type": "string"
+          },
+          "generatedAt": {
+            "type": "string"
+          },
+          "games": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Game"
+            }
+          }
+        }
+      },
+      "Game": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "description",
+          "genre",
+          "playable",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "genre": {
+            "type": "string"
+          },
+          "runtimeUrl": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "probeUrl": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "publicUrl": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "projectUrl": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "runtimeType": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "launchMethod": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "license": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "studio": {
+            "type": "string"
+          },
+          "year": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "artwork": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "catalogState": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source": {
+            "type": [
+              "string",
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "Asset path, list of asset paths, or null"
+          },
+          "playable": {
+            "type": "boolean"
+          },
+          "controls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

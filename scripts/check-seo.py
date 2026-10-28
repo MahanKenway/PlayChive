@@ -244,6 +244,30 @@ for f in ("manifest.json", "agent-manifest.json", "data/games.json", "agent/cata
 if json.loads((ROOT / "agent/catalog.json").read_text())["games"] != games:
     err("agent/catalog.json is out of sync with data/games.json (run scripts/generate-seo.py)")
 
+# ------------------------------------------------------------ API catalog (RFC 9727)
+try:
+    oa = json.loads((ROOT / "openapi.json").read_text(encoding="utf-8"))
+    if not str(oa.get("openapi", "")).startswith("3."):
+        err("openapi.json: not an OpenAPI 3.x document")
+    if (oa.get("servers") or [{}])[0].get("url") != BASE:
+        err("openapi.json: servers[0].url must be " + BASE)
+    for path in oa.get("paths", {}):
+        if not (ROOT / path.lstrip("/")).exists():
+            err(f"openapi.json: documented path has no file: {path}")
+except Exception as e:  # noqa: BLE001
+    err(f"openapi.json: {e}")
+worker_src = (ROOT / "worker/index.ts").read_text(encoding="utf-8")
+if "/.well-known/api-catalog" not in worker_src or "application/linkset+json" not in worker_src:
+    err("worker/index.ts: RFC 9727 api-catalog route is missing")
+for anchor in re.findall(r'"(https://playchive\.ir/[^"]+\.json)"', worker_src):
+    if not (ROOT / anchor[len(BASE) + 1:]).exists():
+        err(f"worker/index.ts: api-catalog anchor has no file: {anchor}")
+if "openapi.json" not in llms:
+    err("llms.txt: should link openapi.json (run scripts/generate-seo.py)")
+wf = (ROOT / ".github/workflows/build-and-deploy.yml").read_text(encoding="utf-8")
+if "openapi.json" not in wf:
+    err("workflow does not copy openapi.json into dist")
+
 print(f"noindex pages (skipped, correctly out of sitemap): {noindex_pages}")
 print(f"checked {len(pages)} pages, {len(locs)} sitemap URLs, {len(games)} catalog records")
 for w in warnings:

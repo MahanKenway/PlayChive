@@ -76,6 +76,43 @@ await test("301: /index.html and /dir/index.html -> clean URLs", async () => {
   assert.equal(r.headers.get("location"), "https://playchive.ir/fa/?a=b");
 });
 
+await test("API catalog (RFC 9727): 200, linkset+json, valid entries, served without hitting the origin", async () => {
+  const r = await run("https://playchive.ir/.well-known/api-catalog");
+  assert.equal(r.status, 200);
+  assert.equal(r.headers.get("content-type"), "application/linkset+json");
+  assert.equal(calls.length, 0, "must be answered by the Worker itself");
+  const body = await r.json();
+  assert.ok(Array.isArray(body.linkset) && body.linkset.length >= 1);
+  for (const e of body.linkset) {
+    assert.match(e.anchor, /^https:\/\/playchive\.ir\//);
+    assert.match(e["service-desc"][0].href, /^https:\/\/playchive\.ir\/openapi\.json$/);
+    assert.equal(e["service-desc"][0].type, "application/vnd.oai.openapi+json");
+    assert.match(e["service-doc"][0].href, /^https:\/\/playchive\.ir\//);
+  }
+  assert.equal(new Set(body.linkset.map((e) => e.anchor)).size, body.linkset.length, "anchors must be unique");
+});
+
+await test("API catalog: HEAD returns headers with an empty body, CORS is open", async () => {
+  const r = await run("https://playchive.ir/.well-known/api-catalog", { method: "HEAD" });
+  assert.equal(r.status, 200);
+  assert.equal(r.headers.get("content-type"), "application/linkset+json");
+  assert.equal(r.headers.get("access-control-allow-origin"), "*");
+  assert.equal(await r.text(), "");
+});
+
+await test("API catalog: www and http still redirect first", async () => {
+  const r = await run("http://www.playchive.ir/.well-known/api-catalog");
+  assert.equal(r.status, 301);
+  assert.equal(r.headers.get("location"), "https://playchive.ir/.well-known/api-catalog");
+});
+
+await test("home page advertises the catalog with a Link header; other pages do not", async () => {
+  let r = await run("https://playchive.ir/");
+  assert.match(r.headers.get("link") ?? "", /<\/\.well-known\/api-catalog>; rel="api-catalog"/);
+  r = await run("https://playchive.ir/cdogs.html");
+  assert.equal(r.headers.get("link"), null);
+});
+
 await test("workers.dev host is noindex", async () => {
   const r = await run("https://playchive.example.workers.dev/");
   assert.equal(r.status, 200);

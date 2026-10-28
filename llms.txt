@@ -36,6 +36,7 @@ Facts: 23 playable runtimes (22 with free bundled content), 57 catalog records i
 - [Full catalog for LLMs](https://playchive.ir/llms-full.txt): Every record with license, controls and rights status.
 - [Catalog JSON](https://playchive.ir/data/games.json): Machine-readable records for all 57 entries.
 - [Agent guide](https://playchive.ir/agent/): No-login discovery page for browser agents.
+- [OpenAPI description](https://playchive.ir/openapi.json): OpenAPI 3.1 spec of the read-only JSON endpoints (also listed in /.well-known/api-catalog).
 - [Persian guide](https://playchive.ir/fa/): Persian landing page (hreflang pair of the home page).
 - [Privacy](https://playchive.ir/privacy/): What is and is not collected.
 
