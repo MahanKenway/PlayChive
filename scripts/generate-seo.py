@@ -661,6 +661,7 @@ def write_llms():
         f"- [OpenAPI description]({BASE}/openapi.json): OpenAPI 3.1 spec of the read-only JSON endpoints (also listed in /.well-known/api-catalog).",
         f"- [Persian guide]({BASE}/fa/): Persian landing page (hreflang pair of the home page).",
         f"- [Privacy]({BASE}/privacy/): What is and is not collected.",
+        f"- [Agent skills]({BASE}/.well-known/agent-skills/index.json): Skills for browsing the catalog, launching games and describing rights.",
         f"- [Authentication]({BASE}/auth.md): No authentication or registration is needed; all endpoints are public and read-only.",
         "",
         RIGHTS_NOTE.rstrip(),
@@ -750,6 +751,33 @@ def update_simple_page(rel, name, parent_name="PLAYCHIVE"):
                        image_alt="PLAYCHIVE browser arcade with classic open-source game worlds", extra_ld=graph)
     p.write_text(apply_head(t, block), encoding="utf-8")
 
+
+# ------------------------------------------------------- agent skills discovery
+
+def write_skills_index():
+    """Agent Skills Discovery RFC v0.2.0: /.well-known/agent-skills/index.json (served by the Worker)."""
+    import hashlib as _h
+    skills = []
+    for d in sorted((ROOT / "agent-skills").iterdir()):
+        f = d / "SKILL.md"
+        if not f.is_file():
+            continue
+        raw = f.read_bytes()
+        text = raw.decode("utf-8")
+        m = re.match(r"---\n(.*?)\n---\n", text, re.S)
+        assert m, f"{f}: missing frontmatter"
+        fm = dict(re.findall(r"^(\w+):\s*(.+)$", m.group(1), re.M))
+        assert fm["name"] == d.name, f"{f}: frontmatter name must equal folder name"
+        skills.append({
+            "name": fm["name"],
+            "type": "skill-md",
+            "description": fm["description"],
+            "url": f"{BASE}/.well-known/agent-skills/{fm['name']}/SKILL.md",
+            "digest": "sha256:" + _h.sha256(raw).hexdigest(),
+        })
+    doc = {"$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json", "skills": skills}
+    (ROOT / "agent-skills/index.json").write_text(json.dumps(doc, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
 # ---------------------------------------------------------------------- sitemap
 
 def build_sitemap(today):
@@ -806,6 +834,7 @@ def main():
     update_agent()
     update_simple_page("agent/index.html", "Agent guide")
     update_simple_page("privacy/index.html", "Privacy")
+    write_skills_index()
     write_llms()
     write_indexnow()
     build_sitemap(args.date)

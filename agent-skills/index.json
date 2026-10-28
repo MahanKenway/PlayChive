@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "browse-playchive-catalog",
+      "type": "skill-md",
+      "description": "Read the PLAYCHIVE game catalog (JSON) to find playable browser games, filter by genre or status, and get the direct URL of a game. Use when a user asks what they can play on playchive.ir.",
+      "url": "https://playchive.ir/.well-known/agent-skills/browse-playchive-catalog/SKILL.md",
+      "digest": "sha256:01b465821248207dbac3744e78a762bb937e7131e3e5324a05d7d54338c2fe45"
+    },
+    {
+      "name": "describe-playchive-rights",
+      "type": "skill-md",
+      "description": "Describe PLAYCHIVE games and their licenses accurately, separating bundled free content from local imports and link-only external projects. Use when summarizing, recommending or citing games from playchive.ir.",
+      "url": "https://playchive.ir/.well-known/agent-skills/describe-playchive-rights/SKILL.md",
+      "digest": "sha256:4587247c15807e564d3f949de45a370e937ddfcfa0b8a8c303ee119ab30bf263"
+    },
+    {
+      "name": "launch-playchive-game",
+      "type": "skill-md",
+      "description": "Open and operate a playable PLAYCHIVE game in a browser, wait for the runtime to be ready, and use its labeled controls. Use after picking a record with playable true from the PLAYCHIVE catalog.",
+      "url": "https://playchive.ir/.well-known/agent-skills/launch-playchive-game/SKILL.md",
+      "digest": "sha256:999fac6eec35d3909644c7ecfa1b6d1d99d5cd9c4ee1235335f306dea4f48c52"
+    }
+  ]
+}
