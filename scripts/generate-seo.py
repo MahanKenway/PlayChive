@@ -661,6 +661,7 @@ def write_llms():
         f"- [OpenAPI description]({BASE}/openapi.json): OpenAPI 3.1 spec of the read-only JSON endpoints (also listed in /.well-known/api-catalog).",
         f"- [Persian guide]({BASE}/fa/): Persian landing page (hreflang pair of the home page).",
         f"- [Privacy]({BASE}/privacy/): What is and is not collected.",
+        f"- [Authentication]({BASE}/auth.md): No authentication or registration is needed; all endpoints are public and read-only.",
         "",
         RIGHTS_NOTE.rstrip(),
         "",

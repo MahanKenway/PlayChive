@@ -268,6 +268,27 @@ wf = (ROOT / ".github/workflows/build-and-deploy.yml").read_text(encoding="utf-8
 if "openapi.json" not in wf:
     err("workflow does not copy openapi.json into dist")
 
+# ------------------------------------------------------------------- auth.md
+am = ROOT / "auth.md"
+if not am.exists():
+    err("auth.md missing")
+else:
+    am_text = am.read_text(encoding="utf-8")
+    first = next((l for l in am_text.splitlines() if l.strip()), "")
+    if not re.match(r"#\s+.*auth\.md", first, re.I):
+        err("auth.md: first line must be an H1 containing 'auth.md'")
+    for url in re.findall(r"https://playchive\.ir/[^\s)`]+", am_text):
+        url = url.rstrip(".,")
+        if "/.well-known/" in url:
+            continue
+        lp = local_for(url)
+        if lp is None or not lp.exists():
+            err(f"auth.md: link does not resolve locally: {url}")
+if "auth.md" not in wf:
+    err("workflow does not copy auth.md into dist")
+if "auth.md" not in llms:
+    err("llms.txt: should link auth.md (run scripts/generate-seo.py)")
+
 print(f"noindex pages (skipped, correctly out of sitemap): {noindex_pages}")
 print(f"checked {len(pages)} pages, {len(locs)} sitemap URLs, {len(games)} catalog records")
 for w in warnings:
