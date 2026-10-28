@@ -11,6 +11,11 @@ const ORIGIN = "https://mahankenway.github.io";
 const BASE_PATH = "/PlayChive"; // GitHub Pages project path
 const MAX_HOPS = 5;
 
+// Agent Skills Discovery: GitHub Pages drops dot-directories, so the files live in /agent-skills/
+// and this Worker serves them under the conventional /.well-known/agent-skills/ path.
+const SKILLS_WELL_KNOWN = "/.well-known/agent-skills/";
+const SKILLS_FILES = "/agent-skills/";
+
 // Never let the *.workers.dev address compete with the real domain in search results.
 const isWorkersDev = (host: string) => host.endsWith(".workers.dev");
 const isLocal = (host: string) => host === "localhost" || host === "127.0.0.1";
@@ -83,7 +88,9 @@ export default {
       if (value) upstreamHeaders.set(name, value);
     }
 
-    let target = `${ORIGIN}${BASE_PATH}${url.pathname}${url.search}`;
+    const isSkills = url.pathname.startsWith(SKILLS_WELL_KNOWN);
+    const upstreamPath = isSkills ? SKILLS_FILES + url.pathname.slice(SKILLS_WELL_KNOWN.length) : url.pathname;
+    let target = `${ORIGIN}${BASE_PATH}${upstreamPath}${url.search}`;
 
     try {
       for (let hop = 0; hop < MAX_HOPS; hop++) {
@@ -97,10 +104,18 @@ export default {
 
         const location = upstream.headers.get("location");
         if (upstream.status < 300 || upstream.status >= 400 || !location) {
+          const headers = finalize(upstream.headers, url.hostname, url.pathname);
+          if (isSkills) {
+            // Correct media type for SKILL.md and open CORS so browser-based agents can read skills.
+            if (upstream.status === 200 && url.pathname.endsWith(".md")) {
+              headers.set("Content-Type", "text/markdown; charset=utf-8");
+            }
+            headers.set("Access-Control-Allow-Origin", "*");
+          }
           return new Response(upstream.body, {
             status: upstream.status,
             statusText: upstream.statusText,
-            headers: finalize(upstream.headers, url.hostname, url.pathname),
+            headers,
           });
         }
 

@@ -113,6 +113,31 @@ await test("home page advertises the catalog with a Link header; other pages do 
   assert.equal(r.headers.get("link"), null);
 });
 
+await test("agent skills: well-known path maps to /agent-skills/, SKILL.md gets text/markdown, CORS open", async () => {
+  upstream = () => new Response("---\nname: x\n---\n", { status: 200, headers: { "content-type": "application/octet-stream" } });
+  const r = await run("https://playchive.ir/.well-known/agent-skills/browse-playchive-catalog/SKILL.md");
+  assert.equal(calls[0].target, `${ORIGIN}/agent-skills/browse-playchive-catalog/SKILL.md`);
+  assert.equal(r.status, 200);
+  assert.equal(r.headers.get("content-type"), "text/markdown; charset=utf-8");
+  assert.equal(r.headers.get("access-control-allow-origin"), "*");
+});
+
+await test("agent skills: index.json keeps its JSON type and a missing skill stays 404", async () => {
+  upstream = () => new Response("{}", { status: 200, headers: { "content-type": "application/json; charset=utf-8" } });
+  let r = await run("https://playchive.ir/.well-known/agent-skills/index.json");
+  assert.equal(calls[0].target, `${ORIGIN}/agent-skills/index.json`);
+  assert.equal(r.headers.get("content-type"), "application/json; charset=utf-8");
+  upstream = () => new Response("nope", { status: 404, headers: { "content-type": "text/html" } });
+  r = await run("https://playchive.ir/.well-known/agent-skills/missing/SKILL.md");
+  assert.equal(r.status, 404);
+  assert.notEqual(r.headers.get("content-type"), "text/markdown; charset=utf-8", "404 must not be relabelled");
+});
+
+await test("agent skills: path traversal cannot escape /agent-skills/", async () => {
+  await run("https://playchive.ir/.well-known/agent-skills/../../data/games.json");
+  assert.ok(!calls[0].target.includes("/agent-skills/../"), calls[0].target);
+});
+
 await test("workers.dev host is noindex", async () => {
   const r = await run("https://playchive.example.workers.dev/");
   assert.equal(r.status, 200);

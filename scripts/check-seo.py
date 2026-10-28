@@ -32,6 +32,11 @@ def local_for(url: str) -> Path | None:
     if not url.startswith(BASE):
         return None
     path = urlparse(url).path.lstrip("/")
+    # Worker-served well-known paths: skills map to /agent-skills/, the API catalog is generated in the Worker.
+    if path.startswith(".well-known/agent-skills/"):
+        path = "agent-skills/" + path[len(".well-known/agent-skills/"):]
+    elif path == ".well-known/api-catalog":
+        path = "worker/index.ts"
     if path == "" or path.endswith("/"):
         path += "index.html"
     return ROOT / path
@@ -288,6 +293,54 @@ if "auth.md" not in wf:
     err("workflow does not copy auth.md into dist")
 if "auth.md" not in llms:
     err("llms.txt: should link auth.md (run scripts/generate-seo.py)")
+
+# ------------------------------------------------------- agent skills discovery
+import hashlib
+try:
+    idx = json.loads((ROOT / "agent-skills/index.json").read_text(encoding="utf-8"))
+    if idx.get("$schema") != "https://schemas.agentskills.io/discovery/0.2.0/schema.json":
+        err("agent-skills/index.json: wrong $schema")
+    if not idx.get("skills"):
+        err("agent-skills/index.json: no skills")
+    seen = set()
+    for sk in idx.get("skills", []):
+        for k in ("name", "type", "description", "url", "digest"):
+            if not sk.get(k):
+                err(f"agent-skills: skill missing {k}: {sk.get('name')}")
+        n = sk.get("name", "")
+        if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", n) or len(n) > 64:
+            err(f"agent-skills: invalid skill name {n!r}")
+        if n in seen:
+            err(f"agent-skills: duplicate skill {n}")
+        seen.add(n)
+        if sk.get("type") != "skill-md":
+            err(f"agent-skills: {n}: unsupported type")
+        if len(sk.get("description", "")) > 1024:
+            err(f"agent-skills: {n}: description over 1024 chars")
+        f = ROOT / "agent-skills" / n / "SKILL.md"
+        if not f.exists():
+            err(f"agent-skills: {n}: SKILL.md missing")
+            continue
+        raw = f.read_bytes()
+        if sk.get("digest") != "sha256:" + hashlib.sha256(raw).hexdigest():
+            err(f"agent-skills: {n}: digest does not match SKILL.md (run scripts/generate-seo.py)")
+        if sk.get("url") != f"{BASE}/.well-known/agent-skills/{n}/SKILL.md":
+            err(f"agent-skills: {n}: unexpected url {sk.get('url')}")
+        fm = re.match(r"---\n(.*?)\n---\n", raw.decode("utf-8"), re.S)
+        fmd = dict(re.findall(r"^(\w+):\s*(.+)$", fm.group(1), re.M)) if fm else {}
+        if fmd.get("description") != sk.get("description") or fmd.get("name") != n:
+            err(f"agent-skills: {n}: frontmatter differs from index entry")
+        for link in re.findall(r"https://playchive\.ir/[^\s)`,]*", raw.decode("utf-8")):
+            link = link.rstrip(".")
+            if "?" in link:
+                continue
+            lp = local_for(link)
+            if lp is None or not lp.exists():
+                err(f"agent-skills: {n}: link does not resolve locally: {link}")
+except Exception as e:  # noqa: BLE001
+    err(f"agent-skills/index.json: {e}")
+if "agent-skills" not in wf or "agent-skills" not in worker_src:
+    err("agent-skills not wired into workflow and worker")
 
 print(f"noindex pages (skipped, correctly out of sitemap): {noindex_pages}")
 print(f"checked {len(pages)} pages, {len(locs)} sitemap URLs, {len(games)} catalog records")
