@@ -658,6 +658,7 @@ def write_llms():
         f"- [Full catalog for LLMs]({BASE}/llms-full.txt): Every record with license, controls and rights status.",
         f"- [Catalog JSON]({BASE}/data/games.json): Machine-readable records for all {len(GAMES)} entries.",
         f"- [Agent guide]({BASE}/agent/): No-login discovery page for browser agents.",
+        f"- [OpenAPI description]({BASE}/openapi.json): OpenAPI 3.1 spec of the read-only JSON endpoints (also listed in /.well-known/api-catalog).",
         f"- [Persian guide]({BASE}/fa/): Persian landing page (hreflang pair of the home page).",
         f"- [Privacy]({BASE}/privacy/): What is and is not collected.",
         "",

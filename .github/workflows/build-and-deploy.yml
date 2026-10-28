@@ -211,7 +211,7 @@ jobs:
 
     - name: Copy frontend files
       run: |
-        cp index.html neon-rift.html shadow-station.html tuxracer.html armawebtron.html astray.html starter-kit-racing.html cdogs.html freedink.html opentyrian.html librequake.html openttd.html freerct.html neverball.html blasphemer.html hexgl.html hextris.html rocksndiamonds.html beats-into-shapes.html 2048.html javascript-tetris.html adarkroom.html digger.html ecwolf.html openresident.html coi-serviceworker.js offline-worker.js manifest.json robots.txt sitemap.xml llms.txt agent-manifest.json google*.html verify-platform.txt llms-full.txt 130c06551e96f52003eb8c0a4570ee51.txt dist/ 2>/dev/null || true
+        cp index.html neon-rift.html shadow-station.html tuxracer.html armawebtron.html astray.html starter-kit-racing.html cdogs.html freedink.html opentyrian.html librequake.html openttd.html freerct.html neverball.html blasphemer.html hexgl.html hextris.html rocksndiamonds.html beats-into-shapes.html 2048.html javascript-tetris.html adarkroom.html digger.html ecwolf.html openresident.html coi-serviceworker.js offline-worker.js manifest.json robots.txt sitemap.xml llms.txt agent-manifest.json google*.html verify-platform.txt llms-full.txt openapi.json 130c06551e96f52003eb8c0a4570ee51.txt dist/ 2>/dev/null || true
         cp -r styles src data agent fa neon-rift shadow-station tuxracer armawebtron starter-kit-racing privacy dist/ 2>/dev/null || true
         mkdir -p dist/assets
         # Copy nested catalog artwork as well as existing icons. The WADs are
