@@ -39,6 +39,7 @@ Facts: 23 playable runtimes (22 with free bundled content), 57 catalog records i
 - [OpenAPI description](https://playchive.ir/openapi.json): OpenAPI 3.1 spec of the read-only JSON endpoints (also listed in /.well-known/api-catalog).
 - [Persian guide](https://playchive.ir/fa/): Persian landing page (hreflang pair of the home page).
 - [Privacy](https://playchive.ir/privacy/): What is and is not collected.
+- [Authentication](https://playchive.ir/auth.md): No authentication or registration is needed; all endpoints are public and read-only.
 
 ## Rights and external entries
 
