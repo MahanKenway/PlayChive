@@ -7,6 +7,8 @@
 // NOTE: this file is the source of truth. Cloudflare's Git integration redeploys
 // it on every push to main, so edits made only in the dashboard are overwritten.
 
+import { handleMcp, handleCard, CARD_PATHS } from "./mcp";
+
 const ORIGIN = "https://mahankenway.github.io";
 const BASE_PATH = "/PlayChive"; // GitHub Pages project path
 const MAX_HOPS = 5;
@@ -48,10 +50,6 @@ const FORWARDED_HEADERS = ["accept", "accept-encoding", "range", "if-none-match"
 
 export default {
   async fetch(request: Request): Promise<Response> {
-    if (request.method !== "GET" && request.method !== "HEAD") {
-      return new Response("Method Not Allowed", { status: 405, headers: { Allow: "GET, HEAD" } });
-    }
-
     const url = new URL(request.url);
 
     // One canonical host: send www.* and plain http to https on the apex domain
@@ -60,7 +58,18 @@ export default {
       const canonical = new URL(request.url);
       canonical.protocol = "https:";
       canonical.hostname = url.hostname.replace(/^www\./, "");
-      return Response.redirect(canonical.toString(), 301);
+      // 308 keeps the method and body for POST (MCP clients); 301 stays for pages.
+      return Response.redirect(canonical.toString(), request.method === "GET" || request.method === "HEAD" ? 301 : 308);
+    }
+
+    // Read-only MCP server (JSON-RPC over POST) and its discovery card.
+    if (url.pathname === "/mcp") return handleMcp(request);
+    if (CARD_PATHS.includes(url.pathname) && (request.method === "GET" || request.method === "HEAD")) {
+      return handleCard(request, url.pathname);
+    }
+
+    if (request.method !== "GET" && request.method !== "HEAD") {
+      return new Response("Method Not Allowed", { status: 405, headers: { Allow: "GET, HEAD" } });
     }
 
     if (url.pathname === "/.well-known/api-catalog") {

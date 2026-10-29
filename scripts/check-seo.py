@@ -35,7 +35,7 @@ def local_for(url: str) -> Path | None:
     # Worker-served well-known paths: skills map to /agent-skills/, the API catalog is generated in the Worker.
     if path.startswith(".well-known/agent-skills/"):
         path = "agent-skills/" + path[len(".well-known/agent-skills/"):]
-    elif path == ".well-known/api-catalog":
+    elif path in (".well-known/api-catalog", "mcp", ".well-known/mcp-server-card"):
         path = "worker/index.ts"
     if path == "" or path.endswith("/"):
         path += "index.html"
@@ -262,6 +262,13 @@ try:
 except Exception as e:  # noqa: BLE001
     err(f"openapi.json: {e}")
 worker_src = (ROOT / "worker/index.ts").read_text(encoding="utf-8")
+mcp_src = (ROOT / "worker/mcp.ts").read_text(encoding="utf-8") if (ROOT / "worker/mcp.ts").exists() else ""
+for needle in ('"/mcp"', "CARD_PATHS", "handleMcp"):
+    if needle not in worker_src:
+        err(f"worker/index.ts: MCP wiring missing {needle}")
+for needle in ("server/discover", "tools/list", "tools/call", "readOnlyHint", "streamable-http"):
+    if needle not in mcp_src:
+        err(f"worker/mcp.ts: missing {needle}")
 if "/.well-known/api-catalog" not in worker_src or "application/linkset+json" not in worker_src:
     err("worker/index.ts: RFC 9727 api-catalog route is missing")
 for anchor in re.findall(r'"(https://playchive\.ir/[^"]+\.json)"', worker_src):
