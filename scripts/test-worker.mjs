@@ -138,6 +138,156 @@ await test("agent skills: path traversal cannot escape /agent-skills/", async ()
   assert.ok(!calls[0].target.includes("/agent-skills/../"), calls[0].target);
 });
 
+const rpc = (body, headers = {}, url = "https://playchive.ir/mcp") =>
+  run(url, { method: "POST", headers: { "content-type": "application/json", ...headers }, body: JSON.stringify(body) });
+const call = async (method, params = {}, headers) => (await rpc({ jsonrpc: "2.0", id: 1, method, params }, headers)).json();
+
+await test("MCP: server/discover advertises versions, capabilities and identity, no origin hit", async () => {
+  const r = await rpc({ jsonrpc: "2.0", id: 1, method: "server/discover" });
+  assert.equal(r.status, 200);
+  assert.equal(calls.length, 0);
+  const j = await r.json();
+  assert.equal(j.id, 1);
+  assert.equal(j.result.resultType, "complete");
+  assert.ok(j.result.supportedVersions.includes("2026-07-28"));
+  assert.ok(j.result.capabilities.tools);
+  assert.ok(j.result.serverInfo.name && j.result.serverInfo.version);
+  assert.equal(r.headers.get("access-control-allow-origin"), "*");
+});
+
+await test("MCP: tools/list is cacheable, deterministic, read-only annotated", async () => {
+  const a = await call("tools/list");
+  const b = await call("tools/list");
+  assert.deepEqual(a, b);
+  assert.equal(a.result.resultType, "complete");
+  assert.equal(typeof a.result.ttlMs, "number");
+  assert.equal(a.result.cacheScope, "public");
+  assert.deepEqual(a.result.tools.map((x) => x.name), ["search_games", "get_game", "list_genres"]);
+  for (const x of a.result.tools) {
+    assert.equal(x.annotations.readOnlyHint, true);
+    assert.equal(x.inputSchema.type, "object");
+  }
+});
+
+await test("MCP: search_games filters, paginates and returns structuredContent", async () => {
+  let j = await call("tools/call", { name: "search_games", arguments: { playable: true, limit: 5 } });
+  const sc = j.result.structuredContent;
+  assert.equal(j.result.isError, false);
+  assert.equal(j.result.resultType, "complete");
+  assert.equal(sc.games.length, 5);
+  assert.ok(sc.total >= 20);
+  assert.ok(sc.games.every((g) => g.playable && g.playUrl.startsWith("https://playchive.ir/")));
+  assert.deepEqual(JSON.parse(j.result.content[0].text), sc);
+  const p2 = (await call("tools/call", { name: "search_games", arguments: { playable: true, limit: 5, offset: 5 } })).result.structuredContent;
+  assert.notEqual(p2.games[0].id, sc.games[0].id);
+  j = await call("tools/call", { name: "search_games", arguments: { query: "BLASPHEMER" } });
+  assert.ok(j.result.structuredContent.games.some((g) => g.id === "blasphemer"));
+  j = await call("tools/call", { name: "search_games", arguments: { query: "zzzz-no-such" } });
+  assert.equal(j.result.structuredContent.total, 0);
+});
+
+await test("MCP: get_game and list_genres", async () => {
+  let j = await call("tools/call", { name: "get_game", arguments: { id: "blasphemer" } });
+  assert.equal(j.result.structuredContent.name, "Blasphemer");
+  assert.equal(j.result.structuredContent.playUrl, "https://playchive.ir/blasphemer.html");
+  j = await call("tools/call", { name: "get_game", arguments: { id: "nope" } });
+  assert.equal(j.result.isError, true);
+  j = await call("tools/call", { name: "list_genres" });
+  assert.ok(j.result.structuredContent.genres.length >= 10);
+});
+
+await test("MCP: invalid tool arguments are tool errors, unknown tool is a protocol error", async () => {
+  for (const args of [{ limit: 0 }, { limit: 51 }, { limit: "x" }, { offset: -1 }, { playable: "yes" }, { query: "x".repeat(101) }, { bogus: 1 }]) {
+    const j = await call("tools/call", { name: "search_games", arguments: args });
+    assert.equal(j.result.isError, true, JSON.stringify(args));
+  }
+  assert.equal((await call("tools/call", { name: "get_game", arguments: {} })).result.isError, true);
+  assert.equal((await call("tools/call", { name: "delete_everything" })).error.code, -32602);
+  assert.equal((await call("tools/call", { name: "search_games", arguments: [] })).error.code, -32602);
+});
+
+await test("MCP: protocol version in _meta is checked", async () => {
+  const meta = (v) => ({ _meta: { "io.modelcontextprotocol/protocolVersion": v } });
+  assert.equal((await call("tools/list", meta("2026-07-28"))).result.tools.length, 3);
+  const bad = await call("tools/list", meta("1999-01-01"));
+  assert.equal(bad.error.code, -32022);
+  assert.ok(bad.error.data.supported.includes("2026-07-28"));
+});
+
+await test("MCP: legacy initialize and ping still work; notifications get 202", async () => {
+  const j = await call("initialize", { protocolVersion: "2025-06-18", capabilities: {}, clientInfo: { name: "t", version: "1" } });
+  assert.equal(j.result.protocolVersion, "2025-06-18");
+  assert.ok(j.result.capabilities.tools);
+  assert.deepEqual((await call("ping")).result, {});
+  const n = await rpc({ jsonrpc: "2.0", method: "notifications/initialized" });
+  assert.equal(n.status, 202);
+  assert.equal(await n.text(), "");
+});
+
+await test("MCP: JSON-RPC errors (parse, shape, method, headers, size)", async () => {
+  let r = await run("https://playchive.ir/mcp", { method: "POST", body: "{nope" });
+  assert.equal(r.status, 400);
+  assert.equal((await r.json()).error.code, -32700);
+  r = await rpc([{ jsonrpc: "2.0", id: 1, method: "tools/list" }]);
+  assert.equal(r.status, 400);
+  r = await rpc({ id: 1, method: "tools/list" });
+  assert.equal(r.status, 400);
+  assert.equal((await call("resources/list")).error.code, -32601);
+  assert.equal((await call("tools/list", {}, { "mcp-method": "tools/call" })).error.code, -32020);
+  assert.equal((await call("tools/call", { name: "list_genres" }, { "mcp-name": "get_game" })).error.code, -32020);
+  assert.equal((await call("tools/call", { name: "list_genres" }, { "mcp-method": "tools/call", "mcp-name": "list_genres" })).result.isError, false);
+  r = await run("https://playchive.ir/mcp", { method: "POST", body: "x".repeat(40000) });
+  assert.equal(r.status, 413);
+});
+
+await test("MCP: GET is 405 with Allow, OPTIONS is a CORS preflight, http POST keeps method via 308", async () => {
+  let r = await run("https://playchive.ir/mcp");
+  assert.equal(r.status, 405);
+  assert.equal(r.headers.get("allow"), "POST, OPTIONS");
+  r = await run("https://playchive.ir/mcp", { method: "OPTIONS" });
+  assert.equal(r.status, 204);
+  assert.match(r.headers.get("access-control-allow-headers"), /Mcp-Method/i);
+  r = await rpc({ jsonrpc: "2.0", id: 1, method: "tools/list" }, {}, "http://playchive.ir/mcp");
+  assert.equal(r.status, 308);
+  assert.equal(r.headers.get("location"), "https://playchive.ir/mcp");
+  assert.equal(calls.length, 0);
+});
+
+await test("MCP server card: SEP-2127 shape, compat shape, three paths, HEAD, no origin hit", async () => {
+  for (const path of ["/.well-known/mcp-server-card", "/mcp/server-card", "/.well-known/mcp/server-card.json"]) {
+    const r = await run(`https://playchive.ir${path}`);
+    assert.equal(r.status, 200, path);
+    assert.equal(r.headers.get("content-type"), "application/json");
+    assert.equal(r.headers.get("access-control-allow-origin"), "*");
+    const c = await r.json();
+    assert.equal(c.$schema, "https://static.modelcontextprotocol.io/schemas/v1/server-card.schema.json");
+    assert.match(c.name, /^[^/]+\/[^/]+$/);
+    assert.match(c.version, /^\d+\.\d+\.\d+$/);
+    assert.ok(c.description);
+    assert.equal(c.remotes[0].type, "streamable-http");
+    assert.equal(c.remotes[0].url, "https://playchive.ir/mcp");
+    assert.ok(c.remotes[0].supportedProtocolVersions.includes("2026-07-28"));
+    assert.equal(c.tools, undefined, "cards must not list tools");
+    if (path.endsWith(".json")) {
+      assert.equal(c.serverInfo.name, c.name);
+      assert.equal(c.transport.endpoint, "/mcp");
+      assert.ok(c.capabilities.tools);
+    }
+  }
+  const h = await run("https://playchive.ir/mcp/server-card", { method: "HEAD" });
+  assert.equal(h.status, 200);
+  assert.equal(await h.text(), "");
+  assert.equal(calls.length, 0);
+});
+
+await test("MCP card and discover agree on name, version and protocol versions", async () => {
+  const card = await (await run("https://playchive.ir/.well-known/mcp-server-card")).json();
+  const d = (await call("server/discover")).result;
+  assert.equal(d.serverInfo.name, card.name);
+  assert.equal(d.serverInfo.version, card.version);
+  assert.deepEqual(d.supportedVersions, card.remotes[0].supportedProtocolVersions);
+});
+
 await test("workers.dev host is noindex", async () => {
   const r = await run("https://playchive.example.workers.dev/");
   assert.equal(r.status, 200);

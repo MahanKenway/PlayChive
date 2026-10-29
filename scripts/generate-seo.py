@@ -662,6 +662,7 @@ def write_llms():
         f"- [Persian guide]({BASE}/fa/): Persian landing page (hreflang pair of the home page).",
         f"- [Privacy]({BASE}/privacy/): What is and is not collected.",
         f"- [Agent skills]({BASE}/.well-known/agent-skills/index.json): Skills for browsing the catalog, launching games and describing rights.",
+        f"- [MCP server]({BASE}/mcp): Read-only MCP endpoint (Streamable HTTP, POST JSON-RPC) with tools search_games, get_game, list_genres; card at {BASE}/.well-known/mcp-server-card.",
         f"- [Authentication]({BASE}/auth.md): No authentication or registration is needed; all endpoints are public and read-only.",
         "",
         RIGHTS_NOTE.rstrip(),
