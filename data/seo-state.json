@@ -1,11 +1,15 @@
 {
   "/": {
-    "hash": "fd88e09ffcdf5bf56341b5688fe3bb4ce5a1f2e463d9d7c854e7cd9010ec93e1",
-    "lastmod": "2026-10-28"
+    "hash": "36deca3706ff337a5c77cb805fd99272dac6617f1c57948c00d0ee27fac6ce51",
+    "lastmod": "2026-10-29"
   },
   "2048.html": {
     "hash": "2b2abc15664b814b11d866f2e0d492176fc838eafb15a82403ce2c22d1a4b87e",
     "lastmod": "2026-10-28"
+  },
+  "about/": {
+    "hash": "8051e452ef00e26d130743d37f69e4cfea35eaa224add638355e9d2797c0bed1",
+    "lastmod": "2026-10-29"
   },
   "adarkroom.html": {
     "hash": "0ee617a26ba343bb031900fcf2c28587b7c5bf912cb0bdf2090a519dd1a379e2",
@@ -44,8 +48,8 @@
     "lastmod": "2026-10-28"
   },
   "fa/": {
-    "hash": "15773073ed9dacd1b9e936ee277114a33be838346aca412f05d013e750ae79ec",
-    "lastmod": "2026-10-28"
+    "hash": "80428130a36d41b91f6b2416a7c6be5e11cd60c6ae4972dc9f0e116f89ef2aa0",
+    "lastmod": "2026-10-29"
   },
   "freedink.html": {
     "hash": "3b0f93f7c6291ebd0a69a8e4b65f558b8bbb90b142a086fc7a25b0ed5c4741f6",

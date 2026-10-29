@@ -35,11 +35,35 @@ const API_CATALOG = {
   ].map((anchor) => ({ anchor, "service-desc": [API_DESC], "service-doc": [API_DOC] })),
 };
 
+// Browser hardening for HTML documents. The CSP is deliberately practical: the games need inline
+// bootstrap scripts, WebAssembly, blobs and workers, and the hub embeds third-party game hosts.
+const CSP = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob:",
+  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+  "font-src 'self' data: https://fonts.gstatic.com",
+  "img-src 'self' data: blob: https:",
+  "media-src 'self' data: blob:",
+  "connect-src 'self' data: blob: https:",
+  "worker-src 'self' blob:",
+  "frame-src 'self' https:",
+  "frame-ancestors 'self'",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+].join("; ");
+const PERMISSIONS_POLICY = "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()";
+
 // Small, safe hardening headers added to every response.
 function finalize(upstreamHeaders: Headers, host: string, path = ""): Headers {
   const headers = new Headers(upstreamHeaders);
   headers.set("X-Content-Type-Options", "nosniff");
   headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
+  if ((headers.get("Content-Type") ?? "").toLowerCase().startsWith("text/html")) {
+    headers.set("Content-Security-Policy", CSP);
+    headers.set("X-Frame-Options", "SAMEORIGIN");
+    headers.set("Permissions-Policy", PERMISSIONS_POLICY);
+  }
   if (isWorkersDev(host)) headers.set("X-Robots-Tag", "noindex, nofollow");
   if (path === "/") headers.append("Link", '</.well-known/api-catalog>; rel="api-catalog"');
   return headers;
