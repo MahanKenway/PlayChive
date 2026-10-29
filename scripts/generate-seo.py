@@ -32,6 +32,7 @@ BASE = "https://playchive.ir"
 INDEXNOW_KEY = "130c06551e96f52003eb8c0a4570ee51"
 DEFAULT_OG = "assets/og-playchive-1200x630.png"
 LOGO = "assets/playchive-icon-512.png"
+UPDATED = datetime.date.today().isoformat()
 REPO_URL = "https://github.com/MahanKenway/PlayChive"
 
 HEAD_BEGIN = "<!-- seo:begin -->"
@@ -452,7 +453,7 @@ def hub_head():
         {"@type": "WebSite", "@id": SITE_ID, "name": "PLAYCHIVE", "url": f"{BASE}/", "description": desc,
          "inLanguage": ["en", "fa"], "publisher": {"@id": ORG_ID}},
         {"@type": "CollectionPage", "@id": f"{BASE}/#catalog", "url": f"{BASE}/", "name": title, "description": desc,
-         "isPartOf": {"@id": SITE_ID}, "inLanguage": "en",
+         "isPartOf": {"@id": SITE_ID}, "inLanguage": "en", "dateModified": UPDATED,
          "mainEntity": {"@type": "ItemList", "name": "Playable games on PLAYCHIVE", "numberOfItems": len(items),
                         "itemListElement": items}},
         faq_jsonld(HUB_FAQ),
@@ -480,6 +481,7 @@ def hub_body():
            f"{len(GAMES) - len(PLAYABLE)} further catalog entries. Each game runs as WebAssembly or HTML5 in your browser: no "
            "install, no account, and saves stay on your device. PLAYCHIVE is non-commercial and keeps upstream license "
            'notices with every runtime. <a href="fa/">فارسی</a></p>',
+           f'<p>Last updated: <time datetime="{UPDATED}">{UPDATED}</time></p>',
            f"<h3>Play now ({len(PLAYABLE)} games)</h3><ul>"]
     for g in PLAYABLE:
         note = " Requires your own lawful game data." if needs_local_data(g) else ""
@@ -509,7 +511,7 @@ def hub_body():
         out.append(f"<h3>{esc(q)}</h3><p>{esc(a)}</p>")
     out.append('<h2>For agents and developers</h2><ul><li><a href="llms.txt">llms.txt</a> and '
                '<a href="llms-full.txt">llms-full.txt</a></li><li><a href="data/games.json">Catalog JSON</a></li>'
-               '<li><a href="agent/">Agent guide</a></li><li><a href="sitemap.xml">Sitemap</a></li>'
+               '<li><a href="agent/">Agent guide</a></li><li><a href="about/">About and contact</a></li><li><a href="sitemap.xml">Sitemap</a></li>'
                f'<li><a href="{REPO_URL}">Source repository</a></li></ul>')
     out.append("</section>")
     return "\n".join(out)
@@ -519,7 +521,7 @@ def update_hub():
     p = ROOT / "index.html"
     text = p.read_text(encoding="utf-8")
     text = apply_head(text, hub_head())
-    text = apply_body(text, hub_body(), "</body>")
+    text = apply_body(text, hub_body(), "</main>")
     p.write_text(text, encoding="utf-8")
 
 
@@ -605,7 +607,7 @@ def fa_page():
                 "ساخته شده. مجوز و نام سازندگان هر بازی کنار همان بازی نگه داشته می‌شود. "
                 f'سورس‌کد در <a href="{REPO_URL}" rel="noopener">گیت‌هاب</a> در دسترس است.</p>')
     body.append('<footer><a href="../privacy/" lang="en">Privacy</a> · <a href="../llms.txt" lang="en">llms.txt</a> · '
-                '<a href="../sitemap.xml" lang="en">Sitemap</a></footer></main>')
+                '<a href="../sitemap.xml" lang="en">Sitemap</a> · <a href="../about/" lang="en">About</a></footer></main>')
     page = (
         '<!doctype html>\n<html lang="fa" dir="rtl">\n<head>\n<meta charset="utf-8" />\n'
         '<meta name="viewport" content="width=device-width, initial-scale=1" />\n'
@@ -661,6 +663,7 @@ def write_llms():
         f"- [OpenAPI description]({BASE}/openapi.json): OpenAPI 3.1 spec of the read-only JSON endpoints (also listed in /.well-known/api-catalog).",
         f"- [Persian guide]({BASE}/fa/): Persian landing page (hreflang pair of the home page).",
         f"- [Privacy]({BASE}/privacy/): What is and is not collected.",
+        f"- [About and contact]({BASE}/about/): Operator, imprint, licensing and how to reach the maintainer.",
         f"- [Agent skills]({BASE}/.well-known/agent-skills/index.json): Skills for browsing the catalog, launching games and describing rights.",
         f"- [MCP server]({BASE}/mcp): Read-only MCP endpoint (Streamable HTTP, POST JSON-RPC) with tools search_games, get_game, list_genres; card at {BASE}/.well-known/mcp-server-card.",
         f"- [Authentication]({BASE}/auth.md): No authentication or registration is needed; all endpoints are public and read-only.",
@@ -791,7 +794,8 @@ def build_sitemap(today):
             continue
         pages.append((g["runtimeUrl"], g["runtimeUrl"], "monthly", "0.7", False, g["artwork"]))
     pages += [("agent/", "agent/index.html", "monthly", "0.4", False, None),
-              ("privacy/", "privacy/index.html", "yearly", "0.3", False, None)]
+              ("privacy/", "privacy/index.html", "yearly", "0.3", False, None),
+              ("about/", "about/index.html", "yearly", "0.3", False, None)]
     out = ['<?xml version="1.0" encoding="UTF-8"?>',
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
            'xmlns:xhtml="http://www.w3.org/1999/xhtml" '
@@ -828,6 +832,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--date", default=datetime.date.today().isoformat())
     args = ap.parse_args()
+    global UPDATED
+    UPDATED = args.date
     for g in PLAYABLE:
         update_game_page(g)
     update_hub()
@@ -835,6 +841,7 @@ def main():
     update_agent()
     update_simple_page("agent/index.html", "Agent guide")
     update_simple_page("privacy/index.html", "Privacy")
+    update_simple_page("about/index.html", "About")
     write_skills_index()
     write_llms()
     write_indexnow()

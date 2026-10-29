@@ -61,7 +61,7 @@ pages = sorted(p for p in ROOT.glob("**/*.html")
                and not p.name.startswith("google"))
 
 # directories like neon-rift/ contain game assets, not pages; only top level pages plus these folders matter
-pages = [p for p in pages if len(p.relative_to(ROOT).parts) == 1 or p.relative_to(ROOT).parts[0] in {"fa", "agent", "privacy"}]
+pages = [p for p in pages if len(p.relative_to(ROOT).parts) == 1 or p.relative_to(ROOT).parts[0] in {"fa", "agent", "privacy", "about"}]
 
 canonicals: dict[str, Path] = {}
 noindex_pages: list[str] = []
@@ -126,7 +126,7 @@ for p in pages:
         err(f"{rel}: still references github.io/PlayChive")
 
     blocks = re.findall(r'<script type="application/ld\+json">(.*?)</script>', t, re.S)
-    if not blocks and rel != "privacy/index.html" and rel != "agent/index.html":
+    if not blocks and rel not in ("privacy/index.html", "agent/index.html", "about/index.html"):
         err(f"{rel}: no JSON-LD")
     for b in blocks:
         try:

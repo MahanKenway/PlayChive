@@ -44,6 +44,19 @@ await test("serves the home page from the Pages path, with hardening headers", a
   assert.equal(r.headers.get("x-robots-tag"), null, "real domain must stay indexable");
 });
 
+await test("HTML gets CSP, X-Frame-Options and Permissions-Policy; non-HTML does not", async () => {
+  upstream = () => new Response("<h1>x</h1>", { headers: { "content-type": "text/html; charset=utf-8" } });
+  let r = await run("https://playchive.ir/");
+  assert.match(r.headers.get("content-security-policy"), /default-src 'self'/);
+  assert.match(r.headers.get("content-security-policy"), /frame-ancestors 'self'/);
+  assert.match(r.headers.get("content-security-policy"), /wasm-unsafe-eval/);
+  assert.equal(r.headers.get("x-frame-options"), "SAMEORIGIN");
+  assert.match(r.headers.get("permissions-policy"), /camera=\(\)/);
+  upstream = () => new Response("{}", { headers: { "content-type": "application/json" } });
+  r = await run("https://playchive.ir/data/games.json");
+  assert.equal(r.headers.get("content-security-policy"), null);
+});
+
 await test("keeps path and query string", async () => {
   await run("https://playchive.ir/assets/a.png?v=3");
   assert.equal(calls[0].target, `${ORIGIN}/assets/a.png?v=3`);

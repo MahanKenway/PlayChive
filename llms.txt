@@ -39,6 +39,7 @@ Facts: 23 playable runtimes (22 with free bundled content), 57 catalog records i
 - [OpenAPI description](https://playchive.ir/openapi.json): OpenAPI 3.1 spec of the read-only JSON endpoints (also listed in /.well-known/api-catalog).
 - [Persian guide](https://playchive.ir/fa/): Persian landing page (hreflang pair of the home page).
 - [Privacy](https://playchive.ir/privacy/): What is and is not collected.
+- [About and contact](https://playchive.ir/about/): Operator, imprint, licensing and how to reach the maintainer.
 - [Agent skills](https://playchive.ir/.well-known/agent-skills/index.json): Skills for browsing the catalog, launching games and describing rights.
 - [MCP server](https://playchive.ir/mcp): Read-only MCP endpoint (Streamable HTTP, POST JSON-RPC) with tools search_games, get_game, list_genres; card at https://playchive.ir/.well-known/mcp-server-card.
 - [Authentication](https://playchive.ir/auth.md): No authentication or registration is needed; all endpoints are public and read-only.

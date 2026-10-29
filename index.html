@@ -3,7 +3,7 @@
 <head>
   <meta name="platform-verification" content="iegttvtsvj" />
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#e9e8e3" />
   <script>(function(){try{var t=localStorage.getItem('retroplay:theme');if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t;document.querySelector('meta[name="theme-color"]').setAttribute('content',t==='dark'?'#10140f':'#e7e6e0')}catch(e){document.documentElement.dataset.theme='light'}})();</script>
   <meta name="application-name" content="PLAYCHIVE" />
@@ -111,6 +111,7 @@
         "@id": "https://playchive.ir/#website"
       },
       "inLanguage": "en",
+      "dateModified": "2026-10-29",
       "mainEntity": {
         "@type": "ItemList",
         "name": "Playable games on PLAYCHIVE",
@@ -633,65 +634,11 @@
         <div class="about-intro"><p class="section-tag"><span>// 05</span><span>About the creator</span></p><h2 id="about-title">Classic worlds.<br />Open paths.</h2><p>PLAYCHIVE is an independent browser archive and play space created by <strong>Mahan Tavakoli</strong> <span lang="fa" dir="rtl">(ماهان توکلی)</span>. It brings legally distributable retro games, engines and experiments into one deliberate interface—ready to play without a forced account, ad network or player upload.</p><a class="retro-button retro-button-primary" href="https://github.com/MahanKenway" target="_blank" rel="noopener noreferrer">GitHub / MahanKenway ↗</a></div>
         <div class="about-principles"><article><span>01 / MOTIVATION</span><h3>Keep play accessible.</h3><p>The goal is to preserve the feeling of discovering old games while removing avoidable friction: each eligible world should start in the browser with its lawful free data already prepared.</p></article><article><span>02 / CURATION</span><h3>Credit the builders.</h3><p>Every runtime keeps an upstream source notice and license information. PLAYCHIVE does not present commercial data as free, and it does not turn a local-file requirement into a false promise.</p></article><article><span>03 / THE FORMAT</span><h3>One library, many engines.</h3><p>Doom worlds belong beside strategy, puzzle, rhythm and action games when each is technically sound, respectful of its creators and genuinely playable on desktop or phone.</p></article></div>
       </section>
-    </main>
-
-    <footer class="retro-footer"><span>PLAYCHIVE / GAME INDEX</span><span>Games, engines and archives remain the property of their creators.</span><span>Audio: Theme Song [8-bit] / nene / CC0</span><a class="retro-footer-link" href="privacy/">Privacy policy</a><span>Build 01 · 2026</span></footer>
-  </div>
-</div>
-
-<audio id="retro-audio-player" loop preload="none" aria-hidden="true"><source src="assets/audio/retroplay-theme-nene.ogg" type="audio/ogg; codecs=opus" /><source src="assets/audio/retroplay-theme-nene.mp3" type="audio/mpeg" /></audio>
-
-<dialog id="game-detail-dialog" class="game-detail-dialog" aria-labelledby="detail-title" aria-describedby="detail-description">
-  <article class="game-detail-shell">
-    <button class="game-detail-close" type="button" data-action="close-detail" aria-label="Close game details">×</button>
-    <div class="game-detail-media"><img id="detail-cover" src="assets/screenshots/hexgl-runtime.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Selected game gameplay screenshot" /><span id="detail-state" class="detail-state"></span><span id="detail-index" class="detail-index"></span></div>
-    <div class="game-detail-copy">
-      <p id="detail-overline" class="detail-overline"></p>
-      <h2 id="detail-title">Game title</h2>
-      <p id="detail-studio" class="detail-studio"></p>
-      <p id="detail-description" class="detail-description"></p>
-      <dl class="detail-specs"><div><dt>Format</dt><dd id="detail-format"></dd></div><div><dt>Session</dt><dd id="detail-duration"></dd></div><div><dt>World</dt><dd id="detail-maps"></dd></div><div><dt>License</dt><dd id="detail-license"></dd></div></dl>
-      <p id="detail-credit" class="detail-credit"></p>
-      <div id="detail-links" class="detail-links"><a id="detail-project-link" href="./" target="_blank" rel="noopener noreferrer" hidden aria-hidden="true"></a><a id="detail-download-link" href="./" target="_blank" rel="noopener noreferrer" hidden aria-hidden="true"></a><p id="detail-download-note" class="detail-download-note" hidden></p></div>
-      <div class="detail-actions"><button id="detail-primary" class="retro-button retro-button-primary" data-magnet type="button"></button><button id="detail-library" class="retro-button retro-button-quiet" type="button"></button></div>
-      <p class="detail-note">PLAYCHIVE launches only packaged local runtimes and clearly marked legal data paths. No account is required.</p>
-    </div>
-  </article>
-</dialog>
-
-<dialog id="external-frame-dialog" class="external-frame-dialog" aria-labelledby="external-frame-title">
-  <div class="external-frame-shell">
-    <header class="external-frame-header"><div><p class="detail-overline">// EXTERNAL EXPERIMENT / EMBEDDED VIEW</p><h2 id="external-frame-title">External project</h2><p id="external-frame-status" class="external-frame-status">Loading the original host inside PLAYCHIVE…</p></div><button id="external-frame-close" class="game-detail-close" type="button" aria-label="Close embedded project">×</button></header>
-    <div class="external-frame-body"><iframe id="external-frame" title="External project embedded in PLAYCHIVE" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-forms allow-pointer-lock allow-presentation allow-popups allow-same-origin" allow="fullscreen; gamepad; autoplay; pointer-lock; accelerometer; gyroscope"></iframe></div>
-    <footer class="external-frame-footer"><span>PLAYCHIVE does not mirror or modify this project.</span><div><button id="external-frame-open" class="retro-button retro-button-quiet" type="button">Open original host ↗</button><button id="external-frame-fallback" class="retro-button retro-button-primary" type="button" hidden>Frame unavailable — open original</button></div></footer>
-  </div>
-</dialog>
-
-<div id="game-screen" class="screen" role="main">
-  <div id="crt-overlay" aria-hidden="true"></div>
-  <div class="game-topbar" aria-hidden="true"><button class="game-return-chip" id="btn-return-hub" type="button">← PLAYCHIVE</button><span>Runtime / active</span><span>Pointer lock for direct input</span></div>
-  <canvas id="doom-canvas" width="320" height="200" aria-label="PLAYCHIVE game canvas" tabindex="0">Your browser does not support the HTML canvas element.</canvas>
-  <div id="hud-overlay" aria-hidden="true"><div id="hud-fps" class="hud-chip">-- FPS</div><div id="hud-map" class="hud-chip">E1M1</div><div id="hud-ping" class="hud-chip" style="display:none">LOCAL</div></div>
-
-  <div id="pause-overlay" class="hidden" aria-live="polite"><div class="pause-box"><p class="pause-title">Session paused</p><p class="pause-hint">Your runtime remains ready.</p><button id="btn-resume" class="retro-button retro-button-primary">Resume</button><button id="btn-settings" class="retro-button retro-button-quiet">Settings</button><button id="btn-fullscreen" class="retro-button retro-button-quiet">Fullscreen</button><button id="btn-restart" class="retro-text-button">Restart session</button></div></div>
-
-  <div id="settings-overlay" class="hidden" aria-live="polite"><div class="settings-box"><p class="pause-title">Session settings</p><p class="settings-note">Saved on this device. Cloud sync is intentionally opt-in and is not enabled in this static build.</p><div class="settings-group"><span>Display</span><div class="settings-row"><label for="setting-crt">Scanline overlay</label><input type="checkbox" id="setting-crt" checked /></div><div class="settings-row"><label for="setting-smoothing">Smooth scaling</label><input type="checkbox" id="setting-smoothing" /></div><div class="settings-row"><label for="setting-scale">Display scale</label><select id="setting-scale"><option value="auto" selected>Auto / fit</option><option value="1">1×</option><option value="2">2×</option><option value="3">3×</option><option value="4">4×</option><option value="5">5×</option></select></div><div class="settings-row"><label for="setting-performance">Mobile performance</label><select id="setting-performance"><option value="auto">Auto</option><option value="battery">Battery saver</option><option value="quality">High quality</option></select></div></div><div class="settings-group"><span>Input</span><div class="settings-row"><label for="setting-sensitivity">Mouse sensitivity</label><input type="range" id="setting-sensitivity" min="0.2" max="3" step="0.1" value="1" /><span id="setting-sensitivity-value">1.0×</span></div><div class="settings-row"><label for="setting-deadzone">Gamepad deadzone</label><input type="range" id="setting-deadzone" min="0.05" max="0.75" step="0.05" value="0.25" /><span id="setting-deadzone-value">25%</span></div><div class="settings-row" id="settings-row-gyro"><label for="setting-gyro">Gyroscope look</label><input type="checkbox" id="setting-gyro" /></div></div><div class="settings-group"><span>Audio</span><div class="settings-row"><label for="setting-master">Master</label><input type="range" id="setting-master" min="0" max="1" step="0.05" value="1" /><span id="setting-master-value">100%</span></div><div class="settings-row"><label for="setting-sfx">Effects</label><input type="range" id="setting-sfx" min="0" max="1" step="0.05" value="1" /><span id="setting-sfx-value">100%</span></div><div class="settings-row"><label for="setting-music">Music</label><input type="range" id="setting-music" min="0" max="1" step="0.05" value="0.6" /><span id="setting-music-value">60%</span></div></div><div class="settings-group settings-saves"><span>Local saves</span><p id="save-profile-label">Profile: no active WAD</p><div id="save-slot-list" class="save-slot-list"><p>Load a world to inspect save slots.</p></div><div class="save-actions"><button id="btn-export-saves" class="retro-button retro-button-quiet">Export saves</button><label class="retro-button retro-button-quiet file-button" for="save-import">Import saves<input type="file" id="save-import" accept="application/json,.json" hidden /></label></div></div><button id="btn-settings-close" class="retro-button retro-button-primary">Done</button></div></div>
-
-  <div id="mobile-controls" aria-label="PSP-style on-screen game controls">
-    <div class="touch-look-zone" data-look-zone aria-label="Drag horizontally to turn"><span>DRAG TO LOOK</span></div>
-    <div class="psp-shoulders" aria-label="Movement modifiers"><button class="shoulder-btn" data-key="strafe" aria-label="Hold to strafe">L</button><button class="shoulder-btn" data-key="run" aria-label="Hold to run">R</button></div>
-    <div class="psp-dpad" aria-label="Movement and turn"><button class="dpad-btn up" data-key="up" aria-label="Move forward">▲</button><button class="dpad-btn left" data-key="left" aria-label="Turn left or strafe left">◀</button><button class="dpad-btn right" data-key="right" aria-label="Turn right or strafe right">▶</button><button class="dpad-btn down" data-key="down" aria-label="Move backward">▼</button><span class="dpad-core" aria-hidden="true"></span></div>
-    <div class="psp-actions" aria-label="Actions"><button class="face-btn face-triangle" data-key="map" aria-label="Toggle automap">△</button><button class="face-btn face-square" data-key="use" aria-label="Use or open">□</button><button class="face-btn face-circle" data-key="fire" aria-label="Fire">○</button><button class="face-btn face-cross" data-key="menu" aria-label="Open menu">×</button></div>
-    <div class="mobile-command-bar" aria-label="Mobile control hint"><span>L / R</span><span>strafe / run</span><span>drag / look</span></div>
-  </div>
-</div>
-
-<div id="click-to-play" class="click-overlay hidden" role="button" tabindex="0" aria-label="Click to capture mouse and start playing"><div class="click-box"><p>Capture mouse to play</p><p class="small">Press Esc to release</p></div></div>
-<script type="module" src="src/main.js?v=retroplay-20260822-r3"></script>
-<!-- seo:content:begin -->
+    <!-- seo:content:begin -->
 <section id="static-catalog" class="seo-static" aria-label="PLAYCHIVE game catalog">
 <h2>PLAYCHIVE: free classic and open-source games in your browser</h2>
 <p>PLAYCHIVE is a curated hub of 23 playable browser runtimes plus a rights-aware directory of 34 further catalog entries. Each game runs as WebAssembly or HTML5 in your browser: no install, no account, and saves stay on your device. PLAYCHIVE is non-commercial and keeps upstream license notices with every runtime. <a href="fa/">فارسی</a></p>
+<p>Last updated: <time datetime="2026-10-29">2026-10-29</time></p>
 <h3>Play now (23 games)</h3><ul>
 <li><a href="blasphemer.html">Blasphemer</a> (Fantasy shooter): A complete free dark-fantasy shooter running through Chocolate Heretic in its own WebAssembly module.</li>
 <li><a href="cdogs.html">C-Dogs SDL</a> (Action): A top-down retro action game running in its own C-Dogs SDL WebAssembly module.</li>
@@ -760,8 +707,63 @@
 <h3>Does PLAYCHIVE work on phones and with controllers?</h3><p>Yes. Supported runtimes offer PSP-style touch controls, and desktop browsers accept keyboard, mouse and a gamepad. Fullscreen is available from each runtime page.</p>
 <h3>Where are my saves stored?</h3><p>Progress is kept in your own browser storage, per game. It never goes to a PLAYCHIVE server, so clearing site data for the domain also clears your saves.</p>
 <h3>Does PLAYCHIVE include commercial games such as the original Doom?</h3><p>No. PLAYCHIVE does not distribute commercial game data. It bundles free content such as Freedoom, and a separate local importer lets you load WAD files you own; they stay in your browser session.</p>
-<h2>For agents and developers</h2><ul><li><a href="llms.txt">llms.txt</a> and <a href="llms-full.txt">llms-full.txt</a></li><li><a href="data/games.json">Catalog JSON</a></li><li><a href="agent/">Agent guide</a></li><li><a href="sitemap.xml">Sitemap</a></li><li><a href="https://github.com/MahanKenway/PlayChive">Source repository</a></li></ul>
+<h2>For agents and developers</h2><ul><li><a href="llms.txt">llms.txt</a> and <a href="llms-full.txt">llms-full.txt</a></li><li><a href="data/games.json">Catalog JSON</a></li><li><a href="agent/">Agent guide</a></li><li><a href="about/">About and contact</a></li><li><a href="sitemap.xml">Sitemap</a></li><li><a href="https://github.com/MahanKenway/PlayChive">Source repository</a></li></ul>
 </section>
 <!-- seo:content:end -->
+</main>
+
+    <footer class="retro-footer"><span>PLAYCHIVE / GAME INDEX</span><span>Games, engines and archives remain the property of their creators.</span><span>Audio: Theme Song [8-bit] / nene / CC0</span><a class="retro-footer-link" href="privacy/">Privacy policy</a><a class="retro-footer-link" href="about/">About and contact</a><span>Build 01 · 2026</span></footer>
+  </div>
+</div>
+
+<audio id="retro-audio-player" loop preload="none" aria-hidden="true"><source src="assets/audio/retroplay-theme-nene.ogg" type="audio/ogg; codecs=opus" /><source src="assets/audio/retroplay-theme-nene.mp3" type="audio/mpeg" /></audio>
+
+<dialog id="game-detail-dialog" class="game-detail-dialog" aria-labelledby="detail-title" aria-describedby="detail-description">
+  <article class="game-detail-shell">
+    <button class="game-detail-close" type="button" data-action="close-detail" aria-label="Close game details">×</button>
+    <div class="game-detail-media"><img id="detail-cover" src="assets/screenshots/hexgl-runtime.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Selected game gameplay screenshot" /><span id="detail-state" class="detail-state"></span><span id="detail-index" class="detail-index"></span></div>
+    <div class="game-detail-copy">
+      <p id="detail-overline" class="detail-overline"></p>
+      <h2 id="detail-title">Game title</h2>
+      <p id="detail-studio" class="detail-studio"></p>
+      <p id="detail-description" class="detail-description"></p>
+      <dl class="detail-specs"><div><dt>Format</dt><dd id="detail-format"></dd></div><div><dt>Session</dt><dd id="detail-duration"></dd></div><div><dt>World</dt><dd id="detail-maps"></dd></div><div><dt>License</dt><dd id="detail-license"></dd></div></dl>
+      <p id="detail-credit" class="detail-credit"></p>
+      <div id="detail-links" class="detail-links"><a id="detail-project-link" href="./" target="_blank" rel="noopener noreferrer" hidden aria-hidden="true">Official project</a><a id="detail-download-link" href="./" target="_blank" rel="noopener noreferrer" hidden aria-hidden="true">Official download</a><p id="detail-download-note" class="detail-download-note" hidden></p></div>
+      <div class="detail-actions"><button id="detail-primary" class="retro-button retro-button-primary" data-magnet type="button"></button><button id="detail-library" class="retro-button retro-button-quiet" type="button"></button></div>
+      <p class="detail-note">PLAYCHIVE launches only packaged local runtimes and clearly marked legal data paths. No account is required.</p>
+    </div>
+  </article>
+</dialog>
+
+<dialog id="external-frame-dialog" class="external-frame-dialog" aria-labelledby="external-frame-title">
+  <div class="external-frame-shell">
+    <header class="external-frame-header"><div><p class="detail-overline">// EXTERNAL EXPERIMENT / EMBEDDED VIEW</p><h2 id="external-frame-title">External project</h2><p id="external-frame-status" class="external-frame-status">Loading the original host inside PLAYCHIVE…</p></div><button id="external-frame-close" class="game-detail-close" type="button" aria-label="Close embedded project">×</button></header>
+    <div class="external-frame-body"><iframe id="external-frame" title="External project embedded in PLAYCHIVE" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-forms allow-pointer-lock allow-presentation allow-popups allow-same-origin" allow="fullscreen; gamepad; autoplay; pointer-lock; accelerometer; gyroscope"></iframe></div>
+    <footer class="external-frame-footer"><span>PLAYCHIVE does not mirror or modify this project.</span><div><button id="external-frame-open" class="retro-button retro-button-quiet" type="button">Open original host ↗</button><button id="external-frame-fallback" class="retro-button retro-button-primary" type="button" hidden>Frame unavailable — open original</button></div></footer>
+  </div>
+</dialog>
+
+<div id="game-screen" class="screen" role="main">
+  <div id="crt-overlay" aria-hidden="true"></div>
+  <div class="game-topbar" aria-hidden="true"><button class="game-return-chip" id="btn-return-hub" type="button">← PLAYCHIVE</button><span>Runtime / active</span><span>Pointer lock for direct input</span></div>
+  <canvas id="doom-canvas" width="320" height="200" aria-label="PLAYCHIVE game canvas" tabindex="0">Your browser does not support the HTML canvas element.</canvas>
+  <div id="hud-overlay" aria-hidden="true"><div id="hud-fps" class="hud-chip">-- FPS</div><div id="hud-map" class="hud-chip">E1M1</div><div id="hud-ping" class="hud-chip" style="display:none">LOCAL</div></div>
+
+  <div id="pause-overlay" class="hidden" aria-live="polite"><div class="pause-box"><p class="pause-title">Session paused</p><p class="pause-hint">Your runtime remains ready.</p><button id="btn-resume" class="retro-button retro-button-primary">Resume</button><button id="btn-settings" class="retro-button retro-button-quiet">Settings</button><button id="btn-fullscreen" class="retro-button retro-button-quiet">Fullscreen</button><button id="btn-restart" class="retro-text-button">Restart session</button></div></div>
+
+  <div id="settings-overlay" class="hidden" aria-live="polite"><div class="settings-box"><p class="pause-title">Session settings</p><p class="settings-note">Saved on this device. Cloud sync is intentionally opt-in and is not enabled in this static build.</p><div class="settings-group"><span>Display</span><div class="settings-row"><label for="setting-crt">Scanline overlay</label><input type="checkbox" id="setting-crt" checked /></div><div class="settings-row"><label for="setting-smoothing">Smooth scaling</label><input type="checkbox" id="setting-smoothing" /></div><div class="settings-row"><label for="setting-scale">Display scale</label><select id="setting-scale"><option value="auto" selected>Auto / fit</option><option value="1">1×</option><option value="2">2×</option><option value="3">3×</option><option value="4">4×</option><option value="5">5×</option></select></div><div class="settings-row"><label for="setting-performance">Mobile performance</label><select id="setting-performance"><option value="auto">Auto</option><option value="battery">Battery saver</option><option value="quality">High quality</option></select></div></div><div class="settings-group"><span>Input</span><div class="settings-row"><label for="setting-sensitivity">Mouse sensitivity</label><input type="range" id="setting-sensitivity" min="0.2" max="3" step="0.1" value="1" /><span id="setting-sensitivity-value">1.0×</span></div><div class="settings-row"><label for="setting-deadzone">Gamepad deadzone</label><input type="range" id="setting-deadzone" min="0.05" max="0.75" step="0.05" value="0.25" /><span id="setting-deadzone-value">25%</span></div><div class="settings-row" id="settings-row-gyro"><label for="setting-gyro">Gyroscope look</label><input type="checkbox" id="setting-gyro" /></div></div><div class="settings-group"><span>Audio</span><div class="settings-row"><label for="setting-master">Master</label><input type="range" id="setting-master" min="0" max="1" step="0.05" value="1" /><span id="setting-master-value">100%</span></div><div class="settings-row"><label for="setting-sfx">Effects</label><input type="range" id="setting-sfx" min="0" max="1" step="0.05" value="1" /><span id="setting-sfx-value">100%</span></div><div class="settings-row"><label for="setting-music">Music</label><input type="range" id="setting-music" min="0" max="1" step="0.05" value="0.6" /><span id="setting-music-value">60%</span></div></div><div class="settings-group settings-saves"><span>Local saves</span><p id="save-profile-label">Profile: no active WAD</p><div id="save-slot-list" class="save-slot-list"><p>Load a world to inspect save slots.</p></div><div class="save-actions"><button id="btn-export-saves" class="retro-button retro-button-quiet">Export saves</button><label class="retro-button retro-button-quiet file-button" for="save-import">Import saves<input type="file" id="save-import" accept="application/json,.json" hidden /></label></div></div><button id="btn-settings-close" class="retro-button retro-button-primary">Done</button></div></div>
+
+  <div id="mobile-controls" aria-label="PSP-style on-screen game controls">
+    <div class="touch-look-zone" data-look-zone aria-label="Drag horizontally to turn"><span>DRAG TO LOOK</span></div>
+    <div class="psp-shoulders" aria-label="Movement modifiers"><button class="shoulder-btn" data-key="strafe" aria-label="Hold to strafe">L</button><button class="shoulder-btn" data-key="run" aria-label="Hold to run">R</button></div>
+    <div class="psp-dpad" aria-label="Movement and turn"><button class="dpad-btn up" data-key="up" aria-label="Move forward">▲</button><button class="dpad-btn left" data-key="left" aria-label="Turn left or strafe left">◀</button><button class="dpad-btn right" data-key="right" aria-label="Turn right or strafe right">▶</button><button class="dpad-btn down" data-key="down" aria-label="Move backward">▼</button><span class="dpad-core" aria-hidden="true"></span></div>
+    <div class="psp-actions" aria-label="Actions"><button class="face-btn face-triangle" data-key="map" aria-label="Toggle automap">△</button><button class="face-btn face-square" data-key="use" aria-label="Use or open">□</button><button class="face-btn face-circle" data-key="fire" aria-label="Fire">○</button><button class="face-btn face-cross" data-key="menu" aria-label="Open menu">×</button></div>
+    <div class="mobile-command-bar" aria-label="Mobile control hint"><span>L / R</span><span>strafe / run</span><span>drag / look</span></div>
+  </div>
+</div>
+
+<div id="click-to-play" class="click-overlay hidden" role="button" tabindex="0" aria-label="Click to capture mouse and start playing"><div class="click-box"><p>Capture mouse to play</p><p class="small">Press Esc to release</p></div></div>
+<script type="module" src="src/main.js?v=retroplay-20260822-r3"></script>
 </body>
 </html>
