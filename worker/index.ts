@@ -8,6 +8,7 @@
 // it on every push to main, so edits made only in the dashboard are overwritten.
 
 import { handleMcp, handleCard, CARD_PATHS } from "./mcp";
+import { handleAgentCard, A2A_CARD_PATHS } from "./a2a";
 
 const ORIGIN = "https://mahankenway.github.io";
 const BASE_PATH = "/PlayChive"; // GitHub Pages project path
@@ -115,6 +116,10 @@ export default {
     if (url.pathname === "/mcp") return handleMcp(request);
     if (CARD_PATHS.includes(url.pathname) && (request.method === "GET" || request.method === "HEAD")) {
       return handleCard(request, url.pathname);
+    }
+
+    if (A2A_CARD_PATHS.includes(url.pathname) && (request.method === "GET" || request.method === "HEAD")) {
+      return handleAgentCard(request);
     }
 
     if (request.method !== "GET" && request.method !== "HEAD") {

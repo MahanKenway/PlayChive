@@ -344,6 +344,22 @@ await test("Markdown for Agents: missing twin falls back to HTML; HEAD has no bo
   assert.equal(r.headers.get("x-robots-tag"), "noindex");
 });
 
+await test("A2A agent card: served by the Worker, 1.0 shape, points at the Ikol endpoint", async () => {
+  const r = await run("https://playchive.ir/.well-known/agent-card.json");
+  assert.equal(r.status, 200);
+  assert.equal(r.headers.get("content-type"), "application/json");
+  assert.equal(calls.length, 0);
+  const c = await r.json();
+  assert.equal(c.supportedInterfaces[0].protocolBinding, "JSONRPC");
+  assert.equal(c.supportedInterfaces[0].protocolVersion, "1.0");
+  assert.match(c.supportedInterfaces[0].url, /^https:\/\/.+\/a2a$/);
+  assert.equal(c.protocolVersion, undefined);
+  assert.ok(c.skills.length >= 1 && c.skills.every((s) => s.id && s.name && s.description && s.tags.length));
+  for (const k of ["name", "description", "version", "capabilities", "defaultInputModes", "defaultOutputModes"]) assert.ok(c[k], k);
+  const h = await run("https://playchive.ir/.well-known/agent-card.json", { method: "HEAD" });
+  assert.equal(await h.text(), "");
+});
+
 await test("workers.dev host is noindex", async () => {
   const r = await run("https://playchive.example.workers.dev/");
   assert.equal(r.status, 200);
