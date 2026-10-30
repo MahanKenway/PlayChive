@@ -4,7 +4,7 @@
 
 ## Summary
 
-PLAYCHIVE requires **no authentication**. The site has no accounts, no API keys, no OAuth server and no registration or provisioning endpoint. Every public endpoint is a static, read-only `GET`. Agents do not need to register, and no credentials are issued.
+PLAYCHIVE requires **no authentication**. The site has no accounts, no API keys, no OAuth server and no registration or provisioning endpoint. Every public endpoint is read-only: static `GET` files, plus the read-only MCP endpoint that takes `POST`. Agents do not need to register, and no credentials are issued.
 
 Agent audience: browser agents, crawlers and LLM tools that read the public game catalog or open a game runtime in a browser.
 
@@ -28,6 +28,7 @@ If PLAYCHIVE ever adds accounts or protected endpoints, this file will be update
 
 - Catalog (JSON): https://playchive.ir/data/games.json and https://playchive.ir/agent/catalog.json
 - OpenAPI description: https://playchive.ir/openapi.json
+- MCP server (read-only, no authentication): POST JSON-RPC to https://playchive.ir/mcp, server card at https://playchive.ir/.well-known/mcp-server-card. Tools: `search_games`, `get_game`, `list_genres`.
 - API catalog (RFC 9727): https://playchive.ir/.well-known/api-catalog
 - Agent guide: https://playchive.ir/agent/ and https://playchive.ir/agent-manifest.json
 - Site guide for LLMs: https://playchive.ir/llms.txt and https://playchive.ir/llms-full.txt
