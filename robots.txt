@@ -1,4 +1,7 @@
+# Content Signals (https://contentsignals.org/): usage preferences, not access control.
+# Search and live answer use are welcome; use as AI training data is not.
 User-agent: *
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 Allow: /
 
 # AI and answer-engine crawlers: PLAYCHIVE is open content and welcomes citation.

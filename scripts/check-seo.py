@@ -193,6 +193,8 @@ if f"Sitemap: {BASE}/sitemap.xml" not in robots:
 for bot in ("GPTBot", "ClaudeBot", "PerplexityBot", "OAI-SearchBot", "Google-Extended"):
     if bot not in robots:
         warn(f"robots.txt: {bot} not mentioned")
+if not re.search(r"(?mi)^Content-Signal:\s*ai-train=(yes|no),\s*search=(yes|no),\s*ai-input=(yes|no)\s*$", robots):
+    err("robots.txt: missing or malformed Content-Signal line (ai-train, search, ai-input)")
 if re.search(r"(?mi)^Disallow:\s*/\s*$", robots):
     err("robots.txt: Disallow: / blocks the whole site")
 
