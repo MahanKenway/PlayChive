@@ -121,7 +121,8 @@ for p in pages:
     if not re.search(r"<html[^>]*\blang=", t):
         err(f"{rel}: <html> has no lang")
     if len(re.findall(r"<h1[\s>]", t)) != 1:
-        warn(f"{rel}: expected exactly one <h1>, found {len(re.findall(r'<h1[\s>]', t))}")
+        h1_count = len(re.findall(r"<h1[\s>]", t))
+        warn(f"{rel}: expected exactly one <h1>, found {h1_count}")
     if "github.io/PlayChive" in t:
         err(f"{rel}: still references github.io/PlayChive")
 
