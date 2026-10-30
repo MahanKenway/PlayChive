@@ -372,6 +372,21 @@ await test("PRM (RFC 9728): minimal, truthful, no authorization servers, no orig
   assert.equal(j.resource_documentation, "https://playchive.ir/auth.md");
 });
 
+await test("Web Bot Auth directory: JWKS with an Ed25519 public key only", async () => {
+  const r = await run("https://playchive.ir/.well-known/http-message-signatures-directory");
+  assert.equal(r.status, 200);
+  assert.equal(r.headers.get("content-type"), "application/http-message-signatures-directory+json");
+  assert.equal(calls.length, 0);
+  const j = await r.json();
+  assert.ok(j.keys.length >= 1);
+  for (const k of j.keys) {
+    assert.equal(k.kty, "OKP");
+    assert.equal(k.crv, "Ed25519");
+    assert.ok(k.x && k.kid);
+    assert.equal(k.d, undefined, "private key material must never be served");
+  }
+});
+
 await test("workers.dev host is noindex", async () => {
   const r = await run("https://playchive.example.workers.dev/");
   assert.equal(r.status, 200);

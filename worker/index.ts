@@ -80,6 +80,19 @@ function markdownPathFor(pathname: string): string | null {
   return null;
 }
 
+// Web Bot Auth key directory (IETF draft). Public key only; the private key lives in the Ikol Worker's
+// secrets and signs Ikol's requests to this site.
+const SIGNATURES_DIRECTORY = {
+  "keys": [
+    {
+      "kty": "OKP",
+      "crv": "Ed25519",
+      "x": "H6V0N6VlnMC-NkwO5Vy4XP446k92qxkijLPywN27kWw",
+      "kid": "U8WRjLSgImn8c6__hFzr9c_C1cPIEQMtNBmrAak2nA4"
+    }
+  ]
+};
+
 const PRM = {
   resource: "https://playchive.ir",
   bearer_methods_supported: [],
@@ -141,6 +154,18 @@ export default {
         headers: {
           "Content-Type": "application/json",
           "Cache-Control": "public, max-age=3600",
+          "Access-Control-Allow-Origin": "*",
+          "X-Content-Type-Options": "nosniff",
+        },
+      });
+    }
+
+    if (url.pathname === "/.well-known/http-message-signatures-directory") {
+      return new Response(request.method === "HEAD" ? null : JSON.stringify(SIGNATURES_DIRECTORY, null, 2), {
+        status: 200,
+        headers: {
+          "Content-Type": "application/http-message-signatures-directory+json",
+          "Cache-Control": "public, max-age=86400",
           "Access-Control-Allow-Origin": "*",
           "X-Content-Type-Options": "nosniff",
         },
