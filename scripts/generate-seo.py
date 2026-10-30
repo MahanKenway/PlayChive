@@ -824,6 +824,23 @@ def build_sitemap(today):
     state_path.write_text(json.dumps(new_state, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
 
+def write_markdown():
+    """md/<page>.md for `Accept: text/markdown` (the Worker maps URLs to these files)."""
+    import shutil, sys
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import htmlmd
+    out = ROOT / "md"
+    shutil.rmtree(out, ignore_errors=True)
+    pages = ["index.html", "fa/index.html", "about/index.html", "privacy/index.html", "agent/index.html"]
+    pages += [g["runtimeUrl"] for g in PLAYABLE if g["runtimeUrl"] != "openresident.html"]
+    for rel in pages:
+        src = (ROOT / rel).read_text(encoding="utf-8")
+        path = rel[: -len("index.html")] if rel.endswith("index.html") else rel
+        dest = out / ((path + "index.md") if path == "" or path.endswith("/") else rel[: -len(".html")] + ".md")
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_text(htmlmd.page_to_markdown(src, url_for(path)), encoding="utf-8")
+
+
 def write_indexnow():
     (ROOT / f"{INDEXNOW_KEY}.txt").write_text(INDEXNOW_KEY, encoding="utf-8")
 
@@ -845,6 +862,7 @@ def main():
     write_skills_index()
     write_llms()
     write_indexnow()
+    write_markdown()
     build_sitemap(args.date)
     print(f"playable pages: {len(PLAYABLE)}, catalog records: {len(GAMES)}")
 

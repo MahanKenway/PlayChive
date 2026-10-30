@@ -54,6 +54,31 @@ const CSP = [
 ].join("; ");
 const PERMISSIONS_POLICY = "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()";
 
+// Markdown for Agents: `Accept: text/markdown` gets the pre-built md/<page>.md of an HTML page.
+// Browsers send text/html first, so they keep getting HTML. Both variants carry `Vary: Accept`.
+function wantsMarkdown(accept: string | null): boolean {
+  if (!accept) return false;
+  let md = 0;
+  let html = 0;
+  for (const part of accept.split(",")) {
+    const [type, ...params] = part.trim().toLowerCase().split(";");
+    const q = params.map((x) => x.trim()).find((x) => x.startsWith("q="));
+    const weight = q ? Number(q.slice(2)) : 1;
+    if (Number.isNaN(weight)) continue;
+    if (type === "text/markdown") md = Math.max(md, weight);
+    else if (type === "text/html") html = Math.max(html, weight);
+  }
+  return md > 0 && md >= html;
+}
+
+// Map a page URL path to its markdown twin, or null when the path is not an HTML page.
+function markdownPathFor(pathname: string): string | null {
+  if (pathname.startsWith("/md/") || pathname.startsWith("/.well-known/")) return null;
+  if (pathname === "/" || pathname.endsWith("/")) return `/md${pathname}index.md`;
+  if (pathname.endsWith(".html")) return `/md${pathname.slice(0, -".html".length)}.md`;
+  return null;
+}
+
 // Small, safe hardening headers added to every response.
 function finalize(upstreamHeaders: Headers, host: string, path = ""): Headers {
   const headers = new Headers(upstreamHeaders);
@@ -115,6 +140,28 @@ export default {
       return Response.redirect(clean.toString(), 301);
     }
 
+    const mdPath = markdownPathFor(url.pathname);
+    if (mdPath && wantsMarkdown(request.headers.get("accept"))) {
+      try {
+        const md = await fetch(`${ORIGIN}${BASE_PATH}${mdPath}`, {
+          method: request.method,
+          cf: { cacheTtlByStatus: { "200-299": 300, "300-399": 0, "400-599": 0 } },
+        });
+        if (md.status === 200) {
+          const body = request.method === "HEAD" ? null : await md.text();
+          const headers = finalize(new Headers(), url.hostname);
+          headers.set("Content-Type", "text/markdown; charset=utf-8");
+          headers.set("Vary", "Accept");
+          headers.set("Cache-Control", "public, max-age=300");
+          headers.set("Access-Control-Allow-Origin", "*");
+          if (body !== null) headers.set("x-markdown-tokens", String(Math.ceil(body.length / 4)));
+          return new Response(body, { status: 200, headers });
+        }
+      } catch (error) {
+        console.error("Markdown fetch failed, falling back to HTML:", error);
+      }
+    }
+
     const upstreamHeaders = new Headers();
     for (const name of FORWARDED_HEADERS) {
       const value = request.headers.get(name);
@@ -138,6 +185,8 @@ export default {
         const location = upstream.headers.get("location");
         if (upstream.status < 300 || upstream.status >= 400 || !location) {
           const headers = finalize(upstream.headers, url.hostname, url.pathname);
+          if (mdPath) headers.append("Vary", "Accept");
+          if (url.pathname.startsWith("/md/")) headers.set("X-Robots-Tag", "noindex");
           if (isSkills) {
             // Correct media type for SKILL.md and open CORS so browser-based agents can read skills.
             if (upstream.status === 200 && url.pathname.endsWith(".md")) {
