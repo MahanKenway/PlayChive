@@ -301,6 +301,49 @@ await test("MCP card and discover agree on name, version and protocol versions",
   assert.deepEqual(d.supportedVersions, card.remotes[0].supportedProtocolVersions);
 });
 
+await test("Markdown for Agents: Accept text/markdown returns md twin, browsers keep HTML", async () => {
+  upstream = (target) =>
+    target.includes("/md/")
+      ? new Response("# Title\n\ntext here", { status: 200, headers: { "content-type": "application/octet-stream" } })
+      : new Response("<h1>hi</h1>", { status: 200, headers: { "content-type": "text/html; charset=utf-8" } });
+  const md = (p, accept) => run(`https://playchive.ir${p}`, { headers: { accept } });
+  let r = await md("/", "text/markdown");
+  assert.equal(calls[0].target, `${ORIGIN}/md/index.md`);
+  assert.equal(r.headers.get("content-type"), "text/markdown; charset=utf-8");
+  assert.equal(r.headers.get("vary"), "Accept");
+  assert.equal(r.headers.get("x-markdown-tokens"), String(Math.ceil("# Title\n\ntext here".length / 4)));
+  assert.equal(await r.text(), "# Title\n\ntext here");
+  await md("/cdogs.html", "text/markdown, text/html;q=0.5");
+  assert.equal(calls.at(-1).target, `${ORIGIN}/md/cdogs.md`);
+  await md("/fa/", "text/markdown");
+  assert.equal(calls.at(-1).target, `${ORIGIN}/md/fa/index.md`);
+  calls = [];
+  r = await md("/", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
+  assert.equal(calls[0].target, `${ORIGIN}/`);
+  assert.match(r.headers.get("content-type"), /text\/html/);
+  assert.match(r.headers.get("vary"), /Accept/);
+  calls = [];
+  await md("/", "*/*");
+  assert.equal(calls[0].target, `${ORIGIN}/`);
+  await md("/", "text/html, text/markdown;q=0.5");
+  assert.equal(calls.at(-1).target, `${ORIGIN}/`);
+  await md("/data/games.json", "text/markdown");
+  assert.equal(calls.at(-1).target, `${ORIGIN}/data/games.json`);
+});
+
+await test("Markdown for Agents: missing twin falls back to HTML; HEAD has no body", async () => {
+  upstream = (target) =>
+    target.includes("/md/") ? new Response("nope", { status: 404 }) : new Response("<h1>hi</h1>", { headers: { "content-type": "text/html" } });
+  let r = await run("https://playchive.ir/", { headers: { accept: "text/markdown" } });
+  assert.match(r.headers.get("content-type"), /text\/html/);
+  upstream = () => new Response("# x", { status: 200 });
+  r = await run("https://playchive.ir/", { method: "HEAD", headers: { accept: "text/markdown" } });
+  assert.equal(r.headers.get("content-type"), "text/markdown; charset=utf-8");
+  assert.equal(await r.text(), "");
+  r = await run("https://playchive.ir/md/index.md");
+  assert.equal(r.headers.get("x-robots-tag"), "noindex");
+});
+
 await test("workers.dev host is noindex", async () => {
   const r = await run("https://playchive.example.workers.dev/");
   assert.equal(r.status, 200);

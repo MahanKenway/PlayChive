@@ -265,6 +265,15 @@ try:
 except Exception as e:  # noqa: BLE001
     err(f"openapi.json: {e}")
 worker_src = (ROOT / "worker/index.ts").read_text(encoding="utf-8")
+if "text/markdown" not in worker_src or "wantsMarkdown" not in worker_src:
+    err("worker/index.ts: Markdown for Agents negotiation is missing")
+for p in pages:
+    rel_md = p.relative_to(ROOT).as_posix()
+    if rel_md == "openresident.html":
+        continue
+    rel_md = rel_md[: -len("index.html")] + "index.md" if rel_md.endswith("index.html") else rel_md[: -len(".html")] + ".md"
+    if not (ROOT / "md" / rel_md).is_file():
+        err(f"md/{rel_md}: markdown twin missing (run scripts/generate-seo.py)")
 mcp_src = (ROOT / "worker/mcp.ts").read_text(encoding="utf-8") if (ROOT / "worker/mcp.ts").exists() else ""
 for needle in ('"/mcp"', "CARD_PATHS", "handleMcp"):
     if needle not in worker_src:
