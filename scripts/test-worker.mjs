@@ -360,6 +360,18 @@ await test("A2A agent card: served by the Worker, 1.0 shape, points at the Ikol 
   assert.equal(await h.text(), "");
 });
 
+await test("PRM (RFC 9728): minimal, truthful, no authorization servers, no origin hit", async () => {
+  const r = await run("https://playchive.ir/.well-known/oauth-protected-resource");
+  assert.equal(r.status, 200);
+  assert.equal(r.headers.get("content-type"), "application/json");
+  assert.equal(calls.length, 0);
+  const j = await r.json();
+  assert.equal(j.resource, "https://playchive.ir");
+  assert.equal(j.authorization_servers, undefined);
+  assert.deepEqual(j.bearer_methods_supported, []);
+  assert.equal(j.resource_documentation, "https://playchive.ir/auth.md");
+});
+
 await test("workers.dev host is noindex", async () => {
   const r = await run("https://playchive.example.workers.dev/");
   assert.equal(r.status, 200);

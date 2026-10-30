@@ -12,7 +12,7 @@ Agent audience: browser agents, crawlers and LLM tools that read the public game
 
 - Resource: https://playchive.ir
 - Authorization servers: none
-- OAuth Protected Resource Metadata (`/.well-known/oauth-protected-resource`): not published, because there is nothing to protect
+- OAuth Protected Resource Metadata (`/.well-known/oauth-protected-resource`): published as a minimal RFC 9728 document that names the resource and points here. It lists no `authorization_servers` and no bearer methods, because nothing is protected
 - OAuth Authorization Server metadata: not published, because PLAYCHIVE runs no authorization server
 - Bearer methods: not applicable, do not send an `Authorization` header
 

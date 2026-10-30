@@ -80,6 +80,13 @@ function markdownPathFor(pathname: string): string | null {
   return null;
 }
 
+const PRM = {
+  resource: "https://playchive.ir",
+  bearer_methods_supported: [],
+  resource_name: "PLAYCHIVE",
+  resource_documentation: "https://playchive.ir/auth.md",
+};
+
 // Small, safe hardening headers added to every response.
 function finalize(upstreamHeaders: Headers, host: string, path = ""): Headers {
   const headers = new Headers(upstreamHeaders);
@@ -124,6 +131,20 @@ export default {
 
     if (request.method !== "GET" && request.method !== "HEAD") {
       return new Response("Method Not Allowed", { status: 405, headers: { Allow: "GET, HEAD" } });
+    }
+
+    // RFC 9728 Protected Resource Metadata. PLAYCHIVE has no protected endpoints and no authorization
+    // server, so this minimal document says exactly that (authorization_servers is optional in RFC 9728).
+    if (url.pathname === "/.well-known/oauth-protected-resource") {
+      return new Response(request.method === "HEAD" ? null : JSON.stringify(PRM, null, 2), {
+        status: 200,
+        headers: {
+          "Content-Type": "application/json",
+          "Cache-Control": "public, max-age=3600",
+          "Access-Control-Allow-Origin": "*",
+          "X-Content-Type-Options": "nosniff",
+        },
+      });
     }
 
     if (url.pathname === "/.well-known/api-catalog") {
