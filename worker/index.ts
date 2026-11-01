@@ -9,6 +9,7 @@
 
 import { handleMcp, handleCard, CARD_PATHS } from "./mcp";
 import { handleAgentCard, A2A_CARD_PATHS } from "./a2a";
+import { handleFavorites, handleDiscovery, protectedResource, OAUTH_PATHS, type OAuthEnv } from "./oauth";
 
 const ORIGIN = "https://mahankenway.github.io";
 const BASE_PATH = "/PlayChive"; // GitHub Pages project path
@@ -93,12 +94,6 @@ const SIGNATURES_DIRECTORY = {
   ]
 };
 
-const PRM = {
-  resource: "https://playchive.ir",
-  bearer_methods_supported: [],
-  resource_name: "PLAYCHIVE",
-  resource_documentation: "https://playchive.ir/auth.md",
-};
 
 // Small, safe hardening headers added to every response.
 function finalize(upstreamHeaders: Headers, host: string, path = ""): Headers {
@@ -119,7 +114,7 @@ function finalize(upstreamHeaders: Headers, host: string, path = ""): Headers {
 const FORWARDED_HEADERS = ["accept", "accept-encoding", "range", "if-none-match", "if-modified-since"];
 
 export default {
-  async fetch(request: Request): Promise<Response> {
+  async fetch(request: Request, env: OAuthEnv = {}): Promise<Response> {
     const url = new URL(request.url);
 
     // One canonical host: send www.* and plain http to https on the apex domain
@@ -134,6 +129,10 @@ export default {
 
     // Read-only MCP server (JSON-RPC over POST) and its discovery card.
     if (url.pathname === "/mcp") return handleMcp(request);
+    if (url.pathname === "/api/favorites") return handleFavorites(request, env);
+    if (OAUTH_PATHS.includes(url.pathname) && (request.method === "GET" || request.method === "HEAD")) {
+      return handleDiscovery(request, env);
+    }
     if (CARD_PATHS.includes(url.pathname) && (request.method === "GET" || request.method === "HEAD")) {
       return handleCard(request, url.pathname);
     }
@@ -149,7 +148,7 @@ export default {
     // RFC 9728 Protected Resource Metadata. PLAYCHIVE has no protected endpoints and no authorization
     // server, so this minimal document says exactly that (authorization_servers is optional in RFC 9728).
     if (url.pathname === "/.well-known/oauth-protected-resource") {
-      return new Response(request.method === "HEAD" ? null : JSON.stringify(PRM, null, 2), {
+      return new Response(request.method === "HEAD" ? null : JSON.stringify(protectedResource(env), null, 2), {
         status: 200,
         headers: {
           "Content-Type": "application/json",

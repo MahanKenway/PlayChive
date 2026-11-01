@@ -387,6 +387,109 @@ await test("Web Bot Auth directory: JWKS with an Ed25519 public key only", async
   }
 });
 
+// ---- OAuth (Cloudflare Access as IdP): everything off until configured, strict verification once on
+import { generateKeyPairSync, createSign } from "node:crypto";
+const ISSUER = "https://team.cloudflareaccess.com/cdn-cgi/access/sso/oidc/client123";
+const AUD = "client123";
+const rsa = generateKeyPairSync("rsa", { modulusLength: 2048 });
+const jwk = { ...rsa.publicKey.export({ format: "jwk" }), kid: "k1", alg: "RS256", use: "sig" };
+const other = generateKeyPairSync("rsa", { modulusLength: 2048 });
+const b64url = (o) => Buffer.from(typeof o === "string" ? o : JSON.stringify(o)).toString("base64url");
+const mint = (claims = {}, { key = rsa.privateKey, kid = "k1", alg = "RS256" } = {}) => {
+  const now = Math.floor(Date.now() / 1000);
+  const body = { iss: ISSUER, aud: AUD, sub: "user-1", exp: now + 600, iat: now, ...claims };
+  const head = b64url({ alg, kid, typ: "JWT" });
+  const data = `${head}.${b64url(body)}`;
+  const sig = createSign("RSA-SHA256").update(data).sign(key).toString("base64url");
+  return `${data}.${sig}`;
+};
+const kvStore = new Map();
+const KV = { get: async (k) => kvStore.get(k) ?? null, put: async (k, v) => void kvStore.set(k, v) };
+const ENV = { ACCESS_ISSUER: ISSUER, ACCESS_AUDIENCE: AUD, FAVORITES: KV };
+const idpUpstream = (target) => {
+  if (target === `${ISSUER}/.well-known/openid-configuration`)
+    return Response.json({ issuer: ISSUER, authorization_endpoint: `${ISSUER}/authorization`, token_endpoint: `${ISSUER}/token`, jwks_uri: `${ISSUER}/jwks`, response_types_supported: ["code"], grant_types_supported: ["authorization_code"] });
+  if (target === `${ISSUER}/jwks`) return Response.json({ keys: [jwk] });
+  return new Response("x", { status: 404 });
+};
+const withEnv = (url, init, env) => worker.fetch(new Request(url, init), env);
+const fav = (method, token, body, env = ENV) =>
+  withEnv("https://playchive.ir/api/favorites", { method, headers: { ...(token ? { authorization: `Bearer ${token}` } : {}), "content-type": "application/json" }, body }, env);
+
+await test("OAuth: unconfigured -> favourites 503, discovery 404, PRM lists no authorization server", async () => {
+  assert.equal((await withEnv("https://playchive.ir/api/favorites", {}, {})).status, 503);
+  assert.equal((await withEnv("https://playchive.ir/.well-known/openid-configuration", {}, {})).status, 404);
+  const prm = await (await withEnv("https://playchive.ir/.well-known/oauth-protected-resource", {}, {})).json();
+  assert.equal(prm.authorization_servers, undefined);
+  assert.equal(calls.length, 0);
+});
+
+await test("OAuth: configured discovery proxies the IdP document, PRM points at it", async () => {
+  upstream = idpUpstream;
+  const d = await (await withEnv("https://playchive.ir/.well-known/openid-configuration", {}, ENV)).json();
+  assert.equal(d.issuer, ISSUER);
+  for (const k of ["authorization_endpoint", "token_endpoint", "jwks_uri", "grant_types_supported", "response_types_supported"]) assert.ok(d[k], k);
+  const d2 = await (await withEnv("https://playchive.ir/.well-known/oauth-authorization-server", {}, ENV)).json();
+  assert.equal(d2.issuer, ISSUER);
+  const prm = await (await withEnv("https://playchive.ir/.well-known/oauth-protected-resource", {}, ENV)).json();
+  assert.deepEqual(prm.authorization_servers, [ISSUER]);
+  assert.deepEqual(prm.bearer_methods_supported, ["header"]);
+  assert.ok(prm.scopes_supported.length);
+});
+
+await test("OAuth: favourites require a valid token and round-trip per user", async () => {
+  upstream = idpUpstream;
+  let r = await fav("GET");
+  assert.equal(r.status, 401);
+  assert.match(r.headers.get("www-authenticate"), /resource_metadata="https:\/\/playchive\.ir\/\.well-known\/oauth-protected-resource"/);
+  r = await fav("GET", mint());
+  assert.deepEqual(await r.json(), { games: [] });
+  r = await fav("PUT", mint(), JSON.stringify({ games: ["cdogs-sdl", "cdogs-sdl", "openttd"] }));
+  assert.deepEqual((await r.json()).games, ["cdogs-sdl", "openttd"]);
+  assert.deepEqual(await (await fav("GET", mint())).json(), { games: ["cdogs-sdl", "openttd"] });
+  assert.deepEqual(await (await fav("GET", mint({ sub: "user-2" }))).json(), { games: [] }, "users are isolated");
+});
+
+await test("OAuth: bad tokens are rejected (signature, kid, alg, iss, aud, exp, nbf)", async () => {
+  upstream = idpUpstream;
+  const now = Math.floor(Date.now() / 1000);
+  const bad = [
+    mint({}, { key: other.privateKey }),
+    mint({}, { kid: "nope" }),
+    mint({ iss: "https://evil.example" }),
+    mint({ aud: "someone-else" }),
+    mint({ exp: now - 3600 }),
+    mint({ nbf: now + 3600 }),
+    mint({ sub: "" }),
+    "not.a.jwt",
+    "x",
+  ];
+  for (const t of bad) assert.equal((await fav("GET", t)).status, 401, t.slice(0, 20));
+  const none = `${b64url({ alg: "none", kid: "k1" })}.${b64url({ iss: ISSUER, aud: AUD, sub: "u", exp: now + 99 })}.`;
+  assert.equal((await fav("GET", none)).status, 401, "alg none");
+  const hs = mint({}, { alg: "HS256" });
+  assert.equal((await fav("GET", hs)).status, 401, "wrong alg");
+});
+
+await test("OAuth: favourites validate input and limit size", async () => {
+  upstream = idpUpstream;
+  const t = mint();
+  for (const body of [JSON.stringify({ games: ["not-a-game"] }), JSON.stringify({ games: "x" }), "{nope", JSON.stringify({ games: Array(101).fill("cdogs-sdl") })]) {
+    assert.equal((await fav("PUT", t, body)).status, 400, body.slice(0, 20));
+  }
+  assert.equal((await fav("PUT", t, "x".repeat(9000))).status, 413);
+  assert.equal((await fav("DELETE", t)).status, 405);
+  assert.equal((await withEnv("https://playchive.ir/api/favorites", { method: "OPTIONS" }, ENV)).status, 204);
+});
+
+await test("OAuth: IdP outage gives 503, not a pass", async () => {
+  upstream = () => new Response("down", { status: 500 });
+  const oe = console.error; console.error = () => {};
+  const r = await fav("GET", mint(), undefined, { ...ENV, ACCESS_ISSUER: ISSUER + "-down" });
+  console.error = oe;
+  assert.equal(r.status, 503);
+});
+
 await test("workers.dev host is noindex", async () => {
   const r = await run("https://playchive.example.workers.dev/");
   assert.equal(r.status, 200);

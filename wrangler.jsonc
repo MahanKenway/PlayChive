@@ -6,6 +6,8 @@
   "name": "playchive",
   "main": "worker/index.ts",
   "compatibility_date": "2025-03-07",
+  // Per-user favourites (worker/oauth.ts). Off until ACCESS_ISSUER and ACCESS_AUDIENCE are set below.
+  "kv_namespaces": [{ "binding": "FAVORITES", "id": "9b85e773cc524899bcb20fad581e2caf" }],
   "observability": {
     "enabled": true,
     "head_sampling_rate": 1
