@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <link rel="icon" href="./runtimes/pacman/favicon.png" />
+  <link rel="stylesheet" href="./runtimes/pacman/static/style/index.css" />
+  <style>
+    :root { color-scheme: dark; --bg:#080b12; --line:#2b3850; --ink:#f6f7fb; --muted:#9ca9bf; --accent:#b6ff43; }
+    * { box-sizing:border-box; }
+    html,body { margin:0; min-height:100%; background:radial-gradient(circle at 50% 0,#1b2945,var(--bg) 64%); color:var(--ink); font:14px/1.5 system-ui,sans-serif; }
+    body { padding:clamp(12px,3vw,36px); }
+    .playchive-runtime { width:min(100%,980px); margin:0 auto; }
+    .runtime-bar { display:flex; justify-content:space-between; align-items:center; gap:14px; margin-bottom:16px; padding:12px 14px; border:1px solid var(--line); background:rgba(17,24,39,.86); }
+    .runtime-bar strong { color:var(--accent); letter-spacing:.08em; font:12px ui-monospace,monospace; }
+    .runtime-bar a { color:var(--ink); text-decoration:none; font:11px ui-monospace,monospace; }
+    .runtime-bar a:hover { color:var(--accent); }
+    .mod-panel { margin:0; padding:clamp(8px,2vw,20px); border:1px solid var(--line); background:rgba(0,0,0,.45); box-shadow:0 20px 60px rgba(0,0,0,.3); }
+    .mod-panel canvas { width:min(100%,960px); height:auto; display:block; margin:0 auto; background:#000; border-radius:8px; }
+    .mod-panel .info { color:var(--muted); text-align:center; }
+    .mod-panel .info p { margin:.35rem 0; }
+    .mod-introtion { margin-top:18px; padding:18px; border:1px solid var(--line); background:rgba(17,24,39,.72); }
+    .mod-introtion .title { margin:0; color:var(--accent); font-size:22px; }
+    .mod-introtion .subtitle { margin:2px 0 12px; color:var(--muted); font-size:17px; }
+    .mod-introtion p { color:#d7deeb; }
+    .credits { margin-top:14px; color:var(--muted); font:11px/1.6 ui-monospace,monospace; }
+    @media (max-width:600px) { .runtime-bar { align-items:flex-start; flex-direction:column; } }
+  </style>
+<!-- seo:begin -->
+  <title>Play Pacman Online Free in Your Browser | PLAYCHIVE</title>
+  <meta name="description" content="A locally bundled HTML5 Pacman-style arcade game with twelve levels, pathfinding ghosts and no dependency on. Free to play in your browser, no install or." />
+  <link rel="canonical" href="https://playchive.ir/pacman.html" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PLAYCHIVE" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Play Pacman Online Free in Your Browser | PLAYCHIVE" />
+  <meta property="og:description" content="A locally bundled HTML5 Pacman-style arcade game with twelve levels, pathfinding ghosts and no dependency on. Free to play in your browser, no install or." />
+  <meta property="og:url" content="https://playchive.ir/pacman.html" />
+  <meta property="og:image" content="https://playchive.ir/assets/screenshots/pacman-gameplay.webp" />
+  <meta property="og:image:width" content="657" />
+  <meta property="og:image:height" content="437" />
+  <meta property="og:image:alt" content="Pacman gameplay in the PLAYCHIVE browser runtime" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Play Pacman Online Free in Your Browser | PLAYCHIVE" />
+  <meta name="twitter:description" content="A locally bundled HTML5 Pacman-style arcade game with twelve levels, pathfinding ghosts and no dependency on. Free to play in your browser, no install or." />
+  <meta name="twitter:image" content="https://playchive.ir/assets/screenshots/pacman-gameplay.webp" />
+  <meta name="twitter:image:alt" content="Pacman gameplay in the PLAYCHIVE browser runtime" />
+  <style>.seo-about{margin:34px 0 0;padding:20px 22px;border:1px solid rgba(21,24,20,.24);background:rgba(255,255,251,.5);color:#2b2f29;font:14px/1.65 Arial,sans-serif}.seo-about h2{margin:0 0 10px;font-size:20px;letter-spacing:-.02em}.seo-about h3{margin:22px 0 8px;font-size:15px}.seo-about dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 16px;margin:14px 0}.seo-about dt{color:#596057;font-weight:700}.seo-about dd{margin:0}.seo-about details{margin:6px 0;padding:8px 0;border-top:1px solid rgba(21,24,20,.14)}.seo-about summary{cursor:pointer;font-weight:700}.seo-about ul{margin:8px 0;padding-left:20px}.seo-about a{color:#385b20}</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "VideoGame",
+      "@id": "https://playchive.ir/pacman.html#game",
+      "name": "Pacman",
+      "url": "https://playchive.ir/pacman.html",
+      "description": "A locally bundled HTML5 Pacman-style arcade game with twelve levels, pathfinding ghosts and no dependency on the original demo host. The upstream code and MIT notice are retained inside the runtime.",
+      "image": "https://playchive.ir/assets/screenshots/pacman-gameplay.webp",
+      "screenshot": "https://playchive.ir/assets/screenshots/pacman-gameplay.webp",
+      "genre": "Arcade",
+      "gamePlatform": "Web browser",
+      "applicationCategory": "Game",
+      "operatingSystem": "Any modern web browser",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Organization",
+        "name": "Haole Zheng / mumuy"
+      },
+      "publisher": {
+        "@id": "https://playchive.ir/#org"
+      },
+      "isPartOf": {
+        "@id": "https://playchive.ir/#website"
+      },
+      "mainEntityOfPage": "https://playchive.ir/pacman.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "PLAYCHIVE",
+          "item": "https://playchive.ir/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Pacman",
+          "item": "https://playchive.ir/pacman.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Pacman free to play on PLAYCHIVE?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Pacman runs free in your browser. PLAYCHIVE bundles the engine and the game content it needs, distributed under their own open or freeware terms (MIT · attribution retained). There is no sign-up and no file upload step."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to install anything to play Pacman?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Pacman runs directly in a modern desktop or mobile browser such as Chrome, Edge, Firefox or Safari, using WebAssembly or HTML5. No account is required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I play Pacman on a phone or with a controller?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PLAYCHIVE supports keyboard, on-screen touch controls and fullscreen mode. Where the runtime allows it, phones get PSP-style on-screen controls, and desktop browsers accept keyboard, mouse and a connected gamepad."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who makes Pacman and what is its license?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pacman is developed by Haole Zheng / mumuy. License and attribution: MIT · attribution retained. PLAYCHIVE is a non-commercial hub and keeps upstream notices with each runtime."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- seo:end -->
+</head>
+<body>
+  <main class="playchive-runtime">
+    <div class="runtime-bar"><strong>PLAYCHIVE / LOCAL RUNTIME</strong><a href="./index.html">← Return to catalog</a></div>
+    <section class="mod-panel" aria-label="Pacman game">
+      <canvas id="canvas" width="960" height="640">Your browser does not support canvas.</canvas>
+      <div class="info"><p>Press Space to pause or continue.</p><p>Arrow keys control Pacman. Touch controls are provided by the original runtime where supported.</p></div>
+    </section>
+    <section class="mod-introtion">
+      <h1 class="title">Pacman</h1><p class="subtitle">MIT-licensed HTML5 arcade runtime</p>
+      <p>A locally bundled HTML5 Pacman-style arcade game with no request to the original demo host.</p>
+      <p class="credits">Upstream: mumuy/pacman · Author: Haole Zheng · License: MIT · Original project: github.com/mumuy/pacman</p>
+    </section>
+  <!-- seo:content:begin -->
+<section class="seo-about" aria-labelledby="seo-about-title">
+<h2 id="seo-about-title">About Pacman</h2>
+<p>A locally bundled HTML5 Pacman-style arcade game with twelve levels, pathfinding ghosts and no dependency on the original demo host. The upstream code and MIT notice are retained inside the runtime.</p>
+<dl>
+<dt>Genre</dt><dd>Arcade</dd>
+<dt>Developer</dt><dd>Haole Zheng / mumuy</dd>
+<dt>License</dt><dd>MIT · attribution retained</dd>
+<dt>Runtime</dt><dd>Bundled HTML5 runtime</dd>
+<dt>Controls</dt><dd>keyboard, on-screen touch controls, fullscreen mode</dd>
+<dt>Content status</dt><dd>READY / LOCAL · MIT bundle</dd>
+</dl>
+<h3>Pacman: frequently asked questions</h3>
+<details><summary>Is Pacman free to play on PLAYCHIVE?</summary><p>Yes. Pacman runs free in your browser. PLAYCHIVE bundles the engine and the game content it needs, distributed under their own open or freeware terms (MIT · attribution retained). There is no sign-up and no file upload step.</p></details>
+<details><summary>Do I need to install anything to play Pacman?</summary><p>No. Pacman runs directly in a modern desktop or mobile browser such as Chrome, Edge, Firefox or Safari, using WebAssembly or HTML5. No account is required.</p></details>
+<details><summary>Can I play Pacman on a phone or with a controller?</summary><p>PLAYCHIVE supports keyboard, on-screen touch controls and fullscreen mode. Where the runtime allows it, phones get PSP-style on-screen controls, and desktop browsers accept keyboard, mouse and a connected gamepad.</p></details>
+<details><summary>Who makes Pacman and what is its license?</summary><p>Pacman is developed by Haole Zheng / mumuy. License and attribution: MIT · attribution retained. PLAYCHIVE is a non-commercial hub and keeps upstream notices with each runtime.</p></details>
+<h3>More playable games on PLAYCHIVE</h3><ul>
+<li><a href="armawebtron.html">Armawebtron</a> (Arcade)</li>
+<li><a href="blasphemer.html">Blasphemer</a> (Fantasy shooter)</li>
+<li><a href="cdogs.html">C-Dogs SDL</a> (Action)</li>
+<li><a href="freedink.html">GNU FreeDink</a> (Exploration)</li>
+<li><a href="opentyrian.html">OpenTyrian2000</a> (Action)</li>
+</ul><p><a href="./">Browse the full PLAYCHIVE catalog</a></p></section>
+<!-- seo:content:end -->
+</main>
+  <script src="./runtimes/pacman/static/script/game.js"></script>
+  <script src="./runtimes/pacman/static/script/index.js"></script>
+</body>
+</html>

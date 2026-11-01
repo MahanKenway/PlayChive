@@ -35,10 +35,10 @@ Armawebtron is developed by Glen Harpring / Armawebtron contributors. License an
 
 ### More playable games on PLAYCHIVE
 
+- [Pacman](https://playchive.ir/pacman.html) (Arcade)
 - [TuxRacer.js](https://playchive.ir/tuxracer.html) (Racing)
 - [Starter Kit Racing](https://playchive.ir/starter-kit-racing.html) (3D Racing)
 - [Astray](https://playchive.ir/astray.html) (Physics Maze)
 - [Neon Rift](https://playchive.ir/neon-rift.html) (Racing)
-- [Obsidian Relay](https://playchive.ir/shadow-station.html) (Survival)
 
 [Browse the full PLAYCHIVE catalog](https://playchive.ir/)

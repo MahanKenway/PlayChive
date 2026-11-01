@@ -1,7 +1,7 @@
 {
   "/": {
-    "hash": "36deca3706ff337a5c77cb805fd99272dac6617f1c57948c00d0ee27fac6ce51",
-    "lastmod": "2026-10-29"
+    "hash": "ceb3630819905732c97b066ee8b73e4f6d6d2c5630c329489cb9fc73cc9214a9",
+    "lastmod": "2026-11-01"
   },
   "2048.html": {
     "hash": "2b2abc15664b814b11d866f2e0d492176fc838eafb15a82403ce2c22d1a4b87e",
@@ -12,16 +12,16 @@
     "lastmod": "2026-10-29"
   },
   "adarkroom.html": {
-    "hash": "0ee617a26ba343bb031900fcf2c28587b7c5bf912cb0bdf2090a519dd1a379e2",
-    "lastmod": "2026-10-28"
+    "hash": "2fed45d5bde30f901cf86ba69974d333d12ca2af704151bc7ed8cd66500b7dd6",
+    "lastmod": "2026-11-01"
   },
   "agent/": {
-    "hash": "631713ad310a67eab7090311c1fdb3ce728e1c07046b5d1f9d5760280fc10eba",
-    "lastmod": "2026-10-28"
+    "hash": "9ff796d00a58bb21c74a420eef9e406c5c9ee03d0f246207c9a9a3e9f46b6ab9",
+    "lastmod": "2026-11-01"
   },
   "armawebtron.html": {
-    "hash": "d2d3c88d9d7852a612170cbf889e64240be2e65b9d2896264a7b50739543bc79",
-    "lastmod": "2026-10-28"
+    "hash": "61f5edb7da323e3577fc4c3097e19279f411630ce5f6db65d3511fe1323f40f6",
+    "lastmod": "2026-11-01"
   },
   "astray.html": {
     "hash": "92974f9ae49a4afa915e32ef19a94d6cc7a9c9a3225967824201ef683b03033e",
@@ -40,16 +40,16 @@
     "lastmod": "2026-10-28"
   },
   "digger.html": {
-    "hash": "bf0ac9f9f1e2b3d2668648d53012ee602ad6c36a057adf2a275475d6796a6efe",
-    "lastmod": "2026-10-28"
+    "hash": "f801fe26d20a423875f5b0e454140563f131c5c7f251eac47f45ade37cee53ef",
+    "lastmod": "2026-11-01"
   },
   "ecwolf.html": {
-    "hash": "ad0a21eb4424f6b3be15a0693c330abe580827cdf0fa9b4740696256566ef556",
-    "lastmod": "2026-10-28"
+    "hash": "fd7f2adac850fe39cecc0a8b5cd0d308e770f006eda9f3d8300870c026811268",
+    "lastmod": "2026-11-01"
   },
   "fa/": {
-    "hash": "80428130a36d41b91f6b2416a7c6be5e11cd60c6ae4972dc9f0e116f89ef2aa0",
-    "lastmod": "2026-10-29"
+    "hash": "ffc206d9f63c297dcc84e9d49c8c6a122ff5c723a3c536ee10a04dd52d7b4c13",
+    "lastmod": "2026-11-01"
   },
   "freedink.html": {
     "hash": "3b0f93f7c6291ebd0a69a8e4b65f558b8bbb90b142a086fc7a25b0ed5c4741f6",
@@ -90,6 +90,10 @@
   "opentyrian.html": {
     "hash": "d86065f685839caacf1353370c6f6a4e1ecb862b63fffc4200786c42aef18c55",
     "lastmod": "2026-10-28"
+  },
+  "pacman.html": {
+    "hash": "ca900206b58635e1e926ac7aac411f61569f438e24c29bb8a3418ffe979b50e9",
+    "lastmod": "2026-11-01"
   },
   "privacy/": {
     "hash": "32b002f99722409145f14b037882febda1ae3240be8a074e20b02fa2e770eed1",

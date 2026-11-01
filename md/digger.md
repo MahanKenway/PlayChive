@@ -39,6 +39,6 @@ Digger Remastered is developed by Digger Remastered contributors. License and at
 - [OpenTyrian2000](https://playchive.ir/opentyrian.html) (Action)
 - [LibreQuake](https://playchive.ir/librequake.html) (Action)
 - [ECWolf](https://playchive.ir/ecwolf.html) (Action)
-- [Blasphemer](https://playchive.ir/blasphemer.html) (Fantasy shooter)
+- [Pacman](https://playchive.ir/pacman.html) (Arcade)
 
 [Browse the full PLAYCHIVE catalog](https://playchive.ir/)

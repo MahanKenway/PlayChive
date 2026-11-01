@@ -38,7 +38,7 @@ A Dark Room is developed by Michael Townsend & contributors. License and attribu
 - [GNU FreeDink](https://playchive.ir/freedink.html) (Exploration)
 - [Digger Remastered](https://playchive.ir/digger.html) (Action)
 - [ECWolf](https://playchive.ir/ecwolf.html) (Action)
+- [Pacman](https://playchive.ir/pacman.html) (Arcade)
 - [Blasphemer](https://playchive.ir/blasphemer.html) (Fantasy shooter)
-- [C-Dogs SDL](https://playchive.ir/cdogs.html) (Action)
 
 [Browse the full PLAYCHIVE catalog](https://playchive.ir/)

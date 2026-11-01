@@ -2,7 +2,7 @@
 
 > PLAYCHIVE is an independent, non-commercial browser hub for legally distributable open-source retro games, classic engines and experimental runtimes. Games run as WebAssembly or HTML5 directly in the browser, with no install and no account.
 
-Facts: 23 playable runtimes (22 with free bundled content), 57 catalog records in total, keyboard, touch (PSP-style), gamepad and fullscreen support, saves stored locally in the browser. Created by Mahan Tavakoli (MahanKenway). Languages: English and Persian (fa). Site: https://playchive.ir
+Facts: 24 playable runtimes (22 with free bundled content), 58 catalog records in total, keyboard, touch (PSP-style), gamepad and fullscreen support, saves stored locally in the browser. Created by Mahan Tavakoli (MahanKenway). Languages: English and Persian (fa). Site: https://playchive.ir
 
 ## Play now
 
@@ -29,12 +29,13 @@ Facts: 23 playable runtimes (22 with free bundled content), 57 catalog records i
 - [A Dark Room](https://playchive.ir/adarkroom.html): Exploration. A minimalist survival adventure that unfolds from its first fire into a wider world.
 - [Digger Remastered](https://playchive.ir/digger.html): Action. A fully local SDL2/WebAssembly build of the remastered 1983 digging-action classic.
 - [ECWolf](https://playchive.ir/ecwolf.html): Action. A Wolfenstein-compatible ECWolf WebAssembly engine with PSP-style controls, browser-local storage and stable fullscreen. Requires your own lawful game data.
+- [Pacman](https://playchive.ir/pacman.html): Arcade. A locally bundled HTML5 Pacman-style arcade game with twelve levels, pathfinding ghosts and no dependency on the original demo host.
 
 ## Guides and data
 
 - [PLAYCHIVE home](https://playchive.ir/): Searchable catalog with a static, crawlable game list.
 - [Full catalog for LLMs](https://playchive.ir/llms-full.txt): Every record with license, controls and rights status.
-- [Catalog JSON](https://playchive.ir/data/games.json): Machine-readable records for all 57 entries.
+- [Catalog JSON](https://playchive.ir/data/games.json): Machine-readable records for all 58 entries.
 - [Agent guide](https://playchive.ir/agent/): No-login discovery page for browser agents.
 - [OpenAPI description](https://playchive.ir/openapi.json): OpenAPI 3.1 spec of the read-only JSON endpoints (also listed in /.well-known/api-catalog).
 - [Persian guide](https://playchive.ir/fa/): Persian landing page (hreflang pair of the home page).

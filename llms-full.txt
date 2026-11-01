@@ -280,6 +280,18 @@ A Wolfenstein-compatible ECWolf WebAssembly engine with PSP-style controls, brow
 - Play: https://playchive.ir/ecwolf.html
 - Controls: keyboard, touch, gamepad, fullscreen
 
+### Pacman
+
+A locally bundled HTML5 Pacman-style arcade game with twelve levels, pathfinding ghosts and no dependency on the original demo host. The upstream code and MIT notice are retained inside the runtime.
+
+- Genre: Arcade
+- Developer: Haole Zheng / mumuy
+- License: MIT · attribution retained
+- Status: READY / LOCAL · MIT bundle
+- Runtime: Bundled HTML5 runtime
+- Play: https://playchive.ir/pacman.html
+- Controls: keyboard, touch, fullscreen
+
 ## Doom-engine campaigns and local import
 
 ### Freedoom: Phase 1

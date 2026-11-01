@@ -1126,7 +1126,7 @@
     {
       "id": "pacman-mit",
       "name": "Pacman",
-      "url": "runtimes/pacman/index.html",
+      "url": "pacman.html",
       "playable": true,
       "runtime": "Bundled HTML5 runtime",
       "controls": [

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://playchive.ir/</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://playchive.ir/" />
@@ -12,7 +12,7 @@
   </url>
   <url>
     <loc>https://playchive.ir/fa/</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://playchive.ir/" />
@@ -78,7 +78,7 @@
   </url>
   <url>
     <loc>https://playchive.ir/armawebtron.html</loc>
-    <lastmod>2026-10-28</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://playchive.ir/assets/screenshots/armawebtron-runtime.webp</image:loc></image:image>
@@ -162,28 +162,35 @@
   </url>
   <url>
     <loc>https://playchive.ir/adarkroom.html</loc>
-    <lastmod>2026-10-28</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://playchive.ir/assets/screenshots/adarkroom-runtime.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://playchive.ir/digger.html</loc>
-    <lastmod>2026-10-28</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://playchive.ir/assets/screenshots/digger-runtime.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://playchive.ir/ecwolf.html</loc>
-    <lastmod>2026-10-28</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://playchive.ir/assets/screenshots/ecwolf-runtime.png</image:loc></image:image>
   </url>
   <url>
+    <loc>https://playchive.ir/pacman.html</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://playchive.ir/assets/screenshots/pacman-gameplay.webp</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://playchive.ir/agent/</loc>
-    <lastmod>2026-10-28</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>

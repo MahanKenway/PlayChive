@@ -1107,7 +1107,7 @@ export const COLLECTIONS = [
     artwork: 'assets/screenshots/pacman-gameplay.webp',
     artworkCredit: 'Gameplay reference: upstream Pacman project',
     description: 'A locally bundled HTML5 Pacman-style arcade game with twelve levels, pathfinding ghosts and no dependency on the original demo host. The upstream code and MIT notice are retained inside the runtime.',
-    runtimePath: 'runtimes/pacman/index.html',
+    runtimePath: 'pacman.html',
     runtimeLabel: 'Launch Pacman',
     playable: true,
     catalogState: 'READY / LOCAL',

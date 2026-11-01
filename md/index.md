@@ -6,11 +6,11 @@ Source: https://playchive.ir/
 
 ## PLAYCHIVE: free classic and open-source games in your browser
 
-PLAYCHIVE is a curated hub of 23 playable browser runtimes plus a rights-aware directory of 34 further catalog entries. Each game runs as WebAssembly or HTML5 in your browser: no install, no account, and saves stay on your device. PLAYCHIVE is non-commercial and keeps upstream license notices with every runtime. [فارسی](https://playchive.ir/fa/)
+PLAYCHIVE is a curated hub of 24 playable browser runtimes plus a rights-aware directory of 34 further catalog entries. Each game runs as WebAssembly or HTML5 in your browser: no install, no account, and saves stay on your device. PLAYCHIVE is non-commercial and keeps upstream license notices with every runtime. [فارسی](https://playchive.ir/fa/)
 
-Last updated: 2026-10-29
+Last updated: 2026-11-01
 
-### Play now (23 games)
+### Play now (24 games)
 
 - [Blasphemer](https://playchive.ir/blasphemer.html) (Fantasy shooter): A complete free dark-fantasy shooter running through Chocolate Heretic in its own WebAssembly module.
 - [C-Dogs SDL](https://playchive.ir/cdogs.html) (Action): A top-down retro action game running in its own C-Dogs SDL WebAssembly module.
@@ -35,6 +35,7 @@ Last updated: 2026-10-29
 - [A Dark Room](https://playchive.ir/adarkroom.html) (Exploration): A minimalist survival adventure that unfolds from its first fire into a wider world.
 - [Digger Remastered](https://playchive.ir/digger.html) (Action): A fully local SDL2/WebAssembly build of the remastered 1983 digging-action classic.
 - [ECWolf](https://playchive.ir/ecwolf.html) (Action): A Wolfenstein-compatible ECWolf WebAssembly engine with PSP-style controls, browser-local storage and stable fullscreen. Requires your own lawful game data.
+- [Pacman](https://playchive.ir/pacman.html) (Arcade): A locally bundled HTML5 Pacman-style arcade game with twelve levels, pathfinding ghosts and no dependency on the original demo host.
 
 ### Doom-engine campaigns and local import
 

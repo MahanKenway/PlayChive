@@ -39,6 +39,6 @@ ECWolf is developed by ECWolf project / ECWolf JS. License and attribution: GPL 
 - [OpenTyrian2000](https://playchive.ir/opentyrian.html) (Action)
 - [LibreQuake](https://playchive.ir/librequake.html) (Action)
 - [Digger Remastered](https://playchive.ir/digger.html) (Action)
-- [Blasphemer](https://playchive.ir/blasphemer.html) (Fantasy shooter)
+- [Pacman](https://playchive.ir/pacman.html) (Arcade)
 
 [Browse the full PLAYCHIVE catalog](https://playchive.ir/)
