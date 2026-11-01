@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <meta name="robots" content="noindex" />
+  <title>PLAYCHIVE / Pacman</title>
+  <link rel="icon" href="./favicon.png" />
+  <link rel="stylesheet" href="./static/style/index.css" />
+  <style>
+    :root { color-scheme: dark; --bg:#080b12; --panel:#111827; --line:#2b3850; --ink:#f6f7fb; --muted:#9ca9bf; --accent:#b6ff43; }
+    * { box-sizing:border-box; }
+    html,body { margin:0; min-height:100%; background:radial-gradient(circle at 50% 0,#1b2945,var(--bg) 64%); color:var(--ink); font:14px/1.5 system-ui,sans-serif; }
+    body { padding:clamp(12px,3vw,36px); }
+    .playchive-runtime { width:min(100%,980px); margin:0 auto; }
+    .runtime-bar { display:flex; justify-content:space-between; align-items:center; gap:14px; margin-bottom:16px; padding:12px 14px; border:1px solid var(--line); background:rgba(17,24,39,.86); }
+    .runtime-bar strong { color:var(--accent); letter-spacing:.08em; font:12px ui-monospace,monospace; }
+    .runtime-bar a { color:var(--ink); text-decoration:none; font:11px ui-monospace,monospace; }
+    .runtime-bar a:hover { color:var(--accent); }
+    .mod-panel { margin:0; padding:clamp(8px,2vw,20px); border:1px solid var(--line); background:rgba(0,0,0,.45); box-shadow:0 20px 60px rgba(0,0,0,.3); }
+    .mod-panel canvas { width:min(100%,960px); height:auto; display:block; margin:0 auto; background:#000; border-radius:8px; image-rendering:auto; }
+    .mod-panel .info { color:var(--muted); text-align:center; }
+    .mod-panel .info p { margin:.35rem 0; }
+    .mod-introtion { margin-top:18px; padding:18px; border:1px solid var(--line); background:rgba(17,24,39,.72); }
+    .mod-introtion .title { margin:0; color:var(--accent); font-size:22px; }
+    .mod-introtion .subtitle { margin:2px 0 12px; color:var(--muted); font-size:17px; }
+    .mod-introtion p { color:#d7deeb; }
+    .credits { margin-top:14px; color:var(--muted); font:11px/1.6 ui-monospace,monospace; }
+    @media (max-width:600px) { .runtime-bar { align-items:flex-start; flex-direction:column; } }
+  </style>
+</head>
+<body>
+  <main class="playchive-runtime">
+    <div class="runtime-bar"><strong>PLAYCHIVE / LOCAL RUNTIME</strong><a href="../../index.html">← Return to catalog</a></div>
+    <section class="mod-panel" aria-label="Pacman game">
+      <canvas id="canvas" width="960" height="640">Your browser does not support canvas.</canvas>
+      <div class="info"><p>Press Space to pause or continue.</p><p>Arrow keys control Pacman. Touch controls are provided by the original runtime where supported.</p></div>
+    </section>
+    <section class="mod-introtion">
+      <h1 class="title">Pacman</h1><p class="subtitle">MIT-licensed HTML5 arcade runtime</p>
+      <p>A locally bundled browser game inspired by the classic arcade format. PLAYCHIVE includes the upstream code and local assets, with no request to the original demo host.</p>
+      <p class="credits">Upstream: mumuy/pacman · Author: Haole Zheng · License: MIT · Original project: github.com/mumuy/pacman</p>
+    </section>
+  </main>
+  <script src="./static/script/game.js"></script>
+  <script src="./static/script/index.js"></script>
+</body>
+</html>

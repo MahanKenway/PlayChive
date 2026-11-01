@@ -1337,6 +1337,31 @@
       "projectUrl": "https://endless-sky.github.io/",
       "catalogState": "EXTERNAL LINK / RIGHTS REVIEW",
       "source": null
+    },
+    {
+      "id": "pacman-mit",
+      "name": "Pacman",
+      "description": "A locally bundled HTML5 Pacman-style arcade game with twelve levels, pathfinding ghosts and no dependency on the original demo host. The upstream code and MIT notice are retained inside the runtime.",
+      "genre": "Arcade",
+      "playable": true,
+      "runtimeUrl": "runtimes/pacman/index.html",
+      "probeUrl": null,
+      "publicUrl": "https://github.com/mumuy/pacman",
+      "runtimeType": "Bundled HTML5 runtime",
+      "controls": [
+        "keyboard",
+        "touch",
+        "fullscreen"
+      ],
+      "launchMethod": "local-runtime",
+      "license": "MIT · attribution retained",
+      "status": "READY / LOCAL · MIT bundle",
+      "studio": "Haole Zheng / mumuy",
+      "year": "MIT HTML5 runtime",
+      "artwork": "assets/screenshots/external-experiments.webp",
+      "projectUrl": "https://github.com/mumuy/pacman",
+      "catalogState": "READY / LOCAL",
+      "source": "runtimes/pacman"
     }
   ]
 }

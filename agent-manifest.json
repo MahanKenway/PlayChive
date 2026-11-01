@@ -1122,6 +1122,24 @@
         "open-project"
       ],
       "agentStateSelector": null
+    },
+    {
+      "id": "pacman-mit",
+      "name": "Pacman",
+      "url": "runtimes/pacman/index.html",
+      "playable": true,
+      "runtime": "Bundled HTML5 runtime",
+      "controls": [
+        "keyboard",
+        "touch",
+        "fullscreen"
+      ],
+      "launchMethod": "local-runtime",
+      "status": "READY / LOCAL · MIT bundle",
+      "actions": [
+        "open-runtime"
+      ],
+      "agentStateSelector": null
     }
   ]
 }

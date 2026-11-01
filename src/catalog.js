@@ -1093,6 +1093,26 @@ export const COLLECTIONS = [
     playable: false,
     catalogState: 'EXTERNAL LINK / RIGHTS REVIEW',
   },
+  {
+    id: 'pacman-mit',
+    title: 'Pacman',
+    studio: 'Haole Zheng / mumuy',
+    year: 'MIT HTML5 runtime',
+    format: 'Bundled HTML5 runtime',
+    genre: 'Arcade',
+    duration: '12 levels',
+    maps: 'Classic maze set',
+    status: 'READY / LOCAL · MIT bundle',
+    license: 'MIT · attribution retained',
+    artwork: 'assets/screenshots/external-experiments.webp',
+    artworkCredit: 'Gameplay reference: upstream Pacman project',
+    description: 'A locally bundled HTML5 Pacman-style arcade game with twelve levels, pathfinding ghosts and no dependency on the original demo host. The upstream code and MIT notice are retained inside the runtime.',
+    runtimePath: 'runtimes/pacman/index.html',
+    runtimeLabel: 'Launch Pacman',
+    playable: true,
+    catalogState: 'READY / LOCAL',
+    featured: false,
+  },
 ];
 
 const FEATURED_ORDER = [
