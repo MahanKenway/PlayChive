@@ -51,7 +51,21 @@ export function initTheme() {
   const toggle = document.getElementById('theme-toggle');
   toggle?.addEventListener('click', () => {
     const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
-    applyTheme(nextTheme, { persist: true, source: 'toggle' });
+    const apply = () => applyTheme(nextTheme, { persist: true, source: 'toggle' });
+    const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    if (!document.startViewTransition || reduced) { apply(); return; }
+    // Circular reveal that grows out of the toggle.
+    const rect = toggle.getBoundingClientRect();
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
+    const radius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+    const transition = document.startViewTransition(apply);
+    transition.ready.then(() => {
+      document.documentElement.animate(
+        { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${radius}px at ${x}px ${y}px)`] },
+        { duration: 700, easing: 'cubic-bezier(.16,1,.3,1)', pseudoElement: '::view-transition-new(root)' },
+      );
+    }).catch(() => {});
   });
 
   const stopMagnet = initMagnet();
