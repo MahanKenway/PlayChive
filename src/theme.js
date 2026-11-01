@@ -1,8 +1,9 @@
 const STORAGE_KEY = 'retroplay:theme';
 const THEMES = new Set(['light', 'dark']);
 
+// Default is light for everyone; only an explicit choice via the toggle (stored) switches to dark.
 function systemTheme() {
-  return window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  return 'light';
 }
 
 function storedTheme() {
@@ -53,16 +54,10 @@ export function initTheme() {
     applyTheme(nextTheme, { persist: true, source: 'toggle' });
   });
 
-  const query = window.matchMedia?.('(prefers-color-scheme: dark)');
-  const onSystemThemeChange = (event) => {
-    if (!storedTheme()) applyTheme(event.matches ? 'dark' : 'light', { source: 'system' });
-  };
-  query?.addEventListener?.('change', onSystemThemeChange);
   const stopMagnet = initMagnet();
   const stopStatusRotation = initStatusRotation();
 
   return () => {
-    query?.removeEventListener?.('change', onSystemThemeChange);
     stopMagnet?.();
     stopStatusRotation?.();
   };
