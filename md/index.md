@@ -8,7 +8,7 @@ Source: https://playchive.ir/
 
 PLAYCHIVE is a curated hub of 24 playable browser runtimes plus a rights-aware directory of 34 further catalog entries. Each game runs as WebAssembly or HTML5 in your browser: no install, no account, and saves stay on your device. PLAYCHIVE is non-commercial and keeps upstream license notices with every runtime. [فارسی](https://playchive.ir/fa/)
 
-Last updated: 2026-11-01
+Last updated: 2026-11-02
 
 ### Play now (24 games)
 
