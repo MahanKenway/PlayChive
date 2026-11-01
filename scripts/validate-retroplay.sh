@@ -5,6 +5,7 @@ cd "$(dirname "$0")/.."
 
 node --check src/catalog.js
 node --check src/retro-audio.js
+node --check src/header-fx.js
 node --check src/runtime-shell.js
 node --check src/ui.js
 node --check src/engine/InputHandler.js
@@ -13,7 +14,7 @@ node --check src/main.js
 git diff --check
 
 test -f llms.txt
-grep -q 'rel="preload" href="styles/main.css" as="style"' index.html
+grep -q 'rel="stylesheet" href="styles/main.css"' index.html
 ! grep -q 'rel="stylesheet"' index.html
 grep -q 'width="1600" height="900"' index.html
 grep -q 'width="1600" height="900"' src/catalog.js
