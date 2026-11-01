@@ -1358,7 +1358,7 @@
       "status": "READY / LOCAL · MIT bundle",
       "studio": "Haole Zheng / mumuy",
       "year": "MIT HTML5 runtime",
-      "artwork": "assets/screenshots/external-experiments.webp",
+      "artwork": "assets/screenshots/pacman-gameplay.webp",
       "projectUrl": "https://github.com/mumuy/pacman",
       "catalogState": "READY / LOCAL",
       "source": "runtimes/pacman"

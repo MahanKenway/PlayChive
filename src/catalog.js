@@ -1104,7 +1104,7 @@ export const COLLECTIONS = [
     maps: 'Classic maze set',
     status: 'READY / LOCAL · MIT bundle',
     license: 'MIT · attribution retained',
-    artwork: 'assets/screenshots/external-experiments.webp',
+    artwork: 'assets/screenshots/pacman-gameplay.webp',
     artworkCredit: 'Gameplay reference: upstream Pacman project',
     description: 'A locally bundled HTML5 Pacman-style arcade game with twelve levels, pathfinding ghosts and no dependency on the original demo host. The upstream code and MIT notice are retained inside the runtime.',
     runtimePath: 'runtimes/pacman/index.html',
