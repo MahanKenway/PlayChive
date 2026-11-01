@@ -1648,8 +1648,8 @@ export class CatalogController {
         <div class="card-overline"><span>${game.genre}</span><span>${game.format}</span></div>
         <h3>${game.title}</h3><p>${game.description}</p>
         <p class="card-license">${game.license}</p>
-        <div class="card-meta"><span>${game.year}</span><span>${game.duration}</span><span>${game.maps}</span></div>
-        <div class="card-actions"><button class="retro-button retro-button-compact" data-magnet data-action="${action}" data-game="${game.id}">${actionLabel}</button><button class="card-detail-button" data-action="show-detail" data-game="${game.id}">Details ↗</button><button class="icon-button ${saved ? 'is-saved' : ''}" data-action="toggle-library" data-game="${game.id}" aria-label="${saved ? 'Remove from' : 'Add to'} Library" aria-pressed="${saved}">${saved ? '★' : '☆'}</button></div>${download}${downloadNote}
+        <div class="card-foot"><div class="card-meta"><span>${game.year}</span><span>${game.duration}</span><span>${game.maps}</span></div>
+        <div class="card-actions"><button class="retro-button retro-button-compact" data-magnet data-action="${action}" data-game="${game.id}">${actionLabel}</button><button class="card-detail-button" data-action="show-detail" data-game="${game.id}">Details ↗</button><button class="icon-button ${saved ? 'is-saved' : ''}" data-action="toggle-library" data-game="${game.id}" aria-label="${saved ? 'Remove from' : 'Add to'} Library" aria-pressed="${saved}">${saved ? '★' : '☆'}</button></div>${download}${downloadNote}</div>
       </div>
     </article>`;
   }

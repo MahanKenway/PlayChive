@@ -481,3 +481,10 @@ body.detail-open { overflow:hidden; }.game-detail-dialog { width:min(1040px,calc
 .external-frame-footer div { display:flex; flex-wrap:wrap; gap:8px; justify-content:flex-end; }
 .external-frame-footer .retro-button { min-height:32px; font-size:8px; }
 @media (max-width:720px) { .external-frame-dialog { width:calc(100vw - 16px); max-height:calc(100vh - 16px); }.external-frame-header { padding:16px 48px 13px 16px; }.external-frame-footer { align-items:stretch; flex-direction:column; }.external-frame-footer div { justify-content:stretch; }.external-frame-footer .retro-button { flex:1 1 100%; } }
+
+/* Equal-height cards: pin meta and actions to the bottom of every card in a row */
+.catalog-grid { align-items: stretch; }
+.game-card { display: flex; flex-direction: column; }
+.game-card-media { flex: 0 0 auto; }
+.game-card-body { flex: 1 1 auto; display: flex; flex-direction: column; }
+.game-card-body .card-foot { margin-top: auto; }
