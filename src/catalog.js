@@ -1372,13 +1372,22 @@ export class CatalogController {
     this.#motionEnabled = true;
     document.documentElement.classList.add('motion-ready');
     if ('IntersectionObserver' in window) {
+      // The catalog is a fixed screen with its own scroll container. Using
+      // the viewport as the observer root leaves cards below the first
+      // viewport permanently hidden (opacity: 0) because their intersection
+      // is measured against the wrong scrolling box.
+      const scrollRoot = document.getElementById('wad-picker');
       this.#motionObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
           entry.target.classList.add('is-revealed');
           this.#motionObserver?.unobserve(entry.target);
         });
-      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.07 });
+      }, { root: scrollRoot ?? null, rootMargin: '0px 0px -8% 0px', threshold: 0.07 });
+    } else {
+      // Older browsers must never lose access to catalog content merely
+      // because the reveal API is unavailable.
+      document.querySelectorAll('.game-card, .collection-card, .catalog-group, .catalog-heading, .filter-panel, .library-section, .about-panel').forEach((target) => target.classList.add('is-revealed'));
     }
     document.addEventListener('pointermove', (event) => {
       if (event.pointerType === 'touch') return;
@@ -1452,6 +1461,16 @@ export class CatalogController {
       target.style.setProperty('--reveal-delay', `${Math.min(index % 9, 6) * 38}ms`);
       this.#motionObserver.observe(target);
     });
+    // Some WebKit/embedded-browser combinations do not dispatch observer
+    // entries for children of a fixed element with its own overflow scroll.
+    // Reveal as a safety net rather than leaving real catalog content at
+    // opacity: 0 forever. The observer still provides the normal staggered
+    // animation on browsers where it behaves correctly.
+    window.setTimeout(() => {
+      targets.forEach((target) => {
+        if (!target.classList.contains('is-revealed')) target.classList.add('is-revealed');
+      });
+    }, 1200);
   }
 
   #startFeaturedAutoplay() {
