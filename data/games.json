@@ -976,7 +976,7 @@
       "status": "External link · lawful files required",
       "studio": "x8BitRain / Xash3D FWGS ecosystem",
       "year": "Emscripten browser builds",
-      "artwork": "assets/screenshots/external-experiments.webp",
+      "artwork": "assets/screenshots/external-webxash-screenshot.webp",
       "projectUrl": "https://x8bitrain.github.io/webXash/",
       "catalogState": "EXTERNAL LINK / RIGHTS REVIEW",
       "source": null
@@ -1081,7 +1081,7 @@
       "status": "External link · hosted runtime",
       "studio": "Pieter.com / FTEQW ecosystem",
       "year": "Hosted browser multiplayer",
-      "artwork": "assets/screenshots/external-experiments.webp",
+      "artwork": "assets/screenshots/external-quake2-logo.jpg",
       "projectUrl": "https://q2.pieter.com/",
       "catalogState": "EXTERNAL LINK / RIGHTS REVIEW",
       "source": null
@@ -1102,7 +1102,7 @@
       "status": "External link · hosted runtime",
       "studio": "Pieter.com / Q3JS ecosystem",
       "year": "Hosted browser multiplayer",
-      "artwork": "assets/screenshots/external-experiments.webp",
+      "artwork": "assets/screenshots/external-quake3-levelshot.jpg",
       "projectUrl": "https://q3.pieter.com/",
       "catalogState": "EXTERNAL LINK / RIGHTS REVIEW",
       "source": null
@@ -1165,7 +1165,7 @@
       "status": "External link · user data required",
       "studio": "JonCodeOfficial / re3-reVC contributors",
       "year": "Emscripten browser client",
-      "artwork": "assets/screenshots/external-experiments.webp",
+      "artwork": "assets/screenshots/external-gta-vice-city-cover.png",
       "projectUrl": "https://joncodeofficial.github.io/gta-vice-city-wasm/",
       "catalogState": "EXTERNAL LINK / RIGHTS REVIEW",
       "source": null
