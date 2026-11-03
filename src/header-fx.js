@@ -44,7 +44,20 @@ function initNav(header, scroller) {
     const enter = () => { place(ghost, btn); ghost.style.opacity = '1'; if (label) scramble(label, text, 380); };
     btn.addEventListener('pointerenter', enter);
     btn.addEventListener('focus', enter);
-    btn.addEventListener('click', () => activate(btn));
+    btn.addEventListener('click', () => {
+      activate(btn);
+      // #wad-picker is the real scrolling viewport. A normal
+      // scrollIntoView call can leave the user at the top of the hub while
+      // the catalog grid remains far below the genre-navigation section.
+      // Send Collections directly to the catalog section inside that box.
+      if (btn.dataset.retroNav === 'catalog') {
+        const section = document.getElementById('catalog');
+        if (section) scroller.scrollTo({
+          top: Math.max(0, section.offsetTop - 12),
+          behavior: reduced() ? 'auto' : 'smooth',
+        });
+      }
+    });
   });
   nav.addEventListener('pointerleave', () => { ghost.style.opacity = '0'; });
   nav.addEventListener('focusout', () => { ghost.style.opacity = '0'; });
