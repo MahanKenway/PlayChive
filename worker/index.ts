@@ -183,6 +183,26 @@ export default {
       });
     }
 
+    // RFC 9116 security contact. Reports go through GitHub private vulnerability reporting.
+    if (url.pathname === "/.well-known/security.txt" || url.pathname === "/security.txt") {
+      const body = [
+        "Contact: https://github.com/MahanKenway/PlayChive/security/advisories/new",
+        "Expires: 2027-11-01T00:00:00.000Z",
+        "Preferred-Languages: en, fa",
+        "Canonical: https://playchive.ir/.well-known/security.txt",
+        "Policy: https://github.com/MahanKenway/PlayChive/security/policy",
+        "",
+      ].join("\n");
+      return new Response(request.method === "HEAD" ? null : body, {
+        status: 200,
+        headers: {
+          "Content-Type": "text/plain; charset=utf-8",
+          "Cache-Control": "public, max-age=86400",
+          "X-Content-Type-Options": "nosniff",
+        },
+      });
+    }
+
     // /index.html and /dir/index.html duplicate / and /dir/: redirect to the clean URL.
     if (url.pathname.endsWith("/index.html")) {
       const clean = new URL(request.url);
@@ -235,6 +255,10 @@ export default {
         const location = upstream.headers.get("location");
         if (upstream.status < 300 || upstream.status >= 400 || !location) {
           const headers = finalize(upstream.headers, url.hostname, url.pathname);
+          if (upstream.status === 200 && /\.(?:webp|avif|png|jpe?g|gif|svg|ico|woff2?|mp3|ogg)$/i.test(url.pathname)) {
+            // Media files rarely change under the same name: let browsers and the edge reuse them for a week.
+            headers.set("Cache-Control", "public, max-age=604800, stale-while-revalidate=86400");
+          }
           if (mdPath) headers.append("Vary", "Accept");
           if (url.pathname.startsWith("/md/")) headers.set("X-Robots-Tag", "noindex");
           if (isSkills) {

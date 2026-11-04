@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://playchive.ir/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://playchive.ir/" />
@@ -22,38 +22,38 @@
   </url>
   <url>
     <loc>https://playchive.ir/blasphemer.html</loc>
-    <lastmod>2026-10-28</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image><image:loc>https://playchive.ir/assets/screenshots/blasphemer-runtime.png</image:loc></image:image>
+    <image:image><image:loc>https://playchive.ir/assets/screenshots/blasphemer-runtime.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://playchive.ir/cdogs.html</loc>
-    <lastmod>2026-10-28</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image><image:loc>https://playchive.ir/assets/screenshots/cdogs-sdl-browser.png</image:loc></image:image>
+    <image:image><image:loc>https://playchive.ir/assets/screenshots/cdogs-sdl-browser.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://playchive.ir/freedink.html</loc>
-    <lastmod>2026-10-28</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image><image:loc>https://playchive.ir/assets/screenshots/freedink-runtime.png</image:loc></image:image>
+    <image:image><image:loc>https://playchive.ir/assets/screenshots/freedink-runtime.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://playchive.ir/opentyrian.html</loc>
-    <lastmod>2026-10-28</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image><image:loc>https://playchive.ir/assets/screenshots/opentyrian-runtime.png</image:loc></image:image>
+    <image:image><image:loc>https://playchive.ir/assets/screenshots/opentyrian-runtime.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://playchive.ir/librequake.html</loc>
-    <lastmod>2026-10-28</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image><image:loc>https://playchive.ir/assets/screenshots/librequake-runtime.png</image:loc></image:image>
+    <image:image><image:loc>https://playchive.ir/assets/screenshots/librequake-runtime.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://playchive.ir/openttd.html</loc>
@@ -71,10 +71,10 @@
   </url>
   <url>
     <loc>https://playchive.ir/neverball.html</loc>
-    <lastmod>2026-10-28</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image><image:loc>https://playchive.ir/assets/screenshots/neverball-runtime.png</image:loc></image:image>
+    <image:image><image:loc>https://playchive.ir/assets/screenshots/neverball-runtime.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://playchive.ir/armawebtron.html</loc>
@@ -176,10 +176,10 @@
   </url>
   <url>
     <loc>https://playchive.ir/ecwolf.html</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image><image:loc>https://playchive.ir/assets/screenshots/ecwolf-runtime.png</image:loc></image:image>
+    <image:image><image:loc>https://playchive.ir/assets/screenshots/ecwolf-runtime.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://playchive.ir/pacman.html</loc>

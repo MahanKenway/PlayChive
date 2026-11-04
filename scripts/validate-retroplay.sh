@@ -51,7 +51,7 @@ grep -q "Compile OpenResident WebGL2 probe" .github/workflows/build-and-deploy.y
 test -f neverball.html
 test -x scripts/build-neverball-web.sh
 grep -q "neverball.html" src/catalog.js
-grep -q "neverball-runtime.png" src/catalog.js
+grep -q "neverball-runtime.webp" src/catalog.js
 grep -q "Compile Neverball fully bundled physics-puzzle runtime" .github/workflows/build-and-deploy.yml
 grep -q "neverball.html" sitemap.xml
 grep -q "id:'set-easy'" neverball.html
@@ -70,7 +70,7 @@ test -f blasphemer.html
 test -x scripts/build-blasphemer-web.sh
 test -f scripts/patches/chocolate-heretic-retroplay.patch
 grep -q "blasphemer.html" src/catalog.js
-grep -q "blasphemer-runtime.png" src/catalog.js
+grep -q "blasphemer-runtime.webp" src/catalog.js
 grep -q "Compile Blasphemer fully bundled fantasy-shooter runtime" .github/workflows/build-and-deploy.yml
 grep -q "blasphemer.html" sitemap.xml
 grep -q "Web_DoomMain" scripts/patches/chocolate-heretic-retroplay.patch
@@ -281,7 +281,7 @@ done
 last_bundled_line=$(grep -n "id: 'adarkroom'" src/catalog.js | cut -d: -f1)
 first_external_line=$(grep -n "id: 'ancient-aliens'" src/catalog.js | cut -d: -f1)
 test "$first_external_line" -gt "$last_bundled_line"
-test -f assets/screenshots/supertuxkart-runtime.jpg
+test -f assets/screenshots/supertuxkart-runtime.webp
 grep -q "id: 'supertuxkart'" src/catalog.js
 grep -q 'supertuxkart.net/Download' src/catalog.js
 grep -q 'SuperTuxKart-1.5-linux-x86_64.tar.gz' src/catalog.js

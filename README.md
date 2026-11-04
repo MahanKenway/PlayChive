@@ -62,7 +62,7 @@ All catalog and README visuals are sourced from actual game or local browser-run
 
 | OpenTTD browser runtime | FreeRCT browser runtime | Neverball browser runtime |
 |---|---|---|
-| [![OpenTTD gameplay and menu in a browser.](assets/screenshots/openttd-runtime.webp)](https://playchive.ir/openttd.html) | [![FreeRCT title menu over an isometric theme park.](assets/screenshots/freerct-runtime.webp)](https://playchive.ir/freerct.html) | [![Neverball 3D physics-puzzle gameplay.](assets/screenshots/neverball-runtime.png)](https://playchive.ir/neverball.html) |
+| [![OpenTTD gameplay and menu in a browser.](assets/screenshots/openttd-runtime.webp)](https://playchive.ir/openttd.html) | [![FreeRCT title menu over an isometric theme park.](assets/screenshots/freerct-runtime.webp)](https://playchive.ir/freerct.html) | [![Neverball 3D physics-puzzle gameplay.](assets/screenshots/neverball-runtime.webp)](https://playchive.ir/neverball.html) |
 | **OpenTTD** uses its free graphics, effects and music sets. | **FreeRCT** uses its project-generated clean-room graphics and data. | **Neverball** uses its bundled base content and Easy level set. |
 
 ## Playing PLAYCHIVE

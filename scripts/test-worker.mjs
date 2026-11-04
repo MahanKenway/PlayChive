@@ -576,6 +576,26 @@ await test("POST is rejected with 405 and Allow header", async () => {
   assert.equal(calls.length, 0);
 });
 
+await test("security.txt (RFC 9116) is served by the Worker with Contact and a future Expires", async () => {
+  const r = await run("https://playchive.ir/.well-known/security.txt");
+  assert.equal(r.status, 200);
+  assert.match(r.headers.get("content-type"), /^text\/plain/);
+  const body = await r.text();
+  assert.match(body, /^Contact: https:\/\//m);
+  const expires = /^Expires: (.+)$/m.exec(body)?.[1];
+  assert.ok(expires && Date.parse(expires) > Date.now(), "Expires must be in the future");
+  assert.equal(calls.length, 0);
+});
+
+await test("media files get a week-long cache, scripts and styles do not", async () => {
+  upstream = () => new Response("img", { status: 200, headers: { "content-type": "image/webp" } });
+  let r = await run("https://playchive.ir/assets/screenshots/x.webp");
+  assert.match(r.headers.get("cache-control"), /max-age=604800/);
+  upstream = () => new Response("css", { status: 200, headers: { "content-type": "text/css", "cache-control": "max-age=600" } });
+  r = await run("https://playchive.ir/styles/main.css");
+  assert.equal(r.headers.get("cache-control"), "max-age=600");
+});
+
 await test("origin failure becomes 502", async () => {
   upstream = () => {
     throw new Error("boom");
