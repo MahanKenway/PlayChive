@@ -219,6 +219,13 @@ jobs:
         # source assets directory contains no bundled archive.
         cp -R assets/. dist/assets/
 
+    - name: Minify CSS and JavaScript
+      run: |
+        # esbuild is pinned; per-file minification keeps every module path and ?v= import intact.
+        npx --yes esbuild@0.24.0 dist/styles/*.css --minify --allow-overwrite --outdir=dist/styles --log-level=warning
+        npx --yes esbuild@0.24.0 $(find dist/src -name '*.js') --minify --allow-overwrite --outbase=dist/src --outdir=dist/src --format=esm --target=es2022 --log-level=warning
+        test -s dist/styles/main.css && test -s dist/src/main.js
+
     - name: Generate complete offline pack manifest
       run: |
         python3 - <<'PY'

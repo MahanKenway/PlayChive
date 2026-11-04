@@ -24,7 +24,7 @@
       "status": "Free / bundled",
       "studio": "Freedoom project",
       "year": "v0.13.0",
-      "artwork": "assets/screenshots/freedoom-phase1.png",
+      "artwork": "assets/screenshots/freedoom-phase1.webp",
       "projectUrl": null,
       "catalogState": "READY / LOCAL",
       "source": "assets/freedoom1.wad"
@@ -50,7 +50,7 @@
       "status": "Free / bundled",
       "studio": "Freedoom project",
       "year": "v0.13.0",
-      "artwork": "assets/screenshots/freedoom-phase2.png",
+      "artwork": "assets/screenshots/freedoom-phase2.webp",
       "projectUrl": null,
       "catalogState": "READY / LOCAL",
       "source": "assets/freedoom2.wad"
@@ -76,7 +76,7 @@
       "status": "Free / bundled · solo exploration",
       "studio": "Freedoom project",
       "year": "v0.13.0",
-      "artwork": "assets/screenshots/freedm.png",
+      "artwork": "assets/screenshots/freedm.webp",
       "projectUrl": null,
       "catalogState": "READY / LOCAL",
       "source": "assets/freedm.wad"
@@ -102,7 +102,7 @@
       "status": "Royalty-free / non-commercial bundle",
       "studio": "Banjo Software / Hacx project",
       "year": "v1.2 · 2010",
-      "artwork": "assets/screenshots/hacx-gameplay.jpg",
+      "artwork": "assets/screenshots/hacx-gameplay.webp",
       "projectUrl": null,
       "catalogState": "READY / LOCAL",
       "source": [
@@ -131,7 +131,7 @@
       "status": "Free / bundled",
       "studio": "Blasphemer project / Chocolate Heretic",
       "year": "v0.1.8 WebAssembly runtime",
-      "artwork": "assets/screenshots/blasphemer-runtime.png",
+      "artwork": "assets/screenshots/blasphemer-runtime.webp",
       "projectUrl": null,
       "catalogState": "INDEPENDENT RUNTIME",
       "source": null
@@ -157,7 +157,7 @@
       "status": "Free / bundled",
       "studio": "C-Dogs SDL project",
       "year": "v2.4.0",
-      "artwork": "assets/screenshots/cdogs-sdl-browser.png",
+      "artwork": "assets/screenshots/cdogs-sdl-browser.webp",
       "projectUrl": null,
       "catalogState": "INDEPENDENT RUNTIME",
       "source": null
@@ -183,7 +183,7 @@
       "status": "Free / bundled",
       "studio": "GNU FreeDink project",
       "year": "v109.6",
-      "artwork": "assets/screenshots/freedink-runtime.png",
+      "artwork": "assets/screenshots/freedink-runtime.webp",
       "projectUrl": null,
       "catalogState": "INDEPENDENT RUNTIME",
       "source": null
@@ -209,7 +209,7 @@
       "status": "Free / bundled",
       "studio": "OpenTyrian2000 project",
       "year": "Tyrian 2000 freeware release",
-      "artwork": "assets/screenshots/opentyrian-runtime.png",
+      "artwork": "assets/screenshots/opentyrian-runtime.webp",
       "projectUrl": null,
       "catalogState": "INDEPENDENT RUNTIME",
       "source": null
@@ -235,7 +235,7 @@
       "status": "Free / bundled",
       "studio": "LibreQuake project / Qwasm",
       "year": "v0.09-beta Lite",
-      "artwork": "assets/screenshots/librequake-runtime.png",
+      "artwork": "assets/screenshots/librequake-runtime.webp",
       "projectUrl": null,
       "catalogState": "INDEPENDENT RUNTIME",
       "source": null
@@ -313,7 +313,7 @@
       "status": "Free / bundled",
       "studio": "Neverball project",
       "year": "WebAssembly runtime",
-      "artwork": "assets/screenshots/neverball-runtime.png",
+      "artwork": "assets/screenshots/neverball-runtime.webp",
       "projectUrl": null,
       "catalogState": "INDEPENDENT RUNTIME",
       "source": null
@@ -698,7 +698,7 @@
       "status": "External engine required",
       "studio": "skillsaw & collaborators",
       "year": "v1.2 · 2016",
-      "artwork": "assets/screenshots/ancient-aliens-gameplay.jpg",
+      "artwork": "assets/screenshots/ancient-aliens-gameplay.webp",
       "projectUrl": "https://www.moddb.com/games/doom-ii/addons/ancient-aliens",
       "catalogState": "ARCHIVE / REFERENCE",
       "source": null
@@ -719,7 +719,7 @@
       "status": "External engine required",
       "studio": "Dragonfly & team",
       "year": "2019",
-      "artwork": "assets/screenshots/eviternity-gameplay.jpg",
+      "artwork": "assets/screenshots/eviternity-gameplay.webp",
       "projectUrl": "https://www.moddb.com/mods/eviternity",
       "catalogState": "ARCHIVE / REFERENCE",
       "source": null
@@ -740,7 +740,7 @@
       "status": "Download project WADs locally",
       "studio": "BTSX team",
       "year": "2012–2017",
-      "artwork": "assets/screenshots/back-to-saturn-x-gameplay.jpg",
+      "artwork": "assets/screenshots/back-to-saturn-x-gameplay.webp",
       "projectUrl": "https://www.moddb.com/mods/back-to-saturn-x",
       "catalogState": "OFFICIAL DOWNLOAD",
       "source": null
@@ -761,7 +761,7 @@
       "status": "External engine required",
       "studio": "BigBrik Games",
       "year": "Secant Edition",
-      "artwork": "assets/screenshots/adventures-of-square-gameplay.png",
+      "artwork": "assets/screenshots/adventures-of-square-gameplay.webp",
       "projectUrl": "http://adventuresofsquare.com/",
       "catalogState": "ARCHIVE / REFERENCE",
       "source": null
@@ -824,7 +824,7 @@
       "status": "Attach a compatible WAD",
       "studio": "License-reviewed import",
       "year": "Your archive",
-      "artwork": "assets/screenshots/freedoom-phase2.png",
+      "artwork": "assets/screenshots/freedoom-phase2.webp",
       "projectUrl": null,
       "catalogState": "ARCHIVE / REFERENCE",
       "source": null
@@ -850,7 +850,7 @@
       "status": "Engine bundled / data local",
       "studio": "ECWolf project / ECWolf JS",
       "year": "Emscripten runtime",
-      "artwork": "assets/screenshots/ecwolf-runtime.png",
+      "artwork": "assets/screenshots/ecwolf-runtime.webp",
       "projectUrl": null,
       "catalogState": "LOCAL DATA RUNTIME",
       "source": null
@@ -892,7 +892,7 @@
       "status": "Free full game / download required",
       "studio": "SuperTuxKart team",
       "year": "v1.5 stable release",
-      "artwork": "assets/screenshots/supertuxkart-runtime.jpg",
+      "artwork": "assets/screenshots/supertuxkart-runtime.webp",
       "projectUrl": "https://supertuxkart.net/Download",
       "catalogState": "OFFICIAL DOWNLOAD",
       "source": null
@@ -1081,7 +1081,7 @@
       "status": "External link · hosted runtime",
       "studio": "Pieter.com / FTEQW ecosystem",
       "year": "Hosted browser multiplayer",
-      "artwork": "assets/screenshots/external-quake2-logo.jpg",
+      "artwork": "assets/screenshots/external-quake2-logo.webp",
       "projectUrl": "https://q2.pieter.com/",
       "catalogState": "EXTERNAL LINK / RIGHTS REVIEW",
       "source": null
@@ -1102,7 +1102,7 @@
       "status": "External link · hosted runtime",
       "studio": "Pieter.com / Q3JS ecosystem",
       "year": "Hosted browser multiplayer",
-      "artwork": "assets/screenshots/external-quake3-levelshot.jpg",
+      "artwork": "assets/screenshots/external-quake3-levelshot.webp",
       "projectUrl": "https://q3.pieter.com/",
       "catalogState": "EXTERNAL LINK / RIGHTS REVIEW",
       "source": null
@@ -1165,7 +1165,7 @@
       "status": "External link · user data required",
       "studio": "JonCodeOfficial / re3-reVC contributors",
       "year": "Emscripten browser client",
-      "artwork": "assets/screenshots/external-gta-vice-city-cover.png",
+      "artwork": "assets/screenshots/external-gta-vice-city-cover.webp",
       "projectUrl": "https://joncodeofficial.github.io/gta-vice-city-wasm/",
       "catalogState": "EXTERNAL LINK / RIGHTS REVIEW",
       "source": null
