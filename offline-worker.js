@@ -1,12 +1,18 @@
-const OFFLINE_CACHE = 'playchive-offline-v1';
+const OFFLINE_CACHE = 'playchive-offline-v2';
 const MANIFEST_URL = 'offline-manifest.json';
+let cancelRequested = false;
+let downloadActive = false;
 
 self.addEventListener('install', (event) => {
   event.waitUntil(self.skipWaiting());
 });
 
 self.addEventListener('activate', (event) => {
-  event.waitUntil(self.clients.claim());
+  event.waitUntil((async () => {
+    const keys = await caches.keys();
+    await Promise.all(keys.filter((key) => key.startsWith('playchive-offline-') && key !== OFFLINE_CACHE).map((key) => caches.delete(key)));
+    await self.clients.claim();
+  })());
 });
 
 async function notifyClients(message, port) {
@@ -16,6 +22,10 @@ async function notifyClients(message, port) {
 }
 
 async function downloadOfflinePack(port) {
+  if (downloadActive) return;
+  downloadActive = true;
+  cancelRequested = false;
+  try {
   const manifestResponse = await fetch(new URL(MANIFEST_URL, self.registration.scope), { cache: 'no-store' });
   if (!manifestResponse.ok) throw new Error(`Offline manifest unavailable (${manifestResponse.status})`);
   const manifest = await manifestResponse.json();
@@ -25,17 +35,39 @@ async function downloadOfflinePack(port) {
   const cache = await caches.open(OFFLINE_CACHE);
   let completed = 0;
   let failed = 0;
+  let cachedBytes = 0;
   const failures = [];
   await notifyClients({ type: 'OFFLINE_PACK_START', total: entries.length, bytes: manifest.totalBytes || 0 }, port);
 
   for (const entry of entries) {
+    if (cancelRequested) {
+      await notifyClients({ type: 'OFFLINE_PACK_CANCELLED', completed, failed, total: entries.length, cachedBytes }, port);
+      return;
+    }
     const url = typeof entry === 'string' ? entry : entry.url;
+    const expectedBytes = typeof entry === 'string' ? 0 : Number(entry.bytes) || 0;
     const absoluteUrl = new URL(url, self.registration.scope).href;
     try {
+      const cached = await cache.match(new Request(absoluteUrl));
+      if (cached) {
+        completed += 1;
+        cachedBytes += expectedBytes;
+        await notifyClients({
+          type: 'OFFLINE_PACK_PROGRESS',
+          completed,
+          failed,
+          total: entries.length,
+          current: url,
+          cachedBytes,
+          resumed: true,
+        }, port);
+        continue;
+      }
       const response = await fetch(absoluteUrl, { cache: 'no-store' });
       if (!response.ok) throw new Error(`${response.status}`);
       await cache.put(new Request(absoluteUrl), response.clone());
       completed += 1;
+      cachedBytes += expectedBytes;
     } catch (error) {
       failed += 1;
       failures.push({ url, error: String(error?.message || error) });
@@ -46,6 +78,7 @@ async function downloadOfflinePack(port) {
       failed,
       total: entries.length,
       current: url,
+      cachedBytes,
     }, port);
   }
 
@@ -56,8 +89,18 @@ async function downloadOfflinePack(port) {
     completed,
     failed,
     total: entries.length,
+    cachedBytes,
     failures: failures.slice(0, 12),
   }, port);
+  } finally {
+    downloadActive = false;
+    cancelRequested = false;
+  }
+}
+
+async function clearOfflinePack(port) {
+  const deleted = await caches.delete(OFFLINE_CACHE);
+  await notifyClients({ type: 'OFFLINE_PACK_CLEARED', deleted }, port);
 }
 
 self.addEventListener('message', (event) => {
@@ -66,6 +109,18 @@ self.addEventListener('message', (event) => {
   event.waitUntil(downloadOfflinePack(port).catch(async (error) => {
     await notifyClients({ type: 'OFFLINE_PACK_ERROR', error: String(error?.message || error) }, port);
   }));
+});
+
+self.addEventListener('message', (event) => {
+  if (!event.data) return;
+  const port = event.ports?.[0];
+  if (event.data.type === 'CANCEL_OFFLINE_PACK') {
+    cancelRequested = true;
+    return;
+  }
+  if (event.data.type === 'CLEAR_OFFLINE_PACK') {
+    event.waitUntil(clearOfflinePack(port));
+  }
 });
 
 self.addEventListener('fetch', (event) => {

@@ -13,7 +13,7 @@
   <link rel="apple-touch-icon" sizes="192x192" href="assets/apple-touch-icon.png" />
   <link rel="icon" href="assets/favicon.ico?v=gamecube-1" type="image/x-icon" />
   <link rel="preload" href="assets/screenshots/hexgl-runtime.webp" as="image" fetchpriority="high" />
-  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/main.css?v=playchive-offline-v2" />
   <style>
     html, body { width:100%; min-height:100%; margin:0; }
     body { overflow:hidden; background:#e7e6e0; color:#161815; }
@@ -777,6 +777,27 @@
   </div>
 </dialog>
 
+<dialog id="offline-pack-dialog" class="offline-pack-dialog" aria-labelledby="offline-pack-title" aria-describedby="offline-pack-description">
+  <article class="offline-pack-shell">
+    <button class="game-detail-close offline-pack-close" type="button" data-offline-action="close" aria-label="Close Offline Pack">×</button>
+    <div class="offline-pack-hero">
+      <div class="offline-orbit" aria-hidden="true"><i></i><b>⇩</b></div>
+      <p class="section-tag"><span>// ARCHIVE MODE</span><span>Local-first access</span></p>
+      <h2 id="offline-pack-title">The complete<br /><em>Offline Pack.</em></h2>
+      <p id="offline-pack-description">Keep the PLAYCHIVE hub, bundled games, screenshots and runtime files available when the network is limited.</p>
+      <div class="offline-pack-promise"><span>NO ACCOUNT</span><span>NO SERVER</span><span>YOUR DEVICE</span></div>
+    </div>
+    <div class="offline-pack-console">
+      <div class="offline-pack-console-head"><span>PACK STATUS</span><strong id="offline-pack-phase">Ready to prepare</strong></div>
+      <div class="offline-pack-progress-wrap"><div class="offline-pack-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="offline-pack-progress-fill"></i></div><strong id="offline-pack-percent">0%</strong></div>
+      <div class="offline-pack-stats"><div><span>FILES</span><b id="offline-pack-files">—</b></div><div><span>SIZE</span><b id="offline-pack-size">—</b></div><div><span>CACHED</span><b id="offline-pack-cached">0 MB</b></div></div>
+      <p class="offline-pack-current"><span class="offline-pulse"></span><span id="offline-pack-current">Waiting for download</span></p>
+      <div class="offline-pack-actions"><button class="retro-button retro-button-primary" type="button" data-offline-action="start" id="offline-pack-start">Prepare offline pack</button><button class="retro-button retro-button-quiet" type="button" data-offline-action="cancel" id="offline-pack-cancel" hidden>Pause</button><button class="retro-button retro-button-quiet" type="button" data-offline-action="clear" id="offline-pack-clear">Clear local pack</button></div>
+      <p class="offline-pack-note">Only files served by PLAYCHIVE are cached. External projects, remote servers and user-owned game data are never copied into the pack.</p>
+    </div>
+  </article>
+</dialog>
+
 <div id="game-screen" class="screen" role="main">
   <div id="crt-overlay" aria-hidden="true"></div>
   <div class="game-topbar" aria-hidden="true"><button class="game-return-chip" id="btn-return-hub" type="button">← PLAYCHIVE</button><span>Runtime / active</span><span>Pointer lock for direct input</span></div>
@@ -797,6 +818,6 @@
 </div>
 
 <div id="click-to-play" class="click-overlay hidden" role="button" tabindex="0" aria-label="Click to capture mouse and start playing"><div class="click-box"><p>Capture mouse to play</p><p class="small">Press Esc to release</p></div></div>
-<script type="module" src="src/main.js?v=retroplay-20260822-r3"></script>
+<script type="module" src="src/main.js?v=playchive-offline-v2"></script>
 </body>
 </html>
