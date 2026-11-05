@@ -384,6 +384,15 @@ try:
             if "aria-label" in tag or " id=" in tag:  # id: filled in by script at runtime
                 continue
             err(f"{page}: empty button without accessible name: {tag[:80]}")
+    # every catalog record must appear in the hub's structured data (playable list or reference list)
+    hub_ld = [json.loads(b) for b in re.findall(r'<script type="application/ld\+json">(.*?)</script>',
+                                                  (ROOT / "index.html").read_text(encoding="utf-8"), re.S)]
+    names = {it["item"]["name"] for d in hub_ld for n in d.get("@graph", [d]) if n.get("@type") == "ItemList"
+             or isinstance(n.get("mainEntity"), dict) for lst in ([n] if n.get("@type") == "ItemList" else [n["mainEntity"]])
+             for it in lst.get("itemListElement", []) if isinstance(it.get("item"), dict)}
+    for g in games:
+        if g["name"] not in names:
+            err(f"index.html JSON-LD: catalog record missing from structured data: {g['id']}")
 except Exception as e:  # noqa: BLE001
     err(f"bilingual/accessibility checks failed to run: {e}")
 

@@ -435,6 +435,31 @@ HUB_FAQ = [
 ]
 
 
+def reference_list():
+    """Every catalog record that is not a PLAYCHIVE runtime, described honestly.
+
+    External projects keep their own URL and are never given a PLAYCHIVE page, offer or play action.
+    """
+    refs = [g for g in GAMES if g not in PLAYABLE]
+    items = []
+    for i, g in enumerate(refs, 1):
+        ext = g.get("projectUrl") or g.get("publicUrl") or ""
+        kind = ("External project listed for reference; PLAYCHIVE does not host or mirror it."
+                if str(ext).startswith("http") else
+                "Bundled free content that runs inside the PLAYCHIVE Doom hub." if is_free(g) or g["status"].startswith("Royalty-free") else
+                "Catalog entry that needs a legal data file you provide locally; no commercial game data is distributed.")
+        node = {"@type": "VideoGame", "name": g["name"], "genre": g["genre"],
+                "description": f"{first_sentence(g['description'], 140)} {kind}",
+                "author": {"@type": "Organization", "name": g["studio"]}}
+        if str(ext).startswith("http"):
+            node["url"] = ext
+            node["sameAs"] = ext
+        items.append({"@type": "ListItem", "position": i, "item": node})
+    return {"@type": "ItemList", "@id": f"{BASE}/#reference-entries",
+            "name": "Reference entries in the PLAYCHIVE catalog (not playable on PLAYCHIVE)",
+            "numberOfItems": len(items), "itemListElement": items}
+
+
 def hub_head():
     n = len(FREE_PLAYABLE)
     title = "PLAYCHIVE: Free Classic and Open-Source Games in Your Browser"
@@ -457,6 +482,7 @@ def hub_head():
          "isPartOf": {"@id": SITE_ID}, "inLanguage": "en", "dateModified": UPDATED,
          "mainEntity": {"@type": "ItemList", "name": "Playable games on PLAYCHIVE", "numberOfItems": len(items),
                         "itemListElement": items}},
+        reference_list(),
         faq_jsonld(HUB_FAQ),
     ]
     extra = (
