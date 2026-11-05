@@ -361,6 +361,32 @@ except Exception as e:  # noqa: BLE001
 if "agent-skills" not in wf or "agent-skills" not in worker_src:
     err("agent-skills not wired into workflow and worker")
 
+# ---- bilingual parity and accessibility rules (see CLAUDE.md) ----
+try:
+    fa_html = (ROOT / "fa/index.html").read_text(encoding="utf-8")
+    if '<html lang="fa" dir="rtl">' not in fa_html:
+        err("fa/index.html must declare lang=fa and dir=rtl")
+    playable = [g for g in games if g["playable"] and str(g.get("runtimeUrl", "")).endswith(".html")
+                and (ROOT / g["runtimeUrl"]).exists()]
+    for g in playable:
+        if f'href="../{g["runtimeUrl"]}"' not in fa_html:
+            err(f"fa/index.html: missing Persian card for playable game {g['id']} (add it to FA_DESC in scripts/generate-seo.py)")
+    for card in re.findall(r'<li class="game">.*?</li>', fa_html, re.S):
+        text = re.search(r"<p>(.*?)</p>", card, re.S)
+        if not text or not re.search(r"[\u0600-\u06FF]", text.group(1)):
+            err("fa/index.html: a game card has no Persian description")
+    for page in ["index.html", "fa/index.html"]:
+        src = (ROOT / page).read_text(encoding="utf-8")
+        for tag in re.findall(r"<img\b[^>]*>", src):
+            if " alt=" not in tag:
+                err(f"{page}: <img> without alt text: {tag[:80]}")
+        for tag in re.findall(r"<button\b[^>]*>\s*</button>", src):
+            if "aria-label" in tag or " id=" in tag:  # id: filled in by script at runtime
+                continue
+            err(f"{page}: empty button without accessible name: {tag[:80]}")
+except Exception as e:  # noqa: BLE001
+    err(f"bilingual/accessibility checks failed to run: {e}")
+
 print(f"noindex pages (skipped, correctly out of sitemap): {noindex_pages}")
 print(f"checked {len(pages)} pages, {len(locs)} sitemap URLs, {len(games)} catalog records")
 for w in warnings:
