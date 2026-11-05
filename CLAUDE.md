@@ -26,7 +26,17 @@ These rules apply to every change, by people and by AI assistants. The owner is 
 - Use semantic landmarks (`header`, `nav`, `main`, `footer`), one `h1` per page and ordered headings.
 - Before finishing a UI change, run Lighthouse (accessibility must stay at 100) and check the page at 390px and 1280px in light and dark.
 
-## 3. Engineering conventions
+## 3. SEO, GEO and structured data come with every change
+
+Search and AI discoverability are built in at creation time, not added later. When you add or change a game, page or feature:
+
+- Add the record to `data/games.json` and regenerate. The generator then produces everything derived from it: the game page head, `VideoGame` JSON-LD, the hub `ItemList`, `sitemap.xml`, `llms.txt`, `llms-full.txt`, the Markdown twin under `md/`, and the Persian page. Never hand-edit these generated files.
+- Every catalog record must appear in the hub's JSON-LD. Playable games are `VideoGame` entries with a PLAYCHIVE URL. Link-only and local-data records go in the reference list with their upstream URL and no offer or play action. Never describe an external project as hosted by PLAYCHIVE.
+- New pages need a title, a description, a canonical URL, Open Graph and Twitter tags, `hreflang` for both languages, a sitemap entry and a `md/` twin. Keep `llms.txt` and the MCP server card (`worker/mcp.ts`) in step with the catalog.
+- Structured data must describe what is really on the page. No invented ratings, prices or reviews.
+- `check-seo.py` fails CI for most of the above. Do not weaken a check to get a green build; fix the data.
+
+## 4. Engineering conventions
 
 - The site is static, built by `.github/workflows/build-and-deploy.yml` to GitHub Pages and proxied by the Cloudflare Worker in `worker/index.ts` at playchive.ir. Merging to `main` deploys.
 - The Worker CSP allows only same-origin scripts. Do not add third-party scripts, CDNs or analytics. Bundle what you need.
@@ -34,7 +44,7 @@ These rules apply to every change, by people and by AI assistants. The owner is 
 - Keep these DOM ids and module contracts working: `wad-picker`, `btn-freedoom`, `wad-upload`, `wad-drop-zone`, `loading-screen`, `game-screen`, `retro-audio-toggle`, `retro-audio-volume`, `offline-pack-button`, `offline-pack-status`, `theme-toggle`, `library-count`, `evil-eye`.
 - New CSS goes in `styles/main.css` and new header behavior in `src/header-fx.js`. Prefer CSS and Web Animations over libraries.
 
-## 4. Checks to run before every merge
+## 5. Checks to run before every merge
 
 ```
 python3 scripts/generate-seo.py --date $(date +%F)
