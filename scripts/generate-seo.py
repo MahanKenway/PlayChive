@@ -55,29 +55,30 @@ FA_GENRE = {
     "Horror": "ترسناک", "Sports": "ورزشی",
 }
 FA_DESC = {
-    "blasphemer": "شوتر فانتزی تاریک با موتور Chocolate Heretic؛ بازی کامل و رایگان با داده‌های همراه خودش.",
-    "cdogs-sdl": "اکشن از بالا به پایین با کمپین و حالت دوئل رایگان.",
-    "gnu-freedink": "ماجراجویی اکشن دوبعدی کامل با داده‌های رسمی و رایگان.",
-    "opentyrian2000": "شوتر عمودی آرکید با داده‌های freeware بازی Tyrian 2000.",
-    "librequake": "اکشن اول‌شخص با موتور کوییک و داده‌های مستقل LibreQuake.",
-    "openttd": "استراتژی حمل‌ونقل؛ راه‌آهن و شبکه جاده بسازید، با گرافیک و موسیقی آزاد.",
-    "freerct": "استراتژی ساخت و مدیریت شهربازی با گرافیک و داده‌های آزاد.",
-    "neverball": "پازل فیزیکی سه‌بعدی؛ با کج کردن زمین، توپ را به مقصد برسانید.",
-    "armawebtron": "مسابقه سه‌بعدی لایت‌سایکل در میدان نئونی با رقبای کامپیوتری.",
-    "tuxracer-js": "مسابقه سه‌بعدی سرسره‌سواری پنگوئن روی برف با بیست مسیر.",
-    "starter-kit-racing": "بازی رانندگی سه‌بعدی با کامیون، پیست محلی و ثبت زمان دور.",
-    "astray": "پازل فیزیکی WebGL؛ یک توپ فولادی را در هزارتوهای سه‌بعدی هدایت کنید.",
-    "neon-rift": "مسابقه شبانه سه‌بعدی با ظاهر low-poly، ساخته‌شده برای PLAYCHIVE.",
-    "obsidian-relay": "بازی بقا و کاوش سه‌بعدی، ساخته‌شده برای PLAYCHIVE.",
-    "hexgl": "مسابقه آینده‌نگرانه سه‌بعدی با WebGL و پیست Cityscape.",
-    "hextris": "پازل آرکید شش‌ضلعی؛ بلوک‌های هم‌رنگ را کنار هم بیاورید.",
-    "rocksndiamonds": "پازل اکشن کلاسیک؛ حفاری کنید، الماس جمع کنید و از خطرها فرار کنید.",
+    "blasphemer": "شوتر اول‌شخص فانتزی و تاریک روی موتور Heretic. بازی کامل است و همهٔ فایل‌هایش همراه خودش می‌آید.",
+    "cdogs-sdl": "اکشن از نمای بالا با کمپین کامل و حالت دوئل؛ تیراندازی‌های شلوغ و پرتحرک، شبیه آرکیدهای قدیمی.",
+    "gnu-freedink": "ماجراجویی نقش‌آفرینی دوبعدی با شوخ‌طبعی عجیب‌وغریب. بازی کامل، با داده‌های رسمی و رایگان.",
+    "opentyrian2000": "شوتر عمودی فضایی و کلاسیک؛ نسخهٔ رایگان Tyrian 2000 با داده‌های freeware.",
+    "librequake": "شوتر اول‌شخص روی موتور Quake، با مرحله‌ها و محتوای کاملاً آزاد و مستقل.",
+    "openttd": "استراتژی حمل‌ونقل: ریل و جاده بکش، قطار و کامیون راه بینداز و شبکه‌ات را سودآور کن. گرافیک و موسیقی‌اش هم آزاد است.",
+    "freerct": "شهربازی خودت را بساز: سرسره، چرخ‌وفلک و مسیر بگذار، مهمان‌ها را راضی نگه دار و حساب‌وکتابت را مثبت.",
+    "neverball": "پازل فیزیکی سه‌بعدی؛ با کج‌کردن زمین، توپ را از مسیرهای سخت به مقصد برسان.",
+    "armawebtron": "مسابقهٔ سه‌بعدی لایت‌سایکل در میدانی نئونی؛ ردّ نورانی بجا بگذار و رقیب را به دام بینداز.",
+    "tuxracer-js": "پنگوئنی که روی برف سر می‌خورد: بیست مسیر سه‌بعدی و سرعتی که کم‌کم دستت می‌آید.",
+    "starter-kit-racing": "رانندگی سه‌بعدی با کامیون روی پیستی محلی؛ زمان هر دور ثبت می‌شود تا رکوردت را بشکنی.",
+    "astray": "یک توپ فولادی را در هزارتوهای سه‌بعدی هدایت کن؛ ساده شروع می‌شود، ولی مسیرها هر بار فرق دارند.",
+    "neon-rift": "مسابقهٔ شبانهٔ سه‌بعدی با ظاهر low-poly؛ ساختهٔ خود PLAYCHIVE.",
+    "obsidian-relay": "بازی بقا و کاوش در یک ایستگاه زیرآبی؛ ساختهٔ خود PLAYCHIVE.",
+    "hexgl": "مسابقهٔ سریع و آینده‌نگرانهٔ سه‌بعدی با WebGL، روی پیست Cityscape.",
+    "hextris": "پازل آرکید شش‌ضلعی: حلقه را بچرخان و بلوک‌های هم‌رنگ را کنار هم بیاور، پیش از آنکه روی هم تلنبار شوند.",
+    "rocksndiamonds": "پازل اکشن کلاسیک؛ زمین را بکن، الماس جمع کن و از سنگ‌های در حال سقوط جا خالی بده.",
     "beats-into-shapes": "بازی ریتم سه‌لاینه با چهار موسیقی اصلی.",
-    "2048": "پازل عددی معروف ۲۰۴۸ با ذخیره بهترین امتیاز در مرورگر.",
-    "javascript-tetris": "نسخه سبک و سریع تتریس.",
-    "adarkroom": "ماجراجویی متنی و بقا که از یک آتش کوچک شروع می‌شود.",
-    "digger-remastered": "نسخه بازسازی‌شده بازی حفاری و اکشن سال ۱۹۸۳.",
-    "ecwolf": "موتور سازگار با ولفنشتاین؛ برای اجرا باید فایل‌های داده قانونی خودتان را انتخاب کنید.",
+    "2048": "همان پازل عددی معروف: مربع‌ها را ادغام کن تا به ۲۰۴۸ برسی. بهترین امتیازت در مرورگر می‌ماند.",
+    "javascript-tetris": "تتریس سبک و سریع؛ فقط باز کن و بازی کن.",
+    "adarkroom": "ماجراجویی متنی که با یک آتش کوچک در اتاقی تاریک شروع می‌شود و کم‌کم دنیایی می‌سازد.",
+    "digger-remastered": "نسخهٔ بازسازی‌شدهٔ بازی حفاری و اکشن سال ۱۹۸۳؛ تونل بزن، طلا جمع کن و از هیولاها دور بمان.",
+    "ecwolf": "موتور سازگار با Wolfenstein 3D. اینجا فقط خود موتور هست و فایل‌های داده‌ی قانونی را باید خودت انتخاب کنی.",
+    "pacman-mit": "پک‌من کلاسیک با مجوز MIT و دوازده مرحله؛ نقطه‌ها را بخور و از روح‌های باهوش فرار کن.",
 }
 
 # --------------------------------------------------------------------------- data
@@ -529,29 +530,97 @@ def update_hub():
 
 FA_FAQ = [
     ("PLAYCHIVE چیست؟",
-     "PLAYCHIVE یک مرکز مرورگرمحور برای بازی‌های کلاسیک، متن‌باز و رایگان است. بازی‌ها با WebAssembly و HTML5 مستقیم "
-     "در مرورگر اجرا می‌شوند، بدون نصب و بدون ساخت حساب کاربری."),
-    ("آیا بازی‌ها رایگان‌اند و باید چیزی نصب کنم؟",
-     "بازی‌های «آماده» رایگان‌اند و محتوای لازم را همراه خودشان دارند. نصب برنامه یا ثبت‌نام لازم نیست. "
-     "فقط ECWolf استثناست: این بازی فقط موتور را دارد و باید فایل‌های داده قانونی خودتان را انتخاب کنید."),
-    ("روی موبایل و با دسته بازی کار می‌کند؟",
-     "بله. روی گوشی کنترل لمسی به سبک PSP نمایش داده می‌شود و روی کامپیوتر می‌توانید از کیبورد، ماوس و گیم‌پد استفاده کنید. "
-     "حالت تمام‌صفحه هم در هر بازی موجود است."),
-    ("ذخیره بازی‌ها کجاست؟",
-     "پیشرفت شما فقط در حافظه محلی مرورگر خودتان ذخیره می‌شود و به هیچ سروری ارسال نمی‌شود. "
-     "اگر داده‌های سایت را پاک کنید، ذخیره‌ها هم پاک می‌شوند."),
-    ("آیا بازی‌های تجاری مثل دووم اصلی در PLAYCHIVE هست؟",
-     "خیر. PLAYCHIVE داده‌های تجاری را توزیع نمی‌کند. محتوای آزاد مثل Freedoom همراه سایت است و اگر فایل WAD قانونی دارید "
-     "می‌توانید آن را به‌صورت محلی وارد کنید؛ فایل‌ها در مرورگر شما می‌مانند."),
+     "یک مجموعهٔ گزینش‌شده از بازی‌های کلاسیک، متن‌باز و رایگان که مستقیم در مرورگر اجرا می‌شوند. "
+     "همه‌چیز با WebAssembly و HTML5 کار می‌کند، پس لازم نیست چیزی نصب کنی یا حساب کاربری بسازی."),
+    ("واقعاً رایگان است؟ تبلیغ یا ثبت‌نام ندارد؟",
+     "بله. بازی‌های آماده رایگان‌اند و هر کدام محتوای لازم برای اجرا را همراه خودشان دارند. "
+     "ثبت‌نام، تبلیغ یا خرید درون‌برنامه‌ای در کار نیست. فقط ECWolf استثناست: موتورش اینجاست، "
+     "ولی فایل‌های داده‌ی قانونی را باید خودت انتخاب کنی."),
+    ("روی گوشی و با دسته هم کار می‌کند؟",
+     "بله. روی گوشی کنترل لمسی به سبک PSP نمایش داده می‌شود و روی کامپیوتر می‌توانی از کیبورد، ماوس یا گیم‌پد "
+     "استفاده کنی. حالت تمام‌صفحه هم در همهٔ بازی‌ها هست."),
+    ("پیشرفتم کجا ذخیره می‌شود؟",
+     "فقط در حافظهٔ محلی مرورگر خودت و روی هیچ سروری نمی‌رود. اگر داده‌های سایت را از مرورگر پاک کنی، "
+     "ذخیره‌ها هم از بین می‌روند."),
+    ("بدون اینترنت هم می‌شود بازی کرد؟",
+     "بله. دکمهٔ «Offline Pack» بالای صفحه همهٔ بازی‌های آماده را در مرورگرت ذخیره می‌کند. "
+     "بعد از دانلود اولیه، بدون اینترنت هم بازی‌ها اجرا می‌شوند."),
+    ("دووم یا کوییک اصلی هم هست؟",
+     "نه. PLAYCHIVE داده‌ی تجاری پخش نمی‌کند. به‌جایش محتوای آزادی مثل Freedoom و LibreQuake را دارد. "
+     "اگر فایل WAD قانونی داری می‌توانی محلی واردش کنی و فایل از مرورگرت بیرون نمی‌رود."),
+    ("چرا بعضی ورودی‌های کاتالوگ دکمهٔ اجرا ندارند؟",
+     "بعضی پروژه‌ها فقط به صفحهٔ رسمی‌شان لینک شده‌اند، چون کد یا داده‌شان اجازهٔ پخش مجدد ندارد. "
+     "این ورودی‌ها به‌وضوح با برچسب «لینک خارجی» مشخص شده‌اند و جزو بازی‌های قابل اجرا حساب نمی‌شوند."),
+    ("چطور باگ گزارش بدهم یا بازی پیشنهاد کنم؟",
+     "سورس‌کد در گیت‌هاب است و می‌توانی همان‌جا Issue باز کنی. فقط مجوز بازی را هم بنویس تا بتوانیم بررسی کنیم "
+     "که امکان گذاشتنش هست یا نه."),
 ]
+
+
+FA_DIGITS = str.maketrans("0123456789", "۰۱۲۳۴۵۶۷۸۹")
+
+
+def fa_num(n):
+    return str(n).translate(FA_DIGITS)
+
+
+FA_CSS = """
+@font-face{font-family:'Vazirmatn';src:url(../assets/fonts/Vazirmatn-Bold.woff2) format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Vazirmatn';src:url(../assets/fonts/Vazirmatn-ExtraBold.woff2) format('woff2');font-weight:800;font-display:swap}
+@font-face{font-family:'Shabnam';src:url(../assets/fonts/Shabnam-Regular.woff2) format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Shabnam';src:url(../assets/fonts/Shabnam-Bold.woff2) format('woff2');font-weight:700;font-display:swap}
+:root{color-scheme:light dark;--bg:#e7e6e0;--surf:#f4f3ee;--ink:#161815;--soft:#3c4039;--muted:#5b6057;--line:rgba(22,24,21,.16);--line-s:rgba(22,24,21,.34);--lime:#8e9b1f;--lime-ink:#161a05;--lime-soft:rgba(142,155,31,.16);--head:'Vazirmatn',Tahoma,system-ui,sans-serif;--body:'Shabnam',Tahoma,system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root{--bg:#111210;--surf:#181917;--ink:#eceeec;--soft:#c3c8c0;--muted:#9ba097;--line:rgba(236,238,236,.1);--line-s:rgba(236,238,236,.28);--lime:#bdee63;--lime-ink:#11130c;--lime-soft:rgba(189,238,99,.12)}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/2 var(--body);background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:36px 36px}
+a{color:inherit;text-decoration-color:var(--lime);text-underline-offset:.28em}
+.wrap{width:min(1080px,100% - 32px);margin:0 auto}
+.bar{position:sticky;top:12px;z-index:10;margin:12px auto 0;width:min(1080px,100% - 32px);display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 8px 8px 16px;border:1px solid var(--line);border-radius:16px;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.brand{font:800 22px/1 var(--head);letter-spacing:-.05em;text-decoration:none;direction:ltr}.brand b{color:var(--lime)}
+nav{display:flex;gap:4px;flex-wrap:wrap}
+nav a{padding:6px 14px;border-radius:999px;text-decoration:none;font-size:15px;color:var(--soft);transition:background .2s,color .2s}
+nav a:hover{background:var(--lime-soft);color:var(--ink)}
+nav a.en{border:1px solid var(--line-s);direction:ltr;font-family:var(--head);font-size:13px}
+.hero{padding:clamp(48px,9vw,110px) 0 36px}
+h1{font:800 clamp(34px,6.4vw,68px)/1.25 var(--head);margin:0;letter-spacing:-.02em;text-wrap:balance}
+h1 em{font-style:normal;color:var(--lime)}
+.lead{max-width:44em;margin:18px 0 0;font-size:clamp(18px,2.2vw,21px);color:var(--soft)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-block;padding:10px 26px;border-radius:6px;background:var(--ink);color:var(--bg);text-decoration:none;font:700 16px/1.8 var(--head);transition:transform .25s}
+.btn:hover{transform:translateY(-2px)}.btn.alt{background:none;color:var(--ink);border:1px solid var(--line-s)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:34px 0 0;padding:0;list-style:none}
+.facts li{padding:14px 16px;border:1px solid var(--line);background:var(--surf);border-radius:4px}
+.facts b{display:block;font:800 28px/1.4 var(--head);color:var(--lime)}.facts span{font-size:15px;color:var(--muted)}
+h2{font:800 clamp(26px,4vw,38px)/1.4 var(--head);margin:0 0 6px;scroll-margin-top:84px}
+.sec{padding:46px 0 10px}.sec>p{margin:0 0 22px;color:var(--muted);max-width:46em}
+.games{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:16px}
+.game{display:flex;flex-direction:column;border:1px solid var(--line);background:var(--surf);border-radius:4px;overflow:hidden;transition:transform .35s cubic-bezier(.16,1,.3,1),border-color .25s}
+.game:hover{transform:translateY(-4px);border-color:var(--line-s)}
+.game img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:var(--line)}
+.game div{display:flex;flex-direction:column;gap:6px;padding:14px 16px 16px;flex:1}
+.game h3{margin:0;font:700 19px/1.5 var(--head);direction:ltr;text-align:right;unicode-bidi:isolate}
+.tag{align-self:flex-start;padding:0 10px;border:1px solid var(--line-s);border-radius:999px;font-size:13px;line-height:1.7;color:var(--muted)}
+.game p{margin:0;font-size:15.5px;line-height:1.95;color:var(--soft);flex:1}
+.game .btn{align-self:flex-start;margin-top:8px;padding:5px 18px;font-size:15px}
+details{border-top:1px solid var(--line);padding:12px 0}details:last-of-type{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font:700 18px/1.8 var(--head);list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:'+';color:var(--lime);font-size:24px;line-height:1.4;transition:transform .25s}details[open] summary::after{transform:rotate(45deg)}
+summary::-webkit-details-marker{display:none}details p{margin:8px 0 2px;color:var(--soft);max-width:46em}
+.about p{max-width:46em;color:var(--soft)}
+footer{margin:56px 0 36px;padding-top:18px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;color:var(--muted);direction:rtl}
+footer a{direction:ltr;unicode-bidi:isolate}
+:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+@media (max-width:640px){.bar{padding-inline:12px}nav a{padding:5px 10px;font-size:14px}.brand{font-size:19px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+"""
 
 
 def fa_page():
     path = "fa/"
-    n = len(FREE_PLAYABLE)
+    n = len(PLAYABLE)
     title = "PLAYCHIVE | بازی‌های کلاسیک و متن‌باز رایگان در مرورگر، بدون نصب"
-    desc = (f"{n} بازی کلاسیک و متن‌باز مثل OpenTTD، LibreQuake، بازی‌های مسابقه‌ای و پازل را رایگان و بدون نصب "
-            "مستقیم در مرورگر اجرا کنید.")
+    desc = (f"{fa_num(n)} بازی کلاسیک و متن‌باز مثل OpenTTD، LibreQuake و HexGL را رایگان و بدون نصب، "
+            "بدون ثبت‌نام و بدون تبلیغ، مستقیم در مرورگر بازی کن.")
     items = []
     for i, g in enumerate(PLAYABLE, 1):
         items.append({"@type": "ListItem", "position": i, "url": url_for(g["runtimeUrl"]), "name": g["name"]})
@@ -566,54 +635,52 @@ def fa_page():
             {"@type": "ListItem", "position": 2, "name": "فارسی", "item": f"{BASE}/fa/"}]},
         faq_jsonld(FA_FAQ, "fa"),
     ]
-    css = (
-        "<style>:root{color-scheme:light}*{box-sizing:border-box}body{margin:0;background:#e7e6e0;color:#161815;"
-        "font:17px/1.9 Tahoma,'Segoe UI',system-ui,sans-serif}main{max-width:900px;margin:0 auto;padding:28px 20px 64px}"
-        "a{color:#385b20}h1{font-size:clamp(26px,5vw,40px);line-height:1.4;margin:.4em 0}h2{margin-top:2em}"
-        "header{display:flex;justify-content:space-between;gap:12px;align-items:center;border-bottom:1px solid rgba(21,24,20,.24);"
-        "padding-bottom:14px}.brand{font:700 26px Arial,sans-serif;text-decoration:none;color:#161815;direction:ltr}"
-        ".brand b{color:#596057;font-weight:500}.lead{font-size:19px;color:#3c4039}"
-        "ul.games{list-style:none;padding:0;display:grid;gap:12px}ul.games li{padding:12px 16px;border:1px solid rgba(21,24,20,.2);"
-        "background:rgba(255,255,251,.5)}ul.games .name{font:700 18px Arial,sans-serif;direction:ltr;unicode-bidi:isolate}"
-        ".tag{color:#596057;font-size:14px}details{border-top:1px solid rgba(21,24,20,.16);padding:10px 0}"
-        "summary{cursor:pointer;font-weight:700}footer{margin-top:3em;color:#596057;font-size:14px}</style>"
-    )
     head = head_block(
         title=title, desc=desc, path=path, image=DEFAULT_OG,
         image_alt="PLAYCHIVE: بازی‌های کلاسیک در مرورگر", extra_ld=graph, locale="fa_IR",
         alternates=[("en", f"{BASE}/"), ("fa", f"{BASE}/fa/"), ("x-default", f"{BASE}/")],
     )
-    body = [
-        '<main>',
-        '<header><a class="brand" href="../" lang="en">PLAY<b>CHIVE</b></a><a href="../" lang="en" hreflang="en">English</a></header>',
-        "<h1>بازی‌های کلاسیک و متن‌باز، رایگان و مستقیم در مرورگر</h1>",
-        f'<p class="lead">PLAYCHIVE مجموعه‌ای گزینش‌شده از بازی‌های آزاد و کلاسیک است که بدون نصب و بدون حساب کاربری در '
-        f"مرورگر اجرا می‌شوند. الان {len(PLAYABLE)} بازی آماده اجراست و همه‌ی آن‌ها با WebAssembly یا HTML5 کار می‌کنند.</p>",
-        '<p><a href="../">ورود به کاتالوگ کامل (English)</a></p>',
-        "<h2>بازی‌هایی که همین حالا می‌توانید بازی کنید</h2>",
-        '<ul class="games">',
-    ]
-    for g in PLAYABLE:
+    cards = []
+    for i, g in enumerate(PLAYABLE):
         genre = FA_GENRE.get(g["genre"], g["genre"])
-        desc_fa = FA_DESC.get(g["id"], "")
-        body.append(f'<li><a class="name" href="../{esc(g["runtimeUrl"])}">{esc(g["name"])}</a> '
-                    f'<span class="tag">({esc(genre)})</span><br>{esc(desc_fa)}</li>')
-    body.append("</ul>")
-    body.append("<h2>پرسش‌های متداول</h2>")
-    for q, a in FA_FAQ:
-        body.append(f"<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>")
-    body.append("<h2>درباره PLAYCHIVE</h2>")
-    body.append('<p>PLAYCHIVE یک پروژه غیرتجاری است که توسط <a href="https://github.com/MahanKenway" rel="noopener">ماهان توکلی</a> '
-                "ساخته شده. مجوز و نام سازندگان هر بازی کنار همان بازی نگه داشته می‌شود. "
-                f'سورس‌کد در <a href="{REPO_URL}" rel="noopener">گیت‌هاب</a> در دسترس است.</p>')
-    body.append('<footer><a href="../privacy/" lang="en">Privacy</a> · <a href="../llms.txt" lang="en">llms.txt</a> · '
-                '<a href="../sitemap.xml" lang="en">Sitemap</a> · <a href="../about/" lang="en">About</a></footer></main>')
+        text = FA_DESC.get(g["id"], "")
+        lazy = ' loading="lazy" decoding="async"' if i >= 3 else ' fetchpriority="high"' if i == 0 else ""
+        cards.append(
+            f'<li class="game"><img src="../{esc(g["artwork"])}" width="1280" height="720" alt="تصویری از بازی {esc(g["name"])}"{lazy}>'
+            f'<div><h3 lang="en">{esc(g["name"])}</h3><span class="tag">{esc(genre)}</span><p>{esc(text)}</p>'
+            f'<a class="btn" href="../{esc(g["runtimeUrl"])}" aria-label="اجرای {esc(g["name"])}">اجرای بازی</a></div></li>'
+        )
+    faq = "\n".join(f"<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>" for q, a in FA_FAQ)
+    body = f"""<div class="bar"><a class="brand" href="../" lang="en" aria-label="PLAYCHIVE">PLAY<b>CHIVE</b></a>
+<nav aria-label="ناوبری"><a href="#games">بازی‌ها</a><a href="#faq">پرسش‌ها</a><a href="#about">درباره</a><a class="en" href="../" lang="en" hreflang="en">English</a></nav></div>
+<main class="wrap">
+<section class="hero">
+<h1>بازی‌های کلاسیک، <em>مستقیم توی مرورگر</em></h1>
+<p class="lead">بدون نصب، بدون ثبت‌نام و بدون تبلیغ. PLAYCHIVE مجموعه‌ای گزینش‌شده از بازی‌های آزاد و متن‌باز است که همین‌جا اجرا می‌شوند. یک مسابقه بده، یک شهربازی بساز یا چند دقیقه‌ای با یک شوتر قدیمی دلتنگی کن.</p>
+<div class="cta"><a class="btn" href="#games">بازی‌ها را ببین</a><a class="btn alt" href="../" lang="en">کاتالوگ کامل (English)</a></div>
+<ul class="facts"><li><b>{fa_num(n)}</b><span>بازی آمادهٔ اجرا</span></li><li><b>۰</b><span>نصب، حساب کاربری یا تبلیغ</span></li><li><b>WebAssembly</b><span>و HTML5 زیر کاپوت</span></li></ul>
+</section>
+<section class="sec" id="games"><h2>همین الان بازی کن</h2>
+<p>هر بازی در صفحهٔ خودش باز می‌شود و محتوایش همراه خودش است. روی گوشی کنترل لمسی و روی کامپیوتر کیبورد و دسته کار می‌کند.</p>
+<ul class="games">
+{chr(10).join(cards)}
+</ul></section>
+<section class="sec" id="faq"><h2>پرسش‌های پرتکرار</h2>
+{faq}
+</section>
+<section class="sec about" id="about"><h2>دربارهٔ PLAYCHIVE</h2>
+<p>PLAYCHIVE پروژه‌ای غیرتجاری است که <a href="https://github.com/MahanKenway" rel="noopener">ماهان توکلی</a> ساخته. هدفش این است که حس پیدا کردن بازی‌های قدیمی را برگرداند، بدون دردسر نصب و حساب کاربری. نام و مجوز سازندگان هر بازی کنار همان بازی می‌ماند و محتوای تجاری هم به‌عنوان رایگان معرفی نمی‌شود. سورس‌کد در <a href="{REPO_URL}" rel="noopener">گیت‌هاب</a> باز است.</p>
+</section>
+<footer><a href="../privacy/" lang="en">Privacy</a><a href="../llms.txt" lang="en">llms.txt</a><a href="../sitemap.xml" lang="en">Sitemap</a><a href="../about/" lang="en">About</a></footer>
+</main>"""
     page = (
         '<!doctype html>\n<html lang="fa" dir="rtl">\n<head>\n<meta charset="utf-8" />\n'
         '<meta name="viewport" content="width=device-width, initial-scale=1" />\n'
         '<meta name="theme-color" content="#e9e8e3" />\n<link rel="icon" href="../assets/favicon.ico" />\n'
-        '<link rel="manifest" href="../manifest.json" />\n' + css + "\n" + head + "\n</head>\n<body>\n"
-        + "\n".join(body) + "\n</body>\n</html>\n"
+        '<link rel="manifest" href="../manifest.json" />\n'
+        '<link rel="preload" href="../assets/fonts/Shabnam-Regular.woff2" as="font" type="font/woff2" crossorigin />\n'
+        '<link rel="preload" href="../assets/fonts/Vazirmatn-ExtraBold.woff2" as="font" type="font/woff2" crossorigin />\n'
+        "<style>" + FA_CSS + "</style>\n" + head + "\n</head>\n<body>\n" + body + "\n</body>\n</html>\n"
     )
     out = ROOT / "fa/index.html"
     out.parent.mkdir(exist_ok=True)
