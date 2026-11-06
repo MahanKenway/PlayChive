@@ -641,6 +641,70 @@ footer a{direction:ltr;unicode-bidi:isolate}
 """
 
 
+FA_REF = {
+    "freedoom-phase-1": "کمپین کامل و آزاد سازگار با Doom، با چهار اپیزود. محتوایش رایگان است و داخل هاب Doom اجرا می‌شود.",
+    "freedoom-phase-2": "کمپین ۳۲مرحله‌ای آزاد برای قوانین Doom II، با هیولاهای بیشتر. داخل هاب Doom اجرا می‌شود.",
+    "freedm": "آرشیو آزاد ۳۲نقشه برای دث‌مچ. می‌توانی نقشه‌ها را محلی بگردی. داخل هاب Doom اجرا می‌شود.",
+    "hacx-1-2": "کمپین سایبرپانک ۲۱مرحله‌ای روی موتور Doom. محتوای رایگانش همراه هاب Doom است.",
+    "ancient-aliens": "مگاوَد ۳۲نقشه‌ای با حال‌وهوای سینث‌ویو و موسیقی اختصاصی. پروژهٔ بیرونی است و فقط برای مرجع اینجاست.",
+    "eviternity": "مگاوَد شش‌فصلی برای Doom II با دنیاهای بصری متفاوت. پروژهٔ بیرونی است و فقط برای مرجع اینجاست.",
+    "back-to-saturn-x-e1": "اپیزود علمی‌تخیلی صیقل‌خورده با هنر و موسیقی اختصاصی. پروژهٔ بیرونی است و فقط برای مرجع اینجاست.",
+    "adventures-of-square": "تبدیل کامل رنگارنگ با بستهٔ GZDoom اختصاصی. پروژهٔ بیرونی است و فقط برای مرجع اینجاست.",
+    "plutonia": "کمپین سخت Final Doom با نبردهای فشرده. برای اجرا باید فایل قانونی خودت را داشته باشی.",
+    "tnt-evilution": "کمپین Final Doom با فضاهای صنعتی و مسیرهای بزرگ‌تر. برای اجرا باید فایل قانونی خودت را داشته باشی.",
+    "community-slot": "قفسهٔ محلی برای نقشه‌ها و آزمایش‌های سازگار. فایل‌هایت را خودت می‌آوری و داخل مرورگرت می‌مانند.",
+    "openresident-research": "موتور متن‌باز C که برای پورت مرورگری آینده بررسی می‌شود. پروژهٔ بیرونی است و فقط برای مرجع اینجاست.",
+    "supertuxkart": "کارت‌ریسینگ سه‌بعدی و متن‌باز با انرژی آرکیدهای قدیمی. پروژهٔ بیرونی است و PLAYCHIVE میزبانش نیست.",
+    "vibeslops": "شوتر اول‌شخص با Three.js که پروژهٔ اصلی میزبانی‌اش می‌کند. PLAYCHIVE فقط لینک می‌دهد.",
+    "ovz-global-flashpoint": "آلفای یک شوتر مرورگری که محتوایش را از سرویس خود پروژه می‌گیرد. فقط لینک بیرونی است.",
+    "surfd-external": "پلتفرم سرف به سبک Counter-Strike با زمان‌سنجی و چک‌پوینت. پروژهٔ بیرونی است و فقط لینک می‌دهیم.",
+    "webxash-half-life": "نسخه‌های مرورگری Half-Life روی GoldSrc. پروژهٔ بیرونی است و PLAYCHIVE میزبانش نیست.",
+    "pixelsuft-half-life": "پروژهٔ مرورگری دیگری از Half-Life روی Xash. پروژهٔ بیرونی است و فقط لینک می‌دهیم.",
+    "halo-web-port": "پورت مرورگری که داده‌های قانونی بازی را محلی می‌خواند. پروژهٔ بیرونی است و فقط لینک می‌دهیم.",
+    "halo-ce-mobile": "پروژهٔ غیررسمی و لمس‌پسند Halo CE که دیسک خودت را وارد می‌کند. فقط لینک بیرونی است.",
+    "quake-browser-port": "تجربهٔ Quake در مرورگر، میزبانی‌شده توسط Pieter.com. PLAYCHIVE فقط به منبع اصلی لینک می‌دهد.",
+    "quake2-browser-port": "پورت مرورگری Quake II که بیرون از PLAYCHIVE میزبانی می‌شود. فقط لینک بیرونی است.",
+    "quake3-browser-port": "تجربهٔ Quake III Arena در مرورگر با ترکیبی از اجزای متن‌باز و اختصاصی. فقط لینک بیرونی است.",
+    "rtcw-browser-port": "نسخهٔ مرورگری Return to Castle Wolfenstein که دادهٔ بزرگی دانلود می‌کند. فقط لینک بیرونی است.",
+    "urban-terror-browser-port": "پورت مرورگری Urban Terror (نه Unreal Tournament). پروژهٔ بیرونی است و فقط لینک می‌دهیم.",
+    "gta-vice-city-wasm": "کلاینت مرورگری Vice City که به نسخهٔ قانونی و شخصی خودت نیاز دارد. فقط لینک بیرونی است.",
+    "pes6-web": "پورت مرورگری نسخهٔ PSP بازی Pro Evolution Soccer 6 با ذخیره و آنلاین اختیاری. فقط لینک بیرونی است.",
+    "skate3-web-engine": "آزمایش موتور متن‌باز برای Skate 3 با کد GPL-3.0. پروژهٔ بیرونی است و فقط لینک می‌دهیم.",
+    "diablo-web": "پورت مرورگری Diablo با شروع شیرور محدود و فایل اختیاری خودت. فقط لینک بیرونی است.",
+    "webwars": "پورت مرورگری Hedgewars با حالت هات‌سیت و دروازهٔ آنلاین آزمایشی. فقط لینک بیرونی است.",
+    "openlara": "بازسازی متن‌باز موتور Tomb Raider با مجوز BSD و دموی WebGL رسمی. فقط لینک بیرونی است.",
+    "corsixth": "بازسازی موتور Theme Hospital با مجوز سبک MIT. پروژهٔ بیرونی است و فقط لینک می‌دهیم.",
+    "freeciv-web": "بازی استراتژی به سبک Civilization با کلاینت HTML5 و WebGL. پروژهٔ بیرونی است و فقط لینک می‌دهیم.",
+    "endless-sky": "بازی متن‌باز فضایی و تجارتی شبیه Elite. پروژهٔ بیرونی است و فقط لینک می‌دهیم.",
+}
+
+
+def fa_reference_ld():
+    items = []
+    for i, g in enumerate([g for g in GAMES if g not in PLAYABLE], 1):
+        ext = g.get("projectUrl") or g.get("publicUrl") or ""
+        node = {"@type": "VideoGame", "name": g["name"], "genre": FA_GENRE.get(g["genre"], g["genre"]),
+                "description": FA_REF.get(g["id"], "")}
+        if str(ext).startswith("http"):
+            node["url"] = ext
+            node["sameAs"] = ext
+        items.append({"@type": "ListItem", "position": i, "item": node})
+    return {"@type": "ItemList", "@id": f"{BASE}/fa/#reference-entries",
+            "name": "ورودی‌های مرجع کاتالوگ PLAYCHIVE (قابل اجرا در PLAYCHIVE نیستند)",
+            "numberOfItems": len(items), "itemListElement": items}
+
+
+def fa_reference_html():
+    rows = []
+    for g in [g for g in GAMES if g not in PLAYABLE]:
+        ext = g.get("projectUrl") or g.get("publicUrl") or ""
+        name = f'<span lang="en">{esc(g["name"])}</span>'
+        if str(ext).startswith("http"):
+            name = f'<a href="{esc(ext)}" rel="noopener" lang="en">{esc(g["name"])}</a>'
+        rows.append(f'<li class="ref">{name}: {esc(FA_REF.get(g["id"], ""))}</li>')
+    return "\n".join(rows)
+
+
 def fa_page():
     path = "fa/"
     n = len(PLAYABLE)
@@ -660,6 +724,7 @@ def fa_page():
             {"@type": "ListItem", "position": 1, "name": "PLAYCHIVE", "item": f"{BASE}/"},
             {"@type": "ListItem", "position": 2, "name": "فارسی", "item": f"{BASE}/fa/"}]},
         faq_jsonld(FA_FAQ, "fa"),
+        fa_reference_ld(),
     ]
     head = head_block(
         title=title, desc=desc, path=path, image=DEFAULT_OG,
@@ -690,6 +755,11 @@ def fa_page():
 <p>هر بازی در صفحهٔ خودش باز می‌شود و محتوایش همراه خودش است. روی گوشی کنترل لمسی و روی کامپیوتر کیبورد و دسته کار می‌کند.</p>
 <ul class="games">
 {chr(10).join(cards)}
+</ul></section>
+<section class="sec" id="reference"><h2>ورودی‌های مرجع</h2>
+<p>این‌ها در PLAYCHIVE اجرا نمی‌شوند. یا پروژهٔ بیرونی‌اند و فقط لینک می‌دهیم، یا فایل قانونی خودت را می‌خواهند.</p>
+<ul class="refs">
+{fa_reference_html()}
 </ul></section>
 <section class="sec" id="faq"><h2>پرسش‌های پرتکرار</h2>
 {faq}
