@@ -233,6 +233,45 @@ Source: https://playchive.ir/fa/
 
 [اجرای بازی](https://playchive.ir/pacman.html)
 
+## ورودی‌های مرجع
+
+این‌ها در PLAYCHIVE اجرا نمی‌شوند. یا پروژهٔ بیرونی‌اند و فقط لینک می‌دهیم، یا فایل قانونی خودت را می‌خواهند.
+
+- Freedoom: Phase 1: کمپین کامل و آزاد سازگار با Doom، با چهار اپیزود. محتوایش رایگان است و داخل هاب Doom اجرا می‌شود.
+- Freedoom: Phase 2: کمپین ۳۲مرحله‌ای آزاد برای قوانین Doom II، با هیولاهای بیشتر. داخل هاب Doom اجرا می‌شود.
+- FreeDM: Arena Archive: آرشیو آزاد ۳۲نقشه برای دث‌مچ. می‌توانی نقشه‌ها را محلی بگردی. داخل هاب Doom اجرا می‌شود.
+- Hacx: Twitch ’n Kill: کمپین سایبرپانک ۲۱مرحله‌ای روی موتور Doom. محتوای رایگانش همراه هاب Doom است.
+- [Ancient Aliens](https://www.moddb.com/games/doom-ii/addons/ancient-aliens): مگاوَد ۳۲نقشه‌ای با حال‌وهوای سینث‌ویو و موسیقی اختصاصی. پروژهٔ بیرونی است و فقط برای مرجع اینجاست.
+- [Eviternity](https://www.moddb.com/mods/eviternity): مگاوَد شش‌فصلی برای Doom II با دنیاهای بصری متفاوت. پروژهٔ بیرونی است و فقط برای مرجع اینجاست.
+- [Back to Saturn X: E1](https://www.moddb.com/mods/back-to-saturn-x): اپیزود علمی‌تخیلی صیقل‌خورده با هنر و موسیقی اختصاصی. پروژهٔ بیرونی است و فقط برای مرجع اینجاست.
+- [The Adventures of Square](http://adventuresofsquare.com/): تبدیل کامل رنگارنگ با بستهٔ GZDoom اختصاصی. پروژهٔ بیرونی است و فقط برای مرجع اینجاست.
+- The Plutonia Experiment: کمپین سخت Final Doom با نبردهای فشرده. برای اجرا باید فایل قانونی خودت را داشته باشی.
+- TNT: Evilution: کمپین Final Doom با فضاهای صنعتی و مسیرهای بزرگ‌تر. برای اجرا باید فایل قانونی خودت را داشته باشی.
+- Community WAD shelf: قفسهٔ محلی برای نقشه‌ها و آزمایش‌های سازگار. فایل‌هایت را خودت می‌آوری و داخل مرورگرت می‌مانند.
+- [OpenResident](https://github.com/XProger/OpenResident): موتور متن‌باز C که برای پورت مرورگری آینده بررسی می‌شود. پروژهٔ بیرونی است و فقط برای مرجع اینجاست.
+- [SuperTuxKart](https://supertuxkart.net/Download): کارت‌ریسینگ سه‌بعدی و متن‌باز با انرژی آرکیدهای قدیمی. پروژهٔ بیرونی است و PLAYCHIVE میزبانش نیست.
+- [Vibeslops / Claude of Duty](https://vibeslops.luckeysystems.com/): شوتر اول‌شخص با Three.js که پروژهٔ اصلی میزبانی‌اش می‌کند. PLAYCHIVE فقط لینک می‌دهد.
+- [Contemporary Conflict: Global Flashpoint](https://ovz-game-production.up.railway.app/): آلفای یک شوتر مرورگری که محتوایش را از سرویس خود پروژه می‌گیرد. فقط لینک بیرونی است.
+- [Surfd](https://surfd.net/): پلتفرم سرف به سبک Counter-Strike با زمان‌سنجی و چک‌پوینت. پروژهٔ بیرونی است و فقط لینک می‌دهیم.
+- [webXash / Half-Life browser ports](https://x8bitrain.github.io/webXash/): نسخه‌های مرورگری Half-Life روی GoldSrc. پروژهٔ بیرونی است و PLAYCHIVE میزبانش نیست.
+- [PixelSutf Half-Life web build](https://pixelsuft.github.io/hl/): پروژهٔ مرورگری دیگری از Half-Life روی Xash. پروژهٔ بیرونی است و فقط لینک می‌دهیم.
+- [Halo: Combat Evolved web port](https://mitchellhynes.com/halo): پورت مرورگری که داده‌های قانونی بازی را محلی می‌خواند. پروژهٔ بیرونی است و فقط لینک می‌دهیم.
+- [Halo CE Mobile](https://hcemobile.com/): پروژهٔ غیررسمی و لمس‌پسند Halo CE که دیسک خودت را وارد می‌کند. فقط لینک بیرونی است.
+- [Quake browser port](https://q1.pieter.com/): تجربهٔ Quake در مرورگر، میزبانی‌شده توسط Pieter.com. PLAYCHIVE فقط به منبع اصلی لینک می‌دهد.
+- [Quake II browser port](https://q2.pieter.com/): پورت مرورگری Quake II که بیرون از PLAYCHIVE میزبانی می‌شود. فقط لینک بیرونی است.
+- [Quake III browser port](https://q3.pieter.com/): تجربهٔ Quake III Arena در مرورگر با ترکیبی از اجزای متن‌باز و اختصاصی. فقط لینک بیرونی است.
+- [Return to Castle Wolfenstein web port](https://rtcw.pieter.com/): نسخهٔ مرورگری Return to Castle Wolfenstein که دادهٔ بزرگی دانلود می‌کند. فقط لینک بیرونی است.
+- [Urban Terror browser port](https://ut.pieter.com/): پورت مرورگری Urban Terror (نه Unreal Tournament). پروژهٔ بیرونی است و فقط لینک می‌دهیم.
+- [GTA: Vice City WASM port](https://joncodeofficial.github.io/gta-vice-city-wasm/): کلاینت مرورگری Vice City که به نسخهٔ قانونی و شخصی خودت نیاز دارد. فقط لینک بیرونی است.
+- [PES 6 Web Online Port](https://pes6.optijuegos.net/): پورت مرورگری نسخهٔ PSP بازی Pro Evolution Soccer 6 با ذخیره و آنلاین اختیاری. فقط لینک بیرونی است.
+- [Skate 3 Rust Engine web project](https://skate.aaddpp.lol/): آزمایش موتور متن‌باز برای Skate 3 با کد GPL-3.0. پروژهٔ بیرونی است و فقط لینک می‌دهیم.
+- [Diablo Web](https://johnimril.github.io/diablo_web/): پورت مرورگری Diablo با شروع شیرور محدود و فایل اختیاری خودت. فقط لینک بیرونی است.
+- [WebWars](https://webwars.link/): پورت مرورگری Hedgewars با حالت هات‌سیت و دروازهٔ آنلاین آزمایشی. فقط لینک بیرونی است.
+- [OpenLara](https://xproger.info/projects/OpenLara/): بازسازی متن‌باز موتور Tomb Raider با مجوز BSD و دموی WebGL رسمی. فقط لینک بیرونی است.
+- [CorsixTH](https://github.com/CorsixTH/CorsixTH): بازسازی موتور Theme Hospital با مجوز سبک MIT. پروژهٔ بیرونی است و فقط لینک می‌دهیم.
+- [Freeciv-web](https://freeciv.github.io/freeciv-web/): بازی استراتژی به سبک Civilization با کلاینت HTML5 و WebGL. پروژهٔ بیرونی است و فقط لینک می‌دهیم.
+- [Endless Sky](https://endless-sky.github.io/): بازی متن‌باز فضایی و تجارتی شبیه Elite. پروژهٔ بیرونی است و فقط لینک می‌دهیم.
+
 ## پرسش‌های پرتکرار
 
 ### PLAYCHIVE چیست؟

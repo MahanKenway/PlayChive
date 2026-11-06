@@ -375,6 +375,13 @@ try:
         text = re.search(r"<p>(.*?)</p>", card, re.S)
         if not text or not re.search(r"[\u0600-\u06FF]", text.group(1)):
             err("fa/index.html: a game card has no Persian description")
+    ref_items = re.findall(r'<li class="ref">(.*?)</li>', fa_html, re.S)
+    n_ref = len([g for g in games if g not in playable])
+    if len(ref_items) != n_ref:
+        err(f"fa/index.html: {len(ref_items)} reference entries, expected {n_ref} (add Persian text to FA_REF)")
+    for it in ref_items:
+        if not re.search(r"[\u0600-\u06FF]", re.sub(r"<[^>]+>", "", it).split(":", 1)[-1]):
+            err("fa/index.html: a reference entry has no Persian description")
     for page in ["index.html", "fa/index.html"]:
         src = (ROOT / page).read_text(encoding="utf-8")
         for tag in re.findall(r"<img\b[^>]*>", src):
