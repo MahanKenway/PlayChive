@@ -7,6 +7,7 @@
  * a typewriter effect and a green cursor blink — purely aesthetic.
  * ─────────────────────────────────────────────────────────────────
  */
+import { COLLECTIONS } from './catalog.js?v=retroplay-20260815-r2';
 
 export class LoadingScreen {
   #el;     // outer .screen element
@@ -30,21 +31,31 @@ export class LoadingScreen {
   }
   hide() { this.#el?.classList.remove('active'); }
 
+  // The boot screen's image wall. It shows the artwork of every catalog record, not a hand-picked few,
+  // using small pre-made tiles (assets/loading/, see scripts/make-loading-thumbs.py).
   #mountDriftWall() {
     const quality = document.documentElement.dataset.visualQuality;
     if (!this.#el || this.#driftWall || quality === 'static') return;
-    const tiles = [
-      'assets/screenshots/hexgl-runtime.webp',
-      'assets/screenshots/astray-runtime.webp',
-      'assets/screenshots/tuxracer-runtime.webp',
-      'assets/screenshots/starter-kit-racing-runtime.webp',
-    ].map((path) => new URL(path, document.baseURI).href);
+    const seen = new Set();
+    const tiles = [];
+    for (const game of COLLECTIONS) {
+      const name = String(game.artwork || '').split('/').pop()?.replace(/\.[a-z0-9]+$/i, '');
+      if (!name || seen.has(name)) continue;
+      seen.add(name);
+      tiles.push(new URL(`assets/loading/${name}.webp`, document.baseURI).href);
+    }
+    if (!tiles.length) return;
+    const width = window.innerWidth;
+    const columns = width > 1100 ? 7 : width > 700 ? 5 : 3;
     const wall = document.createElement('div');
     wall.className = 'loading-drift-wall';
     wall.setAttribute('aria-hidden', 'true');
-    wall.innerHTML = tiles.map((image, index) => {
-      const next = tiles[(index + 1) % tiles.length];
-      return `<div class="loading-drift-column loading-drift-column-${index + 1}" style="--drift-image:url('${image}');--drift-next:url('${next}')"><i></i><i></i><i></i></div>`;
+    wall.style.setProperty('--drift-cols', String(columns));
+    wall.innerHTML = Array.from({ length: columns }, (_, col) => {
+      const own = tiles.filter((_, index) => index % columns === col);
+      // The list is repeated once so translating by -50% loops with no visible seam.
+      const cells = [...own, ...own].map((src) => `<i><img src="${src}" alt="" width="384" height="216" decoding="async" draggable="false" /></i>`).join('');
+      return `<div class="loading-drift-column" style="--drift-time:${(own.length * 3.4 + col * 1.7).toFixed(1)}s">${cells}</div>`;
     }).join('');
     this.#el.prepend(wall);
     this.#driftWall = wall;
