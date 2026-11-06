@@ -206,6 +206,46 @@ function initEye(header) {
   });
 }
 
+
+function initLang(header) {
+  const box = header.querySelector('#pc-lang');
+  if (!box) return;
+  const link = box.querySelector('a[hreflang]');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const store = (k, v) => { try { v === undefined ? localStorage.getItem(k) : localStorage.setItem(k, v); } catch {} };
+  const read = (k) => { try { return localStorage.getItem(k); } catch { return null; } };
+  link.addEventListener('click', (e) => {
+    store('playchive:lang', 'fa');
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || reduce) return;
+    e.preventDefault();
+    box.classList.add('is-switching');
+    setTimeout(() => { location.href = link.href; }, 380);
+  });
+  // Gentle, dismissible hint for Persian-language browsers. Never an automatic redirect.
+  const wantsFa = (navigator.languages || [navigator.language || '']).some((l) => /^fa\b/i.test(l));
+  if (!wantsFa || read('playchive:lang') || read('playchive:lang-hint')) return;
+  const hint = document.createElement('div');
+  hint.className = 'pc-lang-hint';
+  hint.setAttribute('role', 'status');
+  hint.lang = 'fa';
+  hint.dir = 'rtl';
+  const a = document.createElement('a');
+  a.href = link.href;
+  a.textContent = 'نسخهٔ فارسی';
+  const text = document.createElement('span');
+  text.append('این سایت فارسی هم دارد: ', a);
+  const close = document.createElement('button');
+  close.type = 'button';
+  close.setAttribute('aria-label', 'بستن');
+  close.textContent = '×';
+  const dismiss = () => { store('playchive:lang-hint', '1'); hint.remove(); };
+  close.addEventListener('click', dismiss);
+  hint.addEventListener('keydown', (e) => { if (e.key === 'Escape') dismiss(); });
+  hint.append(text, close);
+  box.append(hint);
+  setTimeout(dismiss, 12000);
+}
+
 export function initHeader() {
   const header = document.getElementById('pc-header');
   const scroller = document.getElementById('wad-picker');
@@ -216,4 +256,5 @@ export function initHeader() {
   initMagnet(header);
   initTools(header);
   initEye(header);
+  initLang(header);
 }
