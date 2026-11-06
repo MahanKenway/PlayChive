@@ -1,0 +1,229 @@
+{
+  "generated": "2026-11-05",
+  "policy": "Real project-specific images; local WebP copies retain source attribution. Review restricted assets before commercial redistribution.",
+  "items": [
+    {
+      "id": "endless-sky",
+      "file": "assets/screenshots/external-endless-sky.webp",
+      "source_asset": "https://endless-sky.github.io/images/screenshots/battle.jpg",
+      "source_page": "https://endless-sky.github.io/screenshots.html",
+      "original_dimensions": [
+        1280,
+        720
+      ],
+      "optimized_dimensions": [
+        960,
+        540
+      ],
+      "bytes": 47256
+    },
+    {
+      "id": "freeciv-web",
+      "file": "assets/screenshots/external-freeciv-web.webp",
+      "source_asset": "https://raw.githubusercontent.com/freeciv/freeciv-web/develop/scripts/freeciv-web-screenshot.png",
+      "source_page": "https://github.com/freeciv/freeciv-web/blob/develop/README.md",
+      "original_dimensions": [
+        1000,
+        587
+      ],
+      "optimized_dimensions": [
+        960,
+        564
+      ],
+      "bytes": 127530
+    },
+    {
+      "id": "corsixth",
+      "file": "assets/screenshots/external-corsixth.webp",
+      "source_asset": "https://corsixth.com/media/screenshots/2.jpg",
+      "source_page": "https://corsixth.com/media.html",
+      "original_dimensions": [
+        1920,
+        1200
+      ],
+      "optimized_dimensions": [
+        960,
+        600
+      ],
+      "bytes": 93628
+    },
+    {
+      "id": "openlara",
+      "file": "assets/screenshots/external-openlara.webp",
+      "source_asset": "http://xproger.info/projects/OpenLara/shots/waterfall.jpg",
+      "source_page": "https://xproger.info/projects/OpenLara/",
+      "original_dimensions": [
+        854,
+        480
+      ],
+      "optimized_dimensions": [
+        854,
+        480
+      ],
+      "bytes": 30452
+    },
+    {
+      "id": "webwars",
+      "file": "assets/screenshots/external-webwars.webp",
+      "source_asset": "http://i.imgur.com/aZmjRxb.png",
+      "source_page": "https://github.com/tymscar/WebWars",
+      "original_dimensions": [
+        1920,
+        1080
+      ],
+      "optimized_dimensions": [
+        960,
+        540
+      ],
+      "bytes": 32574
+    },
+    {
+      "id": "diablo-web",
+      "file": "assets/screenshots/external-diablo-web.webp",
+      "source_asset": "https://raw.githubusercontent.com/JohnImril/diablo_web/main/public/screenshot.png",
+      "source_page": "https://github.com/JohnImril/diablo_web/blob/main/README.md",
+      "original_dimensions": [
+        1923,
+        1439
+      ],
+      "optimized_dimensions": [
+        960,
+        718
+      ],
+      "bytes": 62752
+    },
+    {
+      "id": "skate3-web",
+      "file": "assets/screenshots/external-skate3-web.webp",
+      "source_asset": "https://raw.githubusercontent.com/SK8-ENGINE/skate-3-rust-engine/main/docs/images/skating-crab.png",
+      "source_page": "https://github.com/SK8-ENGINE/skate-3-rust-engine/blob/main/docs/images/skating-crab.png",
+      "original_dimensions": [
+        1208,
+        920
+      ],
+      "optimized_dimensions": [
+        960,
+        731
+      ],
+      "bytes": 27470
+    },
+    {
+      "id": "pes6-web",
+      "file": "assets/screenshots/external-pes6-web.webp",
+      "source_asset": "https://pbs.twimg.com/amplify_video_thumb/2106446365609930752/img/JECm62K9fUxPx3uq.jpg",
+      "source_page": "https://x.com/OptiJogos/status/2106446792686715186/video/1",
+      "original_dimensions": [
+        960,
+        720
+      ],
+      "optimized_dimensions": [
+        960,
+        720
+      ],
+      "bytes": 60666
+    },
+    {
+      "id": "rtcw-web",
+      "file": "assets/screenshots/external-rtcw-web.webp",
+      "source_asset": "https://rtcw.pieter.com/rtcwbg.jpg",
+      "source_page": "https://rtcw.pieter.com/",
+      "original_dimensions": [
+        640,
+        366
+      ],
+      "optimized_dimensions": [
+        640,
+        366
+      ],
+      "bytes": 13462
+    },
+    {
+      "id": "urban-terror-web",
+      "file": "assets/screenshots/external-urban-terror-web.webp",
+      "source_asset": "https://ut.pieter.com/assets/og.jpg?v=1",
+      "source_page": "https://ut.pieter.com/",
+      "original_dimensions": [
+        1200,
+        630
+      ],
+      "optimized_dimensions": [
+        960,
+        504
+      ],
+      "bytes": 42028
+    },
+    {
+      "id": "quake-web",
+      "file": "assets/screenshots/external-quake-web.webp",
+      "source_asset": "https://q1.pieter.com/assets/og.jpg?v=2",
+      "source_page": "https://q1.pieter.com/",
+      "original_dimensions": [
+        1200,
+        1200
+      ],
+      "optimized_dimensions": [
+        960,
+        960
+      ],
+      "bytes": 20120
+    },
+    {
+      "id": "halo-web",
+      "file": "assets/screenshots/external-halo-web.webp",
+      "source_asset": "https://files.manuscdn.com/search-media/310519663278709625/HeKTCGBcRycq7NkP6GhQ6z/9yybCsin45dJfiq3V6drUg.jpg",
+      "source_page": "https://mitchellhynes.com/halo",
+      "original_dimensions": [
+        1200,
+        656
+      ],
+      "optimized_dimensions": [
+        960,
+        525
+      ],
+      "bytes": 18118
+    },
+    {
+      "id": "surfd",
+      "file": "assets/screenshots/external-surfd.webp",
+      "source_asset": "https://surfd.net/previews/fornax.jpg",
+      "source_page": "https://surfd.net/reference.html",
+      "original_dimensions": [
+        1280,
+        720
+      ],
+      "optimized_dimensions": [
+        960,
+        540
+      ],
+      "bytes": 89214
+    },
+    {
+      "id": "halo-ce-mobile",
+      "file": "assets/screenshots/external-halo-ce-mobile.webp",
+      "source_asset": "https://hcemobile.com/icons/icon-192.png?h=0ac2ce4db8",
+      "source_page": "https://hcemobile.com/",
+      "license_note": "Official project icon used because no official gameplay screenshot was exposed; Halo content remains proprietary."
+    },
+    {
+      "id": "pixelsuft-half-life",
+      "file": "assets/screenshots/external-pixelsuft.webp",
+      "source_asset": "https://pixelsuft.github.io/hl/",
+      "source_page": "https://pixelsuft.github.io/hl/",
+      "license_note": "Capture of the official project interface; no user game data or third-party screenshot copied."
+    },
+    {
+      "id": "ovz-global-flashpoint",
+      "file": "assets/screenshots/external-global-flashpoint.webp",
+      "source_asset": "https://files.manuscdn.com/search-media/310519663278709625/HeKTCGBcRycq7NkP6GhQ6z/SDotbiWdKJgRNXwe9SaQ7V.jpg",
+      "source_page": "https://ovz-game-production.up.railway.app/",
+      "license_note": "Attributed editorial screenshot from a search result for the project; original host currently serves a DMCA notice. Do not treat as freely licensed."
+    },
+    {
+      "id": "vibeslops",
+      "file": "assets/screenshots/external-vibeslops.webp",
+      "source_asset": "https://vibeslops.luckeysystems.com/tweet.png",
+      "source_page": "https://vibeslops.luckeysystems.com/",
+      "license_note": "Official host announcement image, not gameplay; retained only as a clearly credited project reference."
+    }
+  ]
+}

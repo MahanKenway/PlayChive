@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "generatedFrom": "src/catalog.js",
-  "generatedAt": "2026-10-13",
+  "generatedAt": "2026-11-05",
   "games": [
     {
       "id": "freedoom-phase-1",
@@ -913,10 +913,11 @@
       "status": "External link · rights review",
       "studio": "Luckey Faraday / Claude of Duty contributors",
       "year": "Browser Three.js build",
-      "artwork": "assets/screenshots/external-experiments.webp",
+      "artwork": "assets/screenshots/external-vibeslops.webp",
       "projectUrl": "https://vibeslops.luckeysystems.com/",
       "catalogState": "EXTERNAL LINK / RIGHTS REVIEW",
-      "source": null
+      "source": null,
+      "artworkCredit": "Official host announcement image; not a gameplay screenshot."
     },
     {
       "id": "ovz-global-flashpoint",
@@ -934,10 +935,11 @@
       "status": "External link · no local mirror",
       "studio": "OVZ project",
       "year": "Alpha browser build",
-      "artwork": "assets/screenshots/external-experiments.webp",
+      "artwork": "assets/screenshots/external-global-flashpoint.webp",
       "projectUrl": "https://ovz-game-production.up.railway.app/",
       "catalogState": "EXTERNAL LINK / RIGHTS REVIEW",
-      "source": null
+      "source": null,
+      "artworkCredit": "Attributed editorial screenshot: TabGameHub OVZ start guide; original host currently unavailable."
     },
     {
       "id": "surfd-external",
@@ -955,10 +957,11 @@
       "status": "External link · maps not mirrored",
       "studio": "Surfd contributors",
       "year": "Browser WebGL project",
-      "artwork": "assets/screenshots/external-experiments.webp",
+      "artwork": "assets/screenshots/external-surfd.webp",
       "projectUrl": "https://surfd.net/",
       "catalogState": "EXTERNAL LINK / RIGHTS REVIEW",
-      "source": null
+      "source": null,
+      "artworkCredit": "Renderer preview: Surfd official reference documentation."
     },
     {
       "id": "webxash-half-life",
@@ -997,10 +1000,11 @@
       "status": "External link · no asset mirror",
       "studio": "PixelSutf contributors",
       "year": "Xash browser build",
-      "artwork": "assets/screenshots/external-experiments.webp",
+      "artwork": "assets/screenshots/external-pixelsuft.webp",
       "projectUrl": "https://pixelsuft.github.io/hl/",
       "catalogState": "EXTERNAL LINK / RIGHTS REVIEW",
-      "source": null
+      "source": null,
+      "artworkCredit": "Official PixelSutf Xash3D Emscripten interface capture; game data not included."
     },
     {
       "id": "halo-web-port",
@@ -1018,10 +1022,11 @@
       "status": "External link · user data required",
       "studio": "Mitchell Hynes / halo-ce-universal contributors",
       "year": "WebAssembly + WebGL 2",
-      "artwork": "assets/screenshots/external-experiments.webp",
+      "artwork": "assets/screenshots/external-halo-web.webp",
       "projectUrl": "https://mitchellhynes.com/halo",
       "catalogState": "EXTERNAL LINK / RIGHTS REVIEW",
-      "source": null
+      "source": null,
+      "artworkCredit": "Project image: Mitchell Hynes official Halo web-port announcement."
     },
     {
       "id": "halo-ce-mobile",
@@ -1039,10 +1044,11 @@
       "status": "External link · user data required",
       "studio": "Halo CE Mobile contributors",
       "year": "Browser / PWA build",
-      "artwork": "assets/screenshots/external-experiments.webp",
+      "artwork": "assets/screenshots/external-halo-ce-mobile.webp",
       "projectUrl": "https://hcemobile.com/",
       "catalogState": "EXTERNAL LINK / RIGHTS REVIEW",
-      "source": null
+      "source": null,
+      "artworkCredit": "Official HCEMobile project icon; gameplay screenshot unavailable from the official site."
     },
     {
       "id": "quake-browser-port",
@@ -1060,10 +1066,11 @@
       "status": "External link · hosted runtime",
       "studio": "Pieter.com / FTEQW ecosystem",
       "year": "Hosted browser multiplayer",
-      "artwork": "assets/screenshots/external-experiments.webp",
+      "artwork": "assets/screenshots/external-quake-web.webp",
       "projectUrl": "https://q1.pieter.com/",
       "catalogState": "EXTERNAL LINK / RIGHTS REVIEW",
-      "source": null
+      "source": null,
+      "artworkCredit": "Project image: q1.pieter.com official host."
     },
     {
       "id": "quake2-browser-port",
@@ -1123,10 +1130,11 @@
       "status": "External link · game data not mirrored",
       "studio": "Pieter.com / iortcw ecosystem",
       "year": "Hosted WebAssembly build",
-      "artwork": "assets/screenshots/external-experiments.webp",
+      "artwork": "assets/screenshots/external-rtcw-web.webp",
       "projectUrl": "https://rtcw.pieter.com/",
       "catalogState": "EXTERNAL LINK / RIGHTS REVIEW",
-      "source": null
+      "source": null,
+      "artworkCredit": "Gameplay screenshot: rtcw.pieter.com official host."
     },
     {
       "id": "urban-terror-browser-port",
@@ -1144,10 +1152,11 @@
       "status": "External link · not Unreal Tournament",
       "studio": "Pieter.com / ioUrbanTerror ecosystem",
       "year": "Hosted WebAssembly build",
-      "artwork": "assets/screenshots/external-experiments.webp",
+      "artwork": "assets/screenshots/external-urban-terror-web.webp",
       "projectUrl": "https://ut.pieter.com/",
       "catalogState": "EXTERNAL LINK / RIGHTS REVIEW",
-      "source": null
+      "source": null,
+      "artworkCredit": "Project image: ut.pieter.com official host."
     },
     {
       "id": "gta-vice-city-wasm",
@@ -1186,10 +1195,11 @@
       "status": "External link · Konami data not mirrored",
       "studio": "OptiJuegos contributors",
       "year": "WebGL2 / WebAssembly build",
-      "artwork": "assets/screenshots/external-experiments.webp",
+      "artwork": "assets/screenshots/external-pes6-web.webp",
       "projectUrl": "https://pes6.optijuegos.net/",
       "catalogState": "EXTERNAL LINK / RIGHTS REVIEW",
-      "source": null
+      "source": null,
+      "artworkCredit": "Gameplay thumbnail: OptiJuegos official project media."
     },
     {
       "id": "skate3-web-engine",
@@ -1207,10 +1217,11 @@
       "status": "External link · EA data not mirrored",
       "studio": "SK8-ENGINE contributors",
       "year": "Rust / Bevy work in progress",
-      "artwork": "assets/screenshots/external-experiments.webp",
+      "artwork": "assets/screenshots/external-skate3-web.webp",
       "projectUrl": "https://skate.aaddpp.lol/",
       "catalogState": "EXTERNAL LINK / RIGHTS REVIEW",
-      "source": null
+      "source": null,
+      "artworkCredit": "Project image: SK8-ENGINE official repository."
     },
     {
       "id": "diablo-web",
@@ -1228,10 +1239,11 @@
       "status": "External link · full data local",
       "studio": "JohnImril / DiabloWeb contributors",
       "year": "React + WebAssembly",
-      "artwork": "assets/screenshots/external-experiments.webp",
+      "artwork": "assets/screenshots/external-diablo-web.webp",
       "projectUrl": "https://johnimril.github.io/diablo_web/",
       "catalogState": "EXTERNAL LINK / RIGHTS REVIEW",
-      "source": null
+      "source": null,
+      "artworkCredit": "Gameplay screenshot: Diablo Web official repository README."
     },
     {
       "id": "webwars",
@@ -1249,10 +1261,11 @@
       "status": "External link · live host status varies",
       "studio": "APM Labs / Hedgewars contributors",
       "year": "WebAssembly port",
-      "artwork": "assets/screenshots/external-experiments.webp",
+      "artwork": "assets/screenshots/external-webwars.webp",
       "projectUrl": "https://webwars.link/",
       "catalogState": "EXTERNAL LINK / RIGHTS REVIEW",
-      "source": null
+      "source": null,
+      "artworkCredit": "Gameplay screenshot: WebWars official repository README."
     },
     {
       "id": "openlara",
@@ -1270,10 +1283,11 @@
       "status": "External link · original data required",
       "studio": "XProger / OpenLara contributors",
       "year": "BSD-2-Clause WebGL engine",
-      "artwork": "assets/screenshots/external-experiments.webp",
+      "artwork": "assets/screenshots/external-openlara.webp",
       "projectUrl": "https://xproger.info/projects/OpenLara/",
       "catalogState": "EXTERNAL LINK / RIGHTS REVIEW",
-      "source": null
+      "source": null,
+      "artworkCredit": "Gameplay screenshot: OpenLara official project README."
     },
     {
       "id": "corsixth",
@@ -1291,10 +1305,11 @@
       "status": "External link · original data required",
       "studio": "CorsixTH contributors",
       "year": "MIT-style engine recreation",
-      "artwork": "assets/screenshots/external-experiments.webp",
+      "artwork": "assets/screenshots/external-corsixth.webp",
       "projectUrl": "https://github.com/CorsixTH/CorsixTH",
       "catalogState": "EXTERNAL LINK / RIGHTS REVIEW",
-      "source": null
+      "source": null,
+      "artworkCredit": "Gameplay screenshot: CorsixTH official media page."
     },
     {
       "id": "freeciv-web",
@@ -1312,10 +1327,11 @@
       "status": "External link · multi-service deployment",
       "studio": "Freeciv contributors",
       "year": "AGPLv3 / GPL browser stack",
-      "artwork": "assets/screenshots/external-experiments.webp",
+      "artwork": "assets/screenshots/external-freeciv-web.webp",
       "projectUrl": "https://freeciv.github.io/freeciv-web/",
       "catalogState": "EXTERNAL LINK / RIGHTS REVIEW",
-      "source": null
+      "source": null,
+      "artworkCredit": "Gameplay screenshot: Freeciv-web official repository README."
     },
     {
       "id": "endless-sky",
@@ -1333,10 +1349,11 @@
       "status": "External link · WASM build not pinned",
       "studio": "Endless Sky contributors",
       "year": "GPLv3 + mixed open assets",
-      "artwork": "assets/screenshots/external-experiments.webp",
+      "artwork": "assets/screenshots/external-endless-sky.webp",
       "projectUrl": "https://endless-sky.github.io/",
       "catalogState": "EXTERNAL LINK / RIGHTS REVIEW",
-      "source": null
+      "source": null,
+      "artworkCredit": "Gameplay screenshot: Endless Sky official screenshots page."
     },
     {
       "id": "pacman-mit",
