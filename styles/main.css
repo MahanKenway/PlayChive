@@ -626,3 +626,10 @@ html[data-theme='dark'] .offline-pack-console { background:var(--surface-raised)
 .game-card .card-state { max-width:48%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; padding:3px 5px; border:1px solid rgba(237,238,232,.25); background:rgba(10,12,10,.24); }
 .game-card .card-state.is-ready { border-color:rgba(215,235,65,.55); background:rgba(30,40,15,.42); }.game-card:not(:has(.card-state.is-ready)) .card-state { color:rgba(237,238,232,.78); }
 @media (max-width:760px) { .game-card .card-state { max-width:58%; font-size:8px; } }
+
+.offline-transfer-tools { display:flex; flex-wrap:wrap; gap:10px; margin-top:10px; }
+.offline-transfer-tools .retro-button { text-decoration:none; }
+.offline-import-label { position:relative; cursor:pointer; }
+.offline-import-label input { position:absolute; width:1px; height:1px; overflow:hidden; opacity:0; pointer-events:none; }
+.offline-pack-dialog[data-offline-state='importing'] .offline-import-label,
+.offline-pack-dialog[data-offline-state='downloading'] .offline-import-label { cursor:wait; opacity:.55; }

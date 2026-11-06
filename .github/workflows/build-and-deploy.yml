@@ -226,6 +226,15 @@ jobs:
         npx --yes esbuild@0.24.0 $(find dist/src -name '*.js') --minify --allow-overwrite --outbase=dist/src --outdir=dist/src --format=esm --target=es2022 --log-level=warning
         test -s dist/styles/main.css && test -s dist/src/main.js
 
+    - name: Cache-bust WAD/WASM URLs with commit SHA
+      run: |
+        SHA_SHORT=$(echo "${{ github.sha }}" | cut -c1-8)
+        sed -i "s#assets/freedoom1\\.wad#assets/freedoom1.wad?v=${SHA_SHORT}#" dist/src/main.js
+        sed -i "s#assets/freedoom2\\.wad#assets/freedoom2.wad?v=${SHA_SHORT}#" dist/src/main.js
+        sed -i "s#assets/freedm\\.wad#assets/freedm.wad?v=${SHA_SHORT}#" dist/src/main.js
+        sed -i "s#assets/hacx\\.wad#assets/hacx.wad?v=${SHA_SHORT}#" dist/src/main.js
+        sed -i "s#wasm/doom\\.wasm#wasm/doom.wasm?v=${SHA_SHORT}#" dist/src/main.js
+
     - name: Generate complete offline pack manifest
       run: |
         python3 - <<'PY'
@@ -252,14 +261,22 @@ jobs:
         PY
         test -s dist/offline-manifest.json
 
-    - name: Cache-bust WAD/WASM URLs with commit SHA
+    - name: Build versioned offline transfer ZIP
       run: |
-        SHA_SHORT=$(echo "${{ github.sha }}" | cut -c1-8)
-        sed -i "s#assets/freedoom1\\.wad#assets/freedoom1.wad?v=${SHA_SHORT}#" dist/src/main.js
-        sed -i "s#assets/freedoom2\\.wad#assets/freedoom2.wad?v=${SHA_SHORT}#" dist/src/main.js
-        sed -i "s#assets/freedm\\.wad#assets/freedm.wad?v=${SHA_SHORT}#" dist/src/main.js
-        sed -i "s#assets/hacx\\.wad#assets/hacx.wad?v=${SHA_SHORT}#" dist/src/main.js
-        sed -i "s#wasm/doom\\.wasm#wasm/doom.wasm?v=${SHA_SHORT}#" dist/src/main.js
+        python3 - <<'PY'
+        import zipfile
+        from pathlib import Path
+        root = Path('dist')
+        target = root / 'downloads' / 'PLAYCHIVE-OFFLINE-v1.zip'
+        target.parent.mkdir(parents=True, exist_ok=True)
+        with zipfile.ZipFile(target, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
+          for path in sorted(root.rglob('*')):
+            if not path.is_file() or path == target or 'downloads' in path.relative_to(root).parts:
+              continue
+            archive.write(path, path.relative_to(root).as_posix())
+        print(f'Transfer pack: {target} / {target.stat().st_size / 1024 / 1024:.1f} MiB')
+        PY
+        test -s dist/downloads/PLAYCHIVE-OFFLINE-v1.zip
 
     - name: Upload Pages artifact
       uses: actions/upload-pages-artifact@v3

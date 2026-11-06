@@ -103,6 +103,16 @@ async function clearOfflinePack(port) {
   await notifyClients({ type: 'OFFLINE_PACK_CLEARED', deleted }, port);
 }
 
+async function importOfflineFile(message, port) {
+  if (!message.path || !message.buffer) throw new Error('Transfer pack entry is incomplete.');
+  const cache = await caches.open(OFFLINE_CACHE);
+  const absoluteUrl = new URL(`./${message.path.replace(/^\/+/, '')}`, self.registration.scope).href;
+  await cache.put(new Request(absoluteUrl), new Response(message.buffer, {
+    headers: { 'Content-Type': message.contentType || 'application/octet-stream', 'Cache-Control': 'no-cache' },
+  }));
+  await notifyClients({ type: 'OFFLINE_PACK_IMPORT_FILE', path: message.path }, port);
+}
+
 self.addEventListener('message', (event) => {
   if (!event.data || event.data.type !== 'DOWNLOAD_OFFLINE_PACK') return;
   const port = event.ports?.[0];
@@ -120,6 +130,11 @@ self.addEventListener('message', (event) => {
   }
   if (event.data.type === 'CLEAR_OFFLINE_PACK') {
     event.waitUntil(clearOfflinePack(port));
+  }
+  if (event.data.type === 'IMPORT_OFFLINE_FILE') {
+    event.waitUntil(importOfflineFile(event.data, port).catch(async (error) => {
+      await notifyClients({ type: 'OFFLINE_PACK_ERROR', error: String(error?.message || error) }, port);
+    }));
   }
 });
 

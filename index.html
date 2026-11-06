@@ -13,7 +13,7 @@
   <link rel="apple-touch-icon" sizes="192x192" href="assets/apple-touch-icon.png" />
   <link rel="icon" href="assets/favicon.ico?v=gamecube-1" type="image/x-icon" />
   <link rel="preload" href="assets/screenshots/hexgl-runtime.webp" as="image" fetchpriority="high" />
-  <link rel="stylesheet" href="styles/main.css?v=playchive-offline-v2" />
+  <link rel="stylesheet" href="styles/main.css?v=playchive-offline-v3" />
   <style>
     html, body { width:100%; min-height:100%; margin:0; }
     body { overflow:hidden; background:#e7e6e0; color:#161815; }
@@ -1331,7 +1331,8 @@
       <div class="offline-pack-stats"><div><span>FILES</span><b id="offline-pack-files">—</b></div><div><span>SIZE</span><b id="offline-pack-size">—</b></div><div><span>CACHED</span><b id="offline-pack-cached">0 MB</b></div></div>
       <p class="offline-pack-current"><span class="offline-pulse"></span><span id="offline-pack-current">Waiting for download</span></p>
       <div class="offline-pack-actions"><button class="retro-button retro-button-primary" type="button" data-offline-action="start" id="offline-pack-start">Prepare offline pack</button><button class="retro-button retro-button-quiet" type="button" data-offline-action="cancel" id="offline-pack-cancel" hidden>Pause</button><button class="retro-button retro-button-quiet" type="button" data-offline-action="clear" id="offline-pack-clear">Clear local pack</button></div>
-      <p class="offline-pack-note">Only files served by PLAYCHIVE are cached. External projects, remote servers and user-owned game data are never copied into the pack.</p>
+      <div class="offline-transfer-tools"><a class="retro-button retro-button-quiet" id="offline-pack-download" href="./downloads/PLAYCHIVE-OFFLINE-v1.zip" download>Download transfer ZIP</a><label class="retro-button retro-button-quiet offline-import-label" for="offline-pack-import">Import from USB<input id="offline-pack-import" type="file" accept=".zip,application/zip" /></label></div>
+      <p class="offline-pack-note">Only files served by PLAYCHIVE are cached. External projects, remote servers and user-owned game data are never copied into the pack. Transfer ZIPs use a stable v1 format, so an older copy can be imported after future site updates.</p>
     </div>
   </article>
 </dialog>
@@ -1356,6 +1357,6 @@
 </div>
 
 <div id="click-to-play" class="click-overlay hidden" role="button" tabindex="0" aria-label="Click to capture mouse and start playing"><div class="click-box"><p>Capture mouse to play</p><p class="small">Press Esc to release</p></div></div>
-<script type="module" src="src/main.js?v=playchive-offline-v2"></script>
+<script type="module" src="src/main.js?v=playchive-offline-v3"></script>
 </body>
 </html>
