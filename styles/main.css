@@ -740,3 +740,8 @@ html[lang=fa] .pc-header.is-condensed .pc-wordmark small { max-height: 0; }
 html[data-theme='dark'] .retro-button-primary { border-color: var(--lime); background: var(--lime); color: #10140f; }
 html[data-theme='dark'] .retro-button-primary:hover { background: var(--ink); color: #10140f; border-color: var(--ink); box-shadow: 4px 4px 0 var(--lime); }
 a.retro-button{color:inherit;text-decoration:none}
+
+/* Persian: decorative pseudo-element labels */
+html[lang=fa] .featured-copy::after { content:'انتخاب / اجرا / بازی'; letter-spacing:0; font-family:'Shabnam',sans-serif; }
+html[lang=fa] .game-card-media::before { content:'باز کن'; letter-spacing:0; font-family:'Shabnam',sans-serif; }
+html[lang=fa] .offline-pack-hero::after { content:'آفلاین // ۰۱'; letter-spacing:0; font-family:'Shabnam',sans-serif; left:auto; right:34px; top:84px; }
