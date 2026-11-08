@@ -368,13 +368,23 @@ try:
         err("fa/index.html must declare lang=fa and dir=rtl")
     playable = [g for g in games if g["playable"] and str(g.get("runtimeUrl", "")).endswith(".html")
                 and (ROOT / g["runtimeUrl"]).exists()]
+    # /fa/ is the same app as / (one design, language switched in place), so the shell must match the English page.
+    if '<base href="../" />' not in fa_html:
+        err('fa/index.html must carry <base href="../"> so it shares every asset with the root app')
+    for needle in ('id="pc-lang"', 'id="theme-toggle"', 'id="wad-picker"', 'id="loading-screen"', 'src/main.js'):
+        if needle not in fa_html:
+            err(f"fa/index.html is missing {needle}: it must be the same app shell as index.html")
+    static = re.search(r'<section id="static-catalog".*?</section>', fa_html, re.S)
+    static_html = static.group(0) if static else ""
     for g in playable:
-        if f'href="../{g["runtimeUrl"]}"' not in fa_html:
-            err(f"fa/index.html: missing Persian card for playable game {g['id']} (add it to FA_DESC in scripts/generate-seo.py)")
-    for card in re.findall(r'<li class="game">.*?</li>', fa_html, re.S):
-        text = re.search(r"<p>(.*?)</p>", card, re.S)
-        if not text or not re.search(r"[\u0600-\u06FF]", text.group(1)):
-            err("fa/index.html: a game card has no Persian description")
+        item = re.search(rf'<li><a href="{re.escape(g["runtimeUrl"])}"[^>]*>.*?</li>', static_html, re.S)
+        if not item or not re.search(r"[\u0600-\u06FF]", re.sub(r"<[^>]+>", "", item.group(0))):
+            err(f"fa/index.html: no Persian entry for playable game {g['id']} (add it to FA_DESC in scripts/generate-seo.py)")
+    # every English description needs its Persian twin for the in-page language switch
+    fa_desc_js = (ROOT / "src/i18n/fa-descriptions.js").read_text(encoding="utf-8")
+    for g in games:
+        if json.dumps(g["description"], ensure_ascii=False) not in fa_desc_js:
+            err(f"src/i18n/fa-descriptions.js: no Persian description for {g['id']} (FA_DESC or FA_REF in generate-seo.py)")
     ref_items = re.findall(r'<li class="ref">(.*?)</li>', fa_html, re.S)
     n_ref = len([g for g in games if g not in playable])
     if len(ref_items) != n_ref:
@@ -402,6 +412,14 @@ try:
             err(f"index.html JSON-LD: catalog record missing from structured data: {g['id']}")
 except Exception as e:  # noqa: BLE001
     err(f"bilingual/accessibility checks failed to run: {e}")
+
+# Persian coverage for the in-page language switch (needs node, which CI and the dev setup already have)
+import shutil, subprocess
+if shutil.which("node"):
+    r = subprocess.run(["node", str(ROOT / "scripts/check-i18n.mjs")], capture_output=True, text=True)
+    if r.returncode:
+        for line in (r.stderr or r.stdout).strip().splitlines():
+            err("i18n: " + line.strip())
 
 print(f"noindex pages (skipped, correctly out of sitemap): {noindex_pages}")
 print(f"checked {len(pages)} pages, {len(locs)} sitemap URLs, {len(games)} catalog records")

@@ -4,8 +4,9 @@ These rules apply to every change, by people and by AI assistants. The owner is 
 
 ## 1. Everything user-facing ships in English AND Persian
 
-- Any new page, section, game entry, button label, error message, FAQ item or metadata field gets an English version and a Persian version in the same change. Do not merge English-only additions.
-- New playable game: add the entry to `data/games.json`, then add its Persian genre to `FA_GENRE` and its Persian description to `FA_DESC` in `scripts/generate-seo.py`. CI fails if a playable game has no Persian card on `/fa/`.
+- Persian is NOT a separate site. It is the same app, switched in place (like the theme toggle) by `src/i18n.js`. Any new UI string, button label, error message or metadata field gets a Persian entry in `src/i18n/fa-ui.js` (static markup) or `src/i18n/fa-js.js` (JS-rendered text) in the same change. Run `node scripts/check-i18n.mjs`. Do not merge English-only additions.
+- `/fa/index.html` is generated from `index.html` by `scripts/generate-seo.py`. It must stay the same app shell. Never hand-edit it.
+- New playable game: add the entry to `data/games.json`, then add its Persian genre to `FA_GENRE` and its Persian description to `FA_DESC` in `scripts/generate-seo.py`. Also add Persian values for its format, duration, maps, license and similar fields in `src/i18n/fa-games.js`. CI fails if a playable game has no Persian card on `/fa/`.
 - Persian pages use `lang="fa" dir="rtl"`, link to their English twin and the reverse, and keep the `hreflang` pair (en, fa, x-default) in sync. Regenerate with `python3 scripts/generate-seo.py --date YYYY-MM-DD` (use system python3, Pillow is needed).
 - Keep Latin names (game titles, API terms) inside `lang="en"` spans or `unicode-bidi:isolate` so punctuation does not jump around in RTL text.
 

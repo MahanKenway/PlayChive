@@ -28,7 +28,8 @@ import { initVisualEffects, prepareVisualQuality } from './visual-effects.js?v=r
 import { initTheme } from './theme.js?v=retroplay-20260822-r1';
 import { initRetroAudio } from './retro-audio.js?v=retroplay-20260822-r1';
 import { initOfflinePack } from './offline-pack.js?v=playchive-offline-v3';
-import { initHeader } from './header-fx.js?v=pc-header-1';
+import { initHeader } from './header-fx.js?v=pc-header-2';
+import { initI18n } from './i18n.js?v=1';
 import { loadSettings, saveSettings, profileIdFor, listSaveSlots, exportSaveBundle, importSaveBundle } from './persistence.js?v=retroplay-20260815-r2';
 import {
   LoadingScreen,
@@ -115,6 +116,7 @@ function bootstrapUI() {
   EventBus.on('game:paused',  () => ui.pause.show());
   EventBus.on('game:resumed', () => ui.pause.hide());
 
+  initI18n();
   prepareVisualQuality();
   initTheme();
   initRetroAudio();

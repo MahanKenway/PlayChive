@@ -1,84 +1,40 @@
 <!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="theme-color" content="#e9e8e3" />
-<link rel="icon" href="../assets/favicon.ico" />
-<link rel="manifest" href="../manifest.json" />
-<link rel="preload" href="../assets/fonts/Shabnam-Regular.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="preload" href="../assets/fonts/Vazirmatn-ExtraBold.woff2" as="font" type="font/woff2" crossorigin />
-<style>
-@font-face{font-family:'Vazirmatn';src:url(../assets/fonts/Vazirmatn-Bold.woff2) format('woff2');font-weight:700;font-display:swap}
-@font-face{font-family:'Vazirmatn';src:url(../assets/fonts/Vazirmatn-ExtraBold.woff2) format('woff2');font-weight:800;font-display:swap}
-@font-face{font-family:'Shabnam';src:url(../assets/fonts/Shabnam-Regular.woff2) format('woff2');font-weight:400;font-display:swap}
-@font-face{font-family:'Shabnam';src:url(../assets/fonts/Shabnam-Bold.woff2) format('woff2');font-weight:700;font-display:swap}
-:root{color-scheme:light dark;--bg:#e7e6e0;--surf:#f4f3ee;--ink:#161815;--soft:#3c4039;--muted:#5b6057;--line:rgba(22,24,21,.16);--line-s:rgba(22,24,21,.34);--lime:#8e9b1f;--lime-t:#5b6510;--lime-ink:#161a05;--lime-soft:rgba(142,155,31,.16);--head:'Vazirmatn',Tahoma,system-ui,sans-serif;--body:'Shabnam',Tahoma,system-ui,sans-serif}
-@media (prefers-color-scheme:dark){:root{--bg:#111210;--surf:#181917;--ink:#eceeec;--soft:#c3c8c0;--muted:#9ba097;--line:rgba(236,238,236,.1);--line-s:rgba(236,238,236,.28);--lime:#bdee63;--lime-t:#bdee63;--lime-ink:#11130c;--lime-soft:rgba(189,238,99,.12)}}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/2 var(--body);background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:36px 36px}
-a{color:inherit;text-decoration-color:var(--lime);text-underline-offset:.28em}
-.wrap{width:min(1080px,100% - 32px);margin:0 auto}
-.bar{position:sticky;top:12px;z-index:10;margin:12px auto 0;width:min(1080px,100% - 32px);display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 8px 8px 16px;border:1px solid var(--line);border-radius:16px;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
-.brand{font:800 22px/1 var(--head);letter-spacing:-.05em;text-decoration:none;direction:ltr}.brand b{color:var(--lime)}
-nav{display:flex;gap:4px;flex-wrap:wrap}
-nav a{padding:6px 14px;border-radius:999px;text-decoration:none;font-size:15px;color:var(--soft);transition:background .2s,color .2s}
-nav a:hover{background:var(--lime-soft);color:var(--ink)}
-.pc-lang{--dir:-1;position:relative;display:inline-flex;align-items:center;gap:0;height:34px;padding:3px;padding-inline-start:30px;border:1px solid color-mix(in srgb,var(--ink) 14%,transparent);border-radius:999px;background:color-mix(in srgb,var(--ink) 6%,transparent);isolation:isolate}
-.pc-lang:focus-within{outline:2px solid var(--lime);outline-offset:2px}
-.pc-lang-seg{position:relative;z-index:1;display:grid;place-items:center;min-width:38px;height:26px;padding:0 6px;border-radius:999px;font:600 12px/1 ui-monospace,Menlo,monospace;letter-spacing:.06em;color:inherit;text-decoration:none;transition:color .25s}
-.pc-lang-seg[lang=fa]{font:700 14px/1 Vazirmatn,Shabnam,sans-serif;letter-spacing:0}
-.pc-lang-seg[aria-current]{color:var(--lime-ink)}
-a.pc-lang-seg:hover{color:var(--ink)}
-a.pc-lang-seg:focus-visible{outline:2px solid var(--ink);outline-offset:1px}
-.pc-lang-thumb{position:absolute;z-index:0;inset-block:3px;inset-inline-start:30px;width:38px;border-radius:999px;background:var(--lime);box-shadow:0 1px 6px rgba(0,0,0,.18);transition:transform .45s cubic-bezier(.2,.8,.2,1.25)}
-.pc-lang:has(a:hover) .pc-lang-thumb,.pc-lang:has(a:focus-visible) .pc-lang-thumb{transform:translateX(calc(var(--dir) * 5px)) scaleX(1.08)}
-.pc-lang.is-switching .pc-lang-thumb{transform:translateX(calc(var(--dir) * 38px))}
-.pc-lang.is-switching .pc-lang-seg[aria-current]{color:inherit}
-.pc-lang.is-switching a.pc-lang-seg{color:var(--lime-ink)}
-.pc-globe{position:absolute;inset-inline-start:8px;top:50%;width:16px;height:16px;margin-top:-8px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;opacity:.75}
-.pc-mer{transform-origin:12px 12px;animation:pc-spin 6s linear infinite}
-.pc-lang:hover .pc-mer,.pc-lang.is-switching .pc-mer{animation-duration:1.1s}
-@keyframes pc-spin{0%{transform:scaleX(1)}50%{transform:scaleX(-1)}100%{transform:scaleX(1)}}
-.pc-lang-hint-unused{position:absolute;top:calc(100% + 10px);inset-inline-end:0;z-index:20;display:flex;align-items:center;gap:8px;padding:8px 8px 8px 14px;border-radius:14px;background:var(--lime-ink);color:#f2f2ea;font:600 14px/1.4 Vazirmatn,Shabnam,sans-serif;white-space:nowrap;box-shadow:0 8px 28px rgba(0,0,0,.28);animation:pc-hint .5s cubic-bezier(.2,.8,.2,1.25) both}
-.pc-lang-hint a{color:var(--lime);text-decoration:underline}
-.pc-lang-hint button{display:grid;place-items:center;width:26px;height:26px;border:0;border-radius:50%;background:rgba(255,255,255,.12);color:inherit;cursor:pointer;font-size:15px;line-height:1}
-.pc-lang-hint button:focus-visible,.pc-lang-hint a:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
-@keyframes pc-hint{from{opacity:0;transform:translateY(-8px) scale(.96)}to{opacity:1;transform:none}}
-@media (max-width:640px){.pc-lang{padding-inline-start:26px}.pc-globe{inset-inline-start:6px}.pc-lang-seg{min-width:34px}.pc-lang-thumb{inset-inline-start:26px;width:34px}.pc-lang.is-switching .pc-lang-thumb{transform:translateX(calc(var(--dir) * 34px))}.pc-lang-hint-unused{white-space:normal;max-width:220px}}
-@media (prefers-reduced-motion:reduce){.pc-mer,.pc-lang-hint-unused{animation:none}.pc-lang-thumb,.pc-lang-seg{transition:none}}
-.hero{padding:clamp(48px,9vw,110px) 0 36px}
-h1{font:800 clamp(34px,6.4vw,68px)/1.25 var(--head);margin:0;letter-spacing:-.02em;text-wrap:balance}
-h1 em{font-style:normal;color:var(--lime)}
-.lead{max-width:44em;margin:18px 0 0;font-size:clamp(18px,2.2vw,21px);color:var(--soft)}
-.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-.btn{display:inline-block;padding:10px 26px;border-radius:6px;background:var(--ink);color:var(--bg);text-decoration:none;font:700 16px/1.8 var(--head);transition:transform .25s}
-.btn:hover{transform:translateY(-2px)}.btn.alt{background:none;color:var(--ink);border:1px solid var(--line-s)}
-.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:34px 0 0;padding:0;list-style:none}
-.facts li{padding:14px 16px;border:1px solid var(--line);background:var(--surf);border-radius:4px}
-.facts b{display:block;font:800 28px/1.4 var(--head);color:var(--lime-t,var(--lime))}.facts span{font-size:15px;color:var(--muted)}
-h2{font:800 clamp(26px,4vw,38px)/1.4 var(--head);margin:0 0 6px;scroll-margin-top:84px}
-.sec{padding:46px 0 10px}.sec>p{margin:0 0 22px;color:var(--muted);max-width:46em}
-.games{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:16px}
-.game{display:flex;flex-direction:column;border:1px solid var(--line);background:var(--surf);border-radius:4px;overflow:hidden;transition:transform .35s cubic-bezier(.16,1,.3,1),border-color .25s}
-.game:hover{transform:translateY(-4px);border-color:var(--line-s)}
-.game img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:var(--line)}
-.game div{display:flex;flex-direction:column;gap:6px;padding:14px 16px 16px;flex:1}
-.game h3{margin:0;font:700 19px/1.5 var(--head);direction:ltr;text-align:right;unicode-bidi:isolate}
-.tag{align-self:flex-start;padding:0 10px;border:1px solid var(--line-s);border-radius:999px;font-size:13px;line-height:1.7;color:var(--muted)}
-.game p{margin:0;font-size:15.5px;line-height:1.95;color:var(--soft);flex:1}
-.game .btn{align-self:flex-start;margin-top:8px;padding:5px 18px;font-size:15px}
-details{border-top:1px solid var(--line);padding:12px 0}details:last-of-type{border-bottom:1px solid var(--line)}
-summary{cursor:pointer;font:700 18px/1.8 var(--head);list-style:none;display:flex;justify-content:space-between;gap:16px}
-summary::after{content:'+';color:var(--lime);font-size:24px;line-height:1.4;transition:transform .25s}details[open] summary::after{transform:rotate(45deg)}
-summary::-webkit-details-marker{display:none}details p{margin:8px 0 2px;color:var(--soft);max-width:46em}
-.about p{max-width:46em;color:var(--soft)}
-footer{margin:56px 0 36px;padding-top:18px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;color:var(--muted);direction:rtl}
-footer a{direction:ltr;unicode-bidi:isolate}
-:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
-@media (max-width:640px){.bar{flex-wrap:wrap;padding-inline:12px}.bar nav{order:3;width:100%;display:flex;gap:4px;flex-wrap:wrap}nav a{padding:5px 10px;font-size:14px}.brand{font-size:19px}}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
-</style>
+  <base href="../" />
+  <meta name="platform-verification" content="iegttvtsvj" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#e9e8e3" />
+  <script>(function(){try{var t=localStorage.getItem('retroplay:theme');if(t!=='light'&&t!=='dark'){t='light'}document.documentElement.dataset.theme=t;var g=localStorage.getItem('playchive:lang');if(g==='fa'&&document.documentElement.lang!=='fa'){document.documentElement.lang='fa';document.documentElement.dir='rtl'}document.documentElement.style.colorScheme=t;document.querySelector('meta[name="theme-color"]').setAttribute('content',t==='dark'?'#10140f':'#e7e6e0')}catch(e){document.documentElement.dataset.theme='light'}})();</script>
+  <meta name="application-name" content="PLAYCHIVE" />
+  <meta name="author" content="Mahan Tavakoli" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="alternate" type="text/plain" href="llms.txt" title="PLAYCHIVE machine-readable site guide" />
+  <link rel="apple-touch-icon" sizes="192x192" href="assets/apple-touch-icon.png" />
+  <link rel="icon" href="assets/favicon.ico?v=gamecube-1" type="image/x-icon" />
+  <link rel="preload" href="assets/screenshots/hexgl-runtime.webp" as="image" fetchpriority="high" />
+  <link rel="stylesheet" href="styles/main.css?v=playchive-offline-v3" />
+  <style>
+    html, body { width:100%; min-height:100%; margin:0; }
+    body { overflow:hidden; background:#e7e6e0; color:#161815; }
+    img { display:block; }
+    .screen { position:fixed; inset:0; opacity:0; visibility:hidden; pointer-events:none; }
+    .screen.active { opacity:1; visibility:visible; pointer-events:auto; }
+    #loading-screen { z-index:100; display:grid; place-items:center; overflow:hidden; background:#171a17; color:#e7e6e0; }
+    #wad-picker { z-index:10; overflow-x:hidden; overflow-y:auto; background:#e7e6e0; }
+    .retro-shell { width:min(1480px,calc(100% - 48px)); min-height:100vh; margin:0 auto; padding:22px 0 20px; }
+    .featured-panel { min-height:480px; }
+    .featured-media { min-height:360px; position:relative; overflow:hidden; background:#121412; }
+    .featured-media img { width:100%; height:100%; object-fit:cover; }
+    .catalog-grid { min-height:720px; }
+    @media (max-width:760px) {
+      .retro-shell { width:min(100% - 28px,560px); padding-top:14px; }
+      .featured-panel { min-height:0; }
+      .featured-media { min-height:250px; }
+      .catalog-grid { min-height:440px; }
+    }
+  </style>
 <!-- seo:begin -->
   <title>PLAYCHIVE | بازی‌های کلاسیک و متن‌باز رایگان در مرورگر، بدون نصب</title>
   <meta name="description" content="۲۴ بازی کلاسیک و متن‌باز مثل OpenTTD، LibreQuake و HexGL را رایگان و بدون نصب، بدون ثبت‌نام و بدون تبلیغ، مستقیم در مرورگر بازی کن." />
@@ -102,6 +58,8 @@ footer a{direction:ltr;unicode-bidi:isolate}
   <meta name="twitter:description" content="۲۴ بازی کلاسیک و متن‌باز مثل OpenTTD، LibreQuake و HexGL را رایگان و بدون نصب، بدون ثبت‌نام و بدون تبلیغ، مستقیم در مرورگر بازی کن." />
   <meta name="twitter:image" content="https://playchive.ir/assets/og-playchive-1200x630.png" />
   <meta name="twitter:image:alt" content="PLAYCHIVE: بازی‌های کلاسیک در مرورگر" />
+  <script>document.documentElement.classList.add('js');</script>
+  <style>.js .seo-static{display:none}.seo-static{max-width:960px;margin:0 auto;padding:32px 20px 60px;font:16px/1.8 Shabnam,Tahoma,sans-serif;color:#161815;background:#e7e6e0}.seo-static a{color:#385b20}.seo-static h2{margin-top:32px}.seo-static li{margin:6px 0}</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -789,47 +747,179 @@ footer a{direction:ltr;unicode-bidi:isolate}
 <!-- seo:end -->
 </head>
 <body>
-<div class="bar"><a class="brand" href="../" lang="en" aria-label="PLAYCHIVE">PLAY<b>CHIVE</b></a>
-<nav aria-label="ناوبری"><a href="#games">بازی‌ها</a><a href="#faq">پرسش‌ها</a><a href="#about">درباره</a></nav>
-<div class="pc-lang" role="group" aria-label="زبان"><svg class="pc-globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><ellipse class="pc-mer" cx="12" cy="12" rx="4" ry="9"/><path d="M3.5 9h17M3.5 15h17"/></svg><span class="pc-lang-thumb" aria-hidden="true"></span><span class="pc-lang-seg" lang="fa" aria-current="true">فا</span><a class="pc-lang-seg" href="../" hreflang="en" lang="en" aria-label="EN (English، انگلیسی)">EN</a></div></div>
-<main class="wrap">
-<section class="hero">
-<h1>بازی‌های کلاسیک، <em>مستقیم توی مرورگر</em></h1>
-<p class="lead">بدون نصب، بدون ثبت‌نام و بدون تبلیغ. PLAYCHIVE مجموعه‌ای گزینش‌شده از بازی‌های آزاد و متن‌باز است که همین‌جا اجرا می‌شوند. یک مسابقه بده، یک شهربازی بساز یا چند دقیقه‌ای با یک شوتر قدیمی دلتنگی کن.</p>
-<div class="cta"><a class="btn" href="#games">بازی‌ها را ببین</a><a class="btn alt" href="../" lang="en">کاتالوگ کامل (English)</a></div>
-<ul class="facts"><li><b>۲۴</b><span>بازی آمادهٔ اجرا</span></li><li><b>۰</b><span>نصب، حساب کاربری یا تبلیغ</span></li><li><b>WebAssembly</b><span>و HTML5 زیر کاپوت</span></li></ul>
-</section>
-<section class="sec" id="games"><h2>همین الان بازی کن</h2>
-<p>هر بازی در صفحهٔ خودش باز می‌شود و محتوایش همراه خودش است. روی گوشی کنترل لمسی و روی کامپیوتر کیبورد و دسته کار می‌کند.</p>
-<ul class="games">
-<li class="game"><img src="../assets/screenshots/blasphemer-runtime.webp" width="1280" height="720" alt="تصویری از بازی Blasphemer" fetchpriority="high"><div><h3 lang="en">Blasphemer</h3><span class="tag">شوتر فانتزی</span><p>شوتر اول‌شخص فانتزی و تاریک روی موتور Heretic. بازی کامل است و همهٔ فایل‌هایش همراه خودش می‌آید.</p><a class="btn" href="../blasphemer.html" aria-label="اجرای Blasphemer">اجرای بازی</a></div></li>
-<li class="game"><img src="../assets/screenshots/cdogs-sdl-browser.webp" width="1280" height="720" alt="تصویری از بازی C-Dogs SDL"><div><h3 lang="en">C-Dogs SDL</h3><span class="tag">اکشن</span><p>اکشن از نمای بالا با کمپین کامل و حالت دوئل؛ تیراندازی‌های شلوغ و پرتحرک، شبیه آرکیدهای قدیمی.</p><a class="btn" href="../cdogs.html" aria-label="اجرای C-Dogs SDL">اجرای بازی</a></div></li>
-<li class="game"><img src="../assets/screenshots/freedink-runtime.webp" width="1280" height="720" alt="تصویری از بازی GNU FreeDink"><div><h3 lang="en">GNU FreeDink</h3><span class="tag">ماجراجویی و کاوش</span><p>ماجراجویی نقش‌آفرینی دوبعدی با شوخ‌طبعی عجیب‌وغریب. بازی کامل، با داده‌های رسمی و رایگان.</p><a class="btn" href="../freedink.html" aria-label="اجرای GNU FreeDink">اجرای بازی</a></div></li>
-<li class="game"><img src="../assets/screenshots/opentyrian-runtime.webp" width="1280" height="720" alt="تصویری از بازی OpenTyrian2000" loading="lazy" decoding="async"><div><h3 lang="en">OpenTyrian2000</h3><span class="tag">اکشن</span><p>شوتر عمودی فضایی و کلاسیک؛ نسخهٔ رایگان Tyrian 2000 با داده‌های freeware.</p><a class="btn" href="../opentyrian.html" aria-label="اجرای OpenTyrian2000">اجرای بازی</a></div></li>
-<li class="game"><img src="../assets/screenshots/librequake-runtime.webp" width="1280" height="720" alt="تصویری از بازی LibreQuake" loading="lazy" decoding="async"><div><h3 lang="en">LibreQuake</h3><span class="tag">اکشن</span><p>شوتر اول‌شخص روی موتور Quake، با مرحله‌ها و محتوای کاملاً آزاد و مستقل.</p><a class="btn" href="../librequake.html" aria-label="اجرای LibreQuake">اجرای بازی</a></div></li>
-<li class="game"><img src="../assets/screenshots/openttd-runtime.webp" width="1280" height="720" alt="تصویری از بازی OpenTTD" loading="lazy" decoding="async"><div><h3 lang="en">OpenTTD</h3><span class="tag">استراتژی</span><p>استراتژی حمل‌ونقل: ریل و جاده بکش، قطار و کامیون راه بینداز و شبکه‌ات را سودآور کن. گرافیک و موسیقی‌اش هم آزاد است.</p><a class="btn" href="../openttd.html" aria-label="اجرای OpenTTD">اجرای بازی</a></div></li>
-<li class="game"><img src="../assets/screenshots/freerct-runtime.webp" width="1280" height="720" alt="تصویری از بازی FreeRCT" loading="lazy" decoding="async"><div><h3 lang="en">FreeRCT</h3><span class="tag">استراتژی</span><p>شهربازی خودت را بساز: سرسره، چرخ‌وفلک و مسیر بگذار، مهمان‌ها را راضی نگه دار و حساب‌وکتابت را مثبت.</p><a class="btn" href="../freerct.html" aria-label="اجرای FreeRCT">اجرای بازی</a></div></li>
-<li class="game"><img src="../assets/screenshots/neverball-runtime.webp" width="1280" height="720" alt="تصویری از بازی Neverball" loading="lazy" decoding="async"><div><h3 lang="en">Neverball</h3><span class="tag">تجربی</span><p>پازل فیزیکی سه‌بعدی؛ با کج‌کردن زمین، توپ را از مسیرهای سخت به مقصد برسان.</p><a class="btn" href="../neverball.html" aria-label="اجرای Neverball">اجرای بازی</a></div></li>
-<li class="game"><img src="../assets/screenshots/armawebtron-runtime.webp" width="1280" height="720" alt="تصویری از بازی Armawebtron" loading="lazy" decoding="async"><div><h3 lang="en">Armawebtron</h3><span class="tag">آرکید</span><p>مسابقهٔ سه‌بعدی لایت‌سایکل در میدانی نئونی؛ ردّ نورانی بجا بگذار و رقیب را به دام بینداز.</p><a class="btn" href="../armawebtron.html" aria-label="اجرای Armawebtron">اجرای بازی</a></div></li>
-<li class="game"><img src="../assets/screenshots/tuxracer-runtime.webp" width="1280" height="720" alt="تصویری از بازی TuxRacer.js" loading="lazy" decoding="async"><div><h3 lang="en">TuxRacer.js</h3><span class="tag">مسابقه‌ای</span><p>پنگوئنی که روی برف سر می‌خورد: بیست مسیر سه‌بعدی و سرعتی که کم‌کم دستت می‌آید.</p><a class="btn" href="../tuxracer.html" aria-label="اجرای TuxRacer.js">اجرای بازی</a></div></li>
-<li class="game"><img src="../assets/screenshots/starter-kit-racing-runtime.webp" width="1280" height="720" alt="تصویری از بازی Starter Kit Racing" loading="lazy" decoding="async"><div><h3 lang="en">Starter Kit Racing</h3><span class="tag">مسابقه‌ای سه‌بعدی</span><p>رانندگی سه‌بعدی با کامیون روی پیستی محلی؛ زمان هر دور ثبت می‌شود تا رکوردت را بشکنی.</p><a class="btn" href="../starter-kit-racing.html" aria-label="اجرای Starter Kit Racing">اجرای بازی</a></div></li>
-<li class="game"><img src="../assets/screenshots/astray-runtime.webp" width="1280" height="720" alt="تصویری از بازی Astray" loading="lazy" decoding="async"><div><h3 lang="en">Astray</h3><span class="tag">پازل فیزیکی</span><p>یک توپ فولادی را در هزارتوهای سه‌بعدی هدایت کن؛ ساده شروع می‌شود، ولی مسیرها هر بار فرق دارند.</p><a class="btn" href="../astray.html" aria-label="اجرای Astray">اجرای بازی</a></div></li>
-<li class="game"><img src="../assets/screenshots/neon-rift-runtime.webp" width="1280" height="720" alt="تصویری از بازی Neon Rift" loading="lazy" decoding="async"><div><h3 lang="en">Neon Rift</h3><span class="tag">مسابقه‌ای</span><p>مسابقهٔ شبانهٔ سه‌بعدی با ظاهر low-poly؛ ساختهٔ خود PLAYCHIVE.</p><a class="btn" href="../neon-rift.html" aria-label="اجرای Neon Rift">اجرای بازی</a></div></li>
-<li class="game"><img src="../assets/screenshots/obsidian-relay-runtime.webp" width="1280" height="720" alt="تصویری از بازی Obsidian Relay" loading="lazy" decoding="async"><div><h3 lang="en">Obsidian Relay</h3><span class="tag">بقا</span><p>بازی بقا و کاوش در یک ایستگاه زیرآبی؛ ساختهٔ خود PLAYCHIVE.</p><a class="btn" href="../shadow-station.html" aria-label="اجرای Obsidian Relay">اجرای بازی</a></div></li>
-<li class="game"><img src="../assets/screenshots/hexgl-runtime.webp" width="1280" height="720" alt="تصویری از بازی HexGL" loading="lazy" decoding="async"><div><h3 lang="en">HexGL</h3><span class="tag">مسابقه‌ای</span><p>مسابقهٔ سریع و آینده‌نگرانهٔ سه‌بعدی با WebGL، روی پیست Cityscape.</p><a class="btn" href="../hexgl.html" aria-label="اجرای HexGL">اجرای بازی</a></div></li>
-<li class="game"><img src="../assets/screenshots/hextris-runtime.webp" width="1280" height="720" alt="تصویری از بازی Hextris" loading="lazy" decoding="async"><div><h3 lang="en">Hextris</h3><span class="tag">پازل آرکید</span><p>پازل آرکید شش‌ضلعی: حلقه را بچرخان و بلوک‌های هم‌رنگ را کنار هم بیاور، پیش از آنکه روی هم تلنبار شوند.</p><a class="btn" href="../hextris.html" aria-label="اجرای Hextris">اجرای بازی</a></div></li>
-<li class="game"><img src="../assets/screenshots/rocksndiamonds-runtime.webp" width="1280" height="720" alt="تصویری از بازی Rocks&#x27;n&#x27;Diamonds" loading="lazy" decoding="async"><div><h3 lang="en">Rocks&#x27;n&#x27;Diamonds</h3><span class="tag">پازل اکشن</span><p>پازل اکشن کلاسیک؛ زمین را بکن، الماس جمع کن و از سنگ‌های در حال سقوط جا خالی بده.</p><a class="btn" href="../rocksndiamonds.html" aria-label="اجرای Rocks&#x27;n&#x27;Diamonds">اجرای بازی</a></div></li>
-<li class="game"><img src="../assets/screenshots/beats-into-shapes-runtime.webp" width="1280" height="720" alt="تصویری از بازی Beats into Shapes" loading="lazy" decoding="async"><div><h3 lang="en">Beats into Shapes</h3><span class="tag">ریتم</span><p>بازی ریتم سه‌لاینه با چهار موسیقی اصلی.</p><a class="btn" href="../beats-into-shapes.html" aria-label="اجرای Beats into Shapes">اجرای بازی</a></div></li>
-<li class="game"><img src="../assets/screenshots/2048-runtime.webp" width="1280" height="720" alt="تصویری از بازی 2048" loading="lazy" decoding="async"><div><h3 lang="en">2048</h3><span class="tag">پازل آرکید</span><p>همان پازل عددی معروف: مربع‌ها را ادغام کن تا به ۲۰۴۸ برسی. بهترین امتیازت در مرورگر می‌ماند.</p><a class="btn" href="../2048.html" aria-label="اجرای 2048">اجرای بازی</a></div></li>
-<li class="game"><img src="../assets/screenshots/javascript-tetris-runtime.webp" width="1280" height="720" alt="تصویری از بازی JavaScript Tetris" loading="lazy" decoding="async"><div><h3 lang="en">JavaScript Tetris</h3><span class="tag">پازل آرکید</span><p>تتریس سبک و سریع؛ فقط باز کن و بازی کن.</p><a class="btn" href="../javascript-tetris.html" aria-label="اجرای JavaScript Tetris">اجرای بازی</a></div></li>
-<li class="game"><img src="../assets/screenshots/adarkroom-runtime.webp" width="1280" height="720" alt="تصویری از بازی A Dark Room" loading="lazy" decoding="async"><div><h3 lang="en">A Dark Room</h3><span class="tag">ماجراجویی و کاوش</span><p>ماجراجویی متنی که با یک آتش کوچک در اتاقی تاریک شروع می‌شود و کم‌کم دنیایی می‌سازد.</p><a class="btn" href="../adarkroom.html" aria-label="اجرای A Dark Room">اجرای بازی</a></div></li>
-<li class="game"><img src="../assets/screenshots/digger-runtime.webp" width="1280" height="720" alt="تصویری از بازی Digger Remastered" loading="lazy" decoding="async"><div><h3 lang="en">Digger Remastered</h3><span class="tag">اکشن</span><p>نسخهٔ بازسازی‌شدهٔ بازی حفاری و اکشن سال ۱۹۸۳؛ تونل بزن، طلا جمع کن و از هیولاها دور بمان.</p><a class="btn" href="../digger.html" aria-label="اجرای Digger Remastered">اجرای بازی</a></div></li>
-<li class="game"><img src="../assets/screenshots/ecwolf-runtime.webp" width="1280" height="720" alt="تصویری از بازی ECWolf" loading="lazy" decoding="async"><div><h3 lang="en">ECWolf</h3><span class="tag">اکشن</span><p>موتور سازگار با Wolfenstein 3D. اینجا فقط خود موتور هست و فایل‌های داده‌ی قانونی را باید خودت انتخاب کنی.</p><a class="btn" href="../ecwolf.html" aria-label="اجرای ECWolf">اجرای بازی</a></div></li>
-<li class="game"><img src="../assets/screenshots/pacman-gameplay.webp" width="1280" height="720" alt="تصویری از بازی Pacman" loading="lazy" decoding="async"><div><h3 lang="en">Pacman</h3><span class="tag">آرکید</span><p>پک‌من کلاسیک با مجوز MIT و دوازده مرحله؛ نقطه‌ها را بخور و از روح‌های باهوش فرار کن.</p><a class="btn" href="../pacman.html" aria-label="اجرای Pacman">اجرای بازی</a></div></li>
-</ul></section>
-<section class="sec" id="reference"><h2>ورودی‌های مرجع</h2>
-<p>این‌ها در PLAYCHIVE اجرا نمی‌شوند. یا پروژهٔ بیرونی‌اند و فقط لینک می‌دهیم، یا فایل قانونی خودت را می‌خواهند.</p>
-<ul class="refs">
+
+<div id="loading-screen" class="screen active" role="status" aria-live="polite">
+  <div class="loading-inner retro-loading">
+    <div class="loading-mark" aria-hidden="true"><strong class="brand-word"><span class="brand-play">PLAY</span><span class="brand-chive"><span class="brand-short">CHIVE</span><span class="brand-long">ARCHIVE</span></span></strong><small>THE PLAYABLE ARCHIVE</small></div>
+    <p class="loading-tag" data-no-i18n><span class="t-en" lang="en">Classic games, right in your browser</span><span class="t-fa" lang="fa">آرشیو بازی‌های کلاسیک، مستقیم توی مرورگر</span></p>
+    <div class="loading-meta"><p class="loading-kicker">Runtime / preflight</p></div>
+    <div class="boot-log" id="boot-log" aria-label="Loading progress"></div>
+    <div class="progress-container">
+      <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill" id="progress-fill"></div></div>
+      <span class="progress-text" id="progress-text">0%</span>
+    </div>
+    <div class="loading-foot"><p class="loading-hint">Preparing catalog…</p></div>
+  </div>
+</div>
+
+<div id="wad-picker" class="screen" role="main" aria-label="PLAYCHIVE classic game hub">
+  <div class="retro-shell">
+    <header class="pc-header" id="pc-header">
+      <div class="pc-bar">
+        <div class="pc-brand">
+          <button class="pc-home" type="button" data-retro-nav="featured" aria-label="PLAYCHIVE, The Playable Archive. Go to featured collection"><span class="pc-wordmark" aria-hidden="true"><span class="pc-wm"><span class="pc-play">PLAY</span><i class="pc-ar"><b>A</b><b>R</b></i><i class="pc-ch">CHIVE</i></span><small id="pc-sub" data-text="The playable archive">THE PLAYABLE ARCHIVE</small></span></button>
+          <button class="pc-eye" id="pc-eye" type="button" aria-label="The eye. Click it."><canvas id="evil-eye" class="evil-eye" width="44" height="24" aria-hidden="true"></canvas><span class="evil-eye-fallback" aria-hidden="true"><i></i></span></button>
+        </div>
+        <nav class="pc-nav" aria-label="Primary navigation">
+          <span class="pc-ghost" aria-hidden="true"></span><span class="pc-pill" aria-hidden="true"></span>
+          <button type="button" data-retro-nav="featured" class="is-active" aria-current="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg><span class="pc-label">Discover</span></button>
+          <button type="button" data-retro-nav="catalog"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span class="pc-label">Collections</span></button>
+          <button type="button" data-retro-nav="library"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.4-9-9.2C1.8 8.2 4 5 7.2 5c2 0 3.4 1.1 4.8 3 1.4-1.9 2.8-3 4.8-3C20 5 22.2 8.2 21 11.8 19 16.6 12 21 12 21z"/></svg><span class="pc-label">Library</span> <span id="library-count" class="pc-badge">00</span></button>
+          <button type="button" data-retro-nav="about"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><span class="pc-label">About</span></button>
+        </nav>
+        <div class="pc-tools">
+          <div class="pc-status"><i class="pc-dot"></i><span id="system-time">Online</span></div>
+          <button class="pc-search" type="button" aria-label="Search games"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search games</span><kbd>/</kbd></button>
+          <span class="pc-sep" aria-hidden="true"></span>
+          <div class="retro-audio pc-audio" aria-label="Archive Audio controls">
+            <button id="retro-audio-toggle" class="pc-ibtn" type="button" aria-pressed="false" aria-label="Enable Archive Audio"><svg class="pc-spk" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg><span class="pc-eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span id="retro-audio-label" class="pc-tip">Audio off</span></button>
+            <label class="pc-pop" for="retro-audio-volume"><span>Volume</span><input id="retro-audio-volume" type="range" min="0" max="100" step="1" value="42" aria-label="Archive Audio volume" /></label>
+          </div>
+          <button id="offline-pack-button" class="pc-ibtn pc-offline" type="button" aria-label="Download the complete PLAYCHIVE offline pack"><svg class="pc-ring" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15.9" pathLength="100"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg><span id="offline-pack-status" class="pc-tip" role="status" aria-live="polite">Online only</span></button>
+          <div class="pc-lang" id="pc-lang" role="group" aria-label="Language" dir="ltr" data-lang="en">
+            <svg class="pc-globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><ellipse class="pc-mer" cx="12" cy="12" rx="4" ry="9"/><path d="M3.5 9h17M3.5 15h17"/></svg>
+            <span class="pc-lang-thumb" aria-hidden="true"></span>
+            <button type="button" class="pc-lang-seg" data-lang="en" lang="en" aria-label="English" aria-pressed="true" data-no-i18n>EN</button>
+            <button type="button" class="pc-lang-seg" data-lang="fa" lang="fa" aria-label="فارسی (Persian)" aria-pressed="false" data-no-i18n>فا</button>
+          </div>
+          <button id="theme-toggle" class="pc-theme" type="button" aria-pressed="false" aria-label="Switch to dark mode"><span class="pc-thumb" aria-hidden="true"><svg class="pc-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="pc-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></span><span data-theme-label class="pc-sr">Light</span></button>
+        </div>
+        <div class="pc-progress" aria-hidden="true"><i></i></div>
+      </div>
+    </header>
+
+    <main class="retro-main">
+      <section id="featured" class="featured-zone" aria-labelledby="featured-title">
+        <div class="section-tag"><span>// 01</span><span>Featured world</span></div>
+        <article class="featured-panel spatial-panel" aria-roledescription="carousel" aria-label="Featured PLAYCHIVE games">
+          <div class="featured-media">
+            <img id="featured-cover" src="assets/screenshots/hexgl-runtime.webp" width="1600" height="900" fetchpriority="high" decoding="async" alt="HexGL gameplay preview" />
+            <canvas id="gradient-waves" class="gradient-waves" aria-hidden="true"></canvas>
+            <span class="waves-fallback" aria-hidden="true"></span>
+            <div class="media-grid" aria-hidden="true"></div>
+            <span id="featured-index" class="featured-index">R-01 / 15</span>
+            <div class="featured-media-caption" aria-hidden="true"><span>10s cycle</span><i id="featured-timer"></i></div>
+          </div>
+          <div class="featured-copy">
+            <div class="featured-topline"><span class="lime-mark">✦</span><span>Rotating playable collection</span><span id="featured-status">Ready to play</span></div>
+            <h1 id="featured-title">HexGL</h1>
+            <p id="featured-studio" class="featured-studio">Thibaut Despoulain · WebGL runtime</p>
+            <p id="featured-description" class="featured-description">A high-speed three-dimensional race, ready to launch locally in your browser.</p>
+            <p id="featured-license" class="featured-license">Open-source runtime · attribution retained</p>
+            <dl class="featured-specs">
+              <div><dt>Format</dt><dd id="featured-format">Bundled independent runtime</dd></div>
+              <div><dt>Session</dt><dd id="featured-session">Time trials</dd></div>
+              <div><dt>Topology</dt><dd id="featured-topology">Bundled track</dd></div>
+              <div><dt>Input</dt><dd>KB / Touch / Gamepad</dd></div>
+            </dl>
+            <p id="featured-credit" class="featured-credit">Gameplay screenshot: PLAYCHIVE local runtime</p>
+            <div class="featured-actions">
+              <button id="btn-freedoom" class="retro-button retro-button-primary" data-magnet data-action="play-featured">Launch featured</button>
+              <button id="btn-featured-details" class="retro-button retro-button-quiet" data-action="show-detail">Game details</button>
+              <button class="retro-text-button" data-retro-nav="catalog">Browse catalog <span>↘</span></button>
+            </div>
+          </div>
+          <div class="featured-footer"><span>Archive state / rotating</span><div class="featured-carousel-controls"><button id="featured-prev" class="featured-arrow" type="button" aria-label="Previous featured game">←</button><div id="featured-dots" class="featured-dots" aria-label="Choose a featured game"></div><button id="featured-next" class="featured-arrow" type="button" aria-label="Next featured game">→</button></div><span>Auto / 10 sec</span></div>
+        </article>
+      </section>
+
+      <section id="genre-nav" class="genre-deck" aria-labelledby="genre-nav-title">
+        <div class="genre-deck-heading"><p class="section-tag"><span>// 02</span><span>Genre navigation</span></p><div><h2 id="genre-nav-title">Choose a lane.<br />Enter a world.</h2><p>Every genre in the PLAYCHIVE catalog has a direct route. Pick a lane to jump to its filtered collection, then switch or reset from the persistent catalog controls.</p></div></div>
+        <div class="collection-strip accordion-genre-strip" aria-label="Browse every game genre">
+          <button class="collection-card collection-action" data-action="focus-genre" data-genre="Action"><span>// A</span><b>Action</b><small>Combat &amp; arcade</small><strong data-collection-count="Action">00</strong></button>
+          <button class="collection-card collection-horror" data-action="focus-genre" data-genre="Horror"><span>// H</span><b>Horror</b><small>Tension &amp; survival</small><strong data-collection-count="Horror">00</strong></button>
+          <button class="collection-card collection-explore" data-action="focus-genre" data-genre="Exploration"><span>// E</span><b>Exploration</b><small>Adventure &amp; discovery</small><strong data-collection-count="Exploration">00</strong></button>
+          <button class="collection-card collection-strategy" data-action="focus-genre" data-genre="Strategy"><span>// S</span><b>Strategy</b><small>Build &amp; command</small><strong data-collection-count="Strategy">00</strong></button>
+          <button class="collection-card collection-racing" data-action="focus-genre" data-genre="Racing"><span>// R</span><b>Racing</b><small>Speed &amp; control</small><strong data-collection-count="Racing">00</strong></button>
+          <button class="collection-card collection-arcade" data-action="focus-genre" data-genre="Arcade Puzzle"><span>// P1</span><b>Arcade puzzle</b><small>Fast pattern play</small><strong data-collection-count="Arcade Puzzle">00</strong></button>
+          <button class="collection-card collection-gems" data-action="focus-genre" data-genre="Rock &amp; Gem Action Puzzle"><span>// P2</span><b>Rock &amp; gem</b><small>Dig, collect, escape</small><strong data-collection-count="Rock &amp; Gem Action Puzzle">00</strong></button>
+          <button class="collection-card collection-rhythm" data-action="focus-genre" data-genre="Rhythm"><span>// M</span><b>Rhythm</b><small>Tap into the forge</small><strong data-collection-count="Rhythm">00</strong></button>
+          <button class="collection-card collection-fantasy" data-action="focus-genre" data-genre="Fantasy shooter"><span>// F</span><b>Fantasy shooter</b><small>Mythic first-person action</small><strong data-collection-count="Fantasy shooter">00</strong></button>
+          <button class="collection-card collection-experimental" data-action="focus-genre" data-genre="Experimental"><span>// X</span><b>Experimental</b><small>Physics &amp; new shapes</small><strong data-collection-count="Experimental">00</strong></button>
+        </div>
+      </section>
+
+      <section id="catalog" class="catalog-layout" aria-labelledby="catalog-title">
+        <div class="catalog-heading">
+          <div><p class="section-tag"><span>// 02</span><span>Curated catalog</span></p><h2 id="catalog-title">Find a world<br />worth entering.</h2></div>
+          <div class="catalog-tools">
+            <label class="search-field"><span>Search</span><input id="search-input" type="search" placeholder="Title, mood, format" autocomplete="off" /></label>
+            <div class="elastic-depth-control" id="elastic-depth-control" aria-label="Catalog depth control"><span aria-hidden="true">◒</span><label for="catalog-depth"><b>Depth</b><input id="catalog-depth" type="range" min="40" max="100" step="1" value="78" /></label><output id="catalog-depth-value" for="catalog-depth">78%</output><span aria-hidden="true">◉</span></div>
+            <span id="result-count" class="record-count">13 records</span>
+          </div>
+        </div>
+
+        <aside class="filter-panel spatial-panel" aria-label="Catalog filters">
+          <div class="filter-panel-title"><span>// Filters</span><button data-genre="All" class="filter-reset is-active">Reset</button></div>
+          <div class="filter-group"><span class="filter-label">Browse every genre</span><div class="genre-filter-row"><button data-genre="All" class="filter-chip is-active">All</button><button data-genre="Action" class="filter-chip">Action</button><button data-genre="Horror" class="filter-chip">Horror</button><button data-genre="Exploration" class="filter-chip">Explore</button><button data-genre="Strategy" class="filter-chip">Strategy</button><button data-genre="Racing" class="filter-chip">Racing</button><button data-genre="Arcade Puzzle" class="filter-chip">Arcade puzzle</button><button data-genre="Rock &amp; Gem Action Puzzle" class="filter-chip">Rock &amp; gem</button><button data-genre="Rhythm" class="filter-chip">Rhythm</button><button data-genre="Fantasy shooter" class="filter-chip">Fantasy shooter</button><button data-genre="Experimental" class="filter-chip">Experimental</button></div></div>
+          <div class="filter-group"><label class="filter-label" for="filter-format">Runtime format</label><select id="filter-format"><option value="All">All formats</option><option value="Bundled independent runtime">Ready-to-play runtimes</option><option value="IWAD">Bundled base archives</option><option value="PWAD">Map and level packs</option><option value="Local-data">Local-data engines</option></select></div>
+          <div class="filter-readout"><span>Runtime</span><b>LOCAL / READY</b><span>Library</span><b>LOCAL STORAGE</b></div>
+        </aside>
+        <div id="catalog-grid" class="catalog-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="import-panel spatial-panel" aria-labelledby="import-title">
+        <div class="import-copy"><p class="section-tag"><span>// 03</span><span>Bring your own</span></p><h2 id="import-title">Run the worlds<br />you already own.</h2><p>Attach one IWAD with up to three PWADs. Your files stay in this browser session.</p></div>
+        <div class="import-actions">
+          <label class="retro-button retro-button-primary file-button" for="wad-upload">Choose WAD file(s)<input type="file" id="wad-upload" accept=".wad,.WAD" multiple hidden /></label>
+          <button class="retro-button retro-button-quiet" data-action="import">Open local importer</button>
+          <div id="wad-drop-zone" class="drop-zone" aria-label="Drop an IWAD and optional PWADs here"><span>Drop IWAD + PWAD(s) here</span><small>1 base archive / 3 patches maximum</small></div>
+        </div>
+        <div class="import-schematic" aria-hidden="true"><span>IWAD</span><i></i><span>PWAD</span><i></i><span>PWAD</span><i></i><span>RUN</span></div>
+      </section>
+
+      <section id="library" class="library-section" aria-labelledby="library-title">
+        <div class="library-heading"><div><p class="section-tag"><span>// 04</span><span>Personal library</span></p><h2 id="library-title">Pinned for later.</h2></div><span>Stored on this device</span></div>
+        <p id="library-empty" class="library-empty">No worlds pinned yet. Save a catalog entry to keep it close.</p>
+        <div id="library-grid" class="catalog-grid library-grid"></div>
+      </section>
+
+      <section id="about" class="about-panel spatial-panel" aria-labelledby="about-title">
+        <div class="about-intro"><p class="section-tag"><span>// 05</span><span>About the creator</span></p><h2 id="about-title">Classic worlds.<br />Open paths.</h2><p>PLAYCHIVE is an independent browser archive and play space created by <strong>Mahan Tavakoli</strong> <span lang="fa" dir="rtl">(ماهان توکلی)</span>. It brings legally distributable retro games, engines and experiments into one deliberate interface—ready to play without a forced account, ad network or player upload.</p><a class="retro-button retro-button-primary" href="https://github.com/MahanKenway" target="_blank" rel="noopener noreferrer">GitHub / MahanKenway ↗</a></div>
+        <div class="about-principles"><article><span>01 / MOTIVATION</span><h3>Keep play accessible.</h3><p>The goal is to preserve the feeling of discovering old games while removing avoidable friction: each eligible world should start in the browser with its lawful free data already prepared.</p></article><article><span>02 / CURATION</span><h3>Credit the builders.</h3><p>Every runtime keeps an upstream source notice and license information. PLAYCHIVE does not present commercial data as free, and it does not turn a local-file requirement into a false promise.</p></article><article><span>03 / THE FORMAT</span><h3>One library, many engines.</h3><p>Doom worlds belong beside strategy, puzzle, rhythm and action games when each is technically sound, respectful of its creators and genuinely playable on desktop or phone.</p></article></div>
+      </section>
+    <!-- seo:content:begin -->
+<section id="static-catalog" class="seo-static" lang="fa" dir="rtl" aria-label="کاتالوگ بازی‌های PLAYCHIVE">
+<h2>PLAYCHIVE: بازی‌های کلاسیک و متن‌باز رایگان در مرورگر</h2>
+<p>PLAYCHIVE یک هاب گزینش‌شده با ۲۴ بازی قابل‌اجرا در مرورگر است، به‌اضافهٔ فهرستی از ۳۴ مورد مرجع. هر بازی با WebAssembly یا HTML5 اجرا می‌شود: بدون نصب، بدون ثبت‌نام و با ذخیره‌ها روی دستگاه خودت. PLAYCHIVE غیرتجاری است و اعلان مجوز منبع اصلی را کنار هر اجراگر نگه می‌دارد. <a href="./" lang="en" hreflang="en">English</a></p>
+<p>آخرین به‌روزرسانی: <time datetime="2026-11-08">۲۰۲۶-۱۱-۰۸</time></p>
+<h3>همین حالا بازی کن (۲۴ بازی)</h3><ul>
+<li><a href="blasphemer.html" lang="en">Blasphemer</a> (شوتر فانتزی): شوتر اول‌شخص فانتزی و تاریک روی موتور Heretic. بازی کامل است و همهٔ فایل‌هایش همراه خودش می‌آید.</li>
+<li><a href="cdogs.html" lang="en">C-Dogs SDL</a> (اکشن): اکشن از نمای بالا با کمپین کامل و حالت دوئل؛ تیراندازی‌های شلوغ و پرتحرک، شبیه آرکیدهای قدیمی.</li>
+<li><a href="freedink.html" lang="en">GNU FreeDink</a> (ماجراجویی و کاوش): ماجراجویی نقش‌آفرینی دوبعدی با شوخ‌طبعی عجیب‌وغریب. بازی کامل، با داده‌های رسمی و رایگان.</li>
+<li><a href="opentyrian.html" lang="en">OpenTyrian2000</a> (اکشن): شوتر عمودی فضایی و کلاسیک؛ نسخهٔ رایگان Tyrian 2000 با داده‌های freeware.</li>
+<li><a href="librequake.html" lang="en">LibreQuake</a> (اکشن): شوتر اول‌شخص روی موتور Quake، با مرحله‌ها و محتوای کاملاً آزاد و مستقل.</li>
+<li><a href="openttd.html" lang="en">OpenTTD</a> (استراتژی): استراتژی حمل‌ونقل: ریل و جاده بکش، قطار و کامیون راه بینداز و شبکه‌ات را سودآور کن. گرافیک و موسیقی‌اش هم آزاد است.</li>
+<li><a href="freerct.html" lang="en">FreeRCT</a> (استراتژی): شهربازی خودت را بساز: سرسره، چرخ‌وفلک و مسیر بگذار، مهمان‌ها را راضی نگه دار و حساب‌وکتابت را مثبت.</li>
+<li><a href="neverball.html" lang="en">Neverball</a> (تجربی): پازل فیزیکی سه‌بعدی؛ با کج‌کردن زمین، توپ را از مسیرهای سخت به مقصد برسان.</li>
+<li><a href="armawebtron.html" lang="en">Armawebtron</a> (آرکید): مسابقهٔ سه‌بعدی لایت‌سایکل در میدانی نئونی؛ ردّ نورانی بجا بگذار و رقیب را به دام بینداز.</li>
+<li><a href="tuxracer.html" lang="en">TuxRacer.js</a> (مسابقه‌ای): پنگوئنی که روی برف سر می‌خورد: بیست مسیر سه‌بعدی و سرعتی که کم‌کم دستت می‌آید.</li>
+<li><a href="starter-kit-racing.html" lang="en">Starter Kit Racing</a> (مسابقه‌ای سه‌بعدی): رانندگی سه‌بعدی با کامیون روی پیستی محلی؛ زمان هر دور ثبت می‌شود تا رکوردت را بشکنی.</li>
+<li><a href="astray.html" lang="en">Astray</a> (پازل فیزیکی): یک توپ فولادی را در هزارتوهای سه‌بعدی هدایت کن؛ ساده شروع می‌شود، ولی مسیرها هر بار فرق دارند.</li>
+<li><a href="neon-rift.html" lang="en">Neon Rift</a> (مسابقه‌ای): مسابقهٔ شبانهٔ سه‌بعدی با ظاهر low-poly؛ ساختهٔ خود PLAYCHIVE.</li>
+<li><a href="shadow-station.html" lang="en">Obsidian Relay</a> (بقا): بازی بقا و کاوش در یک ایستگاه زیرآبی؛ ساختهٔ خود PLAYCHIVE.</li>
+<li><a href="hexgl.html" lang="en">HexGL</a> (مسابقه‌ای): مسابقهٔ سریع و آینده‌نگرانهٔ سه‌بعدی با WebGL، روی پیست Cityscape.</li>
+<li><a href="hextris.html" lang="en">Hextris</a> (پازل آرکید): پازل آرکید شش‌ضلعی: حلقه را بچرخان و بلوک‌های هم‌رنگ را کنار هم بیاور، پیش از آنکه روی هم تلنبار شوند.</li>
+<li><a href="rocksndiamonds.html" lang="en">Rocks&#x27;n&#x27;Diamonds</a> (پازل اکشن): پازل اکشن کلاسیک؛ زمین را بکن، الماس جمع کن و از سنگ‌های در حال سقوط جا خالی بده.</li>
+<li><a href="beats-into-shapes.html" lang="en">Beats into Shapes</a> (ریتم): بازی ریتم سه‌لاینه با چهار موسیقی اصلی.</li>
+<li><a href="2048.html" lang="en">2048</a> (پازل آرکید): همان پازل عددی معروف: مربع‌ها را ادغام کن تا به ۲۰۴۸ برسی. بهترین امتیازت در مرورگر می‌ماند.</li>
+<li><a href="javascript-tetris.html" lang="en">JavaScript Tetris</a> (پازل آرکید): تتریس سبک و سریع؛ فقط باز کن و بازی کن.</li>
+<li><a href="adarkroom.html" lang="en">A Dark Room</a> (ماجراجویی و کاوش): ماجراجویی متنی که با یک آتش کوچک در اتاقی تاریک شروع می‌شود و کم‌کم دنیایی می‌سازد.</li>
+<li><a href="digger.html" lang="en">Digger Remastered</a> (اکشن): نسخهٔ بازسازی‌شدهٔ بازی حفاری و اکشن سال ۱۹۸۳؛ تونل بزن، طلا جمع کن و از هیولاها دور بمان.</li>
+<li><a href="ecwolf.html" lang="en">ECWolf</a> (اکشن): موتور سازگار با Wolfenstein 3D. اینجا فقط خود موتور هست و فایل‌های داده‌ی قانونی را باید خودت انتخاب کنی.</li>
+<li><a href="pacman.html" lang="en">Pacman</a> (آرکید): پک‌من کلاسیک با مجوز MIT و دوازده مرحله؛ نقطه‌ها را بخور و از روح‌های باهوش فرار کن.</li>
+</ul>
+<h3>ورودی‌های مرجع (اجرا نمی‌شوند)</h3><p>این‌ها در PLAYCHIVE اجرا نمی‌شوند. یا پروژهٔ بیرونی‌اند و فقط لینک می‌دهیم، یا فایل قانونی خودت را می‌خواهند.</p><ul>
 <li class="ref"><span lang="en">Freedoom: Phase 1</span>: کمپین کامل و آزاد سازگار با Doom، با چهار اپیزود. محتوایش رایگان است و داخل هاب Doom اجرا می‌شود.</li>
 <li class="ref"><span lang="en">Freedoom: Phase 2</span>: کمپین ۳۲مرحله‌ای آزاد برای قوانین Doom II، با هیولاهای بیشتر. داخل هاب Doom اجرا می‌شود.</li>
 <li class="ref"><span lang="en">FreeDM: Arena Archive</span>: آرشیو آزاد ۳۲نقشه برای دث‌مچ. می‌توانی نقشه‌ها را محلی بگردی. داخل هاب Doom اجرا می‌شود.</li>
@@ -864,21 +954,93 @@ footer a{direction:ltr;unicode-bidi:isolate}
 <li class="ref"><a href="https://github.com/CorsixTH/CorsixTH" rel="noopener" lang="en">CorsixTH</a>: بازسازی موتور Theme Hospital با مجوز سبک MIT. پروژهٔ بیرونی است و فقط لینک می‌دهیم.</li>
 <li class="ref"><a href="https://freeciv.github.io/freeciv-web/" rel="noopener" lang="en">Freeciv-web</a>: بازی استراتژی به سبک Civilization با کلاینت HTML5 و WebGL. پروژهٔ بیرونی است و فقط لینک می‌دهیم.</li>
 <li class="ref"><a href="https://endless-sky.github.io/" rel="noopener" lang="en">Endless Sky</a>: بازی متن‌باز فضایی و تجارتی شبیه Elite. پروژهٔ بیرونی است و فقط لینک می‌دهیم.</li>
-</ul></section>
-<section class="sec" id="faq"><h2>پرسش‌های پرتکرار</h2>
-<details><summary>PLAYCHIVE چیست؟</summary><p>یک مجموعهٔ گزینش‌شده از بازی‌های کلاسیک، متن‌باز و رایگان که مستقیم در مرورگر اجرا می‌شوند. همه‌چیز با WebAssembly و HTML5 کار می‌کند، پس لازم نیست چیزی نصب کنی یا حساب کاربری بسازی.</p></details>
-<details><summary>واقعاً رایگان است؟ تبلیغ یا ثبت‌نام ندارد؟</summary><p>بله. بازی‌های آماده رایگان‌اند و هر کدام محتوای لازم برای اجرا را همراه خودشان دارند. ثبت‌نام، تبلیغ یا خرید درون‌برنامه‌ای در کار نیست. فقط ECWolf استثناست: موتورش اینجاست، ولی فایل‌های داده‌ی قانونی را باید خودت انتخاب کنی.</p></details>
-<details><summary>روی گوشی و با دسته هم کار می‌کند؟</summary><p>بله. روی گوشی کنترل لمسی به سبک PSP نمایش داده می‌شود و روی کامپیوتر می‌توانی از کیبورد، ماوس یا گیم‌پد استفاده کنی. حالت تمام‌صفحه هم در همهٔ بازی‌ها هست.</p></details>
-<details><summary>پیشرفتم کجا ذخیره می‌شود؟</summary><p>فقط در حافظهٔ محلی مرورگر خودت و روی هیچ سروری نمی‌رود. اگر داده‌های سایت را از مرورگر پاک کنی، ذخیره‌ها هم از بین می‌روند.</p></details>
-<details><summary>بدون اینترنت هم می‌شود بازی کرد؟</summary><p>بله. دکمهٔ «Offline Pack» بالای صفحه همهٔ بازی‌های آماده را در مرورگرت ذخیره می‌کند. بعد از دانلود اولیه، بدون اینترنت هم بازی‌ها اجرا می‌شوند.</p></details>
-<details><summary>دووم یا کوییک اصلی هم هست؟</summary><p>نه. PLAYCHIVE داده‌ی تجاری پخش نمی‌کند. به‌جایش محتوای آزادی مثل Freedoom و LibreQuake را دارد. اگر فایل WAD قانونی داری می‌توانی محلی واردش کنی و فایل از مرورگرت بیرون نمی‌رود.</p></details>
-<details><summary>چرا بعضی ورودی‌های کاتالوگ دکمهٔ اجرا ندارند؟</summary><p>بعضی پروژه‌ها فقط به صفحهٔ رسمی‌شان لینک شده‌اند، چون کد یا داده‌شان اجازهٔ پخش مجدد ندارد. این ورودی‌ها به‌وضوح با برچسب «لینک خارجی» مشخص شده‌اند و جزو بازی‌های قابل اجرا حساب نمی‌شوند.</p></details>
-<details><summary>چطور باگ گزارش بدهم یا بازی پیشنهاد کنم؟</summary><p>سورس‌کد در گیت‌هاب است و می‌توانی همان‌جا Issue باز کنی. فقط مجوز بازی را هم بنویس تا بتوانیم بررسی کنیم که امکان گذاشتنش هست یا نه.</p></details>
+</ul><h2>پرسش‌های پرتکرار</h2>
+<h3>PLAYCHIVE چیست؟</h3><p>یک مجموعهٔ گزینش‌شده از بازی‌های کلاسیک، متن‌باز و رایگان که مستقیم در مرورگر اجرا می‌شوند. همه‌چیز با WebAssembly و HTML5 کار می‌کند، پس لازم نیست چیزی نصب کنی یا حساب کاربری بسازی.</p>
+<h3>واقعاً رایگان است؟ تبلیغ یا ثبت‌نام ندارد؟</h3><p>بله. بازی‌های آماده رایگان‌اند و هر کدام محتوای لازم برای اجرا را همراه خودشان دارند. ثبت‌نام، تبلیغ یا خرید درون‌برنامه‌ای در کار نیست. فقط ECWolf استثناست: موتورش اینجاست، ولی فایل‌های داده‌ی قانونی را باید خودت انتخاب کنی.</p>
+<h3>روی گوشی و با دسته هم کار می‌کند؟</h3><p>بله. روی گوشی کنترل لمسی به سبک PSP نمایش داده می‌شود و روی کامپیوتر می‌توانی از کیبورد، ماوس یا گیم‌پد استفاده کنی. حالت تمام‌صفحه هم در همهٔ بازی‌ها هست.</p>
+<h3>پیشرفتم کجا ذخیره می‌شود؟</h3><p>فقط در حافظهٔ محلی مرورگر خودت و روی هیچ سروری نمی‌رود. اگر داده‌های سایت را از مرورگر پاک کنی، ذخیره‌ها هم از بین می‌روند.</p>
+<h3>بدون اینترنت هم می‌شود بازی کرد؟</h3><p>بله. دکمهٔ «Offline Pack» بالای صفحه همهٔ بازی‌های آماده را در مرورگرت ذخیره می‌کند. بعد از دانلود اولیه، بدون اینترنت هم بازی‌ها اجرا می‌شوند.</p>
+<h3>دووم یا کوییک اصلی هم هست؟</h3><p>نه. PLAYCHIVE داده‌ی تجاری پخش نمی‌کند. به‌جایش محتوای آزادی مثل Freedoom و LibreQuake را دارد. اگر فایل WAD قانونی داری می‌توانی محلی واردش کنی و فایل از مرورگرت بیرون نمی‌رود.</p>
+<h3>چرا بعضی ورودی‌های کاتالوگ دکمهٔ اجرا ندارند؟</h3><p>بعضی پروژه‌ها فقط به صفحهٔ رسمی‌شان لینک شده‌اند، چون کد یا داده‌شان اجازهٔ پخش مجدد ندارد. این ورودی‌ها به‌وضوح با برچسب «لینک خارجی» مشخص شده‌اند و جزو بازی‌های قابل اجرا حساب نمی‌شوند.</p>
+<h3>چطور باگ گزارش بدهم یا بازی پیشنهاد کنم؟</h3><p>سورس‌کد در گیت‌هاب است و می‌توانی همان‌جا Issue باز کنی. فقط مجوز بازی را هم بنویس تا بتوانیم بررسی کنیم که امکان گذاشتنش هست یا نه.</p>
 </section>
-<section class="sec about" id="about"><h2>دربارهٔ PLAYCHIVE</h2>
-<p>PLAYCHIVE پروژه‌ای غیرتجاری است که <a href="https://github.com/MahanKenway" rel="noopener">ماهان توکلی</a> ساخته. هدفش این است که حس پیدا کردن بازی‌های قدیمی را برگرداند، بدون دردسر نصب و حساب کاربری. نام و مجوز سازندگان هر بازی کنار همان بازی می‌ماند و محتوای تجاری هم به‌عنوان رایگان معرفی نمی‌شود. سورس‌کد در <a href="https://github.com/MahanKenway/PlayChive" rel="noopener">گیت‌هاب</a> باز است.</p>
-</section>
-<footer><a href="../privacy/" lang="en">Privacy</a><a href="../llms.txt" lang="en">llms.txt</a><a href="../sitemap.xml" lang="en">Sitemap</a><a href="../about/" lang="en">About</a></footer>
+<!-- seo:content:end -->
 </main>
+
+    <footer class="retro-footer"><span>PLAYCHIVE / GAME INDEX</span><span>Games, engines and archives remain the property of their creators.</span><span>Audio: Theme Song [8-bit] / nene / CC0</span><a class="retro-footer-link" href="privacy/">Privacy policy</a><a class="retro-footer-link" href="about/">About and contact</a><span>Build 01 · 2026</span></footer>
+  </div>
+</div>
+
+<audio id="retro-audio-player" loop preload="none" aria-hidden="true"><source src="assets/audio/retroplay-theme-nene.ogg" type="audio/ogg; codecs=opus" /><source src="assets/audio/retroplay-theme-nene.mp3" type="audio/mpeg" /></audio>
+
+<dialog id="game-detail-dialog" class="game-detail-dialog" aria-labelledby="detail-title" aria-describedby="detail-description">
+  <article class="game-detail-shell">
+    <button class="game-detail-close" type="button" data-action="close-detail" aria-label="Close game details">×</button>
+    <div class="game-detail-media"><img id="detail-cover" src="assets/screenshots/hexgl-runtime.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Selected game gameplay screenshot" /><span id="detail-state" class="detail-state"></span><span id="detail-index" class="detail-index"></span></div>
+    <div class="game-detail-copy">
+      <p id="detail-overline" class="detail-overline"></p>
+      <h2 id="detail-title">Game title</h2>
+      <p id="detail-studio" class="detail-studio"></p>
+      <p id="detail-description" class="detail-description"></p>
+      <dl class="detail-specs"><div><dt>Format</dt><dd id="detail-format"></dd></div><div><dt>Session</dt><dd id="detail-duration"></dd></div><div><dt>World</dt><dd id="detail-maps"></dd></div><div><dt>License</dt><dd id="detail-license"></dd></div></dl>
+      <p id="detail-credit" class="detail-credit"></p>
+      <div id="detail-links" class="detail-links"><a id="detail-project-link" href="./" target="_blank" rel="noopener noreferrer" hidden aria-hidden="true">Official project</a><a id="detail-download-link" href="./" target="_blank" rel="noopener noreferrer" hidden aria-hidden="true">Official download</a><p id="detail-download-note" class="detail-download-note" hidden></p></div>
+      <div class="detail-actions"><button id="detail-primary" class="retro-button retro-button-primary" data-magnet type="button"></button><button id="detail-library" class="retro-button retro-button-quiet" type="button"></button></div>
+      <p class="detail-note">PLAYCHIVE launches only packaged local runtimes and clearly marked legal data paths. No account is required.</p>
+    </div>
+  </article>
+</dialog>
+
+<dialog id="external-frame-dialog" class="external-frame-dialog" aria-labelledby="external-frame-title">
+  <div class="external-frame-shell">
+    <header class="external-frame-header"><div><p class="detail-overline">// EXTERNAL EXPERIMENT / EMBEDDED VIEW</p><h2 id="external-frame-title">External project</h2><p id="external-frame-status" class="external-frame-status">Loading the original host inside PLAYCHIVE…</p></div><button id="external-frame-close" class="game-detail-close" type="button" aria-label="Close embedded project">×</button></header>
+    <div class="external-frame-body"><iframe id="external-frame" title="External project embedded in PLAYCHIVE" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-forms allow-pointer-lock allow-presentation allow-popups allow-same-origin" allow="fullscreen; gamepad; autoplay; pointer-lock; accelerometer; gyroscope"></iframe></div>
+    <footer class="external-frame-footer"><span>PLAYCHIVE does not mirror or modify this project.</span><div><button id="external-frame-open" class="retro-button retro-button-quiet" type="button">Open original host ↗</button><button id="external-frame-fallback" class="retro-button retro-button-primary" type="button" hidden>Frame unavailable — open original</button></div></footer>
+  </div>
+</dialog>
+
+<dialog id="offline-pack-dialog" class="offline-pack-dialog" aria-labelledby="offline-pack-title" aria-describedby="offline-pack-description">
+  <article class="offline-pack-shell">
+    <button class="game-detail-close offline-pack-close" type="button" data-offline-action="close" aria-label="Close Offline Pack">×</button>
+    <div class="offline-pack-hero">
+      <div class="offline-orbit" aria-hidden="true"><i></i><b>⇩</b></div>
+      <p class="section-tag"><span>// ARCHIVE MODE</span><span>Local-first access</span></p>
+      <h2 id="offline-pack-title">The complete<br /><em>Offline Pack.</em></h2>
+      <p id="offline-pack-description">Keep the PLAYCHIVE hub, bundled games, screenshots and runtime files available when the network is limited.</p>
+      <div class="offline-pack-promise"><span>NO ACCOUNT</span><span>NO SERVER</span><span>YOUR DEVICE</span></div>
+    </div>
+    <div class="offline-pack-console">
+      <div class="offline-pack-console-head"><span>PACK STATUS</span><strong id="offline-pack-phase">Ready to prepare</strong></div>
+      <div class="offline-pack-progress-wrap"><div class="offline-pack-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="offline-pack-progress-fill"></i></div><strong id="offline-pack-percent">0%</strong></div>
+      <div class="offline-pack-stats"><div><span>FILES</span><b id="offline-pack-files">—</b></div><div><span>SIZE</span><b id="offline-pack-size">—</b></div><div><span>CACHED</span><b id="offline-pack-cached">0 MB</b></div></div>
+      <p class="offline-pack-current"><span class="offline-pulse"></span><span id="offline-pack-current">Waiting for download</span></p>
+      <div class="offline-pack-actions"><button class="retro-button retro-button-primary" type="button" data-offline-action="start" id="offline-pack-start">Prepare offline pack</button><button class="retro-button retro-button-quiet" type="button" data-offline-action="cancel" id="offline-pack-cancel" hidden>Pause</button><button class="retro-button retro-button-quiet" type="button" data-offline-action="clear" id="offline-pack-clear">Clear local pack</button></div>
+      <div class="offline-transfer-tools"><a class="retro-button retro-button-quiet" id="offline-pack-download" href="./downloads/PLAYCHIVE-OFFLINE-v1.zip" download>Download transfer ZIP</a><label class="retro-button retro-button-quiet offline-import-label" for="offline-pack-import">Import from USB<input id="offline-pack-import" type="file" accept=".zip,application/zip" /></label></div>
+      <p class="offline-pack-note">Only files served by PLAYCHIVE are cached. External projects, remote servers and user-owned game data are never copied into the pack. Transfer ZIPs use a stable v1 format, so an older copy can be imported after future site updates.</p>
+    </div>
+  </article>
+</dialog>
+
+<div id="game-screen" class="screen" role="main">
+  <div id="crt-overlay" aria-hidden="true"></div>
+  <div class="game-topbar" aria-hidden="true"><button class="game-return-chip" id="btn-return-hub" type="button">← PLAYCHIVE</button><span>Runtime / active</span><span>Pointer lock for direct input</span></div>
+  <canvas id="doom-canvas" width="320" height="200" aria-label="PLAYCHIVE game canvas" tabindex="0">Your browser does not support the HTML canvas element.</canvas>
+  <div id="hud-overlay" aria-hidden="true"><div id="hud-fps" class="hud-chip">-- FPS</div><div id="hud-map" class="hud-chip">E1M1</div><div id="hud-ping" class="hud-chip" style="display:none">LOCAL</div></div>
+
+  <div id="pause-overlay" class="hidden" aria-live="polite"><div class="pause-box"><p class="pause-title">Session paused</p><p class="pause-hint">Your runtime remains ready.</p><button id="btn-resume" class="retro-button retro-button-primary">Resume</button><button id="btn-settings" class="retro-button retro-button-quiet">Settings</button><button id="btn-fullscreen" class="retro-button retro-button-quiet">Fullscreen</button><button id="btn-restart" class="retro-text-button">Restart session</button></div></div>
+
+  <div id="settings-overlay" class="hidden" aria-live="polite"><div class="settings-box"><p class="pause-title">Session settings</p><p class="settings-note">Saved on this device. Cloud sync is intentionally opt-in and is not enabled in this static build.</p><div class="settings-group"><span>Display</span><div class="settings-row"><label for="setting-crt">Scanline overlay</label><input type="checkbox" id="setting-crt" checked /></div><div class="settings-row"><label for="setting-smoothing">Smooth scaling</label><input type="checkbox" id="setting-smoothing" /></div><div class="settings-row"><label for="setting-scale">Display scale</label><select id="setting-scale"><option value="auto" selected>Auto / fit</option><option value="1">1×</option><option value="2">2×</option><option value="3">3×</option><option value="4">4×</option><option value="5">5×</option></select></div><div class="settings-row"><label for="setting-performance">Mobile performance</label><select id="setting-performance"><option value="auto">Auto</option><option value="battery">Battery saver</option><option value="quality">High quality</option></select></div></div><div class="settings-group"><span>Input</span><div class="settings-row"><label for="setting-sensitivity">Mouse sensitivity</label><input type="range" id="setting-sensitivity" min="0.2" max="3" step="0.1" value="1" /><span id="setting-sensitivity-value">1.0×</span></div><div class="settings-row"><label for="setting-deadzone">Gamepad deadzone</label><input type="range" id="setting-deadzone" min="0.05" max="0.75" step="0.05" value="0.25" /><span id="setting-deadzone-value">25%</span></div><div class="settings-row" id="settings-row-gyro"><label for="setting-gyro">Gyroscope look</label><input type="checkbox" id="setting-gyro" /></div></div><div class="settings-group"><span>Audio</span><div class="settings-row"><label for="setting-master">Master</label><input type="range" id="setting-master" min="0" max="1" step="0.05" value="1" /><span id="setting-master-value">100%</span></div><div class="settings-row"><label for="setting-sfx">Effects</label><input type="range" id="setting-sfx" min="0" max="1" step="0.05" value="1" /><span id="setting-sfx-value">100%</span></div><div class="settings-row"><label for="setting-music">Music</label><input type="range" id="setting-music" min="0" max="1" step="0.05" value="0.6" /><span id="setting-music-value">60%</span></div></div><div class="settings-group settings-saves"><span>Local saves</span><p id="save-profile-label">Profile: no active WAD</p><div id="save-slot-list" class="save-slot-list"><p>Load a world to inspect save slots.</p></div><div class="save-actions"><button id="btn-export-saves" class="retro-button retro-button-quiet">Export saves</button><label class="retro-button retro-button-quiet file-button" for="save-import">Import saves<input type="file" id="save-import" accept="application/json,.json" hidden /></label></div></div><button id="btn-settings-close" class="retro-button retro-button-primary">Done</button></div></div>
+
+  <div id="mobile-controls" aria-label="PSP-style on-screen game controls">
+    <div class="touch-look-zone" data-look-zone aria-label="Drag horizontally to turn"><span>DRAG TO LOOK</span></div>
+    <div class="psp-shoulders" aria-label="Movement modifiers"><button class="shoulder-btn" data-key="strafe" aria-label="Hold to strafe">L</button><button class="shoulder-btn" data-key="run" aria-label="Hold to run">R</button></div>
+    <div class="psp-dpad" aria-label="Movement and turn"><button class="dpad-btn up" data-key="up" aria-label="Move forward">▲</button><button class="dpad-btn left" data-key="left" aria-label="Turn left or strafe left">◀</button><button class="dpad-btn right" data-key="right" aria-label="Turn right or strafe right">▶</button><button class="dpad-btn down" data-key="down" aria-label="Move backward">▼</button><span class="dpad-core" aria-hidden="true"></span></div>
+    <div class="psp-actions" aria-label="Actions"><button class="face-btn face-triangle" data-key="map" aria-label="Toggle automap">△</button><button class="face-btn face-square" data-key="use" aria-label="Use or open">□</button><button class="face-btn face-circle" data-key="fire" aria-label="Fire">○</button><button class="face-btn face-cross" data-key="menu" aria-label="Open menu">×</button></div>
+    <div class="mobile-command-bar" aria-label="Mobile control hint"><span>L / R</span><span>strafe / run</span><span>drag / look</span></div>
+  </div>
+</div>
+
+<div id="click-to-play" class="click-overlay hidden" role="button" tabindex="0" aria-label="Click to capture mouse and start playing"><div class="click-box"><p>Capture mouse to play</p><p class="small">Press Esc to release</p></div></div>
+<script type="module" src="src/main.js?v=playchive-offline-v3"></script>
 </body>
 </html>
