@@ -590,77 +590,7 @@ def fa_num(n):
     return str(n).translate(FA_DIGITS)
 
 
-FA_CSS = """
-@font-face{font-family:'Vazirmatn';src:url(../assets/fonts/Vazirmatn-Bold.woff2) format('woff2');font-weight:700;font-display:swap}
-@font-face{font-family:'Vazirmatn';src:url(../assets/fonts/Vazirmatn-ExtraBold.woff2) format('woff2');font-weight:800;font-display:swap}
-@font-face{font-family:'Shabnam';src:url(../assets/fonts/Shabnam-Regular.woff2) format('woff2');font-weight:400;font-display:swap}
-@font-face{font-family:'Shabnam';src:url(../assets/fonts/Shabnam-Bold.woff2) format('woff2');font-weight:700;font-display:swap}
-:root{color-scheme:light dark;--bg:#e7e6e0;--surf:#f4f3ee;--ink:#161815;--soft:#3c4039;--muted:#5b6057;--line:rgba(22,24,21,.16);--line-s:rgba(22,24,21,.34);--lime:#8e9b1f;--lime-t:#5b6510;--lime-ink:#161a05;--lime-soft:rgba(142,155,31,.16);--head:'Vazirmatn',Tahoma,system-ui,sans-serif;--body:'Shabnam',Tahoma,system-ui,sans-serif}
-@media (prefers-color-scheme:dark){:root{--bg:#111210;--surf:#181917;--ink:#eceeec;--soft:#c3c8c0;--muted:#9ba097;--line:rgba(236,238,236,.1);--line-s:rgba(236,238,236,.28);--lime:#bdee63;--lime-t:#bdee63;--lime-ink:#11130c;--lime-soft:rgba(189,238,99,.12)}}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/2 var(--body);background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:36px 36px}
-a{color:inherit;text-decoration-color:var(--lime);text-underline-offset:.28em}
-.wrap{width:min(1080px,100% - 32px);margin:0 auto}
-.bar{position:sticky;top:12px;z-index:10;margin:12px auto 0;width:min(1080px,100% - 32px);display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 8px 8px 16px;border:1px solid var(--line);border-radius:16px;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
-.brand{font:800 22px/1 var(--head);letter-spacing:-.05em;text-decoration:none;direction:ltr}.brand b{color:var(--lime)}
-nav{display:flex;gap:4px;flex-wrap:wrap}
-nav a{padding:6px 14px;border-radius:999px;text-decoration:none;font-size:15px;color:var(--soft);transition:background .2s,color .2s}
-nav a:hover{background:var(--lime-soft);color:var(--ink)}
-.pc-lang{--dir:-1;position:relative;display:inline-flex;align-items:center;gap:0;height:34px;padding:3px;padding-inline-start:30px;border:1px solid color-mix(in srgb,var(--ink) 14%,transparent);border-radius:999px;background:color-mix(in srgb,var(--ink) 6%,transparent);isolation:isolate}
-.pc-lang:focus-within{outline:2px solid var(--lime);outline-offset:2px}
-.pc-lang-seg{position:relative;z-index:1;display:grid;place-items:center;min-width:38px;height:26px;padding:0 6px;border-radius:999px;font:600 12px/1 ui-monospace,Menlo,monospace;letter-spacing:.06em;color:inherit;text-decoration:none;transition:color .25s}
-.pc-lang-seg[lang=fa]{font:700 14px/1 Vazirmatn,Shabnam,sans-serif;letter-spacing:0}
-.pc-lang-seg[aria-current]{color:var(--lime-ink)}
-a.pc-lang-seg:hover{color:var(--ink)}
-a.pc-lang-seg:focus-visible{outline:2px solid var(--ink);outline-offset:1px}
-.pc-lang-thumb{position:absolute;z-index:0;inset-block:3px;inset-inline-start:30px;width:38px;border-radius:999px;background:var(--lime);box-shadow:0 1px 6px rgba(0,0,0,.18);transition:transform .45s cubic-bezier(.2,.8,.2,1.25)}
-.pc-lang:has(a:hover) .pc-lang-thumb,.pc-lang:has(a:focus-visible) .pc-lang-thumb{transform:translateX(calc(var(--dir) * 5px)) scaleX(1.08)}
-.pc-lang.is-switching .pc-lang-thumb{transform:translateX(calc(var(--dir) * 38px))}
-.pc-lang.is-switching .pc-lang-seg[aria-current]{color:inherit}
-.pc-lang.is-switching a.pc-lang-seg{color:var(--lime-ink)}
-.pc-globe{position:absolute;inset-inline-start:8px;top:50%;width:16px;height:16px;margin-top:-8px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;opacity:.75}
-.pc-mer{transform-origin:12px 12px;animation:pc-spin 6s linear infinite}
-.pc-lang:hover .pc-mer,.pc-lang.is-switching .pc-mer{animation-duration:1.1s}
-@keyframes pc-spin{0%{transform:scaleX(1)}50%{transform:scaleX(-1)}100%{transform:scaleX(1)}}
-.pc-lang-hint-unused{position:absolute;top:calc(100% + 10px);inset-inline-end:0;z-index:20;display:flex;align-items:center;gap:8px;padding:8px 8px 8px 14px;border-radius:14px;background:var(--lime-ink);color:#f2f2ea;font:600 14px/1.4 Vazirmatn,Shabnam,sans-serif;white-space:nowrap;box-shadow:0 8px 28px rgba(0,0,0,.28);animation:pc-hint .5s cubic-bezier(.2,.8,.2,1.25) both}
-.pc-lang-hint a{color:var(--lime);text-decoration:underline}
-.pc-lang-hint button{display:grid;place-items:center;width:26px;height:26px;border:0;border-radius:50%;background:rgba(255,255,255,.12);color:inherit;cursor:pointer;font-size:15px;line-height:1}
-.pc-lang-hint button:focus-visible,.pc-lang-hint a:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
-@keyframes pc-hint{from{opacity:0;transform:translateY(-8px) scale(.96)}to{opacity:1;transform:none}}
-@media (max-width:640px){.pc-lang{padding-inline-start:26px}.pc-globe{inset-inline-start:6px}.pc-lang-seg{min-width:34px}.pc-lang-thumb{inset-inline-start:26px;width:34px}.pc-lang.is-switching .pc-lang-thumb{transform:translateX(calc(var(--dir) * 34px))}.pc-lang-hint-unused{white-space:normal;max-width:220px}}
-@media (prefers-reduced-motion:reduce){.pc-mer,.pc-lang-hint-unused{animation:none}.pc-lang-thumb,.pc-lang-seg{transition:none}}
-.hero{padding:clamp(48px,9vw,110px) 0 36px}
-h1{font:800 clamp(34px,6.4vw,68px)/1.25 var(--head);margin:0;letter-spacing:-.02em;text-wrap:balance}
-h1 em{font-style:normal;color:var(--lime)}
-.lead{max-width:44em;margin:18px 0 0;font-size:clamp(18px,2.2vw,21px);color:var(--soft)}
-.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-.btn{display:inline-block;padding:10px 26px;border-radius:6px;background:var(--ink);color:var(--bg);text-decoration:none;font:700 16px/1.8 var(--head);transition:transform .25s}
-.btn:hover{transform:translateY(-2px)}.btn.alt{background:none;color:var(--ink);border:1px solid var(--line-s)}
-.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:34px 0 0;padding:0;list-style:none}
-.facts li{padding:14px 16px;border:1px solid var(--line);background:var(--surf);border-radius:4px}
-.facts b{display:block;font:800 28px/1.4 var(--head);color:var(--lime-t,var(--lime))}.facts span{font-size:15px;color:var(--muted)}
-h2{font:800 clamp(26px,4vw,38px)/1.4 var(--head);margin:0 0 6px;scroll-margin-top:84px}
-.sec{padding:46px 0 10px}.sec>p{margin:0 0 22px;color:var(--muted);max-width:46em}
-.games{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:16px}
-.game{display:flex;flex-direction:column;border:1px solid var(--line);background:var(--surf);border-radius:4px;overflow:hidden;transition:transform .35s cubic-bezier(.16,1,.3,1),border-color .25s}
-.game:hover{transform:translateY(-4px);border-color:var(--line-s)}
-.game img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:var(--line)}
-.game div{display:flex;flex-direction:column;gap:6px;padding:14px 16px 16px;flex:1}
-.game h3{margin:0;font:700 19px/1.5 var(--head);direction:ltr;text-align:right;unicode-bidi:isolate}
-.tag{align-self:flex-start;padding:0 10px;border:1px solid var(--line-s);border-radius:999px;font-size:13px;line-height:1.7;color:var(--muted)}
-.game p{margin:0;font-size:15.5px;line-height:1.95;color:var(--soft);flex:1}
-.game .btn{align-self:flex-start;margin-top:8px;padding:5px 18px;font-size:15px}
-details{border-top:1px solid var(--line);padding:12px 0}details:last-of-type{border-bottom:1px solid var(--line)}
-summary{cursor:pointer;font:700 18px/1.8 var(--head);list-style:none;display:flex;justify-content:space-between;gap:16px}
-summary::after{content:'+';color:var(--lime);font-size:24px;line-height:1.4;transition:transform .25s}details[open] summary::after{transform:rotate(45deg)}
-summary::-webkit-details-marker{display:none}details p{margin:8px 0 2px;color:var(--soft);max-width:46em}
-.about p{max-width:46em;color:var(--soft)}
-footer{margin:56px 0 36px;padding-top:18px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;color:var(--muted);direction:rtl}
-footer a{direction:ltr;unicode-bidi:isolate}
-:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
-@media (max-width:640px){.bar{flex-wrap:wrap;padding-inline:12px}.bar nav{order:3;width:100%;display:flex;gap:4px;flex-wrap:wrap}nav a{padding:5px 10px;font-size:14px}.brand{font-size:19px}}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
-"""
+
 
 
 FA_REF = {
@@ -727,7 +657,33 @@ def fa_reference_html():
     return "\n".join(rows)
 
 
+def fa_static():
+    """Persian twin of the no-JS catalog block: same content as hub_body(), written for Persian readers and crawlers."""
+    out = ['<section id="static-catalog" class="seo-static" lang="fa" dir="rtl" aria-label="کاتالوگ بازی‌های PLAYCHIVE">',
+           "<h2>PLAYCHIVE: بازی‌های کلاسیک و متن‌باز رایگان در مرورگر</h2>",
+           f"<p>PLAYCHIVE یک هاب گزینش‌شده با {fa_num(len(PLAYABLE))} بازی قابل‌اجرا در مرورگر است، به‌اضافهٔ فهرستی از "
+           f"{fa_num(len(GAMES) - len(PLAYABLE))} مورد مرجع. هر بازی با WebAssembly یا HTML5 اجرا می‌شود: بدون نصب، بدون "
+           "ثبت‌نام و با ذخیره‌ها روی دستگاه خودت. PLAYCHIVE غیرتجاری است و اعلان مجوز منبع اصلی را کنار هر اجراگر نگه "
+           'می‌دارد. <a href="./" lang="en" hreflang="en">English</a></p>',
+           f'<p>آخرین به‌روزرسانی: <time datetime="{UPDATED}">{fa_num(UPDATED)}</time></p>',
+           f"<h3>همین حالا بازی کن ({fa_num(len(PLAYABLE))} بازی)</h3><ul>"]
+    for g in PLAYABLE:
+        out.append(f'<li><a href="{esc(g["runtimeUrl"])}" lang="en">{esc(g["name"])}</a> '
+                   f'({esc(FA_GENRE.get(g["genre"], g["genre"]))}): {esc(FA_DESC.get(g["id"], ""))}</li>')
+    out.append("</ul>")
+    out.append("<h3>ورودی‌های مرجع (اجرا نمی‌شوند)</h3><p>این‌ها در PLAYCHIVE اجرا نمی‌شوند. یا پروژهٔ بیرونی‌اند و فقط لینک "
+               "می‌دهیم، یا فایل قانونی خودت را می‌خواهند.</p><ul>")
+    out.append(fa_reference_html())
+    out.append("</ul><h2>پرسش‌های پرتکرار</h2>")
+    for q, a in FA_FAQ:
+        out.append(f"<h3>{esc(q)}</h3><p>{esc(a)}</p>")
+    out.append("</section>")
+    return "\n".join(out)
+
+
 def fa_page():
+    """/fa/ is the same app as /: the English page re-skinned with lang=fa, a Persian head and Persian static content.
+    The in-page language switch (src/i18n.js) translates the UI, so the two URLs always look identical."""
     path = "fa/"
     n = len(PLAYABLE)
     title = "PLAYCHIVE | بازی‌های کلاسیک و متن‌باز رایگان در مرورگر، بدون نصب"
@@ -752,61 +708,36 @@ def fa_page():
         title=title, desc=desc, path=path, image=DEFAULT_OG,
         image_alt="PLAYCHIVE: بازی‌های کلاسیک در مرورگر", extra_ld=graph, locale="fa_IR",
         alternates=[("en", f"{BASE}/"), ("fa", f"{BASE}/fa/"), ("x-default", f"{BASE}/")],
+        extra_head=("  <script>document.documentElement.classList.add('js');</script>\n"
+                    "  <style>.js .seo-static{display:none}.seo-static{max-width:960px;margin:0 auto;padding:32px 20px 60px;"
+                    "font:16px/1.8 Shabnam,Tahoma,sans-serif;color:#161815;background:#e7e6e0}"
+                    ".seo-static a{color:#385b20}.seo-static h2{margin-top:32px}.seo-static li{margin:6px 0}</style>"),
     )
-    cards = []
-    for i, g in enumerate(PLAYABLE):
-        genre = FA_GENRE.get(g["genre"], g["genre"])
-        text = FA_DESC.get(g["id"], "")
-        lazy = ' loading="lazy" decoding="async"' if i >= 3 else ' fetchpriority="high"' if i == 0 else ""
-        cards.append(
-            f'<li class="game"><img src="../{esc(g["artwork"])}" width="1280" height="720" alt="تصویری از بازی {esc(g["name"])}"{lazy}>'
-            f'<div><h3 lang="en">{esc(g["name"])}</h3><span class="tag">{esc(genre)}</span><p>{esc(text)}</p>'
-            f'<a class="btn" href="../{esc(g["runtimeUrl"])}" aria-label="اجرای {esc(g["name"])}">اجرای بازی</a></div></li>'
-        )
-    faq = "\n".join(f"<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>" for q, a in FA_FAQ)
-    body = f"""<div class="bar"><a class="brand" href="../" lang="en" aria-label="PLAYCHIVE">PLAY<b>CHIVE</b></a>
-<nav aria-label="ناوبری"><a href="#games">بازی‌ها</a><a href="#faq">پرسش‌ها</a><a href="#about">درباره</a></nav>
-<div class="pc-lang" role="group" aria-label="زبان"><svg class="pc-globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><ellipse class="pc-mer" cx="12" cy="12" rx="4" ry="9"/><path d="M3.5 9h17M3.5 15h17"/></svg><span class="pc-lang-thumb" aria-hidden="true"></span><span class="pc-lang-seg" lang="fa" aria-current="true">فا</span><a class="pc-lang-seg" href="../" hreflang="en" lang="en" aria-label="EN (English، انگلیسی)">EN</a></div></div>
-<main class="wrap">
-<section class="hero">
-<h1>بازی‌های کلاسیک، <em>مستقیم توی مرورگر</em></h1>
-<p class="lead">بدون نصب، بدون ثبت‌نام و بدون تبلیغ. PLAYCHIVE مجموعه‌ای گزینش‌شده از بازی‌های آزاد و متن‌باز است که همین‌جا اجرا می‌شوند. یک مسابقه بده، یک شهربازی بساز یا چند دقیقه‌ای با یک شوتر قدیمی دلتنگی کن.</p>
-<div class="cta"><a class="btn" href="#games">بازی‌ها را ببین</a><a class="btn alt" href="../" lang="en">کاتالوگ کامل (English)</a></div>
-<ul class="facts"><li><b>{fa_num(n)}</b><span>بازی آمادهٔ اجرا</span></li><li><b>۰</b><span>نصب، حساب کاربری یا تبلیغ</span></li><li><b>WebAssembly</b><span>و HTML5 زیر کاپوت</span></li></ul>
-</section>
-<section class="sec" id="games"><h2>همین الان بازی کن</h2>
-<p>هر بازی در صفحهٔ خودش باز می‌شود و محتوایش همراه خودش است. روی گوشی کنترل لمسی و روی کامپیوتر کیبورد و دسته کار می‌کند.</p>
-<ul class="games">
-{chr(10).join(cards)}
-</ul></section>
-<section class="sec" id="reference"><h2>ورودی‌های مرجع</h2>
-<p>این‌ها در PLAYCHIVE اجرا نمی‌شوند. یا پروژهٔ بیرونی‌اند و فقط لینک می‌دهیم، یا فایل قانونی خودت را می‌خواهند.</p>
-<ul class="refs">
-{fa_reference_html()}
-</ul></section>
-<section class="sec" id="faq"><h2>پرسش‌های پرتکرار</h2>
-{faq}
-</section>
-<section class="sec about" id="about"><h2>دربارهٔ PLAYCHIVE</h2>
-<p>PLAYCHIVE پروژه‌ای غیرتجاری است که <a href="https://github.com/MahanKenway" rel="noopener">ماهان توکلی</a> ساخته. هدفش این است که حس پیدا کردن بازی‌های قدیمی را برگرداند، بدون دردسر نصب و حساب کاربری. نام و مجوز سازندگان هر بازی کنار همان بازی می‌ماند و محتوای تجاری هم به‌عنوان رایگان معرفی نمی‌شود. سورس‌کد در <a href="{REPO_URL}" rel="noopener">گیت‌هاب</a> باز است.</p>
-</section>
-<footer><a href="../privacy/" lang="en">Privacy</a><a href="../llms.txt" lang="en">llms.txt</a><a href="../sitemap.xml" lang="en">Sitemap</a><a href="../about/" lang="en">About</a></footer>
-</main>"""
-    page = (
-        '<!doctype html>\n<html lang="fa" dir="rtl">\n<head>\n<meta charset="utf-8" />\n'
-        '<meta name="viewport" content="width=device-width, initial-scale=1" />\n'
-        '<meta name="theme-color" content="#e9e8e3" />\n<link rel="icon" href="../assets/favicon.ico" />\n'
-        '<link rel="manifest" href="../manifest.json" />\n'
-        '<link rel="preload" href="../assets/fonts/Shabnam-Regular.woff2" as="font" type="font/woff2" crossorigin />\n'
-        '<link rel="preload" href="../assets/fonts/Vazirmatn-ExtraBold.woff2" as="font" type="font/woff2" crossorigin />\n'
-        "<style>" + FA_CSS + "</style>\n" + head + "\n</head>\n<body>\n" + body + "\n</body>\n</html>\n"
-    )
+    text = (ROOT / "index.html").read_text(encoding="utf-8")
+    text = apply_head(text, head)
+    text = apply_body(text, fa_static(), "</main>")
+    text = text.replace('<html lang="en">', '<html lang="fa" dir="rtl">', 1)
+    # The page lives one folder down but shares every asset with the root app.
+    text = text.replace("<head>", '<head>\n  <base href="../" />', 1)
+    # With a <base>, bare #fragments would leave /fa/; point them back at this page.
+    text = re.sub(r'href="#([^"]*)"', r'href="fa/#\1"', text)
     out = ROOT / "fa/index.html"
     out.parent.mkdir(exist_ok=True)
-    out.write_text(page, encoding="utf-8")
+    out.write_text(text, encoding="utf-8")
 
 
-# -------------------------------------------------------------- llms.txt family
+def write_fa_descriptions():
+    """src/i18n/fa-descriptions.js: Persian text for every English catalog description, keyed by the English text."""
+    rows = {}
+    for g in GAMES:
+        fa = FA_DESC.get(g["id"]) or FA_REF.get(g["id"])
+        if fa:
+            rows[g["description"]] = fa
+    body = ",\n".join(f"  {json.dumps(k, ensure_ascii=False)}: {json.dumps(v, ensure_ascii=False)}" for k, v in rows.items())
+    (ROOT / "src/i18n/fa-descriptions.js").write_text(
+        "// GENERATED by scripts/generate-seo.py from FA_DESC / FA_REF. Do not edit by hand.\n"
+        f"export const DESCRIPTIONS = {{\n{body},\n}};\n", encoding="utf-8")
+
 
 RIGHTS_NOTE = (
     "## Rights and external entries\n\n"
@@ -1041,6 +972,7 @@ def main():
         update_game_page(g)
     update_hub()
     fa_page()
+    write_fa_descriptions()
     update_agent()
     update_simple_page("agent/index.html", "Agent guide")
     update_simple_page("privacy/index.html", "Privacy")

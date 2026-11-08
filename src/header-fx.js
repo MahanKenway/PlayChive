@@ -1,3 +1,4 @@
+import { applyLang, getLang, onLangChange, t } from './i18n.js?v=1';
 // Header interactions: sliding nav indicator, scroll condense and progress, brand
 // morph, scramble text, magnetic buttons, offline progress ring and the eye easter egg.
 // Pure CSS and Web Animations. Existing element ids stay wired to their own modules.
@@ -7,7 +8,7 @@ const SECRET_KEY = 'playchive:secrets';
 
 function scramble(el, to, ms = 650) {
   if (!el) return;
-  if (reduced()) { el.textContent = to; return; }
+  if (reduced() || getLang() === 'fa') { el.textContent = t(to); return; }
   const start = performance.now();
   cancelAnimationFrame(el._scr || 0);
   const tick = (now) => {
@@ -210,35 +211,48 @@ function initEye(header) {
 function initLang(header) {
   const box = header.querySelector('#pc-lang');
   if (!box) return;
-  const link = box.querySelector('a[hreflang]');
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const store = (k, v) => { try { v === undefined ? localStorage.getItem(k) : localStorage.setItem(k, v); } catch {} };
   const read = (k) => { try { return localStorage.getItem(k); } catch { return null; } };
-  link.addEventListener('click', (e) => {
-    store('playchive:lang', 'fa');
-    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || reduce) return;
-    e.preventDefault();
-    box.classList.add('is-switching');
-    setTimeout(() => { location.href = link.href; }, 380);
+  const write = (k, v) => { try { localStorage.setItem(k, v); } catch { /* storage can be blocked */ } };
+  const sync = (lang) => {
+    box.dataset.lang = lang;
+    box.querySelectorAll('.pc-lang-seg').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+  };
+  sync(getLang());
+  onLangChange(sync);
+  box.addEventListener('click', (e) => {
+    const btn = e.target.closest('.pc-lang-seg');
+    if (!btn || btn.dataset.lang === getLang()) return;
+    dismiss();
+    applyLang(btn.dataset.lang);
   });
-  // Gentle, dismissible hint for Persian-language browsers. Never an automatic redirect.
+
+  // Gentle, dismissible hint for Persian-language browsers that never chose a language. Never switches by itself.
+  let hint = null;
+  function dismiss() {
+    if (!hint) return;
+    write('playchive:lang-hint', '1');
+    hint.remove();
+    hint = null;
+  }
   const wantsFa = (navigator.languages || [navigator.language || '']).some((l) => /^fa\b/i.test(l));
-  if (!wantsFa || read('playchive:lang') || read('playchive:lang-hint')) return;
-  const hint = document.createElement('div');
+  if (!wantsFa || getLang() === 'fa' || read('playchive:lang') || read('playchive:lang-hint')) return;
+  hint = document.createElement('div');
   hint.className = 'pc-lang-hint';
   hint.setAttribute('role', 'status');
   hint.lang = 'fa';
   hint.dir = 'rtl';
-  const a = document.createElement('a');
-  a.href = link.href;
-  a.textContent = 'نسخهٔ فارسی';
+  hint.dataset.noI18n = '';
+  const go = document.createElement('button');
+  go.type = 'button';
+  go.className = 'pc-lang-hint-go';
+  go.textContent = 'فارسی';
+  go.addEventListener('click', () => { dismiss(); applyLang('fa'); });
   const text = document.createElement('span');
-  text.append('این سایت فارسی هم دارد: ', a);
+  text.append('این سایت فارسی هم دارد: ', go);
   const close = document.createElement('button');
   close.type = 'button';
   close.setAttribute('aria-label', 'بستن');
   close.textContent = '×';
-  const dismiss = () => { store('playchive:lang-hint', '1'); hint.remove(); };
   close.addEventListener('click', dismiss);
   hint.addEventListener('keydown', (e) => { if (e.key === 'Escape') dismiss(); });
   hint.append(text, close);
