@@ -167,6 +167,8 @@ const fa = (v) => String(v).replace(/\d/g, (d) => D[+d]);
 
 // Strings with numbers or names inside. [regex, (captures) => Persian]
 export const PATTERNS = [
+  // Counters and badges (01, 15, 43, 00): Persian digits in Persian mode. Longer numbers are game names (2048) and stay.
+  [/^(\d{1,3})$/, (n) => fa(n)],
   [/^(v\d[\w.\-]*) (.+)$/, (v, rest, tr) => `${v} ${tr(rest)}`],
   [/^View (.+)$/, (title) => `مشاهدهٔ ${title}`],
   [/^(.+) preview$/, (title) => `پیش‌نمایش ${title}`],
