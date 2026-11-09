@@ -288,6 +288,8 @@ def head_block(*, title, desc, path, image, image_alt, extra_ld, locale="en_US",
     img = url_for(img_rel)
     lines = [
         HEAD_BEGIN,
+        # The GitHub Pages address is not the home of the site: send visitors to playchive.ir, same path.
+        "  <script>if(location.hostname==='mahankenway.github.io'){location.replace('https://playchive.ir'+location.pathname.replace(/^\\/PlayChive(?=\\/|$)/,'')+location.search+location.hash)}</script>",
         f"  <title>{esc(title)}</title>",
         f'  <meta name="description" content="{esc(desc)}" />',
         f'  <link rel="canonical" href="{esc(canon)}" />',
