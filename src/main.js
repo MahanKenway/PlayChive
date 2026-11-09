@@ -20,24 +20,24 @@
  * ─────────────────────────────────────────────────────────────────
  */
 
-import { DoomEngine }   from './engine/DoomEngine.js?v=retroplay-20260815-r2';
-import { WadLoader }    from './WadLoader.js?v=retroplay-20260815-r2';
-import { EventBus }     from './EventBus.js?v=retroplay-20260815-r2';
-import { CatalogController } from './catalog.js?v=retroplay-20260815-r2';
+import { DoomEngine }   from './engine/DoomEngine.js?v=retroplay-20261109-r3';
+import { WadLoader }    from './WadLoader.js?v=retroplay-20261109-r3';
+import { EventBus }     from './EventBus.js?v=retroplay-20261109-r3';
+import { CatalogController } from './catalog.js?v=retroplay-20261109-r3';
 import { initVisualEffects, prepareVisualQuality } from './visual-effects.js?v=retroplay-20260822-r2';
 import { initTheme } from './theme.js?v=retroplay-20260822-r1';
 import { initRetroAudio } from './retro-audio.js?v=retroplay-20260822-r1';
 import { initOfflinePack } from './offline-pack.js?v=playchive-offline-v3';
 import { initHeader } from './header-fx.js?v=pc-header-2';
 import { initI18n } from './i18n.js?v=1';
-import { loadSettings, saveSettings, profileIdFor, listSaveSlots, exportSaveBundle, importSaveBundle } from './persistence.js?v=retroplay-20260815-r2';
+import { loadSettings, saveSettings, profileIdFor, listSaveSlots, exportSaveBundle, importSaveBundle } from './persistence.js?v=retroplay-20261109-r3';
 import {
   LoadingScreen,
   HUD,
   PauseMenu,
   MobileControls,
   sleep,
-}                       from './ui.js?v=retroplay-20260815-r2';
+}                       from './ui.js?v=retroplay-20261109-r3';
 
 // ── Config ────────────────────────────────────────────────────────
 const CONFIG = {

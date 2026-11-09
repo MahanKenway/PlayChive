@@ -1,4 +1,4 @@
-import { applyLang, getLang, onLangChange, t } from './i18n.js?v=1';
+import { applyLang, getLang, onLangChange, setText, sourceText } from './i18n.js?v=1';
 // Header interactions: sliding nav indicator, scroll condense and progress, brand
 // morph, scramble text, magnetic buttons, offline progress ring and the eye easter egg.
 // Pure CSS and Web Animations. Existing element ids stay wired to their own modules.
@@ -8,7 +8,7 @@ const SECRET_KEY = 'playchive:secrets';
 
 function scramble(el, to, ms = 650) {
   if (!el) return;
-  if (reduced() || getLang() === 'fa') { el.textContent = t(to); return; }
+  if (reduced() || getLang() === 'fa') { cancelAnimationFrame(el._scr || 0); setText(el, to); return; }
   const start = performance.now();
   cancelAnimationFrame(el._scr || 0);
   const tick = (now) => {
@@ -17,7 +17,7 @@ function scramble(el, to, ms = 650) {
     let out = '';
     for (let i = 0; i < to.length; i += 1) out += i < n || to[i] === ' ' ? to[i] : GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
     el.textContent = out;
-    if (p < 1) el._scr = requestAnimationFrame(tick); else el.textContent = to;
+    if (p < 1) el._scr = requestAnimationFrame(tick); else setText(el, to);
   };
   el._scr = requestAnimationFrame(tick);
 }
@@ -41,7 +41,7 @@ function initNav(header, scroller) {
   };
   buttons.forEach((btn) => {
     const label = btn.querySelector('.pc-label');
-    const text = label?.textContent ?? '';
+    const text = label ? sourceText(label) : '';
     const enter = () => { place(ghost, btn); ghost.style.opacity = '1'; if (label) scramble(label, text, 380); };
     btn.addEventListener('pointerenter', enter);
     btn.addEventListener('focus', enter);

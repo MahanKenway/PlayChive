@@ -7,7 +7,7 @@
  * a typewriter effect and a green cursor blink — purely aesthetic.
  * ─────────────────────────────────────────────────────────────────
  */
-import { COLLECTIONS } from './catalog.js?v=retroplay-20260815-r2';
+import { COLLECTIONS } from './catalog.js?v=retroplay-20261109-r3';
 
 export class LoadingScreen {
   #el;     // outer .screen element

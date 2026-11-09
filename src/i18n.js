@@ -145,6 +145,25 @@ function startObserver() {
   });
 }
 
+/** The English source of an element's text, even while it is showing Persian. */
+export function sourceText(el) {
+  const node = el.firstChild;
+  const rec = node && textOriginals.get(node);
+  return (rec && node.nodeValue === rec.fa ? rec.en : el.textContent).trim();
+}
+
+/** Set an element's text from an English source string and keep it switchable (used by animated labels). */
+export function setText(el, en) {
+  el.textContent = en;
+  const node = el.firstChild;
+  if (lang !== 'fa' || !node) return;
+  const fa = translate(en);
+  if (fa == null) return;
+  textOriginals.set(node, { en, fa });
+  node.nodeValue = fa;
+  markPersian(el);
+}
+
 const metaDescription = () => document.querySelector('meta[name="description"]');
 
 /** Switch language in place. `persist` stores the choice; `sync` updates the address bar (/ or /fa/). */

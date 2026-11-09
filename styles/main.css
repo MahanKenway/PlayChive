@@ -745,3 +745,20 @@ a.retro-button{color:inherit;text-decoration:none}
 html[lang=fa] .featured-copy::after { content:'انتخاب / اجرا / بازی'; letter-spacing:0; font-family:'Shabnam',sans-serif; }
 html[lang=fa] .game-card-media::before { content:'باز کن'; letter-spacing:0; font-family:'Shabnam',sans-serif; }
 html[lang=fa] .offline-pack-hero::after { content:'آفلاین // ۰۱'; letter-spacing:0; font-family:'Shabnam',sans-serif; left:auto; right:34px; top:84px; }
+
+/* Phones: keep the header inside the viewport in both languages (the Persian tagline is wider) */
+@media (max-width:520px) {
+  .pc-bar { grid-template-columns:minmax(0,1fr) auto; }
+  .pc-brand { min-width:0; gap:8px; }
+  .pc-home { min-width:0; }
+  .pc-wordmark { max-width:100%; overflow:hidden; }
+  .pc-wordmark small { white-space:nowrap; overflow:hidden; max-width:100%; }
+  .pc-nav { min-width:0; }
+}
+
+/* Never let the page scroll sideways (3D hero cards overflowed in RTL and shifted the whole page) */
+.depth-deck, .depth-deck-stage { direction:ltr; }
+.depth-deck { overflow:hidden; }
+.depth-deck { contain:paint; }
+.pc-header { overflow-x:clip; }
+#loading-screen { overflow:clip; }
