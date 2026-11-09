@@ -658,13 +658,8 @@ html[data-theme='dark'] .offline-pack-console { background:var(--surface-raised)
 .pc-mer{transform-origin:12px 12px;animation:pc-spin 6s linear infinite}
 .pc-lang:hover .pc-mer{animation-duration:1.1s}
 @keyframes pc-spin{0%{transform:scaleX(1)}50%{transform:scaleX(-1)}100%{transform:scaleX(1)}}
-.pc-lang-hint{position:absolute;top:calc(100% + 10px);inset-inline-end:0;z-index:20;display:flex;align-items:center;gap:8px;padding:8px 14px 8px 8px;border-radius:14px;background:var(--night,#121512);color:#f2f2ea;font:600 14px/1.5 Vazirmatn,Shabnam,sans-serif;white-space:nowrap;box-shadow:0 8px 28px rgba(0,0,0,.28);animation:pc-hint .5s cubic-bezier(.2,.8,.2,1.25) both}
-.pc-lang-hint-go{border:0;background:none;color:#d7eb41;text-decoration:underline;font:inherit;cursor:pointer;padding:0}
-.pc-lang-hint button:not(.pc-lang-hint-go){display:grid;place-items:center;width:26px;height:26px;border:0;border-radius:50%;background:rgba(255,255,255,.12);color:inherit;cursor:pointer;font-size:15px;line-height:1}
-.pc-lang-hint button:focus-visible{outline:2px solid #d7eb41;outline-offset:2px}
-@keyframes pc-hint{from{opacity:0;transform:translateY(-8px) scale(.96)}to{opacity:1;transform:none}}
 @media (max-width:640px){.pc-lang{padding-left:26px}.pc-globe{left:6px}.pc-lang-seg{min-width:34px}.pc-lang-thumb{left:26px;width:34px}.pc-lang[data-lang=fa] .pc-lang-thumb{transform:translateX(34px)}.pc-lang-hint{white-space:normal;max-width:220px}}
-@media (prefers-reduced-motion:reduce){.pc-mer,.pc-lang-hint{animation:none}.pc-lang-thumb,.pc-lang-seg{transition:none}}
+@media (prefers-reduced-motion:reduce){.pc-mer{animation:none}.pc-lang-thumb,.pc-lang-seg{transition:none}}
 @media (max-width:520px){.pc-lang{width:34px;padding:0;justify-content:center}.pc-lang>.pc-globe,.pc-lang>.pc-lang-thumb,.pc-lang>.pc-lang-seg[aria-pressed=true]{display:none}.pc-lang>.pc-lang-seg{width:100%;height:100%;min-width:0;padding:0;color:inherit}.pc-lang-hint{inset-inline-end:-80px}#pc-header .pc-audio{display:none}}
 
 /* ===== Boot screen, light theme (the site default). Dark theme keeps the night look. ===== */
@@ -762,3 +757,12 @@ html[lang=fa] .offline-pack-hero::after { content:'آفلاین // ۰۱'; letter
 .depth-deck { contain:paint; }
 .pc-header { overflow-x:clip; }
 #loading-screen { overflow:clip; }
+
+/* Phones: label gets the room, the meta line drops to its own row (the Persian label was squeezed into a narrow column) */
+@media (max-width:640px) {
+  .featured-topline { grid-template-columns:auto minmax(0,1fr); row-gap:10px; }
+  .featured-topline > :nth-child(3) { grid-column:1 / -1; }
+}
+
+/* Section jumps from the header land below the sticky bar */
+#featured, #catalog, #library, #about { scroll-margin-top:96px; }

@@ -222,42 +222,8 @@ function initLang(header) {
   box.addEventListener('click', (e) => {
     const btn = e.target.closest('.pc-lang-seg');
     if (!btn || btn.dataset.lang === getLang()) return;
-    dismiss();
     applyLang(btn.dataset.lang);
   });
-
-  // Gentle, dismissible hint for Persian-language browsers that never chose a language. Never switches by itself.
-  let hint = null;
-  function dismiss() {
-    if (!hint) return;
-    write('playchive:lang-hint', '1');
-    hint.remove();
-    hint = null;
-  }
-  const wantsFa = (navigator.languages || [navigator.language || '']).some((l) => /^fa\b/i.test(l));
-  if (!wantsFa || getLang() === 'fa' || read('playchive:lang') || read('playchive:lang-hint')) return;
-  hint = document.createElement('div');
-  hint.className = 'pc-lang-hint';
-  hint.setAttribute('role', 'status');
-  hint.lang = 'fa';
-  hint.dir = 'rtl';
-  hint.dataset.noI18n = '';
-  const go = document.createElement('button');
-  go.type = 'button';
-  go.className = 'pc-lang-hint-go';
-  go.textContent = 'فارسی';
-  go.addEventListener('click', () => { dismiss(); applyLang('fa'); });
-  const text = document.createElement('span');
-  text.append('این سایت فارسی هم دارد: ', go);
-  const close = document.createElement('button');
-  close.type = 'button';
-  close.setAttribute('aria-label', 'بستن');
-  close.textContent = '×';
-  close.addEventListener('click', dismiss);
-  hint.addEventListener('keydown', (e) => { if (e.key === 'Escape') dismiss(); });
-  hint.append(text, close);
-  box.append(hint);
-  setTimeout(dismiss, 12000);
 }
 
 export function initHeader() {
