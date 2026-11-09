@@ -1334,7 +1334,12 @@ export class CatalogController {
       const rotation = (isDark ? 13 : 11) * Math.max(0, Math.min(1, distance));
       const opacity = distance < 0 ? Math.max(0, 1 + distance) : (shown ? 1 - back * depthFalloff : 0);
       card.style.transitionDuration = animate && !reduced ? '620ms' : '0ms';
-      card.style.transform = `translate(-50%, -50%) translateX(${tx.toFixed(1)}px) translateZ(${tz.toFixed(1)}px) rotateY(${rotation.toFixed(2)}deg)`;
+      // Cards far from the front stay parked at the centre: projecting them deep in Z pushed them
+      // thousands of pixels sideways and made the page scrollable in RTL.
+      const parked = Math.abs(distance) > 4;
+      card.style.transform = parked
+        ? 'translate(-50%, -50%)'
+        : `translate(-50%, -50%) translateX(${tx.toFixed(1)}px) translateZ(${tz.toFixed(1)}px) rotateY(${rotation.toFixed(2)}deg)`;
       card.style.opacity = opacity.toFixed(3);
 
       card.style.filter = `brightness(${Math.max(isDark ? .20 : .28, 1 - back * (isDark ? .23 : .18)).toFixed(2)}) blur(${Math.min(isDark ? 5.5 : 4, back * depthBlur).toFixed(2)}px)`;
