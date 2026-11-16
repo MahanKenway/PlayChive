@@ -37,8 +37,8 @@ Obsidian Relay is developed by PLAYCHIVE. License and attribution: PLAYCHIVE ori
 
 - [HexGL](https://playchive.ir/hexgl.html) (Racing)
 - [Hextris](https://playchive.ir/hextris.html) (Arcade Puzzle)
+- [Saltline](https://playchive.ir/saltline.html) (First-Person Shooter)
 - [Rocks'n'Diamonds](https://playchive.ir/rocksndiamonds.html) (Rock & Gem Action Puzzle)
 - [Beats into Shapes](https://playchive.ir/beats-into-shapes.html) (Rhythm)
-- [2048](https://playchive.ir/2048.html) (Arcade Puzzle)
 
 [Browse the full PLAYCHIVE catalog](https://playchive.ir/)

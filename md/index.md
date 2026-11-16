@@ -1,16 +1,16 @@
 # PLAYCHIVE: Free Classic and Open-Source Games in Your Browser
 
-> Play 22 free retro and open-source games in your browser, from OpenTTD and LibreQuake to racers and puzzles. No install, no account.
+> Play 23 free retro and open-source games in your browser, from OpenTTD and LibreQuake to racers and puzzles. No install, no account.
 
 Source: https://playchive.ir/
 
 ## PLAYCHIVE: free classic and open-source games in your browser
 
-PLAYCHIVE is a curated hub of 24 playable browser runtimes plus a rights-aware directory of 34 further catalog entries. Each game runs as WebAssembly or HTML5 in your browser: no install, no account, and saves stay on your device. PLAYCHIVE is non-commercial and keeps upstream license notices with every runtime. [فارسی](https://playchive.ir/fa/)
+PLAYCHIVE is a curated hub of 25 playable browser runtimes plus a rights-aware directory of 34 further catalog entries. Each game runs as WebAssembly or HTML5 in your browser: no install, no account, and saves stay on your device. PLAYCHIVE is non-commercial and keeps upstream license notices with every runtime. [فارسی](https://playchive.ir/fa/)
 
-Last updated: 2026-11-09
+Last updated: 2026-11-16
 
-### Play now (24 games)
+### Play now (25 games)
 
 - [Blasphemer](https://playchive.ir/blasphemer.html) (Fantasy shooter): A complete free dark-fantasy shooter running through Chocolate Heretic in its own WebAssembly module.
 - [C-Dogs SDL](https://playchive.ir/cdogs.html) (Action): A top-down retro action game running in its own C-Dogs SDL WebAssembly module.
@@ -28,6 +28,7 @@ Last updated: 2026-11-09
 - [Obsidian Relay](https://playchive.ir/shadow-station.html) (Survival): An original 3D survival-exploration game built through PLAYCHIVE’s OpenResident WebGL2/WebAssembly renderer path.
 - [HexGL](https://playchive.ir/hexgl.html) (Racing): A fast, futuristic 3D WebGL racer in its own fully local runtime.
 - [Hextris](https://playchive.ir/hextris.html) (Arcade Puzzle): A fast arcade-puzzle game running as a complete local HTML5 runtime.
+- [Saltline](https://playchive.ir/saltline.html) (First-Person Shooter): A browser first-person shooter set in a rainy container port.
 - [Rocks'n'Diamonds](https://playchive.ir/rocksndiamonds.html) (Rock & Gem Action Puzzle): A complete rock-and-gem action puzzle compiled from the official Rocks’n’Diamonds source.
 - [Beats into Shapes](https://playchive.ir/beats-into-shapes.html) (Rhythm): A full rhythm-forge game running from the official Godot Web release in its own local WebGL 2 runtime.
 - [2048](https://playchive.ir/2048.html) (Arcade Puzzle): The original 2048 number puzzle bundled as a local HTML5 game.

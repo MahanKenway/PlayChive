@@ -527,6 +527,31 @@
       "source": null
     },
     {
+      "id": "saltline",
+      "name": "Saltline",
+      "description": "A browser first-person shooter set in a rainy container port. Cut three uplink relays while drones and robot dogs hunt you. Models, sounds and textures are generated in code, so the whole game runs from one local page with keyboard and mouse, no upload, account or external game data.",
+      "genre": "First-Person Shooter",
+      "playable": true,
+      "runtimeUrl": "saltline.html",
+      "probeUrl": null,
+      "publicUrl": "saltline.html",
+      "runtimeType": "Bundled independent runtime",
+      "controls": [
+        "keyboard",
+        "gamepad",
+        "fullscreen"
+      ],
+      "launchMethod": "direct-link",
+      "license": "MIT · credit and notice retained",
+      "status": "Free / bundled",
+      "studio": "Claude Fable 5.2 (run set up by Felix Rieseberg)",
+      "year": "Nov 2026 single-file build",
+      "artwork": "assets/screenshots/saltline-runtime.webp",
+      "projectUrl": null,
+      "catalogState": "INDEPENDENT RUNTIME",
+      "source": null
+    },
+    {
       "id": "rocksndiamonds",
       "name": "Rocks'n'Diamonds",
       "description": "A complete rock-and-gem action puzzle compiled from the official Rocks’n’Diamonds source. Dig, collect gems and evade hazards through the bundled classic level sets from first load with keyboard, gamepad or PSP-style touch controls — no upload, original game data or network service required.",

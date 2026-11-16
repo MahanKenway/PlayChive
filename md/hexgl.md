@@ -38,7 +38,7 @@ HexGL is developed by BKcore / Thibaut Despoulain. License and attribution: MIT 
 - [TuxRacer.js](https://playchive.ir/tuxracer.html) (Racing)
 - [Neon Rift](https://playchive.ir/neon-rift.html) (Racing)
 - [Hextris](https://playchive.ir/hextris.html) (Arcade Puzzle)
+- [Saltline](https://playchive.ir/saltline.html) (First-Person Shooter)
 - [Rocks'n'Diamonds](https://playchive.ir/rocksndiamonds.html) (Rock & Gem Action Puzzle)
-- [Beats into Shapes](https://playchive.ir/beats-into-shapes.html) (Rhythm)
 
 [Browse the full PLAYCHIVE catalog](https://playchive.ir/)
