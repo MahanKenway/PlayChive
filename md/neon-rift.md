@@ -39,6 +39,6 @@ Neon Rift is developed by PLAYCHIVE. License and attribution: PLAYCHIVE original
 - [HexGL](https://playchive.ir/hexgl.html) (Racing)
 - [Obsidian Relay](https://playchive.ir/shadow-station.html) (Survival)
 - [Hextris](https://playchive.ir/hextris.html) (Arcade Puzzle)
-- [Rocks'n'Diamonds](https://playchive.ir/rocksndiamonds.html) (Rock & Gem Action Puzzle)
+- [Saltline](https://playchive.ir/saltline.html) (First-Person Shooter)
 
 [Browse the full PLAYCHIVE catalog](https://playchive.ir/)

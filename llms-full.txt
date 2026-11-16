@@ -196,6 +196,18 @@ A fast arcade-puzzle game running as a complete local HTML5 runtime. Rotate the 
 - Play: https://playchive.ir/hextris.html
 - Controls: keyboard, touch, gamepad, fullscreen
 
+### Saltline
+
+A browser first-person shooter set in a rainy container port. Cut three uplink relays while drones and robot dogs hunt you. Models, sounds and textures are generated in code, so the whole game runs from one local page with keyboard and mouse, no upload, account or external game data.
+
+- Genre: First-Person Shooter
+- Developer: Claude Fable 5.2 (run set up by Felix Rieseberg)
+- License: MIT · credit and notice retained
+- Status: Free / bundled
+- Runtime: Bundled independent runtime
+- Play: https://playchive.ir/saltline.html
+- Controls: keyboard, gamepad, fullscreen
+
 ### Rocks'n'Diamonds
 
 A complete rock-and-gem action puzzle compiled from the official Rocks’n’Diamonds source. Dig, collect gems and evade hazards through the bundled classic level sets from first load with keyboard, gamepad or PSP-style touch controls — no upload, original game data or network service required.

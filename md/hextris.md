@@ -37,8 +37,8 @@ Hextris is developed by Logan Engstrom, Garrett Finucane, Noah Moroze & Michael 
 
 - [2048](https://playchive.ir/2048.html) (Arcade Puzzle)
 - [JavaScript Tetris](https://playchive.ir/javascript-tetris.html) (Arcade Puzzle)
+- [Saltline](https://playchive.ir/saltline.html) (First-Person Shooter)
 - [Rocks'n'Diamonds](https://playchive.ir/rocksndiamonds.html) (Rock & Gem Action Puzzle)
 - [Beats into Shapes](https://playchive.ir/beats-into-shapes.html) (Rhythm)
-- [A Dark Room](https://playchive.ir/adarkroom.html) (Exploration)
 
 [Browse the full PLAYCHIVE catalog](https://playchive.ir/)
