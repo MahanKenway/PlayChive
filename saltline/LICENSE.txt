@@ -26,8 +26,15 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-Packaging changes by PLAYCHIVE: the Google Fonts stylesheet was replaced by
-self-hosted OFL fonts (Big Shoulders Display, IBM Plex Mono, Barlow
-Condensed; licenses in saltline/fonts/). No game code was changed.
+Changes by PLAYCHIVE and Mahan Kenway:
+- The Google Fonts stylesheet was replaced by self-hosted OFL fonts (Big
+  Shoulders Display, IBM Plex Mono, Barlow Condensed; licenses in
+  saltline/fonts/). Persian text uses Shabnam and Vazirmatn (OFL) from
+  assets/fonts.
+- Persian edition by Mahan Kenway: saltline/fa.js translates menus, HUD, radio
+  lines and prompts when PLAYCHIVE's saved language is Persian (the in-world
+  signage stays English). The game script got two one-line hooks (objective
+  and radio text), a credit line on the title screen and Persian-only CSS.
+  English is unchanged.
 
 NOTE: the mirror has no LICENSE file; MIT was confirmed by the PLAYCHIVE owner.
