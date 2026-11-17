@@ -88,8 +88,8 @@ const SIGNATURES_DIRECTORY = {
     {
       "kty": "OKP",
       "crv": "Ed25519",
-      "x": "H6V0N6VlnMC-NkwO5Vy4XP446k92qxkijLPywN27kWw",
-      "kid": "U8WRjLSgImn8c6__hFzr9c_C1cPIEQMtNBmrAak2nA4"
+      "x": "bIw7Fr6QqpHN6HroETdJo-9JsnaGHEigHt6yoBSLgsU",
+      "kid": "q0vt6Ky9pWL9bgcGQRxssVwm9nTXcBpBuQpA2LrvVZk"
     }
   ]
 };
