@@ -1,16 +1,16 @@
 # PLAYCHIVE: Free Classic and Open-Source Games in Your Browser
 
-> Play 24 free retro and open-source games in your browser, from OpenTTD and LibreQuake to racers and puzzles. No install, no account.
+> Play 25 free retro and open-source games in your browser, from OpenTTD and LibreQuake to racers and puzzles. No install, no account.
 
 Source: https://playchive.ir/
 
 ## PLAYCHIVE: free classic and open-source games in your browser
 
-PLAYCHIVE is a curated hub of 26 playable browser runtimes plus a rights-aware directory of 34 further catalog entries. Each game runs as WebAssembly or HTML5 in your browser: no install, no account, and saves stay on your device. PLAYCHIVE is non-commercial and keeps upstream license notices with every runtime. [فارسی](https://playchive.ir/fa/)
+PLAYCHIVE is a curated hub of 27 playable browser runtimes plus a rights-aware directory of 34 further catalog entries. Each game runs as WebAssembly or HTML5 in your browser: no install, no account, and saves stay on your device. PLAYCHIVE is non-commercial and keeps upstream license notices with every runtime. [فارسی](https://playchive.ir/fa/)
 
 Last updated: 2026-11-19
 
-### Play now (26 games)
+### Play now (27 games)
 
 - [Blasphemer](https://playchive.ir/blasphemer.html) (Fantasy shooter): A complete free dark-fantasy shooter running through Chocolate Heretic in its own WebAssembly module.
 - [C-Dogs SDL](https://playchive.ir/cdogs.html) (Action): A top-down retro action game running in its own C-Dogs SDL WebAssembly module.
@@ -29,6 +29,7 @@ Last updated: 2026-11-19
 - [HexGL](https://playchive.ir/hexgl.html) (Racing): A fast, futuristic 3D WebGL racer in its own fully local runtime.
 - [Hextris](https://playchive.ir/hextris.html) (Arcade Puzzle): A fast arcade-puzzle game running as a complete local HTML5 runtime.
 - [Saltline](https://playchive.ir/saltline.html) (First-Person Shooter): A browser first-person shooter set in a rainy container port.
+- [Undertow](https://playchive.ir/undertow.html) (Harbour Action): A harbour tug game in a night storm.
 - [Misremember](https://playchive.ir/misremember.html) (Narrative Exploration): A first-person narrative game set in a home that something has rebuilt from what you remember of it.
 - [Rocks'n'Diamonds](https://playchive.ir/rocksndiamonds.html) (Rock & Gem Action Puzzle): A complete rock-and-gem action puzzle compiled from the official Rocks’n’Diamonds source.
 - [Beats into Shapes](https://playchive.ir/beats-into-shapes.html) (Rhythm): A full rhythm-forge game running from the official Godot Web release in its own local WebGL 2 runtime.

@@ -1,6 +1,6 @@
 {
   "/": {
-    "hash": "fd9dabe6347bf59502feb16ed4300dbad079d27ff7ef2b92c5cf58019e186b3b",
+    "hash": "a01aceb9bce7ce81d960ede26a6d8fc37aae11b72253ca58e7e8c3f736d258b8",
     "lastmod": "2026-11-19"
   },
   "2048.html": {
@@ -16,7 +16,7 @@
     "lastmod": "2026-11-09"
   },
   "agent/": {
-    "hash": "43981f8974cfe86a628e5d203f4d319b4a6d56038fbdca16de1956356b4d2529",
+    "hash": "503e8ba49624c31a081424df630737e245b35e96397056e54ffc5ad1017cb56c",
     "lastmod": "2026-11-19"
   },
   "armawebtron.html": {
@@ -48,7 +48,7 @@
     "lastmod": "2026-11-09"
   },
   "fa/": {
-    "hash": "7fdf56b582b53c801cbb7af7cf69ae15e0f85079b226fefa9845eae677023af1",
+    "hash": "c74992053a0893f9dcc7b204f9e63fa349fe8fedf11f879d4aea09e436f3e216",
     "lastmod": "2026-11-19"
   },
   "freedink.html": {
@@ -60,11 +60,11 @@
     "lastmod": "2026-11-09"
   },
   "hexgl.html": {
-    "hash": "5303dd09af2ff1371085f89499693f9cc305a70937ddf7bbda9744dfa3e103b2",
+    "hash": "1ca083826aae5875ded18464428dc4232258f3bb1a32742b41139f538eb2bdd4",
     "lastmod": "2026-11-19"
   },
   "hextris.html": {
-    "hash": "0ada8080dbcc7d307ae60ca638ec48b5925565fd93102136bec58fd8504c18da",
+    "hash": "74e4abf698f82b908474aea98244928831f6d7f1a9412d6ac7c189b9d0ea5d75",
     "lastmod": "2026-11-19"
   },
   "javascript-tetris.html": {
@@ -108,11 +108,11 @@
     "lastmod": "2026-11-09"
   },
   "saltline.html": {
-    "hash": "698b30846c18d5c1accec93334ee3d328dbc2ab5a4ba6a56bd06e7031858f2ba",
+    "hash": "0ebf833a8868ac6311014f02329561355bfc7c70e6c6a3774ef9681aa1868ff7",
     "lastmod": "2026-11-19"
   },
   "shadow-station.html": {
-    "hash": "46c03f6d210c1b70c679ac6ef56bd92cca58484b79d52828fe8ccd8dc96c915a",
+    "hash": "a1ede6c869303a78a095abab03358802fed3de3b8a78863304d1627ad36df6d6",
     "lastmod": "2026-11-19"
   },
   "starter-kit-racing.html": {
@@ -122,5 +122,9 @@
   "tuxracer.html": {
     "hash": "50129a74ff38c896860a3569a48bd75385ecf6ef455d72e45e05bec580b0ccd5",
     "lastmod": "2026-11-09"
+  },
+  "undertow.html": {
+    "hash": "d44026cb3c50f47670a4b13ec3f9af95690b8ef130cd35bf13d2ac8568db79fd",
+    "lastmod": "2026-11-19"
   }
 }
