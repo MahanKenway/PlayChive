@@ -1,0 +1,37 @@
+Graveyard Shift
+
+Source: https://github.com/ethanplusai/zombies (commit 4bc991d2a11b036df6a9e81baac0fc7d8d16972c)
+Built by Fable 5.2, prompted by Ethan (ethanplusai).
+
+MIT License
+
+Copyright (c) 2026 ethanplusai
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Changes by PLAYCHIVE and Mahan Kenway:
+- The Google Fonts request was replaced by self-hosted OFL fonts (Barlow
+  Condensed, Overpass, Alfa Slab One, Yellowtail; see graveyard-shift/fonts/).
+  Persian text uses Shabnam and Vazirmatn (OFL) from assets/fonts.
+- Persian edition by Mahan Kenway: graveyard-shift/fa.js translates menus,
+  loading tips, objectives, the info panel and the end screen when PLAYCHIVE's
+  saved language is Persian. The short in-game hint lines that mix text and key
+  icons are not translated yet. English is unchanged.
+- A credit line for the Persian edition was added next to the source link.
+- The optional leaderboard and report form are off in this build.

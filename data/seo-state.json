@@ -1,7 +1,7 @@
 {
   "/": {
-    "hash": "eefc0f201b6eab3aa8bbf72ab664b9b99111d7c9c4d18e202d540491f982adf8",
-    "lastmod": "2026-11-17"
+    "hash": "67a125d74ced529f44fd620e6cf75e9d3d09e0ac69f43290bb9d0d33227769e1",
+    "lastmod": "2026-11-19"
   },
   "2048.html": {
     "hash": "f190229d48c852aaef971ff78c0600a4fb535484efe042cbf10d2e600a19d65f",
@@ -16,8 +16,8 @@
     "lastmod": "2026-11-09"
   },
   "agent/": {
-    "hash": "6ec059f88432a0a0f5e21ad7b61827a26668ae133d3423d27c94035265704440",
-    "lastmod": "2026-11-16"
+    "hash": "e7fcc1097a6c5a05f548fd35e48cc91541a75a6fd5168a470462ac770883c29d",
+    "lastmod": "2026-11-19"
   },
   "armawebtron.html": {
     "hash": "525aad5261b98b983c56f8760a8d69f952f2213f68b2edc1540d07b9b61ccd33",
@@ -47,9 +47,13 @@
     "hash": "2a783124d264e491dc9b6ae96a0368490db9b5d8ecac68d52235d7446b2ff855",
     "lastmod": "2026-11-09"
   },
+  "emberhold.html": {
+    "hash": "2df5073e8cb913ff62dd7f442e0a29ed7ada43188503d7a4e4c02631f4f6801b",
+    "lastmod": "2026-11-19"
+  },
   "fa/": {
-    "hash": "e303ee6958732173ac1028cf98790a8edf4ef2a02fed319b51a900fe7b814163",
-    "lastmod": "2026-11-17"
+    "hash": "1e2bf7a8e7b7b623a07bb4f2ed3629e47884316880800dd3a25f987785dde70b",
+    "lastmod": "2026-11-19"
   },
   "freedink.html": {
     "hash": "895e12fc328a0aaa2f8b0996c1e9b93e22d4d4dea148b4c66ab4421ba44040bb",
@@ -59,13 +63,17 @@
     "hash": "2cf02f83879e81237dffba9da0a04c188bba5cfcf8497799ef8cf2be2f282dbf",
     "lastmod": "2026-11-09"
   },
+  "graveyard-shift.html": {
+    "hash": "ed88fbc9f8dddc8e6615120803d897c1cc0d95cc6dffbc8e9d6e004c40962904",
+    "lastmod": "2026-11-19"
+  },
   "hexgl.html": {
-    "hash": "43e3486e5ce550e3b92b67c52543b9bbf8b0ff3916225171a7dfe6942d08ca81",
-    "lastmod": "2026-11-16"
+    "hash": "c78e4b167546834002f0d9f702d89c48df1d94fa8a4b0111fdc77501da768891",
+    "lastmod": "2026-11-19"
   },
   "hextris.html": {
-    "hash": "41774e3e570c733a2c2a2f56ee603764036e18acf81b4d30207b9b39a8ec33a8",
-    "lastmod": "2026-11-16"
+    "hash": "e88455cc966851bc6b3cef1d3cd1d9ce0e780aec8135bfc86d4094c14d273b02",
+    "lastmod": "2026-11-19"
   },
   "javascript-tetris.html": {
     "hash": "50326d82bc73823862c69eabbb1a8f0f1d0437394e30290f7cbc349736a342c5",
@@ -74,6 +82,10 @@
   "librequake.html": {
     "hash": "3d8699712a9b80e2d35331fc5c44b7da1cc6c2419f8309c476f573765e853e6a",
     "lastmod": "2026-11-09"
+  },
+  "misremember.html": {
+    "hash": "56daea69d224acb002fe02ed7e5df03c9a8158bdbbae6046756508ba7e4e28f3",
+    "lastmod": "2026-11-19"
   },
   "neon-rift.html": {
     "hash": "a108e5a8cff552943a7a1f2b0744886f22417e6cdcb996f4a286ef76dbfd8fd8",
@@ -104,12 +116,12 @@
     "lastmod": "2026-11-09"
   },
   "saltline.html": {
-    "hash": "e032f57d88c30aaa212f8f5a1d41e1cbd335d81a508875c4ec0f8cfa813bc1ae",
-    "lastmod": "2026-11-17"
+    "hash": "55125ac00930541f9999736cba60d72f2e2ec8c6a2b7f2970e63b597cd6d9faf",
+    "lastmod": "2026-11-19"
   },
   "shadow-station.html": {
-    "hash": "889b46baa827dc37a68fde3016c8bff5dd4b4c77ec5ccb1d616ee56dd2c52183",
-    "lastmod": "2026-11-16"
+    "hash": "e15e41f5055b1b1d18c81c7a4aa2a80c564315ce564889b2937ae77b33567d72",
+    "lastmod": "2026-11-19"
   },
   "starter-kit-racing.html": {
     "hash": "94dd7d94dc1b739bc320b6622f2ff69fd29e4c51e863361944f9dc603f54e92d",
@@ -118,5 +130,9 @@
   "tuxracer.html": {
     "hash": "50129a74ff38c896860a3569a48bd75385ecf6ef455d72e45e05bec580b0ccd5",
     "lastmod": "2026-11-09"
+  },
+  "undertow.html": {
+    "hash": "d44026cb3c50f47670a4b13ec3f9af95690b8ef130cd35bf13d2ac8568db79fd",
+    "lastmod": "2026-11-19"
   }
 }

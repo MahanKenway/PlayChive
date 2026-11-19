@@ -1,0 +1,20 @@
+Undertow
+
+No license text accompanies the original single-file game. PLAYCHIVE publishes
+it with the author's permission, as confirmed by the PLAYCHIVE owner (Mahan
+Kenway) on 2026-11-18. If the author asks, PLAYCHIVE removes it.
+
+Original source artifact: https://claude.ai/artifact/2UXyB49DrVHFfhTMdNDFTA
+The game is built on the engine and visual language of Saltline (see
+../saltline/LICENSE.txt). The bundled three.js library is MIT licensed
+(Copyright 2010-2024 Three.js Authors).
+
+Changes by PLAYCHIVE and Mahan Kenway:
+- The Google Fonts stylesheet was replaced by self-hosted OFL fonts (Big
+  Shoulders Display, IBM Plex Mono, Barlow Condensed; licenses in
+  undertow/fonts/). Persian text uses Shabnam and Vazirmatn (OFL) from
+  assets/fonts.
+- Persian edition by Mahan Kenway: undertow/fa.js translates menus, HUD, radio
+  lines and prompts when PLAYCHIVE's saved language is Persian. The game script
+  got two one-line hooks (objective and radio text), a credit line on the
+  title screen and Persian-only CSS. English is unchanged.

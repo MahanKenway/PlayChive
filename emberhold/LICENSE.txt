@@ -1,0 +1,17 @@
+Emberhold (烬堡)
+
+No license text accompanies the original single-file game, and the original
+file names no author. PLAYCHIVE publishes it with the author's permission, as
+confirmed by the PLAYCHIVE owner (Mahan Kenway) on 2026-11-18. If the author
+asks, PLAYCHIVE removes it. The author's name can be added here and on the
+title screen once it is known.
+
+three.js 0.170.0 (MIT, Copyright 2010-2024 Three.js Authors) is vendored in
+emberhold/vendor/three/ with its license, instead of loading it from jsDelivr.
+
+Changes by PLAYCHIVE and Mahan Kenway:
+- The original interface is Chinese only. emberhold/i18n.js adds English and
+  Persian (and keeps the original with ?lang=zh), following PLAYCHIVE's saved
+  language. The game script got small hooks (loading text, floor rune text and
+  fonts), a title-screen credit line and language CSS.
+- Persian text uses Shabnam and Vazirmatn (OFL) from assets/fonts.
