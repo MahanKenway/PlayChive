@@ -208,6 +208,18 @@ A browser first-person shooter set in a rainy container port. Cut three uplink r
 - Play: https://playchive.ir/saltline.html
 - Controls: keyboard, gamepad, fullscreen
 
+### Misremember
+
+A first-person narrative game set in a home that something has rebuilt from what you remember of it. Walk through the rooms, use what you find, and hold Space to close your eyes. The whole game, including its models and sound, runs from one local page with keyboard and mouse.
+
+- Genre: Narrative Exploration
+- Developer: Author not named in the file (used with permission)
+- License: Used with the author's permission · credit retained
+- Status: Free / bundled
+- Runtime: Bundled independent runtime
+- Play: https://playchive.ir/misremember.html
+- Controls: keyboard, fullscreen
+
 ### Rocks'n'Diamonds
 
 A complete rock-and-gem action puzzle compiled from the official Rocks’n’Diamonds source. Dig, collect gems and evade hazards through the bundled classic level sets from first load with keyboard, gamepad or PSP-style touch controls — no upload, original game data or network service required.

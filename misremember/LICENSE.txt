@@ -1,0 +1,20 @@
+Misremember
+
+No license text accompanies the original single-file game, and the original
+file names no author. PLAYCHIVE publishes it with the author's permission, as
+confirmed by the PLAYCHIVE owner (Mahan Kenway) on 2026-11-18. If the author
+asks, PLAYCHIVE removes it. The author's name can be added here and on the
+title card once it is known.
+
+The bundled three.js library is MIT licensed:
+  Copyright 2010-2024 Three.js Authors, SPDX-License-Identifier: MIT
+  (the notice is kept at the end of index.html).
+
+Changes by PLAYCHIVE and Mahan Kenway:
+- Persian edition by Mahan Kenway: misremember/fa.js translates the title card,
+  hint, pause text, end cards, the paper notes painted in the house, captions,
+  one-line messages and prompts when PLAYCHIVE's saved language is Persian.
+  English stays the default and is unchanged.
+- The game script got four one-line hooks (note texture text, caption, say
+  line, prompt), Persian-only CSS and a credit line on the title card.
+- Persian text uses Shabnam (OFL) from assets/fonts.

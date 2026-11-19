@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://playchive.ir/</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://playchive.ir/" />
@@ -12,7 +12,7 @@
   </url>
   <url>
     <loc>https://playchive.ir/fa/</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://playchive.ir/" />
@@ -113,31 +113,38 @@
   </url>
   <url>
     <loc>https://playchive.ir/shadow-station.html</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://playchive.ir/assets/screenshots/obsidian-relay-runtime.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://playchive.ir/hexgl.html</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://playchive.ir/assets/screenshots/hexgl-runtime.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://playchive.ir/hextris.html</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://playchive.ir/assets/screenshots/hextris-runtime.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://playchive.ir/saltline.html</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://playchive.ir/assets/screenshots/saltline-runtime.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://playchive.ir/misremember.html</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://playchive.ir/assets/screenshots/misremember-runtime.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://playchive.ir/rocksndiamonds.html</loc>
@@ -197,7 +204,7 @@
   </url>
   <url>
     <loc>https://playchive.ir/agent/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>

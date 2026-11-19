@@ -552,6 +552,30 @@
       "source": null
     },
     {
+      "id": "misremember",
+      "name": "Misremember",
+      "description": "A first-person narrative game set in a home that something has rebuilt from what you remember of it. Walk through the rooms, use what you find, and hold Space to close your eyes. The whole game, including its models and sound, runs from one local page with keyboard and mouse.",
+      "genre": "Narrative Exploration",
+      "playable": true,
+      "runtimeUrl": "misremember.html",
+      "probeUrl": null,
+      "publicUrl": "misremember.html",
+      "runtimeType": "Bundled independent runtime",
+      "controls": [
+        "keyboard",
+        "fullscreen"
+      ],
+      "launchMethod": "direct-link",
+      "license": "Used with the author's permission · credit retained",
+      "status": "Free / bundled",
+      "studio": "Author not named in the file (used with permission)",
+      "year": "Single-file build",
+      "artwork": "assets/screenshots/misremember-runtime.webp",
+      "projectUrl": null,
+      "catalogState": "INDEPENDENT RUNTIME",
+      "source": null
+    },
+    {
       "id": "rocksndiamonds",
       "name": "Rocks'n'Diamonds",
       "description": "A complete rock-and-gem action puzzle compiled from the official Rocks’n’Diamonds source. Dig, collect gems and evade hazards through the bundled classic level sets from first load with keyboard, gamepad or PSP-style touch controls — no upload, original game data or network service required.",
