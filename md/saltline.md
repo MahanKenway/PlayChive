@@ -35,10 +35,10 @@ Saltline is developed by Claude Fable 5.2 (run set up by Felix Rieseberg). Licen
 
 ### More playable games on PLAYCHIVE
 
+- [Emberhold](https://playchive.ir/emberhold.html) (Dark Fantasy Action)
 - [Undertow](https://playchive.ir/undertow.html) (Harbour Action)
 - [Misremember](https://playchive.ir/misremember.html) (Narrative Exploration)
 - [Rocks'n'Diamonds](https://playchive.ir/rocksndiamonds.html) (Rock & Gem Action Puzzle)
 - [Beats into Shapes](https://playchive.ir/beats-into-shapes.html) (Rhythm)
-- [2048](https://playchive.ir/2048.html) (Arcade Puzzle)
 
 [Browse the full PLAYCHIVE catalog](https://playchive.ir/)

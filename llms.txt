@@ -2,7 +2,7 @@
 
 > PLAYCHIVE is an independent, non-commercial browser hub for legally distributable open-source retro games, classic engines and experimental runtimes. Games run as WebAssembly or HTML5 directly in the browser, with no install and no account.
 
-Facts: 27 playable runtimes (25 with free bundled content), 61 catalog records in total, keyboard, touch (PSP-style), gamepad and fullscreen support, saves stored locally in the browser. Created by Mahan Tavakoli (MahanKenway). Languages: English and Persian (fa). Site: https://playchive.ir
+Facts: 28 playable runtimes (26 with free bundled content), 62 catalog records in total, keyboard, touch (PSP-style), gamepad and fullscreen support, saves stored locally in the browser. Created by Mahan Tavakoli (MahanKenway). Languages: English and Persian (fa). Site: https://playchive.ir
 
 ## Play now
 
@@ -23,6 +23,7 @@ Facts: 27 playable runtimes (25 with free bundled content), 61 catalog records i
 - [HexGL](https://playchive.ir/hexgl.html): Racing. A fast, futuristic 3D WebGL racer in its own fully local runtime.
 - [Hextris](https://playchive.ir/hextris.html): Arcade Puzzle. A fast arcade-puzzle game running as a complete local HTML5 runtime.
 - [Saltline](https://playchive.ir/saltline.html): First-Person Shooter. A browser first-person shooter set in a rainy container port.
+- [Emberhold](https://playchive.ir/emberhold.html): Dark Fantasy Action. A dark-fantasy action game in a stone fortress.
 - [Undertow](https://playchive.ir/undertow.html): Harbour Action. A harbour tug game in a night storm.
 - [Misremember](https://playchive.ir/misremember.html): Narrative Exploration. A first-person narrative game set in a home that something has rebuilt from what you remember of it.
 - [Rocks'n'Diamonds](https://playchive.ir/rocksndiamonds.html): Rock & Gem Action Puzzle. A complete rock-and-gem action puzzle compiled from the official Rocks’n’Diamonds source.
@@ -38,7 +39,7 @@ Facts: 27 playable runtimes (25 with free bundled content), 61 catalog records i
 
 - [PLAYCHIVE home](https://playchive.ir/): Searchable catalog with a static, crawlable game list.
 - [Full catalog for LLMs](https://playchive.ir/llms-full.txt): Every record with license, controls and rights status.
-- [Catalog JSON](https://playchive.ir/data/games.json): Machine-readable records for all 61 entries.
+- [Catalog JSON](https://playchive.ir/data/games.json): Machine-readable records for all 62 entries.
 - [Agent guide](https://playchive.ir/agent/): No-login discovery page for browser agents.
 - [OpenAPI description](https://playchive.ir/openapi.json): OpenAPI 3.1 spec of the read-only JSON endpoints (also listed in /.well-known/api-catalog).
 - [Persian guide](https://playchive.ir/fa/): Persian landing page (hreflang pair of the home page).

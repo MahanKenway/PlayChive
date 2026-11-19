@@ -39,6 +39,6 @@ HexGL is developed by BKcore / Thibaut Despoulain. License and attribution: MIT 
 - [Neon Rift](https://playchive.ir/neon-rift.html) (Racing)
 - [Hextris](https://playchive.ir/hextris.html) (Arcade Puzzle)
 - [Saltline](https://playchive.ir/saltline.html) (First-Person Shooter)
-- [Undertow](https://playchive.ir/undertow.html) (Harbour Action)
+- [Emberhold](https://playchive.ir/emberhold.html) (Dark Fantasy Action)
 
 [Browse the full PLAYCHIVE catalog](https://playchive.ir/)

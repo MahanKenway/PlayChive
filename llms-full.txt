@@ -208,6 +208,18 @@ A browser first-person shooter set in a rainy container port. Cut three uplink r
 - Play: https://playchive.ir/saltline.html
 - Controls: keyboard, gamepad, fullscreen
 
+### Emberhold
+
+A dark-fantasy action game in a stone fortress. Fight with light and heavy attacks, roll, lock on to enemies, drink from your ember flask, and level up beside a lamp. It starts in a nameless cell, and the whole game, including its models and sound, runs from one local page with keyboard and mouse.
+
+- Genre: Dark Fantasy Action
+- Developer: Author not named in the file (used with permission)
+- License: Used with the author's permission · credit retained
+- Status: Free / bundled
+- Runtime: Bundled independent runtime
+- Play: https://playchive.ir/emberhold.html
+- Controls: keyboard, fullscreen
+
 ### Undertow
 
 A harbour tug game in a night storm. Throttle and steer through the swell, hook onto a load, tow it while the rope strains, and answer the radio. It has chapters and a Storm Shift mode, and the whole game, including its models and sound, runs from one local page with keyboard and mouse.

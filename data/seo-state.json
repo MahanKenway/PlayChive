@@ -1,6 +1,6 @@
 {
   "/": {
-    "hash": "a01aceb9bce7ce81d960ede26a6d8fc37aae11b72253ca58e7e8c3f736d258b8",
+    "hash": "0d3a4bccc9dce7b98aed6e507251ae10e989aad771587ac43d6af8bfa1f83841",
     "lastmod": "2026-11-19"
   },
   "2048.html": {
@@ -16,7 +16,7 @@
     "lastmod": "2026-11-09"
   },
   "agent/": {
-    "hash": "503e8ba49624c31a081424df630737e245b35e96397056e54ffc5ad1017cb56c",
+    "hash": "8805560f12a59195ba3bc32c02ffadaf2ea727bf38a429674ac4079c2bc67cad",
     "lastmod": "2026-11-19"
   },
   "armawebtron.html": {
@@ -47,8 +47,12 @@
     "hash": "2a783124d264e491dc9b6ae96a0368490db9b5d8ecac68d52235d7446b2ff855",
     "lastmod": "2026-11-09"
   },
+  "emberhold.html": {
+    "hash": "2df5073e8cb913ff62dd7f442e0a29ed7ada43188503d7a4e4c02631f4f6801b",
+    "lastmod": "2026-11-19"
+  },
   "fa/": {
-    "hash": "c74992053a0893f9dcc7b204f9e63fa349fe8fedf11f879d4aea09e436f3e216",
+    "hash": "c371500c6de401bb34f2eb42f90a547533fce1a26733bca3aac5dbf0f07a7254",
     "lastmod": "2026-11-19"
   },
   "freedink.html": {
@@ -60,11 +64,11 @@
     "lastmod": "2026-11-09"
   },
   "hexgl.html": {
-    "hash": "1ca083826aae5875ded18464428dc4232258f3bb1a32742b41139f538eb2bdd4",
+    "hash": "346ba7756b47ca3f06462c65678337c491ccfce01a10e6fc180ebe43343161e7",
     "lastmod": "2026-11-19"
   },
   "hextris.html": {
-    "hash": "74e4abf698f82b908474aea98244928831f6d7f1a9412d6ac7c189b9d0ea5d75",
+    "hash": "1cd07a8d4a3cdd38ac3e426b1b005d3fca393c32c45066bf632fa17c973df4da",
     "lastmod": "2026-11-19"
   },
   "javascript-tetris.html": {
@@ -108,11 +112,11 @@
     "lastmod": "2026-11-09"
   },
   "saltline.html": {
-    "hash": "0ebf833a8868ac6311014f02329561355bfc7c70e6c6a3774ef9681aa1868ff7",
+    "hash": "13b62b7c845ea536660a8977e69e900ad5dde1cf06f39a47ef6b9df88d5dd346",
     "lastmod": "2026-11-19"
   },
   "shadow-station.html": {
-    "hash": "a1ede6c869303a78a095abab03358802fed3de3b8a78863304d1627ad36df6d6",
+    "hash": "6dad1ac289387f204341389ec60412901807a45b39765719e20ff98db074e00b",
     "lastmod": "2026-11-19"
   },
   "starter-kit-racing.html": {

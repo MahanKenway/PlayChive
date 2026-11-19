@@ -552,6 +552,30 @@
       "source": null
     },
     {
+      "id": "emberhold",
+      "name": "Emberhold",
+      "description": "A dark-fantasy action game in a stone fortress. Fight with light and heavy attacks, roll, lock on to enemies, drink from your ember flask, and level up beside a lamp. It starts in a nameless cell, and the whole game, including its models and sound, runs from one local page with keyboard and mouse.",
+      "genre": "Dark Fantasy Action",
+      "playable": true,
+      "runtimeUrl": "emberhold.html",
+      "probeUrl": null,
+      "publicUrl": "emberhold.html",
+      "runtimeType": "Bundled independent runtime",
+      "controls": [
+        "keyboard",
+        "fullscreen"
+      ],
+      "launchMethod": "direct-link",
+      "license": "Used with the author's permission · credit retained",
+      "status": "Free / bundled",
+      "studio": "Author not named in the file (used with permission)",
+      "year": "Single-file build",
+      "artwork": "assets/screenshots/emberhold-runtime.webp",
+      "projectUrl": null,
+      "catalogState": "INDEPENDENT RUNTIME",
+      "source": null
+    },
+    {
       "id": "undertow",
       "name": "Undertow",
       "description": "A harbour tug game in a night storm. Throttle and steer through the swell, hook onto a load, tow it while the rope strains, and answer the radio. It has chapters and a Storm Shift mode, and the whole game, including its models and sound, runs from one local page with keyboard and mouse.",
