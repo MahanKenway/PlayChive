@@ -208,6 +208,18 @@ A browser first-person shooter set in a rainy container port. Cut three uplink r
 - Play: https://playchive.ir/saltline.html
 - Controls: keyboard, gamepad, fullscreen
 
+### Graveyard Shift
+
+A round-based zombie survival shooter at a rain-soaked truck stop. Board up windows, earn points for every hit and kill, open new areas, buy guns off the wall and get the power back on while each round sends more and tougher zombies. It runs from one local page with keyboard and mouse, or with touch controls on a phone.
+
+- Genre: Zombie Survival
+- Developer: ethanplusai (built with Fable 5.2)
+- License: MIT · source and notices retained
+- Status: Free / bundled
+- Runtime: Bundled independent runtime
+- Play: https://playchive.ir/graveyard-shift.html
+- Controls: keyboard, touch, fullscreen
+
 ### Emberhold
 
 A dark-fantasy action game in a stone fortress. Fight with light and heavy attacks, roll, lock on to enemies, drink from your ember flask, and level up beside a lamp. It starts in a nameless cell, and the whole game, including its models and sound, runs from one local page with keyboard and mouse.

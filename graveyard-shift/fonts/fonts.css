@@ -1,0 +1,17 @@
+/* Self-hosted OFL fonts for Graveyard Shift (PLAYCHIVE). */
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:500;font-display:swap;src:url(barlow-condensed-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:600;font-display:swap;src:url(barlow-condensed-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:700;font-display:swap;src:url(barlow-condensed-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'Overpass';font-style:normal;font-weight:400;font-display:swap;src:url(overpass-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Overpass';font-style:normal;font-weight:500;font-display:swap;src:url(overpass-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Overpass';font-style:normal;font-weight:600;font-display:swap;src:url(overpass-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Overpass';font-style:normal;font-weight:700;font-display:swap;src:url(overpass-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'Alfa Slab One';font-style:normal;font-weight:400;font-display:swap;src:url(alfa-slab-one-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Yellowtail';font-style:normal;font-weight:400;font-display:swap;src:url(yellowtail-latin-400-normal.woff2) format('woff2')}
+/* Persian glyphs share the same family names, so no other CSS has to change. */
+@font-face{font-family:'Overpass';font-weight:400 500;font-display:swap;src:url(../../assets/fonts/Shabnam-Regular.woff2) format('woff2');unicode-range:U+0600-06FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:'Overpass';font-weight:600 900;font-display:swap;src:url(../../assets/fonts/Shabnam-Bold.woff2) format('woff2');unicode-range:U+0600-06FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:'Barlow Condensed';font-weight:400 500;font-display:swap;src:url(../../assets/fonts/Shabnam-Regular.woff2) format('woff2');unicode-range:U+0600-06FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:'Barlow Condensed';font-weight:600 900;font-display:swap;src:url(../../assets/fonts/Vazirmatn-Bold.woff2) format('woff2');unicode-range:U+0600-06FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF}
+html.fa *:not(canvas) { letter-spacing: normal !important; text-transform: none !important; }
+html.fa { line-height: 1.5; }

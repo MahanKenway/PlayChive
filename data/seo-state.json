@@ -1,6 +1,6 @@
 {
   "/": {
-    "hash": "0d3a4bccc9dce7b98aed6e507251ae10e989aad771587ac43d6af8bfa1f83841",
+    "hash": "67a125d74ced529f44fd620e6cf75e9d3d09e0ac69f43290bb9d0d33227769e1",
     "lastmod": "2026-11-19"
   },
   "2048.html": {
@@ -16,7 +16,7 @@
     "lastmod": "2026-11-09"
   },
   "agent/": {
-    "hash": "8805560f12a59195ba3bc32c02ffadaf2ea727bf38a429674ac4079c2bc67cad",
+    "hash": "e7fcc1097a6c5a05f548fd35e48cc91541a75a6fd5168a470462ac770883c29d",
     "lastmod": "2026-11-19"
   },
   "armawebtron.html": {
@@ -52,7 +52,7 @@
     "lastmod": "2026-11-19"
   },
   "fa/": {
-    "hash": "c371500c6de401bb34f2eb42f90a547533fce1a26733bca3aac5dbf0f07a7254",
+    "hash": "1e2bf7a8e7b7b623a07bb4f2ed3629e47884316880800dd3a25f987785dde70b",
     "lastmod": "2026-11-19"
   },
   "freedink.html": {
@@ -63,12 +63,16 @@
     "hash": "2cf02f83879e81237dffba9da0a04c188bba5cfcf8497799ef8cf2be2f282dbf",
     "lastmod": "2026-11-09"
   },
+  "graveyard-shift.html": {
+    "hash": "ed88fbc9f8dddc8e6615120803d897c1cc0d95cc6dffbc8e9d6e004c40962904",
+    "lastmod": "2026-11-19"
+  },
   "hexgl.html": {
-    "hash": "346ba7756b47ca3f06462c65678337c491ccfce01a10e6fc180ebe43343161e7",
+    "hash": "c78e4b167546834002f0d9f702d89c48df1d94fa8a4b0111fdc77501da768891",
     "lastmod": "2026-11-19"
   },
   "hextris.html": {
-    "hash": "1cd07a8d4a3cdd38ac3e426b1b005d3fca393c32c45066bf632fa17c973df4da",
+    "hash": "e88455cc966851bc6b3cef1d3cd1d9ce0e780aec8135bfc86d4094c14d273b02",
     "lastmod": "2026-11-19"
   },
   "javascript-tetris.html": {
@@ -112,11 +116,11 @@
     "lastmod": "2026-11-09"
   },
   "saltline.html": {
-    "hash": "13b62b7c845ea536660a8977e69e900ad5dde1cf06f39a47ef6b9df88d5dd346",
+    "hash": "55125ac00930541f9999736cba60d72f2e2ec8c6a2b7f2970e63b597cd6d9faf",
     "lastmod": "2026-11-19"
   },
   "shadow-station.html": {
-    "hash": "6dad1ac289387f204341389ec60412901807a45b39765719e20ff98db074e00b",
+    "hash": "e15e41f5055b1b1d18c81c7a4aa2a80c564315ce564889b2937ae77b33567d72",
     "lastmod": "2026-11-19"
   },
   "starter-kit-racing.html": {

@@ -552,6 +552,31 @@
       "source": null
     },
     {
+      "id": "graveyard-shift",
+      "name": "Graveyard Shift",
+      "description": "A round-based zombie survival shooter at a rain-soaked truck stop. Board up windows, earn points for every hit and kill, open new areas, buy guns off the wall and get the power back on while each round sends more and tougher zombies. It runs from one local page with keyboard and mouse, or with touch controls on a phone.",
+      "genre": "Zombie Survival",
+      "playable": true,
+      "runtimeUrl": "graveyard-shift.html",
+      "probeUrl": null,
+      "publicUrl": "graveyard-shift.html",
+      "runtimeType": "Bundled independent runtime",
+      "controls": [
+        "keyboard",
+        "touch",
+        "fullscreen"
+      ],
+      "launchMethod": "direct-link",
+      "license": "MIT · source and notices retained",
+      "status": "Free / bundled",
+      "studio": "ethanplusai (built with Fable 5.2)",
+      "year": "2026",
+      "artwork": "assets/screenshots/graveyard-shift-runtime.webp",
+      "projectUrl": null,
+      "catalogState": "INDEPENDENT RUNTIME",
+      "source": null
+    },
+    {
       "id": "emberhold",
       "name": "Emberhold",
       "description": "A dark-fantasy action game in a stone fortress. Fight with light and heavy attacks, roll, lock on to enemies, drink from your ember flask, and level up beside a lamp. It starts in a nameless cell, and the whole game, including its models and sound, runs from one local page with keyboard and mouse.",
